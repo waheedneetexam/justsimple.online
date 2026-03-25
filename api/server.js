@@ -1,6 +1,7 @@
 const express = require('express');
 const cors    = require('cors');
-const search  = require('./routes/search');
+const search   = require('./routes/search');
+const featured = require('./routes/featured');
 
 const app  = express();
 const PORT = 3011;
@@ -8,7 +9,8 @@ const PORT = 3011;
 app.use(cors({ origin: ['https://justsimple.online', 'https://www.justsimple.online'] }));
 app.use(express.json());
 
-app.use('/api/search', search);
+app.use('/api/search',   search);
+app.use('/api/featured', featured);
 
 app.get('/api/health', (req, res) => res.json({ ok: true, ts: new Date() }));
 

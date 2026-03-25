@@ -293,76 +293,80 @@
 
 <!-- ── Analyses ── -->
 <main>
-  <div class="section-label">Analysed Websites</div>
-  <div class="grid">
-    <a class="site-card" href="/btcpayserver.org/">
-      <div class="site-icon">₿</div>
-      <h3>BTCPay Server</h3>
-      <p>Open-source Bitcoin payment processor. Accept crypto with 0% fees, no middleman, fully self-hosted.</p>
-      <span class="tag">Bitcoin · Payments · Open Source</span>
-    </a>
-    <a class="site-card" href="/phoenix.acinq.co/">
-      <div class="site-icon">⚡</div>
-      <h3>Phoenix Wallet</h3>
-      <p>Self-custodial Lightning Network Bitcoin wallet by ACINQ. Send Bitcoin instantly with auto channel management.</p>
-      <span class="tag">Lightning · Bitcoin · Mobile Wallet</span>
-    </a>
-    <a class="site-card" href="/amazon.com/">
-      <div class="site-icon">📦</div>
-      <h3>Amazon</h3>
-      <p>World's largest online retailer + AWS cloud computing. 315M+ customers, Prime, Alexa, and much more.</p>
-      <span class="tag">E-Commerce · Cloud · Streaming</span>
-    </a>
-    <a class="site-card" href="/yahoo.com/">
-      <div class="site-icon">🟣</div>
-      <h3>Yahoo</h3>
-      <p>Pioneer web portal with 1B+ users. Yahoo Mail, News, Finance, Sports — all in one place since 1994.</p>
-      <span class="tag">Web Portal · Email · News</span>
-    </a>
-    <a class="site-card" href="/tiktok.com/">
-      <div class="site-icon">🎵</div>
-      <h3>TikTok</h3>
-      <p>Short-form video platform by ByteDance. 1.6B users, AI-powered For You feed, $23B revenue in 2024.</p>
-      <span class="tag">Video · Social · Entertainment</span>
-    </a>
-    <a class="site-card" href="/bing.com/">
-      <div class="site-icon">🔍</div>
-      <h3>Bing</h3>
-      <p>Microsoft's AI-powered search engine with Copilot. 3.36B monthly visits and growing fast.</p>
-      <span class="tag">Search · AI · Microsoft</span>
-    </a>
-    <a class="site-card" href="/yahoo.co.jp/">
-      <div class="site-icon">🇯🇵</div>
-      <h3>Yahoo Japan</h3>
-      <p>Japan's #1 web portal with 83M+ monthly users. News, shopping, auctions, PayPay payments and 100+ services.</p>
-      <span class="tag">Japan · Web Portal · Payments</span>
-    </a>
-    <a class="site-card" href="/duckduckgo.com/">
-      <div class="site-icon">🦆</div>
-      <h3>DuckDuckGo</h3>
-      <p>Privacy-first search engine that never tracks you. 71.9B searches in 2024, #2 mobile search in 20+ countries.</p>
-      <span class="tag">Privacy · Search · No Tracking</span>
-    </a>
-    <a class="site-card" href="/temu.com/">
-      <div class="site-icon">🛍️</div>
-      <h3>Temu</h3>
-      <p>Gamified ultra-discount shopping from PDD Holdings. 1B+ downloads, 180+ countries, direct from manufacturers.</p>
-      <span class="tag">E-Commerce · Deals · Shopping</span>
-    </a>
-    <a class="site-card" href="/weather.com/">
-      <div class="site-icon">🌤️</div>
-      <h3>Weather.com</h3>
-      <p>IBM's global weather platform since 1988. Powers 95% of weather apps worldwide with 100M+ monthly users.</p>
-      <span class="tag">Weather · IBM · Forecasting</span>
-    </a>
-    <a class="site-card" href="/netflix.com/">
-      <div class="site-icon">🎬</div>
-      <h3>Netflix</h3>
-      <p>The world's leading streaming service. 230M+ subscribers, $17B content spend, originals in 190 countries.</p>
-      <span class="tag">Streaming · Entertainment · Originals</span>
-    </a>
-  </div>
+  <div class="section-label">Analysed Websites <span id="shuffle-hint" style="font-size:.75rem;color:#8892b0;font-weight:400;margin-left:8px;">↻ shuffles on every visit</span></div>
+  <div class="grid" id="sites-grid"></div>
 </main>
+
+<script>
+(function () {
+  // ── Fallback list (used if API is unreachable) ──────────────────────────
+  var FALLBACK = [
+    { folder_path:'/btcpayserver.org/', name:'BTCPay Server',  description:'Open-source Bitcoin payment processor. Accept crypto with 0% fees, no middleman, fully self-hosted.', tags:['Bitcoin','Payments','Open Source'] },
+    { folder_path:'/phoenix.acinq.co/', name:'Phoenix Wallet', description:'Self-custodial Lightning Network Bitcoin wallet by ACINQ. Send Bitcoin instantly with auto channel management.', tags:['Lightning','Bitcoin','Mobile Wallet'] },
+    { folder_path:'/amazon.com/',   name:'Amazon',    description:'World\'s largest online retailer + AWS cloud computing. 315M+ customers, Prime, Alexa, and much more.', tags:['E-Commerce','Cloud','Streaming'] },
+    { folder_path:'/yahoo.com/',    name:'Yahoo',     description:'Pioneer web portal with 1B+ users. Yahoo Mail, News, Finance, Sports — all in one place since 1994.', tags:['Web Portal','Email','News'] },
+    { folder_path:'/tiktok.com/',   name:'TikTok',    description:'Short-form video platform by ByteDance. 1.6B users, AI-powered For You feed, $23B revenue in 2024.', tags:['Video','Social','Entertainment'] },
+    { folder_path:'/bing.com/',     name:'Bing',      description:'Microsoft\'s AI-powered search engine with Copilot. 3.36B monthly visits and growing fast.', tags:['Search','AI','Microsoft'] },
+    { folder_path:'/duckduckgo.com/', name:'DuckDuckGo', description:'Privacy-first search engine that never tracks you. 71.9B searches in 2024, #2 mobile search in 20+ countries.', tags:['Privacy','Search','No Tracking'] },
+    { folder_path:'/netflix.com/',  name:'Netflix',   description:'The world\'s leading streaming service. 230M+ subscribers, $17B content spend, originals in 190 countries.', tags:['Streaming','Entertainment','Originals'] },
+    { folder_path:'/google.com/',   name:'Google',    description:'The world\'s search engine. 92% market share, 8.5B daily searches, $307B revenue.', tags:['Search','Ads','Cloud','AI'] },
+    { folder_path:'/youtube.com/',  name:'YouTube',   description:'2.7 billion users, 500 hours of video uploaded every minute. The second largest search engine.', tags:['Video','Streaming','Creators'] },
+    { folder_path:'/facebook.com/', name:'Facebook',  description:'3 billion users, $164B in ad revenue. The social network that connected the world.', tags:['Social','Ads','Meta'] },
+    { folder_path:'/instagram.com/', name:'Instagram', description:'2 billion users, 95M photos daily, and the app that created the influencer economy.', tags:['Photos','Reels','Meta'] },
+    { folder_path:'/chatgpt.com/',  name:'ChatGPT',   description:'100 million users in 2 months. OpenAI\'s AI assistant that kicked off the global AI revolution.', tags:['AI','OpenAI','LLM'] },
+    { folder_path:'/reddit.com/',   name:'Reddit',    description:'850M monthly users, 100K+ communities. The front page of the internet since 2005.', tags:['Community','Forums','Upvotes'] },
+    { folder_path:'/wikipedia.org/', name:'Wikipedia', description:'60 million articles, 1.8 billion visitors, zero ads. The free encyclopaedia anyone can edit.', tags:['Reference','Non-profit','Knowledge'] },
+    { folder_path:'/x.com/',        name:'X (Twitter)', description:'550M users, $44B Musk acquisition. The real-time global conversation platform.', tags:['Social','News','Musk'] },
+    { folder_path:'/whatsapp.com/', name:'WhatsApp',  description:'3 billion users, 100 billion messages daily, end-to-end encryption.', tags:['Messaging','Encryption','Meta'] },
+    { folder_path:'/temu.com/',     name:'Temu',      description:'Gamified ultra-discount shopping. 1B+ downloads, 180+ countries, direct from manufacturers.', tags:['E-Commerce','Deals','Shopping'] },
+    { folder_path:'/weather.com/',  name:'Weather.com', description:'IBM\'s global weather platform. Powers 95% of weather apps worldwide.', tags:['Weather','IBM','Forecasting'] },
+    { folder_path:'/yahoo.co.jp/',  name:'Yahoo Japan', description:'Japan\'s #1 web portal with 83M+ monthly users and 100+ services.', tags:['Japan','Web Portal','Payments'] }
+  ];
+
+  // Site-name → emoji icon map
+  var ICONS = { 'BTCPay Server':'₿','Phoenix Wallet':'⚡','Amazon':'📦','Yahoo':'🟣','TikTok':'🎵','Bing':'🔍','Yahoo Japan':'🇯🇵','DuckDuckGo':'🦆','Temu':'🛍️','Weather.com':'🌤️','Netflix':'🎬','Google':'🔍','YouTube':'▶️','Facebook':'👥','Instagram':'📸','ChatGPT':'🤖','Reddit':'🗳️','Wikipedia':'📖','X (Twitter)':'✖️','WhatsApp':'💬' };
+
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function renderCards(sites) {
+    var grid = document.getElementById('sites-grid');
+    grid.innerHTML = '';
+    shuffle(sites).slice(0, 9).forEach(function (s) {
+      var icon = ICONS[s.name] || '🌐';
+      var tag  = Array.isArray(s.tags) ? s.tags.slice(0, 3).join(' · ') : (s.tags || '');
+      var a    = document.createElement('a');
+      a.className = 'site-card';
+      a.href = s.folder_path;
+      a.innerHTML =
+        '<div class="site-icon">' + icon + '</div>' +
+        '<h3>' + s.name + '</h3>' +
+        '<p>' + s.description + '</p>' +
+        '<span class="tag">' + tag + '</span>';
+      grid.appendChild(a);
+    });
+  }
+
+  // ── Try API first; fall back to hardcoded list ──────────────────────────
+  fetch('/api/featured')
+    .then(function (r) {
+      if (!r.ok) throw new Error('API ' + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      renderCards(data.sites && data.sites.length ? data.sites : FALLBACK);
+    })
+    .catch(function () {
+      renderCards(FALLBACK);  // API down → use fallback silently
+    });
+}());
+</script>
 
 <!-- ── Ad: Before Footer (engaged readers) ── -->
 <div class="ad-unit" style="padding-bottom: 32px;">
@@ -380,7 +384,7 @@
   <img class="footer-logo" src="/logo.svg" alt="JustSimple.Online" />
   <strong style="color:#fff;">JustSimple.Online</strong> — Making the web understandable, one site at a time.
   <br><br>
-  <a href="/">justsimple.online</a> &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms of Use</a>
+  <a href="/">justsimple.online</a> &nbsp;·&nbsp; <a href="/what-we-do.html">What We Do</a> &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms of Use</a>
   <br><br>
   <span style="font-size:.78rem;">All analyses are independent editorial content. JustSimple.Online is not affiliated with any website analysed.</span>
 </footer>
