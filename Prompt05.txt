@@ -1,0 +1,47 @@
+Create a new static HTML explainer page using /home/waheed/WebCrawl/btcpayserver.org/index.html as the reference.
+
+Target:
+- New folder/file: /home/waheed/WebCrawl/chatgpt.com/index.html
+- Topic/site: chatgpt.com
+
+What to do:
+- Reuse the BTCPay page's overall structure, visual quality, section flow, and single-file approach
+- Adapt the page for the new topic with fully original content about https://www.chatgpt.com
+- Update all topic-specific content, including:
+  - page title
+  - hero section
+  - stats
+  - diagrams
+  - explanation sections
+  - comparison table
+  - timeline/history
+  - FAQ
+  - summary
+  - footer text and relevant nav links
+- Preserve shared site branding where appropriate, including JustSimple.Online styling, `/logo.svg`, and links to existing pages
+- Add this Google tag in the `<head>` if not already present:
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-TSFVXECJ40');
+</script>
+
+Quality checks:
+- Scan the whole target folder for anomalies
+- Check for broken local links or missing assets
+- Check for malformed HTML or duplicate scripts
+- Check for leftover placeholder or source-topic text
+- Add `rel="noopener noreferrer"` to any `target="_blank"` links
+- Confirm the final page is internally consistent
+
+Optional:
+- Update /home/waheed/WebCrawl/index.html so the new page is linked from the homepage if needed
+
+At the end:
+- summarize what was created
+- list any anomalies found and fixed
+- mention anything that still needs manual review

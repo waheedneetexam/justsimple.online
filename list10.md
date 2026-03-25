@@ -1,0 +1,10 @@
+* Do the same thing as you did for BTCPay to this website: https://www.google.com
+* Do the same thing as you did for BTCPay to this website: https://www.youtube.com
+* Do the same thing as you did for BTCPay to this website: https://www.facebook.com
+* Do the same thing as you did for BTCPay to this website: https://www.instagram.com
+* Do the same thing as you did for BTCPay to this website: https://www.chatgpt.com
+* Do the same thing as you did for BTCPay to this website: https://www.reddit.com
+* Do the same thing as you did for BTCPay to this website: https://www.wikipedia.org
+* Do the same thing as you did for BTCPay to this website: https://www.pornhub.com
+* Do the same thing as you did for BTCPay to this website: https://www.x.com
+* Do the same thing as you did for BTCPay to this website: https://www.whatsapp.com

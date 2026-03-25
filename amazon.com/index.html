@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon — JustSimple.Online</title>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TSFVXECJ40');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root {
+      --bg: #080b14;
+      --surface: #0e1424;
+      --card: #131a2e;
+      --accent: #f97316;
+      --accent2: #51cf66;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --border: #1e2a45;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Navbar ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      background: rgba(8,11,20,.95);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-tagline { font-size: .75rem; color: var(--muted); display: none; }
+    @media(min-width:500px){ .nav-tagline { display: block; } }
+    .nav-right { display: flex; align-items: center; gap: 16px; font-size: .85rem; }
+    .nav-right a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-right a:hover { color: var(--accent); }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #080b14 0%, #1a0f06 50%, #080b14 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 72px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(249,115,22,.12), transparent);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249,115,22,.15);
+      border: 1px solid rgba(249,115,22,.4);
+      color: var(--accent);
+      padding: 4px 16px;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff 30%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+    .hero-url {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 20px;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .hero-url span { color: var(--accent); font-weight: 600; }
+
+    /* ── Layout ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px 100px;
+    }
+    section { margin-bottom: 72px; }
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    h2 .emoji { margin-right: 10px; }
+    .section-intro {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    /* ── Kid Box ── */
+    .kid-box {
+      background: linear-gradient(135deg, rgba(249,115,22,.08), rgba(81,207,102,.05));
+      border: 1.5px solid rgba(249,115,22,.35);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .kid-box::before {
+      content: '👦';
+      position: absolute;
+      right: 24px;
+      top: 20px;
+      font-size: 3rem;
+      opacity: .18;
+    }
+    .kid-box h3 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .kid-box p { color: var(--text); line-height: 1.8; }
+    .kid-box p + p { margin-top: 12px; }
+
+    /* ── Cards grid ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color .2s, transform .2s;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .card h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .card p { font-size: .9rem; color: var(--muted); }
+
+    /* ── Stat strip ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+    .stat .num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent);
+      display: block;
+    }
+    .stat .label { font-size: .85rem; color: var(--muted); margin-top: 4px; }
+
+    /* ── Diagram container ── */
+    .diagram-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      overflow-x: auto;
+    }
+    .diagram-wrap + .diagram-wrap { margin-top: 24px; }
+    .diagram-title {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .mermaid { display: flex; justify-content: center; }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+    .tl-item { position: relative; margin-bottom: 28px; }
+    .tl-dot {
+      position: absolute;
+      left: -28px;
+      top: 4px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+    }
+    .tl-item h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .tl-item p  { font-size: .88rem; color: var(--muted); }
+
+    /* ── Compare table ── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9rem;
+    }
+    .compare-table th {
+      background: var(--card);
+      color: var(--accent);
+      padding: 14px 18px;
+      text-align: left;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+    }
+    .compare-table td {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .compare-table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+    .yes { color: var(--accent2); font-weight: 700; }
+    .no  { color: #ff6b6b; font-weight: 700; }
+
+    /* ── Ad unit ── */
+    .ad-unit {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 24px 0;
+      text-align: center;
+    }
+    .ad-unit-label {
+      font-size: .68rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      opacity: .5;
+    }
+    .ad-unit ins { border-radius: 8px; overflow: hidden; }
+    .ad-unit-inline {
+      margin: 0 0 48px;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer .footer-logo { height: 26px; width: auto; vertical-align: middle; margin-right: 6px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .kid-box { padding: 20px; }
+      .diagram-wrap { padding: 20px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Independent Analysis Banner ── -->
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+
+<!-- ── Navbar ── -->
+<nav>
+  <a class="nav-logo" href="/"><img src="/logo.svg" alt="JustSimple.Online" style="height:34px;"/><span class="nav-tagline">Making the web understandable</span></a>
+  <div class="nav-right"><a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a></div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;" /></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>Amazon</h1>
+  <p>A deep-dive into the world's largest online retailer and cloud computing empire — explained simply, with diagrams.</p>
+  <div class="hero-url">
+    🌐 Analysed: <span>amazon.com</span>
+  </div>
+</div>
+
+<!-- ── Ad 1: Below Hero ── -->
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- ── Disclaimer ── -->
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. We are not affiliated with, endorsed by, or connected to the website being analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+
+
+<!-- ── Main ── -->
+<main>
+
+  <!-- 1. KID EXPLANATION -->
+  <section id="simple">
+    <h2>What is Amazon?</h2>
+    <p class="section-intro">Let's break it down — first for a 10-year-old, then for everyone else.</p>
+    <div class="kid-box">
+      <h3>🛒 Imagine the world's biggest shop that delivers to your door...</h3>
+      <p>
+        You know how some shops have a little bit of everything, but you still have to drive there, walk around, and wait in line? Now imagine a shop so big it has <em>every single thing you could ever want</em> — toys, books, food, TVs, clothes — and instead of going there, you just tap on your phone and it arrives at your door the next day. That's Amazon!
+      </p>
+      <p>
+        But Amazon isn't just a shop. It also owns the invisible computers that power half the internet — when you use apps, stream shows, or play games online, there's a very good chance Amazon's computers are doing the work behind the scenes. Plus, it makes Alexa (the smart speaker you can talk to), Kindle (a reader for books), and even streams movies and TV shows.
+      </p>
+      <p>
+        <strong>Simple version:</strong> Amazon started selling books online in 1994, then added <em>everything else</em> — now it's a shop, a streaming service, a cloud computer, a smart speaker, and more, all in one company.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. STATS -->
+  <section id="stats">
+    <h2><span class="emoji">📊</span>Amazon by the Numbers</h2>
+    <p class="section-intro">The scale of Amazon in 2025 is almost incomprehensible.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">315M</span><div class="label">Active customers worldwide</div></div>
+      <div class="stat"><span class="num">$717B</span><div class="label">Total revenue (2025)</div></div>
+      <div class="stat"><span class="num">31%</span><div class="label">Global cloud market share (AWS)</div></div>
+      <div class="stat"><span class="num">200M</span><div class="label">Amazon Prime members</div></div>
+      <div class="stat"><span class="num">1.9M</span><div class="label">Active third-party sellers</div></div>
+      <div class="stat"><span class="num">1994</span><div class="label">Year founded (originally "Cadabra")</div></div>
+    </div>
+  </section>
+
+  <!-- 3. HOW IT WORKS FLOW -->
+  <section id="how">
+    <h2><span class="emoji">⚙️</span>How Does Amazon Work?</h2>
+    <p class="section-intro">From the moment you search to the parcel arriving at your door — the full journey.</p>
+
+    <div class="diagram-wrap">
+      <div class="diagram-title">Shopping Flow — Search to Delivery</div>
+      <div class="mermaid">
+flowchart TD
+    A([🔍 Customer searches on Amazon]) --> B[AI recommendation engine\nsuggests products]
+    B --> C[Customer browses &\nreads reviews]
+    C --> D[Add to Cart]
+    D --> E{Prime member?}
+    E -->|Yes| F[Next-day / same-day\ndelivery selected]
+    E -->|No| G[Standard shipping\n3–5 days]
+    F --> H[Order confirmed\n& payment processed]
+    G --> H
+    H --> I{Sold by whom?}
+    I -->|Amazon directly| J[Amazon warehouse\npicks & packs order]
+    I -->|Third-party seller\nusing FBA| J
+    I -->|Third-party seller\nself-fulfilled| K[Seller ships\nfrom own warehouse]
+    J --> L[Amazon logistics\nout for delivery]
+    K --> L
+    L --> M([📦 Delivered to customer])
+
+    style A fill:#131a2e,stroke:#f97316,color:#e2e8f0
+    style M fill:#0e2e1a,stroke:#51cf66,color:#e2e8f0
+    style H fill:#131a2e,stroke:#f97316,color:#e2e8f0
+    style I fill:#131a2e,stroke:#64748b,color:#e2e8f0
+      </div>
+    </div>
+
+    <div class="diagram-wrap" style="margin-top:24px">
+      <div class="diagram-title">Amazon's Business Architecture</div>
+      <div class="mermaid">
+graph TB
+    subgraph Retail["🛒 Retail &amp; Marketplace"]
+        AM["Amazon.com\n(Direct Sales)"]
+        MP["Third-Party\nMarketplace"]
+        FBA["FBA — Fulfillment\nby Amazon"]
+        Fresh["Amazon Fresh\n(Groceries)"]
+        WF["Whole Foods\n(Physical stores)"]
+    end
+
+    subgraph Cloud["☁️ AWS — Cloud Computing"]
+        EC2["EC2\n(Virtual servers)"]
+        S3["S3\n(Storage)"]
+        AI["AI &amp; ML\nServices"]
+    end
+
+    subgraph Prime["🎬 Prime Ecosystem"]
+        PV["Prime Video\n(Streaming)"]
+        Music["Prime Music"]
+        Delivery["Free fast\ndelivery"]
+    end
+
+    subgraph Devices["📱 Devices &amp; AI"]
+        Alexa["Alexa\n(Smart speaker)"]
+        Kindle["Kindle\n(E-reader)"]
+        Ring["Ring\n(Smart home)"]
+        FireTV["Fire TV\n(Streaming stick)"]
+    end
+
+    AM --> FBA
+    MP --> FBA
+    Cloud -->|powers| Retail
+    Cloud -->|powers| Prime
+    Alexa -->|integrates| Prime
+    Alexa -->|integrates| AM
+
+    style Retail fill:#0e1424,stroke:#f97316
+    style Cloud  fill:#0e1424,stroke:#f97316
+    style Prime  fill:#0e1424,stroke:#64748b
+    style Devices fill:#0e1424,stroke:#64748b
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Ad 2: Mid-content ── -->
+  <div class="ad-unit-inline">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-2662293899276634"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- 4. FEATURES -->
+  <section id="features">
+    <h2><span class="emoji">🚀</span>Amazon's Key Products &amp; Services</h2>
+    <p class="section-intro">Amazon is many companies in one — here are its major pillars.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🛍️</div>
+        <h4>Amazon Prime</h4>
+        <p>200M members get free next-day delivery, streaming, music, gaming perks, and more for a single subscription.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">☁️</div>
+        <h4>AWS (Amazon Web Services)</h4>
+        <p>The world's largest cloud platform — used by Netflix, NASA, Airbnb and millions of businesses to run their servers.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏪</div>
+        <h4>Marketplace</h4>
+        <p>1.9M third-party sellers list products on Amazon, giving customers access to virtually unlimited inventory.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h4>Alexa</h4>
+        <p>Amazon's AI voice assistant lives inside Echo smart speakers, answering questions, playing music, and controlling smart homes.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎬</div>
+        <h4>Prime Video</h4>
+        <p>Amazon's streaming service with original shows like The Boys, Rings of Power, and Thursday Night Football.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📖</div>
+        <h4>Kindle</h4>
+        <p>E-reader hardware and digital bookstore with millions of titles — plus Kindle Unlimited subscription reading.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📦</div>
+        <h4>FBA (Fulfillment by Amazon)</h4>
+        <p>Sellers send stock to Amazon warehouses; Amazon handles storage, packing, shipping, and customer service.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏡</div>
+        <h4>Ring &amp; Smart Home</h4>
+        <p>Ring doorbells and cameras, smart plugs, and Alexa-connected devices that turn any home into a smart home.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛒</div>
+        <h4>Amazon Fresh &amp; Whole Foods</h4>
+        <p>Grocery delivery and 500+ physical Whole Foods stores — Amazon's push into everyday food shopping.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. USE CASES -->
+  <section id="usecases">
+    <h2><span class="emoji">🗺️</span>Who Uses Amazon &amp; For What</h2>
+    <p class="section-intro">Amazon serves individuals, businesses, developers, and enterprises simultaneously.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Amazon Use Case Mindmap</div>
+      <div class="mermaid">
+mindmap
+  root((Amazon))
+    Shopping
+      Everyday consumer goods
+      Electronics &amp; appliances
+      Fashion &amp; clothing
+      Groceries via Fresh
+    Cloud Computing
+      Hosting websites &amp; apps
+      AI and machine learning
+      Data storage
+      Enterprise software
+    Streaming
+      Movies &amp; TV via Prime Video
+      Music via Prime Music
+      Live sports streaming
+    Smart Home
+      Alexa voice assistant
+      Ring security cameras
+      Smart plugs &amp; lights
+    Business &amp; Sellers
+      Selling via Marketplace
+      FBA logistics
+      Advertising on Amazon
+      B2B via Amazon Business
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. COMPARISON -->
+  <section id="comparison">
+    <h2><span class="emoji">⚖️</span>Amazon vs Traditional Retail</h2>
+    <p class="section-intro">Why Amazon disrupted decades of brick-and-mortar retail dominance.</p>
+    <div class="diagram-wrap" style="padding:0;overflow:hidden;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Amazon</th>
+            <th>Traditional Retail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Store overhead</td><td class="yes">Minimal (warehouses only)</td><td class="no">High (rent, staff, utilities)</td></tr>
+          <tr><td>Inventory size</td><td class="yes">Virtually unlimited</td><td class="no">Limited by shelf space</td></tr>
+          <tr><td>Delivery speed</td><td class="yes">Next-day / same-day (Prime)</td><td class="no">You drive there yourself</td></tr>
+          <tr><td>Price comparison</td><td class="yes">Instant, millions of sellers</td><td class="no">Manual, shop to shop</td></tr>
+          <tr><td>Opening hours</td><td class="yes">24/7/365</td><td class="no">Fixed hours, closed holidays</td></tr>
+          <tr><td>Customer reviews</td><td class="yes">Millions of real reviews</td><td class="no">Ask a sales assistant</td></tr>
+          <tr><td>Returns</td><td class="yes">Easy, often free</td><td class="no">In-store only, restricted</td></tr>
+          <tr><td>Additional revenue streams</td><td class="yes">Cloud, ads, streaming</td><td class="no">Retail only</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── Ad 3: Mid-content ── -->
+  <div class="ad-unit-inline">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-2662293899276634"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- 7. TIMELINE -->
+  <section id="timeline">
+    <h2><span class="emoji">📅</span>Amazon's History</h2>
+    <p class="section-intro">From a garage in Bellevue, Washington to the world's most valuable company.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>1994 — Founded in a Garage</h4>
+        <p>Jeff Bezos quits his Wall Street job and drives cross-country. He incorporates Amazon (originally named "Cadabra") on July 5, 1994 in Bellevue, Washington, starting as an online bookstore.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>1997 — IPO on NASDAQ</h4>
+        <p>Amazon goes public at $18 per share. Bezos writes his famous shareholder letter emphasising long-term thinking over short-term profit — a philosophy he repeats for decades.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2002 — AWS Is Born</h4>
+        <p>Amazon begins offering web services to third-party developers. The internal infrastructure that powers Amazon becomes the foundation of Amazon Web Services — launching a cloud computing revolution.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2005 — Amazon Prime Launches</h4>
+        <p>For $79/year, customers get free two-day shipping on millions of items. The loyalty programme that would transform e-commerce and lock in hundreds of millions of customers is born.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2007 — Kindle E-reader</h4>
+        <p>The first Kindle sells out in 5.5 hours. Amazon reinvents book reading and builds a billion-dollar digital publishing ecosystem alongside its hardware.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2013 — Prime Video Expands</h4>
+        <p>Amazon invests heavily in original content for Prime Video. Shows like Transparent and The Man in the High Castle begin winning Emmy Awards, establishing Amazon as a Hollywood player.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2017 — Whole Foods Acquisition ($13.7B)</h4>
+        <p>Amazon buys Whole Foods Market, giving it 470+ physical stores overnight and a major foothold in the $800B US grocery market.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2023–2025 — AI Push</h4>
+        <p>Amazon invests $4B in Anthropic, integrates generative AI across AWS and Alexa, and launches AI coding tools and Bedrock cloud AI services — competing directly with OpenAI and Microsoft.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. SUMMARY -->
+  <section id="summary">
+    <h2><span class="emoji">✨</span>Summary</h2>
+    <div class="kid-box">
+      <h3>🎯 The one-sentence version</h3>
+      <p>
+        <strong>Amazon is the world's biggest shop, cloud computer, and streaming service all rolled into one</strong> — it started selling books online in 1994 and grew into a $717B empire that touches nearly every part of modern digital life.
+      </p>
+      <p style="margin-top:16px; font-size:.95rem; color: var(--muted);">
+        What makes Amazon unique isn't just selling things cheaply — it's that the cloud computing business (AWS) subsidises the retail side, meaning Amazon can afford to offer prices and delivery speeds no traditional retailer can match.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Ad 4: Before Footer ── -->
+<div class="ad-unit" style="padding-bottom:32px;">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <img class="footer-logo" src="/logo.svg" alt="JustSimple.Online" />
+  <strong style="color:#fff;">JustSimple.Online</strong> — Making the web understandable, one site at a time.
+  <br><br>
+  Analysis of <a href="https://amazon.com" target="_blank">amazon.com</a>
+  &nbsp;·&nbsp; <a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
+</footer>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      primaryColor: '#131a2e',
+      primaryTextColor: '#e2e8f0',
+      primaryBorderColor: '#f97316',
+      lineColor: '#f97316',
+      secondaryColor: '#0e1424',
+      tertiaryColor: '#0e1424',
+      background: '#080b14',
+      mainBkg: '#131a2e',
+      nodeBorder: '#f97316',
+      clusterBkg: '#0e1424',
+      titleColor: '#e2e8f0',
+      edgeLabelBackground: '#131a2e',
+      attributeBackgroundColorEven: '#131a2e',
+      attributeBackgroundColorOdd: '#0e1424'
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DuckDuckGo — JustSimple.Online</title>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TSFVXECJ40');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root {
+      --bg: #080b14;
+      --surface: #0e1424;
+      --card: #131a2e;
+      --accent: #f97316;
+      --accent2: #fb923c;
+      --accent3: #fdba74;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --border: #1e2a45;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Navbar ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      background: rgba(8,11,20,.95);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-tagline { font-size: .75rem; color: var(--muted); display: none; }
+    @media(min-width:500px){ .nav-tagline { display: block; } }
+    .nav-right { display: flex; align-items: center; gap: 16px; font-size: .85rem; }
+    .nav-right a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-right a:hover { color: var(--accent); }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #080b14 0%, #100a04 40%, #080b14 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(249,115,22,.1), transparent);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249,115,22,.15);
+      border: 1px solid rgba(249,115,22,.4);
+      color: var(--accent);
+      padding: 4px 16px;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff 30%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+    .hero-url {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 20px;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .hero-url span { color: var(--accent); font-weight: 600; }
+
+    /* ── Layout ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px 100px;
+    }
+    section { margin-bottom: 72px; }
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    h2 .emoji { margin-right: 10px; }
+    .section-intro {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    /* ── Kid Box ── */
+    .kid-box {
+      background: linear-gradient(135deg, rgba(249,115,22,.08), rgba(251,146,60,.05));
+      border: 1.5px solid rgba(249,115,22,.35);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .kid-box::before {
+      content: '🦆';
+      position: absolute;
+      right: 24px;
+      top: 20px;
+      font-size: 3rem;
+      opacity: .18;
+    }
+    .kid-box h3 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .kid-box p { color: var(--text); line-height: 1.8; }
+    .kid-box p + p { margin-top: 12px; }
+
+    /* ── Cards grid ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color .2s, transform .2s;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .card h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .card p { font-size: .9rem; color: var(--muted); }
+
+    /* ── Stats grid ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+    .stat .num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent);
+      display: block;
+    }
+    .stat .label { font-size: .85rem; color: var(--muted); margin-top: 4px; }
+
+    /* ── Diagram container ── */
+    .diagram-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      overflow-x: auto;
+    }
+    .diagram-wrap + .diagram-wrap { margin-top: 24px; }
+    .diagram-title {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .mermaid { display: flex; justify-content: center; }
+
+    /* ── Comparison table ── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9rem;
+    }
+    .compare-table th {
+      background: var(--card);
+      color: var(--accent);
+      padding: 14px 18px;
+      text-align: left;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+    }
+    .compare-table td {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .compare-table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+    .yes { color: #f97316; font-weight: 700; }
+    .no  { color: #ff6b6b; font-weight: 700; }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+    .tl-item { position: relative; margin-bottom: 28px; }
+    .tl-dot {
+      position: absolute;
+      left: -28px;
+      top: 4px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+    }
+    .tl-item h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .tl-item p  { font-size: .88rem; color: var(--muted); }
+
+    /* ── Ad unit ── */
+    .ad-unit {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 24px 0;
+      text-align: center;
+    }
+    .ad-unit-label {
+      font-size: .68rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      opacity: .5;
+    }
+    .ad-unit ins { border-radius: 8px; overflow: hidden; }
+    .ad-unit-inline {
+      margin: 0 0 48px;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer .footer-logo { height: 26px; width: auto; vertical-align: middle; margin-right: 6px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .kid-box { padding: 20px; }
+      .diagram-wrap { padding: 20px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Independent Analysis Banner ── -->
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+
+<!-- ── Navbar ── -->
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="/logo.svg" alt="JustSimple.Online logo" />
+    <span class="nav-tagline">Making the web understandable</span>
+  </a>
+  <div class="nav-right">
+    <a href="/">← All Analyses</a>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;" /></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>DuckDuckGo</h1>
+  <p>A deep-dive into the world's leading privacy search engine — the search engine that refuses to spy on you.</p>
+  <div class="hero-url">
+    🌐 Analysed: <span>duckduckgo.com</span>
+  </div>
+</div>
+
+<!-- ── Ad 1: Below Hero ── -->
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- ── Disclaimer ── -->
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. We are not affiliated with, endorsed by, or connected to the website being analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+
+
+<!-- ── Main ── -->
+<main>
+
+  <!-- ── 1. KID EXPLANATION ── -->
+  <section id="simple">
+    <h2>What is DuckDuckGo?</h2>
+    <p class="section-intro">Let's forget the technical stuff and use a simple story first.</p>
+    <div class="kid-box">
+      <h3>🔒 Imagine searching without anyone watching...</h3>
+      <p>
+        You know how when you search for something on Google, Google remembers <em>everything</em> you searched — and then uses that to show you ads that are weirdly specific to you? Like you search for sneakers and suddenly every website shows you sneaker ads?
+      </p>
+      <p>
+        <strong>DuckDuckGo is like searching on Google — but Google never writes down what you searched.</strong> It finds answers to your questions without spying on you or building a profile of your interests to sell to advertisers.
+      </p>
+      <p>
+        DuckDuckGo was founded in 2008 by Gabriel Weinberg in Pennsylvania. His idea was simple: search the web privately, like it used to be before big companies started tracking everything. No search history saved. No IP address logged. No targeted ads based on your personal information.
+      </p>
+      <p>
+        It's become so popular that by 2024, people used it for <strong>71.9 billion searches</strong> in a single year — a 379% jump since 2019. It's now the #2 mobile search engine in the US, UK, Canada and 20+ other countries.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── 2. STATS ── -->
+  <section id="stats">
+    <h2><span class="emoji">📊</span>By the Numbers</h2>
+    <p class="section-intro">DuckDuckGo's explosive growth driven by a global privacy awakening.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">71.9B</span><div class="label">Searches in 2024 (annual total)</div></div>
+      <div class="stat"><span class="num">102M+</span><div class="label">Daily searches (2022 baseline, grown since)</div></div>
+      <div class="stat"><span class="num">379%</span><div class="label">Search growth since 2019 (15B → 71.9B)</div></div>
+      <div class="stat"><span class="num">#2</span><div class="label">Mobile search engine in US, UK, Canada + 20 more markets</div></div>
+      <div class="stat"><span class="num">2008</span><div class="label">Founded by Gabriel Weinberg in Pennsylvania</div></div>
+      <div class="stat"><span class="num">0</span><div class="label">User profiles stored. Zero. None.</div></div>
+    </div>
+  </section>
+
+  <!-- ── 3. HOW IT WORKS FLOW ── -->
+  <section id="how">
+    <h2><span class="emoji">⚙️</span>How Does DuckDuckGo Work?</h2>
+    <p class="section-intro">The complete journey from search query to private results — with no tracking at any step.</p>
+
+    <div class="diagram-wrap">
+      <div class="diagram-title">Privacy-First Search Flow</div>
+      <div class="mermaid">
+flowchart TD
+    A([👤 User types a query]) --> B[DuckDuckGo receives query\nNo IP stored · No cookie set]
+    B --> C{Query routing}
+    C -->|Web results| D["Bing Index\n(primary source)"]
+    C -->|Encyclopedic| E["Wikipedia\n+ structured sources"]
+    C -->|Specialised| F["DuckDuckGo's own crawls\n+ 400+ direct sources"]
+    D --> G[Results aggregated\nand de-duplicated]
+    E --> G
+    F --> G
+    G --> H[Ads matched by\nkeyword ONLY\nNo user profile used]
+    H --> I([📱 User sees results\nNo tracking data created])
+    I --> J{User clicks a result?}
+    J -->|Yes| K["Redirect strips\nreferrer info\nWebsite can't see\nyour DDG query"]
+    J -->|No - follows up| A
+    K --> L([🔒 Private browsing complete\nNo trace left behind])
+
+    style A fill:#0e1424,stroke:#f97316,color:#e2e8f0
+    style L fill:#0e1a0e,stroke:#fb923c,color:#e2e8f0
+    style I fill:#131a2e,stroke:#f97316,color:#e2e8f0
+    style H fill:#131a2e,stroke:#fb923c,color:#e2e8f0
+      </div>
+    </div>
+
+    <div class="diagram-wrap" style="margin-top:24px">
+      <div class="diagram-title">DuckDuckGo Privacy Architecture — What They Block</div>
+      <div class="mermaid">
+graph TB
+    subgraph User["👤 You"]
+        Browser["Your Browser"]
+        Query["Your Search Query"]
+    end
+
+    subgraph DDG["🦆 DuckDuckGo Layer"]
+        Search["Search Engine\nNo IP · No Cookie · No History"]
+        Email["@duck.com Email\nStrips tracking pixels"]
+        Extension["Browser Extension\nBlocks trackers on all sites"]
+        AppBrowser["DDG Browser App\nBuilt-in tracker blocking"]
+        Burn["Burn Bar\nWipes session instantly"]
+    end
+
+    subgraph Blocked["🚫 What Gets Blocked"]
+        ThirdParty["3rd Party Trackers\n(Facebook, Google pixels)"]
+        Fingerprint["Browser Fingerprinting\nScripts"]
+        IPLog["IP Address Logging"]
+        CrossSite["Cross-site\nProfile Building"]
+    end
+
+    subgraph Results["📋 What You Get"]
+        WebResults["Search Results\n(Bing + own sources)"]
+        KeywordAds["Keyword Ads Only\n(not behavioural)"]
+        Answers["Instant Answers\n(Wikipedia, calculators, etc.)"]
+    end
+
+    Browser --> Search
+    Query --> Search
+    Search --> WebResults
+    Search --> KeywordAds
+    Search --> Answers
+    Email -.->|strips| ThirdParty
+    Extension -.->|blocks| ThirdParty
+    Extension -.->|blocks| Fingerprint
+    Search -.->|never logs| IPLog
+    AppBrowser -.->|prevents| CrossSite
+    Burn -.->|clears| Browser
+
+    style User fill:#0e1424,stroke:#f97316
+    style DDG fill:#0e1424,stroke:#f97316
+    style Blocked fill:#1a0a0a,stroke:#ff6b6b
+    style Results fill:#0a1a0a,stroke:#fb923c
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Ad 2: Mid-content after section 3 ── -->
+  <div class="ad-unit-inline">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-2662293899276634"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ── 4. FEATURES ── -->
+  <section id="features">
+    <h2><span class="emoji">🚀</span>Key Features & Privacy Tools</h2>
+    <p class="section-intro">DuckDuckGo has grown far beyond a search engine into a full privacy suite.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <h4>Private Search</h4>
+        <p>Search the web with no search history, no IP logging, and no user profiling. Results pulled from Bing, Wikipedia, and 400+ direct sources.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📧</div>
+        <h4>@duck.com Email Protection</h4>
+        <p>Get a free @duck.com forwarding address. Emails are stripped of tracking pixels before being forwarded to your real inbox — completely invisibly.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛡️</div>
+        <h4>Tracker Blocker</h4>
+        <p>Browser extension that blocks third-party trackers (Facebook, Google pixels, ad networks) on every website you visit — not just on DDG.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h4>DuckDuckGo Browser</h4>
+        <p>A full mobile browser (iOS + Android) with tracker blocking, forced HTTPS, and the Burn Bar built in. Now expanding to desktop.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔥</div>
+        <h4>Burn Bar</h4>
+        <p>One tap to instantly clear all tabs and browsing data from your session — like your visit never happened. Unique to the DDG browser.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔐</div>
+        <h4>Fingerprinting Protection</h4>
+        <p>Blocks scripts that try to identify you by your device's unique characteristics (screen size, fonts, hardware) — even without cookies.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💡</div>
+        <h4>Instant Answers</h4>
+        <p>Hundreds of built-in quick answers — calculators, unit converters, weather, dictionary definitions, code snippets — shown directly in results.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏷️</div>
+        <h4>Keyword-Only Ads</h4>
+        <p>DuckDuckGo does show ads — but only matched to what you typed right now. No profile, no history, no behavioural targeting. Just the words on screen.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <h4>!Bangs</h4>
+        <p>Type !amazon, !wikipedia, !github followed by your query and DDG instantly redirects you to search within that site. Over 13,000 bangs available.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. USE CASE MINDMAP ── -->
+  <section id="usecases">
+    <h2><span class="emoji">🗺️</span>Who Uses DuckDuckGo & Why</h2>
+    <p class="section-intro">Privacy-conscious users from all walks of life choose DDG for very different reasons.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">DuckDuckGo Use Case Map</div>
+      <div class="mermaid">
+mindmap
+  root((DuckDuckGo))
+    Privacy-Conscious Users
+      Don't want Google tracking
+      Concerned about data sales
+      Anti-surveillance philosophy
+    Professionals
+      Lawyers researching cases
+      Medical professionals
+      Journalists protecting sources
+    Tech Users
+      Developers using bangs
+      Open-source advocates
+      Security researchers
+    Everyday Search
+      General web browsing
+      Shopping research
+      News reading
+    Email Protection
+      @duck.com forwarding
+      Tracker-free inbox
+      Anonymous contact
+    Mobile Browsing
+      DDG Browser app
+      Burn Bar session clearing
+      Tracker blocking on all sites
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. COMPARISON ── -->
+  <section id="comparison">
+    <h2><span class="emoji">⚖️</span>DuckDuckGo vs Google</h2>
+    <p class="section-intro">Privacy vs power — the core trade-off between the two search engines.</p>
+    <div class="diagram-wrap" style="padding: 0; overflow: hidden;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>DuckDuckGo</th>
+            <th>Google</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Search History Stored</td><td class="yes">Never — zero storage</td><td class="no">Yes, indefinitely</td></tr>
+          <tr><td>IP Address Logged</td><td class="yes">No</td><td class="no">Yes</td></tr>
+          <tr><td>User Profile Built</td><td class="yes">None — impossible</td><td class="no">Comprehensive profile</td></tr>
+          <tr><td>Ad Targeting</td><td class="yes">Keyword only (current query)</td><td class="no">Behavioural + historical</td></tr>
+          <tr><td>Cross-Site Tracking</td><td class="yes">Blocked by default</td><td class="no">Enabled via cookies</td></tr>
+          <tr><td>Search Index Size</td><td>Bing + 400+ sources</td><td class="yes">Vast, own proprietary index</td></tr>
+          <tr><td>Local Search Quality</td><td>Good (improving)</td><td class="yes">Excellent</td></tr>
+          <tr><td>AI Integration</td><td>DuckAssist (in progress)</td><td class="yes">Gemini, AI Overviews</td></tr>
+          <tr><td>Email Protection</td><td class="yes">@duck.com, strips trackers</td><td class="no">Gmail tracks metadata</td></tr>
+          <tr><td>Browser Extension</td><td class="yes">Blocks trackers site-wide</td><td>Chrome extensions available</td></tr>
+          <tr><td>Market Share</td><td>#2 mobile in 20+ markets</td><td class="yes">#1 globally (~90%)</td></tr>
+          <tr><td>Revenue Model</td><td class="yes">Keyword ads (not behavioural)</td><td class="no">Comprehensive data monetisation</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── Ad 3: Mid-content after section 6 ── -->
+  <div class="ad-unit-inline">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-2662293899276634"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ── 7. PRIVACY MODEL ── -->
+  <section id="privacy">
+    <h2><span class="emoji">🛡️</span>The Privacy Model Explained</h2>
+    <p class="section-intro">How DuckDuckGo makes money without selling your data — a business model built on trust.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">DuckDuckGo Revenue Model — Privacy-Compatible Advertising</div>
+      <div class="mermaid">
+flowchart LR
+    A["User searches\n'best hiking boots'"] --> B["DDG reads\ncurrent keywords ONLY"]
+    B --> C["Matches to keyword-based ads\nvia Yahoo-Bing ad network"]
+    C --> D["Shows ad:\n'Columbia Boots — 30% off'\n(relevant to the query)"]
+    D --> E["User clicks ad\nDDG earns revenue"]
+    E --> F["✅ DDG profitable\nwithout user profiling"]
+
+    G["❌ What DDG does NOT do"] --> H["Build user profiles"]
+    G --> I["Store past searches"]
+    G --> J["Track across sessions"]
+    G --> K["Sell data to third parties"]
+    G --> L["Use behavioural signals"]
+
+    style A fill:#0e1424,stroke:#f97316,color:#e2e8f0
+    style F fill:#0e1a0e,stroke:#fb923c,color:#e2e8f0
+    style G fill:#1a0a0a,stroke:#ff6b6b,color:#e2e8f0
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 8. TIMELINE ── -->
+  <section id="timeline">
+    <h2><span class="emoji">📅</span>Timeline</h2>
+    <p class="section-intro">From a tiny one-man project to a global privacy movement.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2008 — Founded</h4>
+        <p>Gabriel Weinberg launches DuckDuckGo in his basement in Pennsylvania. The idea is radical for the time: a search engine that simply doesn't track you. Traffic is tiny but the concept is visionary.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2010 — Privacy Focus Formalised</h4>
+        <p>DuckDuckGo publicly commits to its privacy policy: no search history stored, no personal information collected, no user tracking. The policy becomes the foundation of the brand.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2011 — Instant Answers Launch</h4>
+        <p>Instant Answers feature introduced — giving direct answers to factual queries without requiring users to click through. Thousands of built-in answer sources added over time.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2013 — NSA Revelations Boost</h4>
+        <p>Edward Snowden's revelations about mass NSA surveillance cause a huge surge in privacy awareness. DuckDuckGo's daily searches triple almost overnight, crossing 4M daily searches.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2014 — 10M Daily Searches</h4>
+        <p>DuckDuckGo crosses 10 million daily searches. Included as a default option in Apple Safari, Firefox and other browsers — massively expanding its mainstream reach.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2020 — Privacy Boom</h4>
+        <p>Growing tech backlash and GDPR awareness push DDG past 100M daily searches. A watershed year that proves privacy-focused search is a genuine mainstream demand, not a niche.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2021 — @duck.com Email Protection</h4>
+        <p>DuckDuckGo launches email forwarding via @duck.com addresses that automatically strip tracking pixels from incoming emails before forwarding them — bringing privacy protection beyond search.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2022 — Browser Launch</h4>
+        <p>Full DuckDuckGo Browser launched for iOS and Android, featuring built-in tracker blocking, the Fire Button (Burn Bar), and forced HTTPS — making it a complete privacy browsing solution.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2024 — 71.9B Annual Searches</h4>
+        <p>DuckDuckGo reaches 71.9 billion searches in a single year — a 379% increase since 2019's 15 billion. Confirmed as #2 mobile search engine in the US and 20+ other markets globally.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 9. GROWTH CHART ── -->
+  <section id="growth">
+    <h2><span class="emoji">📈</span>Search Volume Growth</h2>
+    <p class="section-intro">The remarkable trajectory of DuckDuckGo's annual search growth over five years.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Annual Search Volume Growth (Billions)</div>
+      <div class="mermaid">
+xychart-beta
+    title "DuckDuckGo Annual Searches (Billions)"
+    x-axis ["2019", "2020", "2021", "2022", "2023", "2024"]
+    y-axis "Searches (Billions)" 0 --> 80
+    bar [15, 23.6, 35.3, 46.9, 58.2, 71.9]
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 10. SUMMARY ── -->
+  <section id="summary">
+    <h2><span class="emoji">✨</span>Summary</h2>
+    <div class="kid-box">
+      <h3>🎯 The one-sentence version</h3>
+      <p>
+        <strong>DuckDuckGo is the world's leading private search engine</strong> — founded in 2008 to prove you can find anything on the internet without being tracked, profiled, or sold to advertisers, now processing 71.9 billion annual searches and offering a full privacy suite including email protection, browser extension, and mobile browser.
+      </p>
+      <p style="margin-top:16px; font-size:.95rem; color: var(--muted);">
+        It's proof that you don't have to choose between a useful internet and a private one — and 102 million people search with it every single day.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Ad 4: Before Footer ── -->
+<div class="ad-unit" style="padding-bottom: 32px;">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <img class="footer-logo" src="/logo.svg" alt="JustSimple.Online" />
+  <strong style="color:#fff;">JustSimple.Online</strong> — Making the web understandable, one site at a time.
+  <br><br>
+  Analysis of <a href="https://duckduckgo.com" target="_blank">duckduckgo.com</a>
+  &nbsp;·&nbsp; <a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
+</footer>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      primaryColor: '#131a2e',
+      primaryTextColor: '#e2e8f0',
+      primaryBorderColor: '#f97316',
+      lineColor: '#f97316',
+      secondaryColor: '#0e1424',
+      tertiaryColor: '#0e1424',
+      background: '#080b14',
+      mainBkg: '#131a2e',
+      nodeBorder: '#f97316',
+      clusterBkg: '#0e1424',
+      titleColor: '#e2e8f0',
+      edgeLabelBackground: '#131a2e',
+      attributeBackgroundColorEven: '#131a2e',
+      attributeBackgroundColorOdd: '#0e1424'
+    }
+  });
+</script>
+</body>
+</html>

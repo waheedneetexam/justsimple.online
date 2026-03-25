@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reddit — JustSimple.Online</title>
+  <meta name="description" content="An independent analysis of Reddit.com — how upvotes, karma, and subreddits built the front page of the internet into a billion-dollar platform." />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0d0a07;--surface:#1a120a;--card:#211710;--accent:#ff4500;--accent2:#51cf66;--text:#e8eaf6;--muted:#8892b0;--border:#3d2a18;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#1a0f05 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(255,69,0,.12),transparent);}
+    .hero-badge{display:inline-block;background:rgba(255,69,0,.15);border:1px solid rgba(255,69,0,.4);color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,rgba(255,69,0,.08),rgba(81,207,102,.05));border:1.5px solid rgba(255,69,0,.35);border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+    .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;}
+    .stat .num{font-size:2.2rem;font-weight:800;color:var(--accent);display:block;}
+    .stat .label{font-size:.85rem;color:var(--muted);margin-top:4px;}
+    .diagram-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;overflow-x:auto;}
+    .diagram-wrap+.diagram-wrap{margin-top:24px;}
+    .diagram-title{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+    .mermaid{display:flex;justify-content:center;}
+    .timeline{position:relative;padding-left:28px;}
+    .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--accent),transparent);}
+    .tl-item{position:relative;margin-bottom:28px;}
+    .tl-dot{position:absolute;left:-28px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px;}
+    .tl-item p{font-size:.88rem;color:var(--muted);}
+    .ad-unit{max-width:1100px;margin:0 auto;padding:28px 24px 0;text-align:center;}
+    .ad-unit-label{font-size:.68rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;opacity:.5;}
+    footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;}
+    footer a{color:var(--accent);text-decoration:none;}
+    footer .footer-logo{height:26px;width:auto;vertical-align:middle;margin-right:6px;}
+    @media(max-width:600px){.kid-box{padding:20px;}.diagram-wrap{padding:20px 12px;}}
+    #diag-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;}
+    #diag-modal.open{display:flex;}
+    #diag-modal-inner{position:relative;max-width:95vw;max-height:92vh;overflow:auto;background:#1a1d27;border:1px solid #2d3250;border-radius:16px;padding:48px 32px 32px;box-shadow:0 24px 80px rgba(0,0,0,.8);}
+    #diag-close{position:absolute;top:12px;right:16px;background:none;border:none;color:#8892b0;font-size:1.6rem;cursor:pointer;line-height:1;transition:color .2s;}
+    #diag-close:hover{color:#fff;}
+    #diag-modal-inner svg{display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:78vh;width:auto!important;height:auto!important;}
+  </style>
+</head>
+<body>
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+<nav>
+  <a class="nav-logo" href="/"><img src="/logo.svg" alt="JustSimple.Online" style="height:34px;"/><span class="nav-tagline">Making the web understandable</span></a>
+  <div class="nav-right"><a href="/">← All Analyses</a>&nbsp;·&nbsp;<a href="/privacy.html">Privacy</a>&nbsp;·&nbsp;<a href="/terms.html">Terms</a></div>
+</nav>
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;"/></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>Inside Reddit: The Front Page of the Internet</h1>
+  <p>How a simple upvote system turned anonymous strangers into the most powerful editorial force on the web — and built a billion-dollar community platform in the process.</p>
+  <div class="hero-url">🌐 Analysed: <span>reddit.com</span></div>
+</div>
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. Not affiliated with the website analysed.</span>
+  </div>
+</div>
+<main>
+
+  <!-- SECTION 1: What is Reddit -->
+  <section>
+    <h2><span class="emoji">🤔</span>What is Reddit?</h2>
+    <p class="section-intro">A plain-language explanation of how Reddit works — perfect if you've never used it before.</p>
+    <div class="kid-box">
+      <h3>Explained Simply</h3>
+      <p>Imagine a giant bulletin board divided into thousands of smaller boards — one for cats, one for news, one for cooking, one for almost anything you can think of. Each smaller board is called a <strong>subreddit</strong> (like r/cats or r/worldnews), and anyone can post a link, image, or question there.</p>
+      <p>Once something is posted, other users vote it <strong>up</strong> or <strong>down</strong>. Posts with lots of upvotes float to the top so everyone sees them; posts nobody likes sink to the bottom. This voting system means the crowd — not editors or algorithms — decides what's important. The score you earn from upvotes is called your <strong>karma</strong>, a kind of reputation badge.</p>
+      <p>Reddit calls itself "the front page of the internet" because popular posts there often become the news stories, memes, and conversations the rest of the web talks about the following day. It started in 2005 as a simple link aggregator and has grown into one of the most visited sites on earth.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: By the Numbers -->
+  <section>
+    <h2><span class="emoji">📊</span>Reddit by the Numbers</h2>
+    <p class="section-intro">The scale of Reddit is staggering — here are the headline figures that define the platform today.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">850M+</span><span class="label">Monthly Active Users</span></div>
+      <div class="stat"><span class="num">100K+</span><span class="label">Active Subreddits</span></div>
+      <div class="stat"><span class="num">$804M</span><span class="label">Revenue (2023)</span></div>
+      <div class="stat"><span class="num">Mar 2024</span><span class="label">IPO on NYSE</span></div>
+      <div class="stat"><span class="num">16B+</span><span class="label">Total Posts Ever</span></div>
+      <div class="stat"><span class="num">2005</span><span class="label">Year Founded</span></div>
+    </div>
+  </section>
+
+  <!-- AD UNIT 1 -->
+  <div class="ad-unit" style="margin-bottom:56px;">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <!-- SECTION 3: How Reddit Works -->
+  <section>
+    <h2><span class="emoji">⚙️</span>How Reddit Works — Upvotes, Karma &amp; Subreddits</h2>
+    <p class="section-intro">Reddit's core mechanics are deceptively simple, yet they power one of the most complex community ecosystems on the internet.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">When a user submits a post to a subreddit, every logged-in member of that community can cast one upvote or one downvote. The net score (upvotes minus downvotes) feeds directly into Reddit's ranking algorithm, which also considers the age of the post — older posts decay in rank even if they continue to accumulate votes. This time-weighted scoring means fresh, engaging content constantly displaces older material, keeping feeds lively.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">Karma is Reddit's reputation currency. You earn post karma when your submissions are upvoted, and comment karma when your replies receive positive votes. While karma has no monetary value, it signals trustworthiness and community standing; many subreddits require a minimum karma threshold before new accounts can post, acting as a lightweight spam filter. Power users with high karma often become de facto community voices.</p>
+    <p style="color:var(--muted);margin-bottom:28px;">Subreddits are moderated by volunteer teams who set their own rules, flairs, and culture. Reddit's central team sets platform-wide policies (no child exploitation, no doxxing, no illegal content), but individual subreddit moderators decide everything else — from whether memes are allowed to whether political discussion is banned. This decentralised governance model is both Reddit's greatest strength and the source of its most famous controversies.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Post Lifecycle — From Submission to Front Page</div>
+      <div class="mermaid">
+flowchart LR
+    A([User Submits Post]) --> B[Community Votes\nUpvote or Downvote]
+    B --> C{Net Score}
+    C -->|High Score| D[Rises in Subreddit Feed]
+    C -->|Low Score| E[Sinks / Removed]
+    D --> F[Earns Poster Karma]
+    D --> G[Eligible for r/all\nFront Page]
+    G --> H([Millions of Viewers])
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: How Reddit Makes Money -->
+  <section>
+    <h2><span class="emoji">💰</span>How Reddit Makes Money</h2>
+    <p class="section-intro">Reddit's business model relies almost entirely on advertising, with a growing push into premium subscriptions and data licensing.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">Advertising accounts for approximately 97% of Reddit's revenue. Because subreddits are highly topic-specific, Reddit can offer advertisers unusually precise audience targeting — a sports drink brand can reach r/running, a GPU maker can target r/buildapc. In 2023 Reddit generated $804 million in ad revenue, a 21% year-on-year increase, even as its IPO was being prepared.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">Beyond ads, Reddit sells <strong>Reddit Premium</strong> ($5.99/month), which removes ads and grants access to the exclusive r/lounge community plus monthly "Coins" for rewarding posts. A landmark new income stream arrived in 2023 when Reddit signed a <strong>$203 million data licensing deal with Google</strong>, allowing the AI giant to train its language models on Reddit's vast archive of human conversation — a deal that highlighted how valuable organic community content has become in the AI era.</p>
+    <p style="color:var(--muted);margin-bottom:28px;">The API controversy of 2023 stemmed directly from this monetisation strategy. When Reddit announced it would charge third-party developers for API access — pricing that effectively killed popular apps like Apollo — users suspected it was about protecting the data-licensing deals from third parties scraping content. The resulting protest, where thousands of subreddits went dark, became one of the largest acts of user revolt in internet history.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Reddit Revenue Model</div>
+      <div class="mermaid">
+flowchart TD
+    A([Millions of Users]) --> B[Create Content\nPosts &amp; Comments]
+    B --> C[Generate Attention\n&amp; Engagement Data]
+    C --> D[Targeted Advertising\n~97% of Revenue]
+    C --> E[Data Licensing\nGoogle $203M deal]
+    A --> F[Reddit Premium\nSubscriptions]
+    D --> G([Reddit Revenue\n$804M in 2023])
+    E --> G
+    F --> G
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Key Features -->
+  <section>
+    <h2><span class="emoji">🔧</span>Key Features</h2>
+    <p class="section-intro">The features that define the Reddit experience and set it apart from other social platforms.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🗂️</div>
+        <h4>Subreddits</h4>
+        <p>Over 100,000 active topic-specific communities covering everything from astrophysics to sourdough bread — each with its own rules, culture, and moderator team.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⬆️</div>
+        <h4>Upvote / Downvote</h4>
+        <p>The democratic engine of Reddit. Every user gets one vote per post or comment. Net votes determine what rises to the top and what disappears — no editorial gatekeeping needed.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏆</div>
+        <h4>Karma</h4>
+        <p>A running total of upvotes earned across posts and comments. Karma acts as a reputation signal and a spam barrier — some subreddits require minimum karma to participate.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎤</div>
+        <h4>AMA — Ask Me Anything</h4>
+        <p>Reddit's signature interview format where public figures (Barack Obama, Bill Gates, Elon Musk, astronauts, scientists) answer community-submitted questions live. AMAs have become cultural events.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⭐</div>
+        <h4>Reddit Premium</h4>
+        <p>A paid subscription ($5.99/month) that removes all advertisements, provides monthly Coins to award to great posts, and unlocks access to the exclusive r/lounge community.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🥇</div>
+        <h4>Reddit Awards</h4>
+        <p>Virtual awards (Gold, Silver, Platinum, and hundreds of custom ones) that users give to exceptional posts or comments. Awards are purchased with Coins and signal community appreciation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Timeline -->
+  <section>
+    <h2><span class="emoji">📅</span>Reddit History Timeline</h2>
+    <p class="section-intro">Two decades of growth, controversy, and cultural impact — the key moments that shaped Reddit.</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><h4>2005 — Founded</h4><p>Steve Huffman and Alexis Ohanian launch Reddit from a University of Virginia dorm room with seed funding from Y Combinator. The site starts as a simple link-sharing board with no categories.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2006 — Aaron Swartz &amp; Condé Nast</h4><p>Aaron Swartz briefly joins Reddit after his company Infogami merges with it. Condé Nast Publications acquires Reddit, giving it corporate backing but limiting its independence.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2008 — Open Source &amp; Subreddits</h4><p>Reddit opens its source code and formally launches the subreddit system, allowing any user to create their own community. User growth accelerates dramatically.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2012 — SOPA Blackout</h4><p>Reddit joins Wikipedia in blacking out its site to protest the Stop Online Piracy Act. The coordinated protest is credited with helping kill the bill and demonstrates Reddit's political reach.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2014 — Ellen Pao Controversy</h4><p>CEO Ellen Pao's tenure sparks debates about harassment policy and moderation. She resigns in 2015, and Steve Huffman returns as CEO — a position he still holds today.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2015 — The Victoria Crisis</h4><p>Reddit fires beloved AMA coordinator Victoria Taylor without warning. Volunteer moderators revolt and take hundreds of major subreddits private, exposing the fragile relationship between Reddit and its unpaid workforce.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2020 — Anti-Hate Reforms</h4><p>Following the Black Lives Matter movement, Reddit bans over 2,000 subreddits including r/The_Donald for violating its updated hate-speech policies. A long-overdue reckoning with the platform's darker communities.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2023 — API Protest</h4><p>Reddit announces API pricing that kills third-party apps. Thousands of subreddits go dark in protest. Reddit holds firm, and the protests ultimately subside — but user trust takes a hit.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2024 — IPO on NYSE</h4><p>Reddit lists on the New York Stock Exchange under ticker RDDT, raising approximately $748 million. It's one of the most anticipated tech IPOs of the decade, valuing Reddit at around $6.4 billion at open.</p></div>
+    </div>
+  </section>
+
+  <!-- AD UNIT MID -->
+  <div class="ad-unit" style="margin-bottom:56px;">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <!-- SECTION 8: Culture & Community Power -->
+  <section>
+    <h2><span class="emoji">🌐</span>The Culture &amp; Community Power</h2>
+    <p class="section-intro">Reddit has repeatedly proved that organised internet communities can move markets, change laws, and shape global culture.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">The platform's most iconic cultural contribution is the <strong>AMA (Ask Me Anything)</strong> format. Barack Obama's 2012 AMA crashed Reddit's servers. Bill Gates has done over a dozen AMAs, making himself accessible to millions in ways no traditional press conference could. Scientists, astronauts, musicians, and accident survivors have all used the format to connect with audiences on their own terms, bypassing traditional media entirely.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">Nothing demonstrated Reddit's raw collective power more dramatically than the <strong>GameStop short squeeze of January 2021</strong>. Users of r/wallstreetbets noticed that hedge funds had shorted GameStop stock beyond 100% of available shares. They coordinated a mass buying campaign that drove the stock from $20 to nearly $500, costing hedge funds an estimated $19 billion in losses and forcing congressional hearings about market manipulation. It was the first time an internet forum demonstrably moved global financial markets.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">Reddit's <strong>hivemind</strong> phenomenon — where communities develop strong shared opinions that amplify into near-universal consensus — is both its most powerful and most dangerous trait. Subreddit moderators wield enormous power with zero accountability: they can ban users, restrict topics, and shape narratives for millions. The system of <strong>subreddit rebellions</strong> — where communities go dark or switch to "protest mode" — has become a recognised form of internet activism that Reddit's corporate leadership has struggled to contain without alienating its unpaid moderator workforce.</p>
+  </section>
+
+  <!-- SECTION 9: Architecture Diagram -->
+  <section>
+    <h2><span class="emoji">🏗️</span>Architecture &amp; Scale</h2>
+    <p class="section-intro">How Reddit handles billions of votes, posts, and comments across thousands of communities at web scale.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Reddit System Architecture — Simplified</div>
+      <div class="mermaid">
+flowchart TD
+    subgraph Input["User Input Layer"]
+        P[Posts]
+        CM[Comments]
+        V[Votes]
+    end
+    subgraph Rank["Ranking Engine"]
+        RA[Wilson Score\nAlgorithm]
+        TD[Time Decay\nFunction]
+        RA --> SCORE[Post Score]
+        TD --> SCORE
+    end
+    subgraph Output["Delivery Layer"]
+        FP[Front Page\nr/all]
+        SR[Subreddit\nFeeds]
+        SRCH[Search Index]
+    end
+    P --> RA
+    CM --> RA
+    V --> RA
+    SCORE --> FP
+    SCORE --> SR
+    SCORE --> SRCH
+    FP --> U([End Users\n850M+ Monthly])
+    SR --> U
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: Summary -->
+  <section>
+    <h2><span class="emoji">✅</span>Summary</h2>
+    <div class="kid-box">
+      <h3>The Reddit Story in a Nutshell</h3>
+      <p>Reddit is a voting-powered community platform where millions of anonymous users collectively decide what information, entertainment, and conversation deserves attention. Its genius is that it replaced editorial judgment with democratic voting — making the crowd the editor. This gave it unmatched authenticity but also made it a persistent battleground between free expression and harm prevention.</p>
+      <p>After nearly two decades of growth through controversy — corporate acquisitions, moderator revolts, API wars, and a landmark IPO — Reddit remains the internet's most powerful long-form community platform. No other site has the same depth of niche expertise, the same raw crowd-sourced energy, or the same ability to occasionally reshape the real world through collective action. It is messy, imperfect, and irreplaceable.</p>
+    </div>
+  </section>
+
+</main>
+<div class="ad-unit" style="padding-bottom:32px;">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<footer>
+  <img class="footer-logo" src="/logo.svg" alt="JustSimple.Online" />
+  <strong style="color:#fff;">JustSimple.Online</strong> — Making the web understandable, one site at a time.<br><br>
+  Analysis of <a href="https://reddit.com" target="_blank">reddit.com</a>
+  &nbsp;·&nbsp; <a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
+</footer>
+<div id="diag-modal" role="dialog" aria-modal="true" aria-label="Diagram viewer">
+  <div id="diag-modal-inner"><button id="diag-close" aria-label="Close diagram">&times;</button></div>
+</div>
+<script>
+  mermaid.initialize({startOnLoad:true,theme:'dark',themeVariables:{primaryColor:'#211710',primaryTextColor:'#e8eaf6',primaryBorderColor:'#ff4500',lineColor:'#ff4500',secondaryColor:'#1a120a',tertiaryColor:'#1a120a',background:'#0d0a07',mainBkg:'#211710',nodeBorder:'#ff4500',clusterBkg:'#1a120a',titleColor:'#e8eaf6',edgeLabelBackground:'#211710',attributeBackgroundColorEven:'#211710',attributeBackgroundColorOdd:'#1a120a'}});
+  (function(){var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');if(!modal||!inner||!closeBtn)return;document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});function openModal(mDiv){inner.querySelectorAll('svg,.diag-msg').forEach(function(el){el.remove();});modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}function showSvg(svg){inner.querySelectorAll('svg').forEach(function(s){s.remove();});inner.insertAdjacentHTML('beforeend',svg.outerHTML);var s=inner.querySelector('svg');if(s){s.removeAttribute('width');s.removeAttribute('height');s.style.cssText='display:block;margin:0 auto;width:100%;height:auto;max-height:78vh;';}}function closeModal(){modal.classList.remove('open');document.body.style.overflow='';}closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});}());
+</script>
+</body>
+</html>

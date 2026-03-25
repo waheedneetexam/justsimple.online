@@ -1,0 +1,10 @@
+* Do the same thing as you did for BTCPay to this website: https://www.xvideos.com
+* Do the same thing as you did for BTCPay to this website: https://www.amazon.com
+* Do the same thing as you did for BTCPay to this website: https://www.yahoo.com
+* Do the same thing as you did for BTCPay to this website: https://www.tiktok.com
+* Do the same thing as you did for BTCPay to this website: https://www.bing.com
+* Do the same thing as you did for BTCPay to this website: https://www.yahoo.co.jp
+* Do the same thing as you did for BTCPay to this website: https://www.duckduckgo.com
+* Do the same thing as you did for BTCPay to this website: https://www.temu.com
+* Do the same thing as you did for BTCPay to this website: https://www.weather.com
+* Do the same thing as you did for BTCPay to this website: https://www.netflix.com

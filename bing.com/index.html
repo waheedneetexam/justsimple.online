@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bing — JustSimple.Online</title>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TSFVXECJ40');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root {
+      --bg: #080b14;
+      --surface: #0e1424;
+      --card: #131a2e;
+      --accent: #00b4d8;
+      --accent2: #48cae4;
+      --accent3: #90e0ef;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --border: #1e2a45;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Navbar ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      background: rgba(8,11,20,.95);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-tagline { font-size: .75rem; color: var(--muted); display: none; }
+    @media(min-width:500px){ .nav-tagline { display: block; } }
+    .nav-right { display: flex; align-items: center; gap: 16px; font-size: .85rem; }
+    .nav-right a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-right a:hover { color: var(--accent); }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #080b14 0%, #060e1a 40%, #080b14 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,180,216,.1), transparent);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(0,180,216,.15);
+      border: 1px solid rgba(0,180,216,.4);
+      color: var(--accent);
+      padding: 4px 16px;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff 30%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+    .hero-url {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 20px;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .hero-url span { color: var(--accent); font-weight: 600; }
+
+    /* ── Layout ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px 100px;
+    }
+    section { margin-bottom: 72px; }
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    h2 .emoji { margin-right: 10px; }
+    .section-intro {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    /* ── Kid Box ── */
+    .kid-box {
+      background: linear-gradient(135deg, rgba(0,180,216,.08), rgba(72,202,228,.05));
+      border: 1.5px solid rgba(0,180,216,.35);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .kid-box::before {
+      content: '🤖';
+      position: absolute;
+      right: 24px;
+      top: 20px;
+      font-size: 3rem;
+      opacity: .18;
+    }
+    .kid-box h3 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .kid-box p { color: var(--text); line-height: 1.8; }
+    .kid-box p + p { margin-top: 12px; }
+
+    /* ── Cards grid ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color .2s, transform .2s;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .card h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .card p { font-size: .9rem; color: var(--muted); }
+
+    /* ── Stats grid ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+    .stat .num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent);
+      display: block;
+    }
+    .stat .label { font-size: .85rem; color: var(--muted); margin-top: 4px; }
+
+    /* ── Diagram container ── */
+    .diagram-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      overflow-x: auto;
+    }
+    .diagram-wrap + .diagram-wrap { margin-top: 24px; }
+    .diagram-title {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .mermaid { display: flex; justify-content: center; }
+
+    /* ── Comparison table ── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9rem;
+    }
+    .compare-table th {
+      background: var(--card);
+      color: var(--accent);
+      padding: 14px 18px;
+      text-align: left;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+    }
+    .compare-table td {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .compare-table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+    .yes { color: #48cae4; font-weight: 700; }
+    .no  { color: #ff6b6b; font-weight: 700; }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+    .tl-item { position: relative; margin-bottom: 28px; }
+    .tl-dot {
+      position: absolute;
+      left: -28px;
+      top: 4px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+    }
+    .tl-item h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .tl-item p  { font-size: .88rem; color: var(--muted); }
+
+    /* ── Ad unit ── */
+    .ad-unit {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 24px 0;
+      text-align: center;
+    }
+    .ad-unit-label {
+      font-size: .68rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      opacity: .5;
+    }
+    .ad-unit ins { border-radius: 8px; overflow: hidden; }
+    .ad-unit-inline {
+      margin: 0 0 48px;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer .footer-logo { height: 26px; width: auto; vertical-align: middle; margin-right: 6px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .kid-box { padding: 20px; }
+      .diagram-wrap { padding: 20px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Independent Analysis Banner ── -->
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+
+<!-- ── Navbar ── -->
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="/logo.svg" alt="JustSimple.Online logo" />
+    <span class="nav-tagline">Making the web understandable</span>
+  </a>
+  <div class="nav-right">
+    <a href="/">← All Analyses</a>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;" /></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>Bing</h1>
+  <p>A deep-dive into Microsoft's search engine and AI-powered Copilot platform — explained simply, with diagrams.</p>
+  <div class="hero-url">
+    🌐 Analysed: <span>bing.com</span>
+  </div>
+</div>
+
+<!-- ── Ad 1: Below Hero ── -->
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- ── Disclaimer ── -->
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. We are not affiliated with, endorsed by, or connected to the website being analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+
+
+<!-- ── Main ── -->
+<main>
+
+  <!-- ── 1. KID EXPLANATION ── -->
+  <section id="simple">
+    <h2>What is Bing?</h2>
+    <p class="section-intro">Let's forget the technical stuff and use a simple story first.</p>
+    <div class="kid-box">
+      <h3>🔍 Imagine asking a really smart robot friend...</h3>
+      <p>
+        You know how you can type a question into a search box and find answers? That's a <strong>search engine</strong>. Bing is Microsoft's version of that — kind of like Google, but made by the people who made Windows.
+      </p>
+      <p>
+        Bing is like a super-smart librarian who has read every single page on the internet. You ask it anything, and it tells you exactly where to find the answer — websites, images, videos, maps, news, you name it.
+      </p>
+      <p>
+        But here's the cool part: since February 2023, Bing added an AI robot friend called <strong>Copilot</strong>. Now instead of just giving you a list of links, Bing can actually <em>talk to you</em>, write essays for you, draw pictures for you, and have real conversations — like ChatGPT but built right into search!
+      </p>
+      <p>
+        So Bing is like Google but made by Microsoft, and it has an AI helper called Copilot that can write essays, draw pictures, and have real conversations with you. It's the #2 search engine in the world, used by hundreds of millions of people every day.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── 2. STATS ── -->
+  <section id="stats">
+    <h2><span class="emoji">📊</span>By the Numbers</h2>
+    <p class="section-intro">The real scale of Bing's global reach and business impact.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">3.36B</span><div class="label">Monthly visits</div></div>
+      <div class="stat"><span class="num">900M</span><div class="label">Daily searches</div></div>
+      <div class="stat"><span class="num">11.78%</span><div class="label">Desktop search market share (2nd globally)</div></div>
+      <div class="stat"><span class="num">$11.59B</span><div class="label">Advertising revenue (2026)</div></div>
+      <div class="stat"><span class="num">33M</span><div class="label">Copilot AI users (2025)</div></div>
+      <div class="stat"><span class="num">238</span><div class="label">Regions where Bing is available</div></div>
+    </div>
+  </section>
+
+  <!-- ── 3. HOW IT WORKS FLOW ── -->
+  <section id="how">
+    <h2><span class="emoji">⚙️</span>How Does Bing Work?</h2>
+    <p class="section-intro">The complete journey from your search query to results and AI answers.</p>
+
+    <div class="diagram-wrap">
+      <div class="diagram-title">Search & AI Flow — Query to Answer</div>
+      <div class="mermaid">
+flowchart TD
+    A([👤 User types a search query]) --> B[Bing receives query]
+    B --> C{Query Analysis\nIntent Detection}
+    C -->|Web search| D[Bingbot Web Index\nTrillions of crawled pages]
+    C -->|AI question| E[Microsoft Copilot\nGPT-4 powered AI layer]
+    D --> F[Ranking Algorithm\nRelevance · Freshness · Authority]
+    E --> G[AI generates\nconversational answer]
+    F --> H[10 blue links\n+ rich snippets]
+    G --> I[AI answer panel\n+ follow-up chat]
+    H --> J([📱 User sees results page])
+    I --> J
+    J --> K{User satisfied?}
+    K -->|Yes| L[✅ Task complete]
+    K -->|No - follow-up| E
+
+    style A fill:#0e1424,stroke:#00b4d8,color:#e2e8f0
+    style L fill:#0e1a0e,stroke:#48cae4,color:#e2e8f0
+    style C fill:#131a2e,stroke:#00b4d8,color:#e2e8f0
+    style E fill:#131a2e,stroke:#48cae4,color:#e2e8f0
+      </div>
+    </div>
+
+    <div class="diagram-wrap" style="margin-top:24px">
+      <div class="diagram-title">Bing System Architecture — Components Overview</div>
+      <div class="mermaid">
+graph LR
+    subgraph Crawl["🕷️ Crawling Layer"]
+        Bingbot["Bingbot\nWeb Crawler"]
+        Index["Web Index\nTrillions of pages"]
+    end
+
+    subgraph AI["🤖 AI Layer (Copilot)"]
+        GPT4["GPT-4 Turbo\nLanguage Model"]
+        DALL["DALL-E 3\nImage Generation"]
+        Chat["Copilot Chat\nConversation Engine"]
+    end
+
+    subgraph Results["📋 Results Layer"]
+        Rank["Ranking\nAlgorithm"]
+        Ads["Advertising\nPlatform"]
+        Rich["Rich Snippets\nKnowledge Cards"]
+    end
+
+    subgraph Products["🛠️ Bing Products"]
+        Web["Web Search"]
+        Images["Image Search"]
+        Video["Video Search"]
+        Maps["Bing Maps"]
+        News["Bing News"]
+        Shop["Bing Shopping"]
+    end
+
+    Bingbot --> Index
+    Index --> Rank
+    Rank --> Web
+    GPT4 --> Chat
+    DALL --> Images
+    Chat --> Web
+    Ads --> Web
+    Rich --> Web
+    Web --> Images
+    Web --> Video
+    Web --> Maps
+    Web --> News
+    Web --> Shop
+
+    style Crawl fill:#0e1424,stroke:#00b4d8
+    style AI fill:#0e1424,stroke:#48cae4
+    style Results fill:#131a2e,stroke:#64748b
+    style Products fill:#0e1424,stroke:#00b4d8
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Ad 2: Mid-content after section 3 ── -->
+  <div class="ad-unit-inline">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-2662293899276634"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ── 4. FEATURES ── -->
+  <section id="features">
+    <h2><span class="emoji">🚀</span>Key Features</h2>
+    <p class="section-intro">Everything Bing offers beyond basic web search.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h4>Copilot AI</h4>
+        <p>Powered by GPT-4 Turbo — have real AI conversations, get summaries, write content, and ask follow-up questions naturally.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <h4>Web Search</h4>
+        <p>Deep index of trillions of web pages with smart ranking, rich snippets, and knowledge panels for instant answers.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🖼️</div>
+        <h4>Image Search</h4>
+        <p>Widely considered superior to Google Images — filter by colour, size, type, licence, and time. Plus AI image creation via DALL-E 3.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎬</div>
+        <h4>Video Search</h4>
+        <p>Preview videos inline without leaving search. Strong integration with YouTube and other platforms.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🗺️</div>
+        <h4>Bing Maps</h4>
+        <p>Turn-by-turn navigation, street view, business listings and local search — deeply integrated with Microsoft products.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏆</div>
+        <h4>Bing Rewards</h4>
+        <p>Earn points for every search, redeemable for gift cards, Xbox credits, and more — unique incentive absent from Google.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📰</div>
+        <h4>Bing News</h4>
+        <p>Aggregated news from thousands of publishers, personalised to your interests with real-time updates.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛒</div>
+        <h4>Bing Shopping</h4>
+        <p>Compare prices across retailers, track price history, and find deals — with cashback offers via Microsoft Edge.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎨</div>
+        <h4>Image Creator (DALL-E)</h4>
+        <p>Type a description and Bing creates an original AI-generated image for you — free, powered by DALL-E 3.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. USE CASE MINDMAP ── -->
+  <section id="usecases">
+    <h2><span class="emoji">🗺️</span>Who Uses Bing & How</h2>
+    <p class="section-intro">Bing serves many different audiences with very different needs.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Bing Use Case Map</div>
+      <div class="mermaid">
+mindmap
+  root((Bing))
+    Web Search
+      General queries
+      News &amp; current events
+      Research &amp; homework
+    AI Copilot Chat
+      Essay writing
+      Code generation
+      Question answering
+      Summarising articles
+    Image Tools
+      Image search
+      DALL-E image creation
+      Visual search
+    Shopping
+      Price comparison
+      Deal finding
+      Product research
+    Enterprise
+      Microsoft 365 integration
+      Edge browser default
+      Windows Search integration
+    Rewards Users
+      Daily search rewards
+      Xbox credits
+      Gift cards
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. COMPARISON ── -->
+  <section id="comparison">
+    <h2><span class="emoji">⚖️</span>Bing vs Google</h2>
+    <p class="section-intro">The two giants of search — where Bing wins, where Google still dominates.</p>
+    <div class="diagram-wrap" style="padding: 0; overflow: hidden;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Bing</th>
+            <th>Google</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Market Share (Desktop)</td><td>11.78%</td><td class="yes">89.98%</td></tr>
+          <tr><td>AI Chat Integration</td><td class="yes">Copilot (GPT-4), built-in</td><td>Gemini, separate</td></tr>
+          <tr><td>Image Generation</td><td class="yes">DALL-E 3, free</td><td>Limited / paid</td></tr>
+          <tr><td>Search Rewards</td><td class="yes">Bing Rewards program</td><td class="no">None</td></tr>
+          <tr><td>Video Search Preview</td><td class="yes">Inline previews</td><td>Click to YouTube</td></tr>
+          <tr><td>Index Size</td><td>Billions of pages</td><td class="yes">Larger index</td></tr>
+          <tr><td>Windows / Office Integration</td><td class="yes">Deep (Edge, Windows, M365)</td><td>Partial</td></tr>
+          <tr><td>Ad Revenue (2024)</td><td>$11.59B</td><td class="yes">~$175B</td></tr>
+          <tr><td>Privacy Focus</td><td>Standard</td><td>Standard</td></tr>
+          <tr><td>Local Search</td><td>Good</td><td class="yes">Excellent</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── Ad 3: Mid-content after section 6 ── -->
+  <div class="ad-unit-inline">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-2662293899276634"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ── 7. HISTORY ── -->
+  <section id="history">
+    <h2><span class="emoji">🏛️</span>The Road to Bing</h2>
+    <p class="section-intro">How Microsoft's search engine evolved from a forgotten also-ran to an AI pioneer.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Microsoft Search Evolution</div>
+      <div class="mermaid">
+flowchart LR
+    A["MSN Search\n1998\nBasic web search"] --> B["Windows Live Search\n2006\nRebranded, improved"]
+    B --> C["Bing\nJune 2009\nLaunch with 'decision engine' concept"]
+    C --> D["Yahoo Deal\n2010\nBing powers Yahoo Search"]
+    C --> E["LinkedIn\n2016\nMicrosoft acquires for $26B"]
+    C --> F["Copilot Launch\nFeb 2023\nChatGPT / GPT-4 integration"]
+    F --> G["Market Share Growth\n2.81% → 5.01%\nPost-AI launch surge"]
+
+    style A fill:#0e1424,stroke:#00b4d8,color:#e2e8f0
+    style F fill:#0e1424,stroke:#48cae4,color:#e2e8f0
+    style G fill:#0e1a0e,stroke:#48cae4,color:#e2e8f0
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 8. TIMELINE ── -->
+  <section id="timeline">
+    <h2><span class="emoji">📅</span>Timeline</h2>
+    <p class="section-intro">Key milestones in Bing's journey from launch to AI search leader.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>1998 — MSN Search</h4>
+        <p>Microsoft enters the search game with MSN Search, powered by third-party results. Largely ignored while Google rose to dominance.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2006 — Windows Live Search</h4>
+        <p>Rebranded and revamped, but still struggling to capture market share against Google's growing dominance.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>June 2009 — Bing Launches</h4>
+        <p>Microsoft rebrands as "Bing" and positions it as a "decision engine" — more than just a search engine. Backed by a massive $100M marketing campaign.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2010 — Yahoo Partnership</h4>
+        <p>Yahoo switches its search backend to Bing in a landmark 10-year deal, dramatically increasing Bing's market share and query volume overnight.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2016 — LinkedIn Acquisition</h4>
+        <p>Microsoft acquires LinkedIn for $26.2B. Professional data begins enriching Bing's knowledge graph and search capabilities.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>February 2023 — Copilot Integration</h4>
+        <p>Microsoft announces Bing with ChatGPT-powered Copilot — the biggest shake-up in search in two decades. Market share jumps from 2.81% to 5.01%.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2024–2025 — AI Search Expansion</h4>
+        <p>Copilot gains 33M users. DALL-E 3 image generation added free. Deep integration with Microsoft 365 and Windows. Advertising revenue hits $11.59B.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 9. MARKET POSITION ── -->
+  <section id="market">
+    <h2><span class="emoji">📈</span>Market Position & AI Impact</h2>
+    <p class="section-intro">How Bing's AI bet changed the competitive landscape of search.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Desktop Search Market Share (2025)</div>
+      <div class="mermaid">
+pie title Desktop Search Market Share
+    "Google" : 89.98
+    "Bing" : 11.78
+    "Yahoo" : 2.85
+    "DuckDuckGo" : 2.52
+    "Other" : 1.87
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 10. SUMMARY ── -->
+  <section id="summary">
+    <h2><span class="emoji">✨</span>Summary</h2>
+    <div class="kid-box">
+      <h3>🎯 The one-sentence version</h3>
+      <p>
+        <strong>Bing is Microsoft's search engine and AI platform</strong> — the #2 search engine globally, processing 900 million searches daily across 238 regions, now transformed by Copilot AI into a conversational search assistant that can write, create images, and hold real conversations.
+      </p>
+      <p style="margin-top:16px; font-size:.95rem; color: var(--muted);">
+        While Google dominates with nearly 90% market share, Bing's AI-first bet with Copilot made 2023 the most disruptive year in search since Google's own launch — and the race is far from over.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Ad 4: Before Footer ── -->
+<div class="ad-unit" style="padding-bottom: 32px;">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <img class="footer-logo" src="/logo.svg" alt="JustSimple.Online" />
+  <strong style="color:#fff;">JustSimple.Online</strong> — Making the web understandable, one site at a time.
+  <br><br>
+  Analysis of <a href="https://bing.com" target="_blank">bing.com</a>
+  &nbsp;·&nbsp; <a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
+</footer>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      primaryColor: '#131a2e',
+      primaryTextColor: '#e2e8f0',
+      primaryBorderColor: '#00b4d8',
+      lineColor: '#00b4d8',
+      secondaryColor: '#0e1424',
+      tertiaryColor: '#0e1424',
+      background: '#080b14',
+      mainBkg: '#131a2e',
+      nodeBorder: '#00b4d8',
+      clusterBkg: '#0e1424',
+      titleColor: '#e2e8f0',
+      edgeLabelBackground: '#131a2e',
+      attributeBackgroundColorEven: '#131a2e',
+      attributeBackgroundColorOdd: '#0e1424'
+    }
+  });
+</script>
+</body>
+</html>

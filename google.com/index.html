@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Google: how it works, its business model, revenue, products, and why it dominates the web with 92% search market share." />
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TSFVXECJ40');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root {
+      --bg: #0a0d1a;
+      --surface: #0f1628;
+      --card: #141d35;
+      --accent: #4285f4;
+      --accent2: #51cf66;
+      --text: #e8eaf6;
+      --muted: #8892b0;
+      --border: #1e2d50;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; background: rgba(15,17,23,.95); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-tagline { font-size: .75rem; color: var(--muted); display: none; }
+    @media(min-width:500px){ .nav-tagline { display: block; } }
+    .nav-right { display: flex; align-items: center; gap: 16px; font-size: .85rem; }
+    .nav-right a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-right a:hover { color: var(--accent); }
+    .hero { background: linear-gradient(135deg, var(--bg) 0%, #0a1628 50%, var(--bg) 100%); border-bottom: 1px solid var(--border); padding: 72px 24px 60px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(66,133,244,.12), transparent); }
+    .hero-badge { display: inline-block; background: rgba(66,133,244,.15); border: 1px solid rgba(66,133,244,.4); color: var(--accent); padding: 4px 16px; border-radius: 999px; font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 800; background: linear-gradient(135deg, #fff 30%, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.15; margin-bottom: 16px; }
+    .hero p { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin: 0 auto 28px; }
+    .hero-url { display: inline-flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 8px 20px; font-size: .9rem; color: var(--muted); }
+    .hero-url span { color: var(--accent); font-weight: 600; }
+    main { max-width: 1100px; margin: 0 auto; padding: 56px 24px 100px; }
+    section { margin-bottom: 72px; }
+    h2 { font-size: 1.75rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    h2 .emoji { margin-right: 10px; }
+    .section-intro { color: var(--muted); font-size: 1rem; max-width: 720px; margin-bottom: 28px; }
+    .kid-box { background: linear-gradient(135deg, rgba(66,133,244,.08), rgba(81,207,102,.05)); border: 1.5px solid rgba(66,133,244,.35); border-radius: var(--radius); padding: 28px 32px; position: relative; overflow: hidden; }
+    .kid-box::before { content: '💡'; position: absolute; right: 24px; top: 20px; font-size: 3rem; opacity: .18; }
+    .kid-box h3 { color: var(--accent); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
+    .kid-box p { color: var(--text); line-height: 1.8; }
+    .kid-box p + p { margin-top: 12px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: border-color .2s, transform .2s; }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .card h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .card p { font-size: .9rem; color: var(--muted); }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; text-align: center; }
+    .stat .num { font-size: 2.2rem; font-weight: 800; color: var(--accent); display: block; }
+    .stat .label { font-size: .85rem; color: var(--muted); margin-top: 4px; }
+    .diagram-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 24px; overflow-x: auto; }
+    .diagram-wrap + .diagram-wrap { margin-top: 24px; }
+    .diagram-title { font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+    .mermaid { display: flex; justify-content: center; }
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before { content: ''; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(to bottom, var(--accent), transparent); }
+    .tl-item { position: relative; margin-bottom: 28px; }
+    .tl-dot { position: absolute; left: -28px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+    .tl-item h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .tl-item p { font-size: .88rem; color: var(--muted); }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+    .compare-table th { background: var(--card); color: var(--accent); padding: 14px 18px; text-align: left; font-weight: 700; border-bottom: 2px solid var(--border); }
+    .compare-table td { padding: 12px 18px; border-bottom: 1px solid var(--border); color: var(--text); }
+    .compare-table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+    .yes { color: #51cf66; font-weight: 700; }
+    .no  { color: #ff6b6b; font-weight: 700; }
+    .ad-unit { max-width: 1100px; margin: 0 auto; padding: 28px 24px 0; text-align: center; }
+    .ad-unit-label { font-size: .68rem; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; opacity: .5; }
+    .ad-unit ins { border-radius: 8px; overflow: hidden; }
+    footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer .footer-logo { height: 26px; width: auto; vertical-align: middle; margin-right: 6px; }
+    @media (max-width: 600px) { .kid-box { padding: 20px; } .diagram-wrap { padding: 20px 12px; } }
+  </style>
+</head>
+<body>
+
+<!-- ── Independent Analysis Banner ── -->
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+
+<!-- ── Navbar ── -->
+<nav>
+  <a class="nav-logo" href="/"><img src="/logo.svg" alt="JustSimple.Online" style="height:34px;"/><span class="nav-tagline">Making the web understandable</span></a>
+  <div class="nav-right"><a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a></div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;" /></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>Google: How the World's Biggest Search Engine Works</h1>
+  <p>An independent deep-dive into Google's technology, business model, revenue streams, and its extraordinary grip on the global internet.</p>
+  <div class="hero-url">🌐 Analysed: <span>google.com</span></div>
+</div>
+
+<!-- ── Ad 1: Below Hero ── -->
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ── Disclaimer ── -->
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. We are not affiliated with, endorsed by, or connected to the website being analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+
+<main>
+
+  <!-- SECTION 1: What is Google? -->
+  <section>
+    <h2><span class="emoji">🔍</span>What is Google?</h2>
+    <p class="section-intro">From a Stanford dorm-room project to the most visited website on Earth — here's what Google actually is and how it changed everything.</p>
+
+    <div class="kid-box" style="margin-bottom:28px;">
+      <h3>Explain it like I'm 10</h3>
+      <p>Imagine the internet is a gigantic library with trillions of books, but none of the books have a proper index and they're all scattered on the floor in no particular order. Google is like a super-smart librarian who has already read every single book, written notes on all of them, and can find exactly the right page in under a second whenever you ask a question.</p>
+      <p>The librarian does this by sending out tiny robot helpers called "crawlers" that visit every page on the internet, read it, and bring back a summary. Then Google sorts all those summaries into a massive filing system so it can find answers lightning-fast. When you type something into Google, you're not actually searching the internet live — you're searching Google's own giant filing system of notes it already took. That's why results appear in milliseconds.</p>
+    </div>
+
+    <p style="color:var(--muted);margin-bottom:16px;">Google LLC is the world's dominant internet search engine and one of the most valuable technology companies ever built. It was founded in September 1998 by Larry Page and Sergey Brin while they were PhD students at Stanford University. What started as a research project called "Backrub" evolved into a search engine that ranked web pages not just by keywords but by the number and quality of other pages linking to them — a revolutionary concept they called PageRank.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">Since those early days, Google has expanded far beyond search into email (Gmail), maps (Google Maps), mobile operating systems (Android), web browsers (Chrome), cloud computing (Google Cloud), productivity tools (Docs, Sheets, Drive), hardware (Pixel phones, Nest devices), video (YouTube), and cutting-edge research into artificial intelligence through DeepMind. In 2015, Google reorganised under a holding company called Alphabet Inc., allowing its more experimental ventures like Waymo (self-driving cars) and Verily (life sciences) to operate with greater independence.</p>
+    <p style="color:var(--muted);">At its core, Google's mission remains "to organise the world's information and make it universally accessible and useful." This deceptively simple statement has driven the company to index hundreds of billions of web pages, build one of the world's largest computing infrastructures, and process more information every day than was stored in all of humanity's libraries combined just a few decades ago. The company's original informal motto was "Don't be evil," later revised to "Do the right thing" — a shift that has been the subject of ongoing public debate as Google's influence over the flow of information has grown to unprecedented scale.</p>
+  </section>
+
+  <!-- SECTION 2: By the Numbers -->
+  <section>
+    <h2><span class="emoji">📊</span>Google by the Numbers</h2>
+    <p class="section-intro">The scale at which Google operates is almost incomprehensible. These figures give a sense of just how large this single company has become.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">8.5B</span><span class="label">Searches processed every single day</span></div>
+      <div class="stat"><span class="num">$307B</span><span class="label">Total revenue in 2024</span></div>
+      <div class="stat"><span class="num">92%+</span><span class="label">Global search engine market share</span></div>
+      <div class="stat"><span class="num">270+</span><span class="label">Products and services offered</span></div>
+      <div class="stat"><span class="num">180K+</span><span class="label">Full-time employees worldwide</span></div>
+      <div class="stat"><span class="num">1998</span><span class="label">Year founded at Stanford University</span></div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: How Google Search Works -->
+  <section>
+    <h2><span class="emoji">⚙️</span>How Does Google Search Work?</h2>
+    <p class="section-intro">Google Search involves three major phases: crawling the web, building an index, and ranking results. Each phase involves enormous engineering complexity.</p>
+
+    <p style="color:var(--muted);margin-bottom:20px;">Google's search engine operates through a pipeline that begins long before you ever type a query. The first stage is <strong style="color:var(--text);">crawling</strong>: Google deploys automated software programs called Googlebot spiders that continuously visit billions of web pages, follow links, and download page content. This crawling process never truly stops — the web is constantly changing and Google must keep its copy fresh. The crawlers are so prolific that they account for a significant portion of all internet traffic.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">The second stage is <strong style="color:var(--text);">indexing</strong>: once a page is crawled, Google analyses its content — the text, images, videos, and metadata — and stores structured information about it in a colossal index. This index is not stored in one place but distributed across dozens of data centres around the world, containing hundreds of billions of documents. The index tracks not just what words appear on a page but the context in which they appear, which pages link to it, how fresh the content is, how fast the page loads, and hundreds of other signals.</p>
+    <p style="color:var(--muted);margin-bottom:28px;">The third stage is <strong style="color:var(--text);">ranking</strong>: when you submit a query, Google's algorithms evaluate thousands of signals simultaneously to determine which pages are most relevant and trustworthy. The original PageRank algorithm treated links as votes of confidence — a page linked to by many high-quality pages was more likely to be authoritative. Today, Google uses hundreds of ranking factors including semantic understanding of query intent (powered by machine learning models like BERT and MUM), user location, device type, personalisation based on search history, and real-time signals about content quality.</p>
+
+    <div class="diagram-wrap">
+      <div class="diagram-title">How a Google Search Query Flows From Browser to Results Page</div>
+      <div class="mermaid">
+graph TB
+    A[User types query in browser] --> B[Query sent to Google servers]
+    B --> C[Query Understanding &amp; NLP Processing]
+    C --> D[Index Lookup across data centres]
+    D --> E[Ranking Algorithm evaluates signals]
+    E --> F{Quality Signals}
+    F --> G[PageRank &amp; Link Authority]
+    F --> H[Content Relevance Score]
+    F --> I[Page Experience &amp; Speed]
+    G --> J[Results Assembled &amp; Ranked]
+    H --> J
+    I --> J
+    J --> K[Featured Snippets &amp; Rich Results added]
+    K --> L[Search Results Page delivered to user]
+    L --> M[User clicks result]
+    M --> N[Click signal recorded for future ranking]
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Business Model -->
+  <section>
+    <h2><span class="emoji">💰</span>How Does Google Make Money?</h2>
+    <p class="section-intro">Google is fundamentally an advertising company — almost everything else it does exists to make its advertising business more powerful and defensible.</p>
+
+    <p style="color:var(--muted);margin-bottom:20px;">Approximately 77% of Alphabet's revenue comes from advertising — specifically from Google Search ads and YouTube ads, delivered through platforms called Google Ads and Google Ad Manager. When a business wants to appear at the top of search results for a specific keyword, it bids in a real-time auction every time someone searches that term. Google charges the advertiser only when a user actually clicks their ad (cost-per-click model). Because billions of searches happen daily and advertisers compete fiercely for premium keywords (some costing $50 or more per click), this generates enormous revenue with extremely high margins.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">Google Cloud is the company's fastest-growing revenue segment, generating approximately $33 billion in 2024 as businesses move their computing infrastructure off physical servers and into the cloud. Google Cloud competes directly with Amazon Web Services and Microsoft Azure, offering services ranging from basic storage and computing to specialised AI and machine learning platforms. Unlike advertising, cloud revenue is more predictable and subscription-based, which makes it attractive for long-term stability.</p>
+    <p style="color:var(--muted);margin-bottom:28px;">The remaining revenue comes from hardware sales (Pixel phones, Nest smart home devices, Chromebooks), YouTube Premium subscriptions, Google Play Store commissions on app sales and in-app purchases, and licensing fees. While these non-advertising streams represent a relatively small share of total revenue today, they represent Google's strategic bets on a future where advertising alone may not sustain its growth — particularly as AI-powered search changes how users interact with information and potentially reduces ad click-through rates.</p>
+
+    <div class="diagram-wrap">
+      <div class="diagram-title">Alphabet Inc — Revenue Breakdown by Business Segment (2024)</div>
+      <div class="mermaid">
+graph TB
+    A[Alphabet Total Revenue<br/>307 Billion USD] --> B[Google Services<br/>~$267B]
+    A --> C[Google Cloud<br/>~$33B]
+    A --> D[Other Bets<br/>~$2B]
+    B --> E[Search Ads<br/>~$175B — 57%]
+    B --> F[YouTube Ads<br/>~$36B — 12%]
+    B --> G[Network Ads<br/>~$31B — 10%]
+    B --> H[Subscriptions &amp; Hardware<br/>~$25B — 8%]
+    C --> I[Cloud Infrastructure IaaS]
+    C --> J[AI &amp; ML Platform Services]
+    C --> K[Workspace SaaS]
+    D --> L[Waymo Self-Driving]
+    D --> M[Verily Life Sciences]
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Key Products -->
+  <section>
+    <h2><span class="emoji">🗂️</span>Key Products and Services</h2>
+    <p class="section-intro">Google has built an ecosystem of products that touches almost every aspect of digital life, from how we communicate to how we navigate the physical world.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <h4>Google Search</h4>
+        <p>The flagship product processing 8.5 billion queries daily. Powered by AI models including BERT and MUM, it understands natural language, context, and intent — not just keywords.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📧</div>
+        <h4>Gmail</h4>
+        <p>Launched in 2004, Gmail revolutionised email by offering 1GB of free storage (enormous at the time). Today it serves over 1.8 billion active users and integrates deeply with Google Workspace.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🗺️</div>
+        <h4>Google Maps</h4>
+        <p>Used by over 1 billion people monthly, Maps offers turn-by-turn navigation, Street View imagery, local business listings, and real-time traffic data sourced from users' phones.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h4>Android</h4>
+        <p>The world's most widely used mobile operating system, powering approximately 72% of all smartphones globally. Android's open-source model enables Google to extend its services to billions of devices.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">☁️</div>
+        <h4>Google Cloud</h4>
+        <p>A comprehensive cloud platform offering compute, storage, databases, AI/ML services, and developer tools. Now the third-largest cloud provider globally and Alphabet's fastest-growing segment.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧠</div>
+        <h4>DeepMind &amp; Gemini AI</h4>
+        <p>DeepMind (acquired 2014) produced AlphaFold, which solved protein folding. Gemini is Google's large language model powering AI features across Search, Workspace, and Android.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: History / Timeline -->
+  <section>
+    <h2><span class="emoji">📅</span>Google's History and Key Milestones</h2>
+    <p class="section-intro">From two graduate students sharing a server rack in a garage to a $2 trillion corporation — Google's history is one of the most dramatic in business.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>1996 — The Backrub Project Begins</h4>
+        <p>Larry Page and Sergey Brin begin a research project at Stanford to analyse the structure of the World Wide Web. Their key insight: a page linked to by many important pages must itself be important. They call the algorithm PageRank, after Larry Page.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>1998 — Google Inc. Is Founded</h4>
+        <p>On September 4, 1998, Google is formally incorporated in a garage in Menlo Park, California. Sun Microsystems co-founder Andy Bechtolsheim writes the first investor check — $100,000 — before the company even has a bank account. The name "Google" is a play on "googol," the number 1 followed by 100 zeros.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2004 — Gmail and the IPO</h4>
+        <p>Google launches Gmail on April 1 (many thought it was a joke given the then-unbelievable 1GB storage offer). That same year, Google goes public at $85 per share, raising $1.67 billion in one of the most anticipated IPOs of the decade.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2006 — YouTube Acquisition</h4>
+        <p>Google acquires YouTube for $1.65 billion in stock — a deal widely questioned at the time but now considered one of the most successful acquisitions in technology history. YouTube has since become a standalone business generating tens of billions annually.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2008 — Android and Chrome Launch</h4>
+        <p>Google releases Android as an open-source mobile operating system and launches the Chrome web browser. Both become dominant in their categories: Android now powers nearly three-quarters of the world's smartphones, and Chrome holds over 65% of the browser market.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2015 — Alphabet Restructuring</h4>
+        <p>Google reorganises itself under a new parent holding company, Alphabet Inc. Larry Page becomes CEO of Alphabet while Sundar Pichai takes over as CEO of Google itself. The restructuring is designed to give moonshot projects like Waymo and life sciences more autonomy.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2023–2024 — The AI Race</h4>
+        <p>Facing competitive pressure from OpenAI's ChatGPT, Google accelerates its AI roadmap, releasing the Bard chatbot (later renamed Gemini) and integrating AI Overviews directly into Search results. DeepMind and Google Brain are merged into Google DeepMind to consolidate AI research capabilities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mid-page Ad -->
+  <div class="ad-unit" style="padding-bottom:32px;margin-bottom:56px;">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- SECTION 7: Architecture / Technical -->
+  <section>
+    <h2><span class="emoji">🏗️</span>Alphabet's Product Empire — Technical Architecture</h2>
+    <p class="section-intro">Alphabet organises its sprawling portfolio into Google Services, Google Cloud, and a collection of "Other Bets" — each with distinct infrastructure and business logic.</p>
+
+    <p style="color:var(--muted);margin-bottom:28px;">Google operates one of the world's largest private computing infrastructures, spanning data centres on five continents connected by privately owned undersea fibre-optic cables. The technical systems powering Google Search, Gmail, YouTube, and Google Cloud all run on Google's proprietary hardware and software stack, including custom-designed servers, network switches, and AI accelerator chips called Tensor Processing Units (TPUs). This vertical integration — owning everything from the chips to the cables — gives Google both cost advantages and performance capabilities that are difficult for competitors to replicate.</p>
+
+    <div class="diagram-wrap">
+      <div class="diagram-title">Alphabet Inc — Corporate &amp; Product Structure Overview</div>
+      <div class="mermaid">
+graph TB
+    A[Alphabet Inc<br/>Parent Holding Company] --> B[Google Services]
+    A --> C[Google Cloud]
+    A --> D[Other Bets]
+    B --> E[Search &amp; Maps]
+    B --> F[YouTube]
+    B --> G[Gmail &amp; Workspace]
+    B --> H[Android &amp; Chrome]
+    B --> I[Google Ads Platform]
+    C --> J[Cloud Infrastructure]
+    C --> K[AI &amp; ML APIs]
+    C --> L[Google Workspace Business]
+    D --> M[Waymo Self-Driving Cars]
+    D --> N[Verily Life Sciences]
+    D --> O[DeepMind Research]
+    D --> P[Wing Drone Delivery]
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: Impact -->
+  <section>
+    <h2><span class="emoji">🌍</span>Impact and Why Google Matters</h2>
+    <p class="section-intro">No technology company has reshaped how human beings access knowledge more profoundly than Google. Its effects — both positive and deeply contested — touch every corner of society.</p>
+
+    <p style="color:var(--muted);margin-bottom:16px;">Google fundamentally democratised access to information at global scale. Before search engines of Google's quality existed, finding reliable information required access to libraries, encyclopedias, or expensive professional databases. Google made it possible for anyone with an internet connection to answer almost any factual question within seconds, for free. This has had measurable effects on education, healthcare decision-making, journalism, and scientific research — particularly in countries where physical library infrastructure is limited.</p>
+
+    <p style="color:var(--muted);margin-bottom:16px;">At the same time, Google's dominance has attracted sustained regulatory scrutiny. Its 92%+ search market share means that its ranking decisions effectively determine which websites and businesses succeed online. In 2023 and 2024, the US Department of Justice pursued antitrust cases against Google, arguing that it illegally maintained its search monopoly through exclusive deals (such as paying Apple approximately $20 billion per year to be the default search engine in Safari). The European Union has levied over €8 billion in antitrust fines against Google since 2017.</p>
+
+    <p style="color:var(--muted);margin-bottom:16px;">Google's advertising model has also reshaped the entire media economy. By capturing the majority of digital advertising revenue, Google has contributed to the decline of traditional newspaper and broadcast advertising, accelerating a crisis in local journalism that has left many communities without reliable local news coverage. Simultaneously, Google's platforms — particularly YouTube — have enabled entirely new categories of creators and entrepreneurs to build audiences and businesses outside of traditional media gatekeepers.</p>
+
+    <p style="color:var(--muted);">Looking forward, Google's investments in artificial intelligence may be its most consequential impact yet. Its AI systems have already contributed to major scientific breakthroughs (AlphaFold's protein structure predictions, AlphaGo's mastery of the game of Go) and are increasingly being integrated into products used by billions of people daily. Whether Google's AI integration accelerates human progress or introduces new risks around misinformation, privacy, and economic displacement is one of the defining questions of the coming decade.</p>
+  </section>
+
+  <!-- SECTION 9: Summary -->
+  <section>
+    <h2><span class="emoji">✅</span>Summary</h2>
+    <div class="kid-box">
+      <h3>The Bottom Line on Google</h3>
+      <p>Google started as a better way to find things on the internet, and it turned that simple idea into the most powerful advertising business in human history. By building a search engine so good that people chose it voluntarily, Google gained access to the most valuable data imaginable: what every person is curious about, worried about, and looking to buy. It then monetised that attention by selling targeted ads to businesses, generating over $300 billion in annual revenue — most of which flows from a system where advertisers pay each time a user clicks their link.</p>
+      <p>Beyond search, Google has used its profits to build or acquire a remarkable portfolio of products: the world's most popular email service, the world's most used mobile operating system, the world's most popular web browser, and the world's largest online video platform. It is simultaneously a search engine, an advertising network, a phone maker, a cloud computing provider, a mapping company, an AI research lab, and a self-driving car company. Understanding Google means understanding not just how the internet works today — but who controls the infrastructure that shapes what billions of people see, read, and believe.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Ad 4: Before Footer ── -->
+<div class="ad-unit" style="padding-bottom:32px;">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <img class="footer-logo" src="/logo.svg" alt="JustSimple.Online" />
+  <strong style="color:#fff;">JustSimple.Online</strong> — Making the web understandable, one site at a time.
+  <br><br>
+  Analysis of <a href="https://google.com" target="_blank">google.com</a>
+  &nbsp;·&nbsp; <a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
+</footer>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      primaryColor: '#141d35',
+      primaryTextColor: '#e8eaf6',
+      primaryBorderColor: '#4285f4',
+      lineColor: '#4285f4',
+      secondaryColor: '#0f1628',
+      tertiaryColor: '#0f1628',
+      background: '#0a0d1a',
+      mainBkg: '#141d35',
+      nodeBorder: '#4285f4',
+      clusterBkg: '#0f1628',
+      titleColor: '#e8eaf6',
+      edgeLabelBackground: '#141d35',
+      attributeBackgroundColorEven: '#141d35',
+      attributeBackgroundColorOdd: '#0f1628'
+    }
+  });
+</script>
+</body>
+</html>

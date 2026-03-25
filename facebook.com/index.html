@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facebook — JustSimple.Online</title>
+  <meta name="description" content="Deep-dive analysis of Facebook.com: how the world's largest social network connects 3 billion people, makes money from ads, and shapes global culture." />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#080d1a;--surface:#0c1225;--card:#101830;--accent:#1877f2;--accent2:#51cf66;--text:#e8eaf6;--muted:#8892b0;--border:#1a2845;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,#080d1a 0%,#080f20 50%,#080d1a 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(24,119,242,.12),transparent);}
+    .hero-badge{display:inline-block;background:rgba(24,119,242,.15);border:1px solid rgba(24,119,242,.4);color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,rgba(24,119,242,.08),rgba(81,207,102,.05));border:1.5px solid rgba(24,119,242,.35);border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+    .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;}
+    .stat .num{font-size:2.2rem;font-weight:800;color:var(--accent);display:block;}
+    .stat .label{font-size:.85rem;color:var(--muted);margin-top:4px;}
+    .diagram-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;overflow-x:auto;}
+    .diagram-wrap+.diagram-wrap{margin-top:24px;}
+    .diagram-title{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+    .mermaid{display:flex;justify-content:center;}
+    .timeline{position:relative;padding-left:28px;}
+    .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--accent),transparent);}
+    .tl-item{position:relative;margin-bottom:28px;}
+    .tl-dot{position:absolute;left:-28px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px;}
+    .tl-item p{font-size:.88rem;color:var(--muted);}
+    .ad-unit{max-width:1100px;margin:0 auto;padding:28px 24px 0;text-align:center;}
+    .ad-unit-label{font-size:.68rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;opacity:.5;}
+    footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;}
+    footer a{color:var(--accent);text-decoration:none;}
+    footer .footer-logo{height:26px;width:auto;vertical-align:middle;margin-right:6px;}
+    @media(max-width:600px){.kid-box{padding:20px;}.diagram-wrap{padding:20px 12px;}}
+    #diag-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;}
+    #diag-modal.open{display:flex;}
+    #diag-modal-inner{position:relative;max-width:95vw;max-height:92vh;overflow:auto;background:#1a1d27;border:1px solid #2d3250;border-radius:16px;padding:48px 32px 32px;box-shadow:0 24px 80px rgba(0,0,0,.8);}
+    #diag-close{position:absolute;top:12px;right:16px;background:none;border:none;color:#8892b0;font-size:1.6rem;cursor:pointer;line-height:1;transition:color .2s;}
+    #diag-close:hover{color:#fff;}
+    #diag-modal-inner svg{display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:78vh;width:auto!important;height:auto!important;}
+  </style>
+</head>
+<body>
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+<nav>
+  <a class="nav-logo" href="/"><img src="/logo.svg" alt="JustSimple.Online" style="height:34px;"/><span class="nav-tagline">Making the web understandable</span></a>
+  <div class="nav-right"><a href="/">← All Analyses</a>&nbsp;·&nbsp;<a href="/privacy.html">Privacy</a>&nbsp;·&nbsp;<a href="/terms.html">Terms</a></div>
+</nav>
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;"/></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>Inside Facebook: The Social Network That Connected the World</h1>
+  <p>From a Harvard dorm room to 3 billion users — how Facebook became Meta, redefined human connection, and built an advertising empire worth $164 billion a year.</p>
+  <div class="hero-url">🌐 Analysed: <span>facebook.com</span></div>
+</div>
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. We are not affiliated with, endorsed by, or connected to the website being analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+
+<main>
+
+  <section id="simple">
+    <h2>What is Facebook?</h2>
+    <p class="section-intro">The world's largest social network — explained simply, then in depth.</p>
+    <div class="kid-box">
+      <h3>👫 Imagine a giant digital town square where everyone you know hangs out...</h3>
+      <p>You know how in a small town everyone knows everyone — you bump into friends at the shops, see photos of your cousin's new baby, hear about local events on the notice board? Facebook is like that, but for the entire planet. Instead of bumping into people physically, you post photos, share news, write messages, and see what everyone else is up to — all on your phone or computer.</p>
+      <p>Facebook was invented in 2004 by a university student named Mark Zuckerberg. He started it just for his college, then it spread to other colleges, then to everyone. Now over 3 billion people — nearly half the world — use Facebook every month. That's more people than live in the continents of North America, South America, and Europe combined.</p>
+      <p><strong>Simple version:</strong> Facebook is a free app where you connect with friends and family, share photos and videos, join groups about your interests, and follow news — and it pays for itself by showing you targeted ads based on everything it knows about you.</p>
+    </div>
+  </section>
+
+  <section id="stats">
+    <h2><span class="emoji">📊</span>Facebook by the Numbers</h2>
+    <p class="section-intro">The scale of the Meta empire is staggering.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">3.07B</span><div class="label">Monthly active users (Facebook alone)</div></div>
+      <div class="stat"><span class="num">3.27B</span><div class="label">Daily active users across Meta family</div></div>
+      <div class="stat"><span class="num">$164B</span><div class="label">Meta revenue (2024)</div></div>
+      <div class="stat"><span class="num">98%</span><div class="label">Revenue from advertising</div></div>
+      <div class="stat"><span class="num">$19B</span><div class="label">WhatsApp acquisition price (2014)</div></div>
+      <div class="stat"><span class="num">2004</span><div class="label">Founded in a Harvard dorm room</div></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2><span class="emoji">⚙️</span>How Does Facebook Work?</h2>
+    <p class="section-intro">At its core, Facebook is a news feed powered by an algorithm that decides what you see.</p>
+    <p>When you open Facebook, you don't see posts in chronological order — you see what Facebook's algorithm thinks will keep you engaged longest. The algorithm weighs thousands of signals: who you interact with most, what type of content you engage with (video, photos, links), how long you pause on each post, and what your friends are reacting to. Posts that generate strong emotional reactions — especially anger and outrage — tend to spread furthest because they trigger the most comments and shares.</p>
+    <p>The business logic is straightforward: the longer you stay on Facebook, the more ads you see. Every minute you spend scrolling is a minute Facebook can monetise. This has led to legitimate criticism that the algorithm optimises for engagement at the expense of wellbeing — a dynamic documented in internal research Facebook suppressed, later revealed by whistleblower Frances Haugen in 2021.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">How Facebook's News Feed Algorithm Works</div>
+      <div class="mermaid">
+flowchart TD
+    A([📱 You open Facebook]) --> B[Fetch candidate posts\nfrom friends &amp; pages]
+    B --> C{Algorithm scores\neach post}
+    C --> D[Who posted it?\nHow close are you?]
+    C --> E[What type?\nVideo/photo/link]
+    C --> F[Predicted reaction\nLike/Love/Angry/Share]
+    C --> G[Time &amp; recency\nof post]
+    D & E & F & G --> H[Ranked feed\nhighest score first]
+    H --> I([📰 Your News Feed])
+    I --> J[You engage — like,\ncomment, share]
+    J --> K[Algorithm learns\nyour preferences]
+    K --> C
+      </div>
+    </div>
+  </section>
+
+  <section id="money">
+    <h2><span class="emoji">💰</span>How Facebook Makes Money</h2>
+    <p class="section-intro">Facebook's product is free — which means you are the product.</p>
+    <p>Facebook earns 98% of its revenue from advertising. Advertisers pay to show targeted ads to specific groups of users — defined by age, location, interests, behaviours, income bracket, political views, relationship status, and hundreds of other data points Facebook has collected. This targeting precision is why Facebook ads are so effective: a shoe brand can show running shoe ads specifically to 28–35 year old women in London who follow fitness accounts and have recently searched for trainers.</p>
+    <p>In 2024, Meta generated $164 billion in revenue. The average revenue per user (ARPU) varies enormously: a US/Canada user generates roughly $68/year in ad revenue, while a user in Asia-Pacific generates around $6. This is why Meta works so hard to grow in developing markets — the user base is enormous even if individual ad revenue is lower.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Meta's Advertising Revenue Engine</div>
+      <div class="mermaid">
+graph LR
+    A[👤 User scrolls\nFacebook/Instagram] -->|attention &amp; data| B[Meta's Ad\nAuction System]
+    C[🏢 Advertiser sets\ntarget audience\n+ budget] --> B
+    B --> D{Highest\nbidder wins\nthe impression}
+    D --> E[Ad shown\nto user]
+    E --> F[User clicks\nor converts]
+    F --> G[💵 Advertiser pays\nMeta per click/view]
+    G --> H[$164B annual\nrevenue 2024]
+      </div>
+    </div>
+  </section>
+
+  <section id="family">
+    <h2><span class="emoji">🌐</span>The Meta Family of Apps</h2>
+    <p class="section-intro">Facebook is just one piece of a much larger empire.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Meta Platforms — The Full Ecosystem</div>
+      <div class="mermaid">
+graph TB
+    META["🏢 Meta Platforms Inc."]
+    META --> FB["📘 Facebook\n3.07B monthly users\nSocial network"]
+    META --> IG["📸 Instagram\n2B monthly users\nPhoto &amp; video"]
+    META --> WA["💬 WhatsApp\n3B monthly users\nMessaging"]
+    META --> MS["💭 Messenger\n1B+ users\nChat &amp; calls"]
+    META --> QST["🥽 Quest / Reality Labs\nVR headsets\nMetaverse"]
+    META --> THR["🧵 Threads\n150M+ users\nText &amp; discussion"]
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <h2><span class="emoji">✨</span>Key Features</h2>
+    <div class="cards">
+      <div class="card"><div class="card-icon">📰</div><h4>News Feed</h4><p>Algorithm-ranked stream of posts, photos, videos, and links from friends, family, and pages you follow.</p></div>
+      <div class="card"><div class="card-icon">👥</div><h4>Groups</h4><p>Over 1.8 billion people use Facebook Groups monthly — communities around every topic from local neighbourhoods to niche hobbies.</p></div>
+      <div class="card"><div class="card-icon">🛍️</div><h4>Marketplace</h4><p>Local buy-and-sell listings. Over 1 billion people use Facebook Marketplace monthly, rivalling Craigslist and eBay in many markets.</p></div>
+      <div class="card"><div class="card-icon">📅</div><h4>Events</h4><p>Public and private event organisation, RSVPs, and discovery. Facebook Events remain the dominant way to organise real-world gatherings at scale.</p></div>
+      <div class="card"><div class="card-icon">📺</div><h4>Reels &amp; Video</h4><p>Short-form video (Reels) and longer-form video content, competing directly with TikTok and YouTube for video watch time.</p></div>
+      <div class="card"><div class="card-icon">💼</div><h4>Business Pages</h4><p>200M+ businesses maintain Facebook Pages for customer communication, advertising, and reviews — the de-facto small business web presence in many regions.</p></div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <h2><span class="emoji">📅</span>Facebook's History</h2>
+    <p class="section-intro">From college prank to global infrastructure in 20 years.</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><h4>2004 — TheFacebook Launches</h4><p>Mark Zuckerberg launches thefacebook.com from his Harvard dorm. Within 24 hours, 1,200 students sign up. It expands to other Ivy League universities within weeks.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2005 — Facebook.com Purchased</h4><p>Zuckerberg buys the domain facebook.com for $200,000 and drops "The". Peter Thiel invests $500K for a 10% stake, valuing the company at $5M.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2006 — Opens to Everyone</h4><p>Facebook removes the university email requirement and opens to anyone aged 13+. News Feed launches — users hate it initially, then can't live without it.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2008 — 100 Million Users</h4><p>Sheryl Sandberg joins as COO and builds out the advertising business. Facebook overtakes MySpace as the world's largest social network.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2012 — Instagram Acquired &amp; IPO</h4><p>Facebook acquires Instagram for ~$1 billion (13 employees, 13 months old). IPO raises $16 billion at $38/share — largest tech IPO at the time.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2014 — WhatsApp &amp; Oculus</h4><p>Facebook acquires WhatsApp for $19 billion and Oculus VR for $2 billion — signalling the pivot toward messaging and virtual reality.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2018 — Cambridge Analytica Scandal</h4><p>Revelations that data of 87 million users was harvested without consent and used in political targeting. Zuckerberg testifies before US Congress. Largest privacy scandal in social media history.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2021 — Rebrands to Meta</h4><p>Facebook rebrands as Meta Platforms, signalling a pivot to the "metaverse." The name change is widely seen as an attempt to distance the company from its scandals.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2023–2024 — AI Pivot &amp; Recovery</h4><p>After a brutal 2022 (stock fell 65%), Meta rebounds through cost-cutting ("Year of Efficiency") and AI investment. Revenue reaches $164B in 2024.</p></div>
+    </div>
+  </section>
+
+  <div class="ad-unit" style="margin-bottom:56px;">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <section id="controversies">
+    <h2><span class="emoji">⚖️</span>Controversies &amp; Impact</h2>
+    <p class="section-intro">No company has been more central to debates about technology, democracy, and mental health.</p>
+    <p>The Cambridge Analytica scandal of 2018 was a watershed moment: it demonstrated that Facebook's data collection practices, while legal, could be weaponised for political manipulation. The data of 87 million users was harvested through a personality quiz app and used to build psychological profiles for targeted political advertising — most famously during the 2016 US presidential election and the Brexit referendum. The fallout led to billions in regulatory fines and a congressional hearing where Zuckerberg famously failed to explain basic concepts about Facebook's business model to ageing senators.</p>
+    <p>Frances Haugen's 2021 whistleblower disclosures revealed that Facebook's own internal research showed Instagram caused body image issues in teenage girls, that the algorithm amplified outrage and misinformation, and that the company consistently chose engagement metrics over user wellbeing. These revelations led to Senate hearings, EU investigations, and accelerated calls for social media regulation.</p>
+    <p>Despite the controversies, Facebook's core utility — connecting people with friends, family, and communities — remains genuinely valuable. In developing countries particularly, Facebook is often synonymous with the internet itself (the Free Basics programme provides Facebook access without data charges). For billions of people, it's how they stay in touch with family abroad, find jobs, organise community events, and access news.</p>
+  </section>
+
+  <section id="summary">
+    <h2><span class="emoji">✨</span>Summary</h2>
+    <div class="kid-box">
+      <h3>🎯 The one-sentence version</h3>
+      <p><strong>Facebook is a free social network that connects 3 billion people and pays for itself by knowing everything about you and selling that knowledge to advertisers.</strong></p>
+      <p style="margin-top:16px;font-size:.95rem;color:var(--muted);">It's the world's most powerful attention machine — and understanding how it works is essential for anyone who uses it.</p>
+    </div>
+  </section>
+
+</main>
+
+<div class="ad-unit" style="padding-bottom:32px;">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<footer>
+  <img class="footer-logo" src="/logo.svg" alt="JustSimple.Online" />
+  <strong style="color:#fff;">JustSimple.Online</strong> — Making the web understandable, one site at a time.<br><br>
+  Analysis of <a href="https://facebook.com" target="_blank">facebook.com</a>
+  &nbsp;·&nbsp; <a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
+</footer>
+<div id="diag-modal" role="dialog" aria-modal="true" aria-label="Diagram viewer">
+  <div id="diag-modal-inner"><button id="diag-close" aria-label="Close diagram">&times;</button></div>
+</div>
+<script>
+  mermaid.initialize({startOnLoad:true,theme:'dark',themeVariables:{primaryColor:'#101830',primaryTextColor:'#e8eaf6',primaryBorderColor:'#1877f2',lineColor:'#1877f2',secondaryColor:'#0c1225',tertiaryColor:'#0c1225',background:'#080d1a',mainBkg:'#101830',nodeBorder:'#1877f2',clusterBkg:'#0c1225',titleColor:'#e8eaf6',edgeLabelBackground:'#101830',attributeBackgroundColorEven:'#101830',attributeBackgroundColorOdd:'#0c1225'}});
+  (function(){var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');if(!modal||!inner||!closeBtn)return;document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});function openModal(mDiv){inner.querySelectorAll('svg,.diag-msg').forEach(function(el){el.remove();});modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}function showSvg(svg){inner.querySelectorAll('svg').forEach(function(s){s.remove();});inner.insertAdjacentHTML('beforeend',svg.outerHTML);var s=inner.querySelector('svg');if(s){s.removeAttribute('width');s.removeAttribute('height');s.style.cssText='display:block;margin:0 auto;width:100%;height:auto;max-height:78vh;';}}function closeModal(){modal.classList.remove('open');document.body.style.overflow='';}closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});}());
+</script>
+</body>
+</html>

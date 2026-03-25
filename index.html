@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JustSimple.Online — Website Analysis Hub</title>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TSFVXECJ40');
+  </script>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --card: #21253a;
+      --accent: #7c3aed;
+      --orange: #f97316;
+      --text: #e8eaf6;
+      --muted: #8892b0;
+      --border: #2d3250;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    /* ── Ad unit ── */
+    .ad-unit {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 24px 0;
+      text-align: center;
+    }
+    .ad-unit-label {
+      font-size: .68rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      opacity: .6;
+    }
+    .ad-unit ins { border-radius: 8px; overflow: hidden; }
+
+    /* ── Navbar ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      background: rgba(15,17,23,.95);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 36px; width: auto; }
+    .nav-tagline { font-size: .78rem; color: var(--muted); display: none; }
+    @media(min-width:500px){ .nav-tagline { display: block; } }
+    .nav-right { display: flex; align-items: center; gap: 16px; font-size: .85rem; }
+    .nav-right a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-right a:hover { color: #a78bfa; }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 80px 24px 64px;
+      text-align: center;
+      background: linear-gradient(135deg, #0f1117, #1a0d2e 50%, #0f1117);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(124,58,237,.12), transparent);
+    }
+    .hero-logo { display: block; margin: 0 auto 28px; height: 64px; width: auto; }
+    .badge {
+      display: inline-block;
+      background: rgba(124,58,237,.15);
+      border: 1px solid rgba(124,58,237,.4);
+      color: #a78bfa;
+      padding: 4px 16px;
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff 30%, #a78bfa 70%, var(--orange));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+    .subtitle { color: var(--muted); font-size: 1.05rem; max-width: 520px; margin: 0 auto; }
+
+    /* ── Search ── */
+    .search-wrap {
+      position: relative;
+      max-width: 560px;
+      margin: 32px auto 0;
+      z-index: 10;
+    }
+    .search-inner {
+      display: flex;
+      align-items: center;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      padding: 4px 6px 4px 22px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .search-inner:focus-within {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(124,58,237,.15);
+    }
+    .search-icon { color: var(--muted); font-size: 1rem; flex-shrink: 0; margin-right: 10px; }
+    .search-input {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size: 1rem;
+      padding: 10px 0;
+    }
+    .search-input::placeholder { color: var(--muted); }
+    .search-clear {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 1.1rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      display: none;
+      transition: color .2s;
+    }
+    .search-clear:hover { color: var(--text); }
+    .search-clear.visible { display: block; }
+
+    .search-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0; right: 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    }
+    .search-dropdown.open { display: block; }
+    .search-result {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 20px;
+      text-decoration: none;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      transition: background .15s;
+    }
+    .search-result:last-child { border-bottom: none; }
+    .search-result:hover { background: rgba(124,58,237,.1); }
+    .search-result-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+    .search-result-body { flex: 1; min-width: 0; }
+    .search-result-name { font-weight: 700; font-size: .95rem; color: #fff; }
+    .search-result-desc {
+      color: var(--muted);
+      font-size: .82rem;
+      margin-top: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .search-result-tags { margin-top: 7px; display: flex; flex-wrap: wrap; gap: 4px; }
+    .search-result-tags .stag {
+      background: rgba(124,58,237,.15);
+      color: #a78bfa;
+      border-radius: 999px;
+      padding: 2px 10px;
+      font-size: .7rem;
+      font-weight: 600;
+    }
+    .search-result-arrow { color: var(--muted); font-size: 1rem; flex-shrink: 0; align-self: center; }
+    .search-status { padding: 18px 20px; color: var(--muted); font-size: .9rem; text-align: center; }
+
+    /* ── Main ── */
+    main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+    .section-label {
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 24px;
+    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 20px; }
+    .site-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      text-decoration: none;
+      display: block;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .site-card:hover { border-color: #a78bfa; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(124,58,237,.15); }
+    .site-icon { font-size: 2.6rem; margin-bottom: 14px; }
+    .site-card h3 { color: #fff; font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .site-card p  { color: var(--muted); font-size: .88rem; line-height: 1.65; }
+    .tag {
+      display: inline-block;
+      margin-top: 14px;
+      background: rgba(124,58,237,.15);
+      color: #a78bfa;
+      border-radius: 999px;
+      padding: 3px 12px;
+      font-size: .75rem;
+      font-weight: 600;
+    }
+
+    /* ── Footer ── */
+    footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
+    footer .footer-logo { height: 28px; width: auto; vertical-align: middle; margin-right: 8px; }
+    footer a { color: #a78bfa; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- ── Navbar ── -->
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="/logo.svg" alt="JustSimple.Online logo" />
+    <span class="nav-tagline">Making the web understandable</span>
+  </a>
+  <div class="nav-right">
+    <a href="/">All Analyses</a>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <img class="hero-logo" src="/logo.svg" alt="JustSimple.Online" />
+  <div class="badge">Website Analysis Hub</div>
+  <h1>Making the Web<br>Understandable</h1>
+  <p class="subtitle">Deep-dive analysis of websites — explained simply with diagrams, flowcharts, and kid-friendly summaries.</p>
+
+  <!-- Search -->
+  <div class="search-wrap">
+    <div class="search-inner">
+      <span class="search-icon">🔍</span>
+      <input
+        id="site-search"
+        class="search-input"
+        type="search"
+        placeholder="Search analyses… e.g. Bitcoin, wallet, payments"
+        autocomplete="off"
+        aria-label="Search analysed websites"
+        spellcheck="false"
+      />
+      <button class="search-clear" id="search-clear" aria-label="Clear search">✕</button>
+    </div>
+    <div id="search-dropdown" class="search-dropdown" role="listbox"></div>
+  </div>
+</div>
+
+<!-- ── Ad: Below Hero (high viewability, not intrusive) ── -->
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ── Analyses ── -->
+<main>
+  <div class="section-label">Analysed Websites</div>
+  <div class="grid">
+    <a class="site-card" href="/btcpayserver.org/">
+      <div class="site-icon">₿</div>
+      <h3>BTCPay Server</h3>
+      <p>Open-source Bitcoin payment processor. Accept crypto with 0% fees, no middleman, fully self-hosted.</p>
+      <span class="tag">Bitcoin · Payments · Open Source</span>
+    </a>
+    <a class="site-card" href="/phoenix.acinq.co/">
+      <div class="site-icon">⚡</div>
+      <h3>Phoenix Wallet</h3>
+      <p>Self-custodial Lightning Network Bitcoin wallet by ACINQ. Send Bitcoin instantly with auto channel management.</p>
+      <span class="tag">Lightning · Bitcoin · Mobile Wallet</span>
+    </a>
+    <a class="site-card" href="/amazon.com/">
+      <div class="site-icon">📦</div>
+      <h3>Amazon</h3>
+      <p>World's largest online retailer + AWS cloud computing. 315M+ customers, Prime, Alexa, and much more.</p>
+      <span class="tag">E-Commerce · Cloud · Streaming</span>
+    </a>
+    <a class="site-card" href="/yahoo.com/">
+      <div class="site-icon">🟣</div>
+      <h3>Yahoo</h3>
+      <p>Pioneer web portal with 1B+ users. Yahoo Mail, News, Finance, Sports — all in one place since 1994.</p>
+      <span class="tag">Web Portal · Email · News</span>
+    </a>
+    <a class="site-card" href="/tiktok.com/">
+      <div class="site-icon">🎵</div>
+      <h3>TikTok</h3>
+      <p>Short-form video platform by ByteDance. 1.6B users, AI-powered For You feed, $23B revenue in 2024.</p>
+      <span class="tag">Video · Social · Entertainment</span>
+    </a>
+    <a class="site-card" href="/bing.com/">
+      <div class="site-icon">🔍</div>
+      <h3>Bing</h3>
+      <p>Microsoft's AI-powered search engine with Copilot. 3.36B monthly visits and growing fast.</p>
+      <span class="tag">Search · AI · Microsoft</span>
+    </a>
+    <a class="site-card" href="/yahoo.co.jp/">
+      <div class="site-icon">🇯🇵</div>
+      <h3>Yahoo Japan</h3>
+      <p>Japan's #1 web portal with 83M+ monthly users. News, shopping, auctions, PayPay payments and 100+ services.</p>
+      <span class="tag">Japan · Web Portal · Payments</span>
+    </a>
+    <a class="site-card" href="/duckduckgo.com/">
+      <div class="site-icon">🦆</div>
+      <h3>DuckDuckGo</h3>
+      <p>Privacy-first search engine that never tracks you. 71.9B searches in 2024, #2 mobile search in 20+ countries.</p>
+      <span class="tag">Privacy · Search · No Tracking</span>
+    </a>
+    <a class="site-card" href="/temu.com/">
+      <div class="site-icon">🛍️</div>
+      <h3>Temu</h3>
+      <p>Gamified ultra-discount shopping from PDD Holdings. 1B+ downloads, 180+ countries, direct from manufacturers.</p>
+      <span class="tag">E-Commerce · Deals · Shopping</span>
+    </a>
+    <a class="site-card" href="/weather.com/">
+      <div class="site-icon">🌤️</div>
+      <h3>Weather.com</h3>
+      <p>IBM's global weather platform since 1988. Powers 95% of weather apps worldwide with 100M+ monthly users.</p>
+      <span class="tag">Weather · IBM · Forecasting</span>
+    </a>
+    <a class="site-card" href="/netflix.com/">
+      <div class="site-icon">🎬</div>
+      <h3>Netflix</h3>
+      <p>The world's leading streaming service. 230M+ subscribers, $17B content spend, originals in 190 countries.</p>
+      <span class="tag">Streaming · Entertainment · Originals</span>
+    </a>
+  </div>
+</main>
+
+<!-- ── Ad: Before Footer (engaged readers) ── -->
+<div class="ad-unit" style="padding-bottom: 32px;">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <img class="footer-logo" src="/logo.svg" alt="JustSimple.Online" />
+  <strong style="color:#fff;">JustSimple.Online</strong> — Making the web understandable, one site at a time.
+  <br><br>
+  <a href="/">justsimple.online</a> &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms of Use</a>
+  <br><br>
+  <span style="font-size:.78rem;">All analyses are independent editorial content. JustSimple.Online is not affiliated with any website analysed.</span>
+</footer>
+
+<script>
+(function () {
+  const input    = document.getElementById('site-search');
+  const dropdown = document.getElementById('search-dropdown');
+  const clearBtn = document.getElementById('search-clear');
+  const ICONS    = { default: '🌐' };
+  let debounce   = null;
+
+  function esc(str) {
+    return String(str)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function siteIcon(name) {
+    const n = name.toLowerCase();
+    if (n.includes('bitcoin') || n.includes('btc') || n.includes('pay')) return '₿';
+    if (n.includes('lightning') || n.includes('phoenix')) return '⚡';
+    if (n.includes('wallet')) return '👛';
+    return '🌐';
+  }
+
+  function renderResults(results, query) {
+    if (!results.length) {
+      dropdown.innerHTML = `<div class="search-status">No results for "<strong>${esc(query)}</strong>"</div>`;
+      dropdown.classList.add('open');
+      return;
+    }
+    dropdown.innerHTML = results.map(r => `
+      <a class="search-result" href="${esc(r.folder_path)}" role="option">
+        <div class="search-result-icon">${siteIcon(r.name)}</div>
+        <div class="search-result-body">
+          <div class="search-result-name">${esc(r.name)}</div>
+          <div class="search-result-desc">${esc(r.description)}</div>
+          <div class="search-result-tags">
+            ${r.tags.slice(0,4).map(t => `<span class="stag">${esc(t)}</span>`).join('')}
+          </div>
+        </div>
+        <div class="search-result-arrow">›</div>
+      </a>`).join('');
+    dropdown.classList.add('open');
+  }
+
+  async function doSearch(q) {
+    dropdown.innerHTML = `<div class="search-status">Searching…</div>`;
+    dropdown.classList.add('open');
+    try {
+      const res  = await fetch('/api/search?q=' + encodeURIComponent(q));
+      const data = await res.json();
+      renderResults(data.results || [], q);
+    } catch {
+      dropdown.innerHTML = `<div class="search-status">Search unavailable. Please try again.</div>`;
+    }
+  }
+
+  input.addEventListener('input', function () {
+    const q = this.value.trim();
+    clearBtn.classList.toggle('visible', q.length > 0);
+    clearTimeout(debounce);
+    if (q.length < 2) {
+      dropdown.innerHTML = '';
+      dropdown.classList.remove('open');
+      return;
+    }
+    debounce = setTimeout(() => doSearch(q), 220);
+  });
+
+  clearBtn.addEventListener('click', function () {
+    input.value = '';
+    input.focus();
+    clearBtn.classList.remove('visible');
+    dropdown.innerHTML = '';
+    dropdown.classList.remove('open');
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.search-wrap')) {
+      dropdown.classList.remove('open');
+    }
+  });
+
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      dropdown.classList.remove('open');
+      input.blur();
+    }
+  });
+})();
+</script>
+</body>
+</html>

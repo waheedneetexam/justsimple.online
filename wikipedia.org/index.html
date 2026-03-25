@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wikipedia — JustSimple.Online</title>
+  <meta name="description" content="An independent analysis of Wikipedia.org — how a non-profit run by volunteers created the world's largest reference work with 60 million articles and zero advertising." />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#090c14;--surface:#0d1220;--card:#111828;--accent:#3388ff;--accent2:#51cf66;--text:#e8eaf6;--muted:#8892b0;--border:#1a2540;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#0a1020 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(51,136,255,.12),transparent);}
+    .hero-badge{display:inline-block;background:rgba(51,136,255,.15);border:1px solid rgba(51,136,255,.4);color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,rgba(51,136,255,.08),rgba(81,207,102,.05));border:1.5px solid rgba(51,136,255,.35);border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+    .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;}
+    .stat .num{font-size:2.2rem;font-weight:800;color:var(--accent);display:block;}
+    .stat .label{font-size:.85rem;color:var(--muted);margin-top:4px;}
+    .diagram-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;overflow-x:auto;}
+    .diagram-wrap+.diagram-wrap{margin-top:24px;}
+    .diagram-title{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+    .mermaid{display:flex;justify-content:center;}
+    .timeline{position:relative;padding-left:28px;}
+    .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--accent),transparent);}
+    .tl-item{position:relative;margin-bottom:28px;}
+    .tl-dot{position:absolute;left:-28px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px;}
+    .tl-item p{font-size:.88rem;color:var(--muted);}
+    .ad-unit{max-width:1100px;margin:0 auto;padding:28px 24px 0;text-align:center;}
+    .ad-unit-label{font-size:.68rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;opacity:.5;}
+    footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;}
+    footer a{color:var(--accent);text-decoration:none;}
+    footer .footer-logo{height:26px;width:auto;vertical-align:middle;margin-right:6px;}
+    @media(max-width:600px){.kid-box{padding:20px;}.diagram-wrap{padding:20px 12px;}}
+    #diag-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;}
+    #diag-modal.open{display:flex;}
+    #diag-modal-inner{position:relative;max-width:95vw;max-height:92vh;overflow:auto;background:#1a1d27;border:1px solid #2d3250;border-radius:16px;padding:48px 32px 32px;box-shadow:0 24px 80px rgba(0,0,0,.8);}
+    #diag-close{position:absolute;top:12px;right:16px;background:none;border:none;color:#8892b0;font-size:1.6rem;cursor:pointer;line-height:1;transition:color .2s;}
+    #diag-close:hover{color:#fff;}
+    #diag-modal-inner svg{display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:78vh;width:auto!important;height:auto!important;}
+  </style>
+</head>
+<body>
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+<nav>
+  <a class="nav-logo" href="/"><img src="/logo.svg" alt="JustSimple.Online" style="height:34px;"/><span class="nav-tagline">Making the web understandable</span></a>
+  <div class="nav-right"><a href="/">← All Analyses</a>&nbsp;·&nbsp;<a href="/privacy.html">Privacy</a>&nbsp;·&nbsp;<a href="/terms.html">Terms</a></div>
+</nav>
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;"/></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>Inside Wikipedia: The Free Encyclopedia Anyone Can Edit</h1>
+  <p>How a non-profit run by volunteers created the world's largest reference work — 60 million articles, 300+ languages, zero advertising — and why it still works.</p>
+  <div class="hero-url">🌐 Analysed: <span>wikipedia.org</span></div>
+</div>
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. Not affiliated with the website analysed.</span>
+  </div>
+</div>
+<main>
+
+  <!-- SECTION 1: What is Wikipedia -->
+  <section>
+    <h2><span class="emoji">🤔</span>What is Wikipedia?</h2>
+    <p class="section-intro">A simple explanation of Wikipedia — what it is, how it works, and why it's remarkable.</p>
+    <div class="kid-box">
+      <h3>Explained Simply</h3>
+      <p>Imagine the world's biggest homework book — except the whole world writes it together. That's Wikipedia. It's a free online encyclopaedia where any person with an internet connection can write or improve an article about almost any topic. Need to know about the French Revolution, a rare butterfly species, or the rules of cricket? Wikipedia probably has it.</p>
+      <p>What makes Wikipedia extraordinary is that it runs with <strong>no advertising</strong>, charges <strong>no subscription fee</strong>, and is written entirely by <strong>volunteers</strong>. Tens of thousands of unpaid editors around the world spend their free time writing, fact-checking, and improving articles because they believe knowledge should be free for everyone. The organisation behind it — the Wikimedia Foundation — is a non-profit that survives on donations.</p>
+      <p>With over 60 million articles across more than 300 languages, Wikipedia has become the default first stop for information for billions of people and the primary training source for AI language models worldwide. It is arguably the most ambitious collaborative project in human history.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: By the Numbers -->
+  <section>
+    <h2><span class="emoji">📊</span>Wikipedia by the Numbers</h2>
+    <p class="section-intro">The staggering scale of the world's most comprehensive reference work.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">60M+</span><span class="label">Articles (All Languages)</span></div>
+      <div class="stat"><span class="num">6.7M</span><span class="label">English Articles</span></div>
+      <div class="stat"><span class="num">1.8B</span><span class="label">Monthly Visitors</span></div>
+      <div class="stat"><span class="num">300+</span><span class="label">Language Editions</span></div>
+      <div class="stat"><span class="num">$0</span><span class="label">Advertising Revenue</span></div>
+      <div class="stat"><span class="num">2001</span><span class="label">Year Founded</span></div>
+    </div>
+  </section>
+
+  <!-- AD UNIT 1 -->
+  <div class="ad-unit" style="margin-bottom:56px;">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <!-- SECTION 3: How Wikipedia Works -->
+  <section>
+    <h2><span class="emoji">⚙️</span>How Wikipedia Works — The Edit Model</h2>
+    <p class="section-intro">Wikipedia's open editing model is its defining feature — and also the source of its greatest challenges.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">Wikipedia operates on a <strong>wiki</strong> system, meaning any page can be edited by almost anyone at almost any time. When you click "Edit" on an article, you see the raw wikitext markup, make your changes, write a summary of what you did, and click publish. Your edit is live immediately — no approval required for most articles. This radical openness is what allowed Wikipedia to grow from zero to the world's largest encyclopaedia in just a few years, far outpacing traditionally edited references.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">Every article comes with a <strong>Talk page</strong> — a companion discussion space where editors debate what should and should not be included, how sources should be cited, and how neutrality should be maintained. The Talk page is often as fascinating as the article itself, revealing the contested nature of knowledge. More contentious articles (like those covering living politicians or recent events) see hundreds of Talk page discussions. Wikipedia's core content policy — <strong>Neutral Point of View (NPOV)</strong> — requires all articles to represent significant views fairly, without advocating for any position.</p>
+    <p style="color:var(--muted);margin-bottom:28px;"><strong>Vandalism and revert wars</strong> are inevitable in an open system. Wikipedia uses a combination of automated bots (which can revert obvious vandalism in seconds), experienced human editors, and semi-protection tools (which restrict editing of high-risk articles to confirmed accounts). The most contentious articles — such as those about controversial political figures or disputed historical events — can be fully protected, editable only by administrators. Despite these vulnerabilities, studies have repeatedly found Wikipedia's accuracy comparable to that of traditional encyclopaedias.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Wikipedia Edit Lifecycle</div>
+      <div class="mermaid">
+flowchart LR
+    A([User Edits Article]) --> B{Automated Bot\nCheck}
+    B -->|Obvious Vandalism| C[Reverted in Seconds]
+    B -->|Passes Bot Check| D[Edit Goes Live\nImmediately]
+    D --> E{Human Editor\nReview}
+    E -->|Incorrect / Unsourced| F[Reverted with\nEdit Summary]
+    E -->|Accepted| G[Article Improved]
+    F --> H[Talk Page\nDiscussion]
+    H --> I([Consensus Reached\nStable Article])
+    G --> I
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: How Wikipedia is Funded -->
+  <section>
+    <h2><span class="emoji">💰</span>How Wikipedia is Funded</h2>
+    <p class="section-intro">Wikipedia receives no advertising revenue — yet it keeps the lights on for 1.8 billion monthly visitors. Here's how.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">The Wikimedia Foundation, the non-profit organisation that operates Wikipedia, relies almost entirely on <strong>individual donations</strong> from readers. Those iconic banner appeals — "Please don't scroll past this. We rely on donations" — fund the entire operation. In 2023, the Wikimedia Foundation raised approximately $180 million, mainly from small recurring donations averaging around $15. The decision to never carry advertising was made by co-founder Jimmy Wales and has remained a core principle, preserving Wikipedia's editorial independence.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">The Foundation spends its budget on server infrastructure (Wikipedia serves billions of page views per month from data centres in the US and Europe), staff (engineers, legal counsel, community liaisons), and grants to support Wikimedia projects worldwide. It employs around 700 full-time staff — a remarkably lean team for a service at this scale. The vast majority of Wikipedia's actual content work is done by an estimated 280,000 active volunteer editors globally.</p>
+    <p style="color:var(--muted);margin-bottom:28px;">One growing revenue stream is <strong>enterprise licensing</strong> — large corporations and AI companies that use Wikipedia's content commercially are asked to contribute financially through the Wikimedia Enterprise programme. Companies like Google, Apple, and Amazon pay for high-volume API access to Wikipedia data, providing a sustainable revenue stream that doesn't compromise the free access model for regular readers.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Wikipedia Funding Flow</div>
+      <div class="mermaid">
+flowchart TD
+    A([1.8B Monthly Readers]) -->|Small Donations\nAvg $15| B[Wikimedia Foundation\nNon-Profit]
+    C([Enterprise Clients\nGoogle, Apple, Amazon]) -->|API Licensing Fees| B
+    B --> D[Server Infrastructure\nGlobal Data Centres]
+    B --> E[Staff ~700\nEngineers &amp; Support]
+    B --> F[Community Grants\nWikimania, Projects]
+    D --> G([Wikipedia Stays\nFree &amp; Ad-Free])
+    E --> G
+    F --> G
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Key Features -->
+  <section>
+    <h2><span class="emoji">🔧</span>Key Features &amp; Sister Projects</h2>
+    <p class="section-intro">Wikipedia is just the most visible part of a broader Wikimedia ecosystem of free knowledge projects.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">📖</div>
+        <h4>Wikipedia</h4>
+        <p>The flagship encyclopaedia — 60 million+ articles in 300+ languages written and maintained by volunteers. The world's go-to reference for practically any topic.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📝</div>
+        <h4>Wiktionary</h4>
+        <p>A free collaborative dictionary and thesaurus covering over 6 million words and phrases across hundreds of languages. Includes etymology, pronunciation, and usage examples.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🗄️</div>
+        <h4>Wikidata</h4>
+        <p>A structured, machine-readable knowledge base that powers Wikipedia's infoboxes and feeds AI systems. Contains over 100 million data items about people, places, and concepts.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🖼️</div>
+        <h4>Wikimedia Commons</h4>
+        <p>A shared media repository of over 100 million freely usable images, videos, and audio files — the source of most images you see on Wikipedia articles.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📚</div>
+        <h4>Wikibooks</h4>
+        <p>A collection of free, open-content textbooks and manuals. Students and educators worldwide contribute to and use these resources as an alternative to expensive commercial textbooks.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">✈️</div>
+        <h4>Wikivoyage</h4>
+        <p>A free collaborative travel guide covering destinations worldwide. Written entirely by volunteers and freely editable, offering an open alternative to commercial travel sites.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Timeline -->
+  <section>
+    <h2><span class="emoji">📅</span>Wikipedia History Timeline</h2>
+    <p class="section-intro">From a failed academic encyclopaedia to the internet's most trusted reference — the key moments in Wikipedia's history.</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><h4>1999–2000 — Nupedia</h4><p>Jimmy Wales and Larry Sanger attempt to build Nupedia, a rigorously peer-reviewed online encyclopaedia. The process is so slow that only 21 articles are finished in two years. A faster alternative is needed.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>January 2001 — Wikipedia Launches</h4><p>Wikipedia goes live on January 15, 2001 as a "feeder" project for Nupedia. Within weeks it is generating more content than Nupedia ever did. By the end of 2001 it has 20,000 articles.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2003 — Wikimedia Foundation</h4><p>The Wikimedia Foundation is incorporated as a non-profit to host Wikipedia and related projects. Jimmy Wales transfers Wikipedia's servers and intellectual property to the Foundation, establishing its independent, non-commercial future.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2006 — Time "Person of the Year"</h4><p>Time Magazine names "You" — the collective internet user — as Person of the Year, citing Wikipedia as a prime example of the collaborative power of ordinary people reshaping information.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2012 — SOPA Blackout</h4><p>English Wikipedia goes dark for 24 hours to protest the Stop Online Piracy Act. Over 160 million people see the blackout page. The action drives 8 million contacts to US Congress members and helps defeat the bill.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2018 — GDPR &amp; Privacy Reforms</h4><p>Wikipedia adapts to the European Union's General Data Protection Regulation, updating its privacy policy and data handling. Debate intensifies about the "right to be forgotten" and how it conflicts with Wikipedia's archival mission.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2021 — 20th Anniversary</h4><p>Wikipedia celebrates its 20th birthday with 55 million articles across 300+ languages. Retrospectives highlight both its extraordinary achievement and its persistent challenges: editor decline, geographic bias, and the gender gap among contributors.</p></div>
+    </div>
+  </section>
+
+  <!-- AD UNIT MID -->
+  <div class="ad-unit" style="margin-bottom:56px;">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <!-- SECTION 8: Reliability & Controversies -->
+  <section>
+    <h2><span class="emoji">⚖️</span>Reliability, Bias &amp; Controversies</h2>
+    <p class="section-intro">Wikipedia's accuracy is better than most people assume — but its structural biases are real and persistent problems.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">A landmark 2005 study in the journal <em>Nature</em> compared 42 science articles from Wikipedia and Encyclopaedia Britannica and found Wikipedia's accuracy "remarkably close" — averaging 4 errors per article versus Britannica's 3. Later studies on medical, historical, and scientific topics have generally found similar results. Wikipedia's self-correcting community model, while chaotic, is surprisingly effective at converging on accurate information over time — especially for well-trafficked articles.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">The more troubling issue is <strong>structural bias</strong>. Multiple surveys have found that approximately <strong>90% of Wikipedia editors are male</strong>, and the majority are from English-speaking Western countries. This skew affects what gets written: female scientists, non-Western historical figures, and topics important to the Global South are systematically under-represented or covered in less detail than equivalent Western male subjects. Organisations like the Wikimedia Foundation have run campaigns to address this, but progress has been slow.</p>
+    <p style="color:var(--muted);margin-bottom:16px;"><strong>Paid editing and conflict of interest</strong> represent another persistent challenge. Some PR companies and individuals pay people to create or improve Wikipedia articles about their clients, violating Wikipedia's policies but difficult to detect. The <strong>Biographies of Living Persons</strong> (BLP) policy — which holds Wikipedia to high standards for articles about living people who could be defamed — requires constant vigilance. High-profile errors in BLP articles have occasionally caused real-world reputational damage before being corrected.</p>
+  </section>
+
+  <!-- SECTION 9: Editorial Process Diagram -->
+  <section>
+    <h2><span class="emoji">🏗️</span>The Editorial Process</h2>
+    <p class="section-intro">How Wikipedia turns a new article stub into a stable, reliable resource — the quality improvement pipeline.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Wikipedia Article Quality Pipeline</div>
+      <div class="mermaid">
+flowchart TD
+    A([Article Created\nStub or Draft]) --> B[Flagged for\nImprovement]
+    B --> C[Peer Editors\nAdd Sources &amp; Content]
+    C --> D[Talk Page\nDebate &amp; Consensus]
+    D --> E{Meets\nQuality Standards?}
+    E -->|No| C
+    E -->|Yes| F[Good Article\nNomination]
+    F --> G{Peer\nReview}
+    G -->|Passes| H[Featured Article\nTop 0.1% of Wikipedia]
+    G -->|Needs Work| C
+    H --> I([Stable, High-Quality\nArticle])
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: Summary -->
+  <section>
+    <h2><span class="emoji">✅</span>Summary</h2>
+    <div class="kid-box">
+      <h3>The Wikipedia Story in a Nutshell</h3>
+      <p>Wikipedia is one of the internet's most improbable success stories. It proved that strangers with no financial incentive could collaborate at massive scale to produce something genuinely valuable — a free encyclopaedia that rivals professionally edited references in accuracy and vastly surpasses them in scope. No advertising, no subscription fee, no hidden agenda. Just volunteers who believe the world is better when knowledge is free.</p>
+      <p>Its flaws are real: the editor gender gap, geographic bias toward Western perspectives, the ongoing battle against paid editing and vandalism. But these are structural problems of all human knowledge systems, not unique to Wikipedia. For all its imperfections, Wikipedia remains one of the few truly public goods the internet has produced — and a daily reminder that the web, at its best, can still be a place of genuine generosity.</p>
+    </div>
+  </section>
+
+</main>
+<div class="ad-unit" style="padding-bottom:32px;">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<footer>
+  <img class="footer-logo" src="/logo.svg" alt="JustSimple.Online" />
+  <strong style="color:#fff;">JustSimple.Online</strong> — Making the web understandable, one site at a time.<br><br>
+  Analysis of <a href="https://wikipedia.org" target="_blank">wikipedia.org</a>
+  &nbsp;·&nbsp; <a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
+</footer>
+<div id="diag-modal" role="dialog" aria-modal="true" aria-label="Diagram viewer">
+  <div id="diag-modal-inner"><button id="diag-close" aria-label="Close diagram">&times;</button></div>
+</div>
+<script>
+  mermaid.initialize({startOnLoad:true,theme:'dark',themeVariables:{primaryColor:'#111828',primaryTextColor:'#e8eaf6',primaryBorderColor:'#3388ff',lineColor:'#3388ff',secondaryColor:'#0d1220',tertiaryColor:'#0d1220',background:'#090c14',mainBkg:'#111828',nodeBorder:'#3388ff',clusterBkg:'#0d1220',titleColor:'#e8eaf6',edgeLabelBackground:'#111828',attributeBackgroundColorEven:'#111828',attributeBackgroundColorOdd:'#0d1220'}});
+  (function(){var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');if(!modal||!inner||!closeBtn)return;document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});function openModal(mDiv){inner.querySelectorAll('svg,.diag-msg').forEach(function(el){el.remove();});modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}function showSvg(svg){inner.querySelectorAll('svg').forEach(function(s){s.remove();});inner.insertAdjacentHTML('beforeend',svg.outerHTML);var s=inner.querySelector('svg');if(s){s.removeAttribute('width');s.removeAttribute('height');s.style.cssText='display:block;margin:0 auto;width:100%;height:auto;max-height:78vh;';}}function closeModal(){modal.classList.remove('open');document.body.style.overflow='';}closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});}());
+</script>
+</body>
+</html>

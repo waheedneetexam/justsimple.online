@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TikTok — JustSimple.Online</title>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TSFVXECJ40');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root {
+      --bg: #080b14;
+      --surface: #0e1424;
+      --card: #131a2e;
+      --accent: #ec4899;
+      --accent2: #51cf66;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --border: #1e2a45;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Navbar ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      background: rgba(8,11,20,.95);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-tagline { font-size: .75rem; color: var(--muted); display: none; }
+    @media(min-width:500px){ .nav-tagline { display: block; } }
+    .nav-right { display: flex; align-items: center; gap: 16px; font-size: .85rem; }
+    .nav-right a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-right a:hover { color: var(--accent); }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #080b14 0%, #180814 50%, #080b14 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 72px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(236,72,153,.12), transparent);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(236,72,153,.15);
+      border: 1px solid rgba(236,72,153,.4);
+      color: var(--accent);
+      padding: 4px 16px;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff 30%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+    .hero-url {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 20px;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .hero-url span { color: var(--accent); font-weight: 600; }
+
+    /* ── Layout ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px 100px;
+    }
+    section { margin-bottom: 72px; }
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    h2 .emoji { margin-right: 10px; }
+    .section-intro {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    /* ── Kid Box ── */
+    .kid-box {
+      background: linear-gradient(135deg, rgba(236,72,153,.08), rgba(81,207,102,.05));
+      border: 1.5px solid rgba(236,72,153,.35);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .kid-box::before {
+      content: '👦';
+      position: absolute;
+      right: 24px;
+      top: 20px;
+      font-size: 3rem;
+      opacity: .18;
+    }
+    .kid-box h3 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .kid-box p { color: var(--text); line-height: 1.8; }
+    .kid-box p + p { margin-top: 12px; }
+
+    /* ── Cards grid ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color .2s, transform .2s;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .card h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .card p { font-size: .9rem; color: var(--muted); }
+
+    /* ── Stat strip ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+    .stat .num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent);
+      display: block;
+    }
+    .stat .label { font-size: .85rem; color: var(--muted); margin-top: 4px; }
+
+    /* ── Diagram container ── */
+    .diagram-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      overflow-x: auto;
+    }
+    .diagram-wrap + .diagram-wrap { margin-top: 24px; }
+    .diagram-title {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .mermaid { display: flex; justify-content: center; }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+    .tl-item { position: relative; margin-bottom: 28px; }
+    .tl-dot {
+      position: absolute;
+      left: -28px;
+      top: 4px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+    }
+    .tl-item h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .tl-item p  { font-size: .88rem; color: var(--muted); }
+
+    /* ── Warning box ── */
+    .warning-box {
+      background: linear-gradient(135deg, rgba(239,68,68,.08), rgba(239,68,68,.04));
+      border: 1.5px solid rgba(239,68,68,.35);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-top: 24px;
+    }
+    .warning-box h4 { color: #ef4444; font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .warning-box p { color: var(--text); font-size: .95rem; }
+
+    /* ── Ad unit ── */
+    .ad-unit {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 24px 0;
+      text-align: center;
+    }
+    .ad-unit-label {
+      font-size: .68rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      opacity: .5;
+    }
+    .ad-unit ins { border-radius: 8px; overflow: hidden; }
+    .ad-unit-inline {
+      margin: 0 0 48px;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer .footer-logo { height: 26px; width: auto; vertical-align: middle; margin-right: 6px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .kid-box { padding: 20px; }
+      .diagram-wrap { padding: 20px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Independent Analysis Banner ── -->
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+
+<!-- ── Navbar ── -->
+<nav>
+  <a class="nav-logo" href="/"><img src="/logo.svg" alt="JustSimple.Online" style="height:34px;"/><span class="nav-tagline">Making the web understandable</span></a>
+  <div class="nav-right"><a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a></div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;" /></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>TikTok</h1>
+  <p>A deep-dive into the short-form video platform that took over the world — its algorithm, business model, and controversies explained simply.</p>
+  <div class="hero-url">
+    🌐 Analysed: <span>tiktok.com</span>
+  </div>
+</div>
+
+<!-- ── Ad 1: Below Hero ── -->
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- ── Disclaimer ── -->
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. We are not affiliated with, endorsed by, or connected to the website being analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+
+
+<!-- ── Main ── -->
+<main>
+
+  <!-- 1. KID EXPLANATION -->
+  <section id="simple">
+    <h2>What is TikTok?</h2>
+    <p class="section-intro">Let's start with the simplest possible explanation before we dive into the details.</p>
+    <div class="kid-box">
+      <h3>📺 Imagine a TV where you never have to pick what to watch...</h3>
+      <p>
+        You know how boring it is when you can't find anything good on TV and you have to scroll through hundreds of channels? TikTok is like a magic TV where you <em>never</em> have to do that. You just open the app, and it immediately starts showing you short videos — usually between 15 seconds and 3 minutes — of exactly the kind of stuff you love.
+      </p>
+      <p>
+        How does it know what you like? It watches how you behave. If you watch a dog video all the way to the end, it shows you more dog videos. If you skip a video after two seconds, it never shows you that kind again. After a while, it knows your taste better than your own friends do — and it keeps showing you videos, one after another, that you just can't stop watching.
+      </p>
+      <p>
+        <strong>TikTok was created in China</strong> by a company called ByteDance. In China it's called <strong>Douyin</strong>. It launched internationally in 2017, bought a similar app called Musical.ly, and by 2024 had <strong>1.6 billion people</strong> using it every month across 150+ countries.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. STATS -->
+  <section id="stats">
+    <h2><span class="emoji">📊</span>TikTok by the Numbers</h2>
+    <p class="section-intro">TikTok's growth from 2016 to 2024 is one of the fastest in tech history.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">1.6B</span><div class="label">Monthly active users (2024)</div></div>
+      <div class="stat"><span class="num">$23B</span><div class="label">Revenue in 2024 (+42.8% YoY)</div></div>
+      <div class="stat"><span class="num">773M</span><div class="label">Downloads in 2024 — #1 worldwide</div></div>
+      <div class="stat"><span class="num">1B+</span><div class="label">Video views per day</div></div>
+      <div class="stat"><span class="num">150+</span><div class="label">Countries where TikTok is available</div></div>
+      <div class="stat"><span class="num">$220B</span><div class="label">ByteDance estimated valuation</div></div>
+    </div>
+  </section>
+
+  <!-- 3. HOW IT WORKS — THE ALGORITHM -->
+  <section id="how">
+    <h2><span class="emoji">⚙️</span>How TikTok's Algorithm Works</h2>
+    <p class="section-intro">The "For You Page" (FYP) is TikTok's secret weapon — here's exactly how it decides what to show you.</p>
+
+    <div class="diagram-wrap">
+      <div class="diagram-title">For You Page Algorithm — Personalisation Flow</div>
+      <div class="mermaid">
+flowchart TD
+    A([📱 User opens TikTok]) --> B[Algorithm shows\ncurated video mix]
+    B --> C{User behaviour\nwhile watching}
+
+    C -->|Watches to end| D[Strong positive signal\n+++ weight]
+    C -->|Watches halfway| E[Moderate positive signal\n+ weight]
+    C -->|Skips quickly| F[Negative signal\n— weight]
+    C -->|Shares video| G[Very strong positive signal\n++++ weight]
+    C -->|Comments| H[Strong engagement signal\n+++ weight]
+    C -->|Likes| I[Positive signal\n++ weight]
+
+    D --> J[Recommendation Engine\nML model updates user profile]
+    E --> J
+    F --> J
+    G --> J
+    H --> J
+    I --> J
+
+    J --> K{Other signals}
+    K -->|Location| L[Local &amp; regional content]
+    K -->|Device &amp; time| M[Context-aware delivery]
+    K -->|Follows &amp; interests| N[Creator preference]
+
+    L --> O([🎯 For You Page\nPersonalised feed])
+    M --> O
+    N --> O
+    O --> B
+
+    style A fill:#131a2e,stroke:#ec4899,color:#e2e8f0
+    style O fill:#0e2e1a,stroke:#51cf66,color:#e2e8f0
+    style J fill:#131a2e,stroke:#ec4899,color:#e2e8f0
+      </div>
+    </div>
+
+    <div class="diagram-wrap" style="margin-top:24px">
+      <div class="diagram-title">TikTok Platform Architecture</div>
+      <div class="mermaid">
+graph TB
+    subgraph Users["👥 User Layer"]
+        Viewers["Viewers\n(1.6B users)"]
+        Creators["Creators\n(content makers)"]
+        Brands["Brands &amp;\nAdvertisers"]
+      end
+
+    subgraph Platform["📱 TikTok Platform"]
+        FYP["For You Page\n(AI recommendation)"]
+        Upload["Video Upload\n&amp; Processing"]
+        TikShop["TikTok Shop\n(E-commerce)"]
+        Live["TikTok Live\n(Livestreaming)"]
+        Effects["Effects &amp;\nFilters"]
+    end
+
+    subgraph Revenue["💰 Revenue Streams"]
+        AdRev["Advertising\n(~80% of revenue)"]
+        ShopRev["TikTok Shop\nCommissions"]
+        LiveRev["Live Gifts\n&amp; Virtual items"]
+    end
+
+    subgraph ByteDance["🏢 ByteDance (Parent)"]
+        Algo["AI Algorithm\n(core IP)"]
+        Data["Data Processing\nInfrastructure"]
+    end
+
+    Creators --> Upload
+    Upload --> FYP
+    Algo --> FYP
+    FYP --> Viewers
+    Brands --> AdRev
+    TikShop --> ShopRev
+    Live --> LiveRev
+    ByteDance --> Platform
+
+    style Users    fill:#0e1424,stroke:#ec4899
+    style Platform fill:#0e1424,stroke:#64748b
+    style Revenue  fill:#0e1424,stroke:#51cf66
+    style ByteDance fill:#0e1424,stroke:#ec4899
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Ad 2: Mid-content ── -->
+  <div class="ad-unit-inline">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-2662293899276634"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- 4. FEATURES -->
+  <section id="features">
+    <h2><span class="emoji">🚀</span>TikTok's Key Features</h2>
+    <p class="section-intro">TikTok has evolved from a simple video app into a full entertainment and commerce ecosystem.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h4>For You Page (FYP)</h4>
+        <p>The AI-powered feed that shows you videos personalised to your exact tastes — the reason TikTok is so addictive and hard to put down.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎭</div>
+        <h4>Duet</h4>
+        <p>Record your video side-by-side with another creator's video. Used for reactions, collaborations, singing along to songs, and comedy responses.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">✂️</div>
+        <h4>Stitch</h4>
+        <p>Clip up to 5 seconds of another user's video and add your own footage after it. Popular for commentary, fact-checking, and storytelling.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📡</div>
+        <h4>TikTok Live</h4>
+        <p>Creators stream live to their followers. Viewers send virtual gifts purchased with real money, which creators convert to cash earnings.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛍️</div>
+        <h4>TikTok Shop</h4>
+        <p>Full in-app e-commerce. Creators promote products in videos, and users buy without leaving TikTok. A major revenue growth driver in 2023–2024.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💰</div>
+        <h4>Creator Fund</h4>
+        <p>TikTok pays eligible creators based on views and engagement. Rates vary and have been criticised as low, but it enables full-time TikTok careers.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">✨</div>
+        <h4>Effects &amp; Filters</h4>
+        <p>Thousands of AR effects — from face filters and background replacements to viral sound-synced effects that drive participation trends.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎵</div>
+        <h4>Music Discovery</h4>
+        <p>TikTok is the world's most powerful music discovery platform — a viral sound on TikTok regularly launches unknown artists to chart success overnight.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📚</div>
+        <h4>TikTok Learn</h4>
+        <p>Educational content — from science explainers to language learning — has grown massively, with users using TikTok as a search engine alternative.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. USE CASES MINDMAP -->
+  <section id="usecases">
+    <h2><span class="emoji">🗺️</span>How People Use TikTok</h2>
+    <p class="section-intro">TikTok has grown far beyond just entertainment — it's a platform for business, education, and culture.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">TikTok Use Case Mindmap</div>
+      <div class="mermaid">
+mindmap
+  root((TikTok))
+    Entertainment
+      Funny clips &amp; memes
+      Dance challenges
+      Cooking videos
+      Pet content
+    Marketing &amp; Business
+      Brand advertising
+      Influencer partnerships
+      TikTok Shop product sales
+      Viral product launches
+    Music &amp; Culture
+      Music discovery
+      Trending sounds
+      Artist promotion
+      Concert teasers
+    Education
+      TikTok Learn
+      Science explainers
+      Language learning
+      History &amp; news
+    E-commerce
+      TikTok Shop
+      Live shopping events
+      Affiliate product links
+      Creator merchandise
+    Community &amp; Identity
+      Niche communities
+      Activism &amp; awareness
+      Mental health content
+      LGBTQ+ spaces
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CONTROVERSY -->
+  <section id="controversy">
+    <h2><span class="emoji">⚠️</span>Controversy &amp; Security Concerns</h2>
+    <p class="section-intro">TikTok is one of the most politically contentious tech platforms in history.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">TikTok's Regulatory Challenges Timeline</div>
+      <div class="mermaid">
+flowchart LR
+    A([2019\nUS government\nbegins investigation]) --> B([2020\nTrump signs executive\norders to ban TikTok])
+    B --> C([2020\nCourts block\nthe ban])
+    C --> D([2022\nUS government\nbans TikTok on\nfederal devices])
+    D --> E([2023\nCEO Shou Zi Chew\ntestifies to Congress])
+    E --> F([2024\nUS Congress passes\nbill requiring ByteDance\nto divest TikTok])
+    F --> G([2025\nLegal battles\ncontinue])
+
+    style A fill:#131a2e,stroke:#ec4899,color:#e2e8f0
+    style F fill:#2e1a1a,stroke:#ef4444,color:#e2e8f0
+    style G fill:#131a2e,stroke:#64748b,color:#e2e8f0
+      </div>
+    </div>
+    <div class="warning-box">
+      <h4>Key Controversy: Data Privacy &amp; Chinese Ownership</h4>
+      <p>The core concern is that ByteDance, a Chinese company, could theoretically be compelled by the Chinese government to hand over data on TikTok's 170M American users — or to manipulate what content Americans see. TikTok has consistently denied sharing data with the Chinese government and launched "Project Texas" to store US user data exclusively on Oracle servers in the US. The debate remains unresolved and has set a precedent for how Western governments treat foreign-owned tech platforms.</p>
+    </div>
+  </section>
+
+  <!-- ── Ad 3: Mid-content ── -->
+  <div class="ad-unit-inline">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-2662293899276634"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- 7. TIMELINE -->
+  <section id="timeline">
+    <h2><span class="emoji">📅</span>TikTok's History</h2>
+    <p class="section-intro">From a Chinese lip-sync app to the world's most downloaded platform in under a decade.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>September 2016 — Douyin Launches in China</h4>
+        <p>ByteDance launches Douyin in China — a short-form video app powered by an advanced AI recommendation engine. It becomes one of the fastest-growing apps in Chinese history, reaching 100M users in just one year.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2017 — International Launch as TikTok</h4>
+        <p>ByteDance launches TikTok internationally for markets outside China. The algorithm that made Douyin addictive is ported to TikTok, immediately setting it apart from competitors with its uncanny personalisation.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>November 2017 — Musical.ly Acquisition ($1B)</h4>
+        <p>ByteDance acquires Musical.ly — a popular lip-syncing app with 200M users, mostly in the US and Europe — for approximately $1 billion. This gives TikTok an instant Western user base.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2018 — Musical.ly Merges into TikTok</h4>
+        <p>ByteDance merges Musical.ly into TikTok, consolidating the user bases. TikTok becomes the most downloaded app on the US App Store, surpassing Facebook, YouTube, and Instagram.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2019–2020 — US Government Scrutiny &amp; Ban Attempts</h4>
+        <p>The Trump administration attempts to ban TikTok via executive order, citing national security concerns. Courts block the ban. TikTok becomes a geopolitical flashpoint between the US and China.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2020–2022 — COVID-Era Explosion</h4>
+        <p>Lockdowns drive explosive growth. TikTok becomes the dominant cultural platform for Gen Z, influencing music charts, fashion trends, political discourse, and social movements worldwide.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2023 — CEO Testifies Before Congress</h4>
+        <p>TikTok CEO Shou Zi Chew testifies for 5 hours before the US Congress. The hearing is widely watched, but critics argue it exposed US lawmakers' lack of understanding of how social media works.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2024 — Legislation Passed, Record Growth</h4>
+        <p>The US passes a law requiring ByteDance to divest TikTok or face a ban. TikTok reaches 1.6B users, posts $23B revenue (up 42.8%), and is the world's most downloaded app with 773M downloads. Legal battles continue.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. SUMMARY -->
+  <section id="summary">
+    <h2><span class="emoji">✨</span>Summary</h2>
+    <div class="kid-box">
+      <h3>🎯 The one-sentence version</h3>
+      <p>
+        <strong>TikTok is a short-video platform owned by Chinese company ByteDance</strong> that uses an extraordinarily powerful AI algorithm to show each of its 1.6 billion users exactly the videos they'll enjoy most — making it the world's most addictive and fastest-growing social media platform, and the most politically controversial.
+      </p>
+      <p style="margin-top:16px; font-size:.95rem; color: var(--muted);">
+        What sets TikTok apart from every competitor is its algorithm. Unlike Facebook or Instagram, where your feed is driven mostly by who you follow, TikTok's For You Page can make any creator go viral to millions of people overnight — regardless of how many followers they have. That radical democratisation of reach is why it changed the entire social media landscape.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Ad 4: Before Footer ── -->
+<div class="ad-unit" style="padding-bottom:32px;">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <img class="footer-logo" src="/logo.svg" alt="JustSimple.Online" />
+  <strong style="color:#fff;">JustSimple.Online</strong> — Making the web understandable, one site at a time.
+  <br><br>
+  Analysis of <a href="https://tiktok.com" target="_blank">tiktok.com</a>
+  &nbsp;·&nbsp; <a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
+</footer>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      primaryColor: '#131a2e',
+      primaryTextColor: '#e2e8f0',
+      primaryBorderColor: '#ec4899',
+      lineColor: '#ec4899',
+      secondaryColor: '#0e1424',
+      tertiaryColor: '#0e1424',
+      background: '#080b14',
+      mainBkg: '#131a2e',
+      nodeBorder: '#ec4899',
+      clusterBkg: '#0e1424',
+      titleColor: '#e2e8f0',
+      edgeLabelBackground: '#131a2e',
+      attributeBackgroundColorEven: '#131a2e',
+      attributeBackgroundColorOdd: '#0e1424'
+    }
+  });
+</script>
+</body>
+</html>

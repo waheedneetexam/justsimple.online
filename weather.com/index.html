@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather.com Analysis — JustSimple.Online</title>
+  <meta name="description" content="Deep-dive analysis of Weather.com: IBM's 100M+ user weather platform that powers 95% of weather-enabled apps globally, since 1988." />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root {
+      --bg: #080b14;
+      --surface: #0e1424;
+      --card: #131a2e;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --border: #1e2a45;
+      --radius: 16px;
+      --accent: #0ea5e9;
+      --accent-dim: rgba(14,165,233,0.12);
+      --accent-glow: rgba(14,165,233,0.25);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: var(--bg); } ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    /* ── Navbar ── */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 32px;
+      background: rgba(8,11,20,0.95);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(14px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-back { color: var(--muted); text-decoration: none; font-size: .85rem; transition: color .2s; display: flex; align-items: center; gap: 6px; }
+    .nav-back:hover { color: var(--accent); }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 80px 24px 60px;
+      text-align: center;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(14,165,233,0.15) 0%, transparent 70%), var(--bg);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(14,165,233,0.05) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(14,165,233,0.07) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-logo { height: 44px; width: auto; margin-bottom: 20px; }
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent-dim);
+      border: 1px solid rgba(14,165,233,0.3);
+      color: var(--accent);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: 16px; }
+    .hero h1 span { color: var(--accent); }
+    .hero-desc { max-width: 640px; margin: 0 auto 28px; color: var(--muted); font-size: 1.05rem; }
+    .hero-url {
+      display: inline-block;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-family: monospace;
+      font-size: .9rem;
+      color: var(--accent);
+      letter-spacing: .04em;
+    }
+
+    /* ── Ad Unit ── */
+    .ad-unit { max-width: 960px; margin: 0 auto; padding: 32px 24px 0; text-align: center; }
+    .ad-unit-label { font-size: .66rem; color: var(--muted); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; opacity: .55; }
+    .ad-unit ins { border-radius: 8px; overflow: hidden; }
+
+    /* ── Layout ── */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+    .section-label {
+      font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 10px;
+    }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 20px; }
+    h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 10px; }
+    p { color: var(--muted); margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Stats Grid ── */
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-top: 32px; }
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 16px;
+      text-align: center;
+      transition: border-color .2s, transform .2s;
+    }
+    .stat-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .stat-value { font-size: 1.9rem; font-weight: 800; color: var(--accent); line-height: 1.1; }
+    .stat-label { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* ── Feature Cards ── */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 32px; }
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      transition: border-color .2s, transform .2s;
+    }
+    .feature-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .feature-icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .feature-card h3 { font-size: 1rem; margin-bottom: 6px; }
+    .feature-card p { font-size: .85rem; }
+
+    /* ── Mermaid diagram ── */
+    .diagram-wrap {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 20px;
+      margin-top: 32px;
+      overflow-x: auto;
+      text-align: center;
+    }
+    .mermaid { max-width: 100%; }
+
+    /* ── Kid box ── */
+    .kid-box {
+      background: linear-gradient(135deg, rgba(14,165,233,0.08), rgba(14,165,233,0.03));
+      border: 1px solid rgba(14,165,233,0.25);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-top: 32px;
+      position: relative;
+    }
+    .kid-box::before { content: '🧒'; font-size: 2rem; display: block; margin-bottom: 12px; }
+    .kid-box-title { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .kid-box p { font-size: 1.05rem; color: var(--text); font-style: italic; }
+
+    /* ── Timeline ── */
+    .timeline { margin-top: 32px; display: flex; flex-direction: column; gap: 0; }
+    .timeline-item { display: flex; gap: 20px; position: relative; padding-bottom: 28px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 48px; }
+    .timeline-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); flex-shrink: 0; margin-top: 4px; }
+    .timeline-line { width: 2px; background: var(--border); flex: 1; margin-top: 6px; }
+    .timeline-item:last-child .timeline-line { display: none; }
+    .timeline-year { font-size: .8rem; font-weight: 700; color: var(--accent); min-width: 44px; text-align: right; margin-top: 2px; }
+    .timeline-content { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; flex: 1; }
+    .timeline-content h3 { font-size: .95rem; margin-bottom: 4px; }
+    .timeline-content p { font-size: .85rem; }
+
+    /* ── Comparison Table ── */
+    .table-wrap { overflow-x: auto; margin-top: 32px; border-radius: var(--radius); border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; }
+    thead { background: var(--card); }
+    th { padding: 14px 18px; text-align: left; font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); }
+    td { padding: 14px 18px; font-size: .9rem; border-bottom: 1px solid var(--border); color: var(--muted); }
+    tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: var(--card); color: var(--text); }
+    .tag-yes { color: #4ade80; font-weight: 600; }
+    .tag-no { color: #f43f5e; font-weight: 600; }
+    .tag-mid { color: #fbbf24; font-weight: 600; }
+
+    /* ── Summary Box ── */
+    .summary-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 28px 28px 28px 32px;
+      margin-top: 32px;
+    }
+    .summary-box h3 { font-size: 1.05rem; margin-bottom: 12px; color: var(--text); }
+    .summary-box ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .summary-box li { font-size: .92rem; color: var(--muted); display: flex; gap: 10px; align-items: flex-start; }
+    .summary-box li::before { content: '→'; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+
+    /* ── Who Uses It cards ── */
+    .users-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; margin-top: 28px; }
+    .user-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: border-color .2s, transform .2s;
+    }
+    .user-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .user-icon { font-size: 2rem; margin-bottom: 10px; }
+    .user-card h3 { font-size: .95rem; margin-bottom: 4px; }
+    .user-card p { font-size: .8rem; }
+
+    /* ── Two-col layout ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+    @media(max-width:640px) { .two-col { grid-template-columns: 1fr; } }
+    .info-box { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+    .info-box h3 { margin-bottom: 12px; font-size: 1rem; }
+    .info-box ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .info-box li { font-size: .87rem; color: var(--muted); display: flex; gap: 8px; align-items: flex-start; }
+    .info-box li::before { content: '◆'; color: var(--accent); font-size: .55rem; flex-shrink: 0; margin-top: 6px; }
+
+    /* ── Footer ── */
+    footer {
+      padding: 40px 32px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 10px; }
+    .footer-brand img { height: 28px; width: auto; }
+    .footer-brand span { font-size: .9rem; color: var(--muted); font-weight: 600; }
+    footer a { color: var(--muted); text-decoration: none; font-size: .85rem; transition: color .2s; }
+    footer a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<!-- ── Independent Analysis Banner ── -->
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+
+<!-- ── Navbar ── -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/logo.svg" alt="JustSimple.Online logo" />
+  </a>
+  <a href="/" class="nav-back">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <img src="/logo.svg" alt="JustSimple.Online" class="hero-logo" />
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>Inside <span>Weather.com</span>: The World's Weather Engine</h1>
+  <p class="hero-desc">How IBM's The Weather Company became the invisible backbone of global forecasting — powering 95% of weather apps, 100M+ monthly users, and billions of data points processed every single day.</p>
+  <div class="hero-url">weather.com</div>
+</div>
+
+<!-- ── Ad below hero ── -->
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- ── Disclaimer ── -->
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. We are not affiliated with, endorsed by, or connected to the website being analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+
+
+<!-- ── SECTION 1: Overview ── -->
+<section>
+  <div class="container">
+    <div class="section-label">Overview</div>
+    <h2>What Is Weather.com?</h2>
+    <p>Weather.com is the public face of The Weather Company, a data and technology enterprise owned by IBM that has been at the center of meteorological intelligence since 1988. What began as a cable television channel founded by meteorologist John Jacobs has evolved into one of the most sophisticated atmospheric data platforms on Earth — and one of the earliest major consumer websites, launching in 1995 when the commercial internet was barely a year old.</p>
+    <p>The platform is deceptively simple to the average user: you type in a city, you get a forecast. Behind that simplicity lies a planetary-scale data infrastructure: tens of thousands of ground-based weather stations, hundreds of weather balloons launched daily, geostationary and polar-orbiting satellites, ocean buoys, commercial aircraft sensors, and a network of citizen-science weather observers — all feeding real-time data into IBM's cloud computing infrastructure for processing by ensemble AI models.</p>
+    <p>What most users do not realize is that weather.com is not just a consumer product — it is a B2B data powerhouse. An estimated 95% of all weather-enabled apps worldwide (from your phone's native weather widget to airline routing software to agricultural planning tools) pull data from The Weather Company's APIs. Weather.com is the weather internet's hub.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-value">100M+</div><div class="stat-label">Monthly Active Users</div></div>
+      <div class="stat-card"><div class="stat-value">200+</div><div class="stat-label">Countries Covered</div></div>
+      <div class="stat-card"><div class="stat-value">95%</div><div class="stat-label">Weather Apps Use Their Data</div></div>
+      <div class="stat-card"><div class="stat-value">$2B</div><div class="stat-label">IBM Acquisition Price (2015)</div></div>
+      <div class="stat-card"><div class="stat-value">1988</div><div class="stat-label">Founded as Weather Channel</div></div>
+      <div class="stat-card"><div class="stat-value">1995</div><div class="stat-label">Weather.com Website Launched</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 2: Kid Explanation ── -->
+<section>
+  <div class="container">
+    <div class="section-label">Simply Explained</div>
+    <h2>Explain It Like I'm Five</h2>
+    <div class="kid-box">
+      <div class="kid-box-title">Kid-Friendly Explanation</div>
+      <p>"Imagine if thousands of weather balloons, satellites, and computers all talked to each other and then told you whether you need an umbrella tomorrow — that's Weather.com! It has the world's biggest weather computer. Scientists all over the planet send it information about clouds and wind and rain, and then supercomputers figure out what the weather will be — kind of like the world's smartest guessing game, except the computers are really, really good at guessing."</p>
+    </div>
+    <p style="margin-top:24px;">The technical reality is an ensemble forecasting system: instead of running one weather simulation, IBM's systems run dozens simultaneously with slightly different starting conditions. Where those simulations agree, confidence is high. Where they disagree, forecasters know uncertainty is elevated. This probabilistic approach — combined with Watson AI fine-tuning — is what makes modern forecasts dramatically more accurate than those of 20 years ago.</p>
+  </div>
+</section>
+
+<!-- ── SECTION 3: How It Works ── -->
+<section>
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2>From Sensor to Screen: The Data Pipeline</h2>
+    <p>Weather forecasting at planetary scale is a multi-stage pipeline: raw sensor data flows in from thousands of sources, gets ingested and quality-checked, runs through numerical weather prediction models and AI ensembles, and is then delivered to consumers and enterprise clients via web, mobile, and API.</p>
+    <div class="diagram-wrap">
+      <div class="mermaid">
+flowchart TD
+    subgraph Sensors["🌍 Global Data Collection"]
+        A1[Ground Weather Stations] & A2[Weather Balloons] & A3[Satellites] & A4[Ocean Buoys] & A5[Aircraft Sensors] & A6[Citizen Observers]
+    end
+    subgraph Ingest["⚙️ Data Ingestion"]
+        B[IBM Cloud Data Pipeline]
+        QC[Quality Control & Normalization]
+    end
+    subgraph Models["🧠 AI & Forecasting Models"]
+        NWP[Numerical Weather Prediction]
+        ENS[Ensemble Modeling — 50+ runs]
+        WAT[Watson AI Fine-Tuning]
+    end
+    subgraph Delivery["📡 Delivery Layer"]
+        API[Enterprise API — 95% of weather apps]
+        WEB[Weather.com Website]
+        APP[Mobile Apps]
+        TV[Broadcast Partners]
+    end
+
+    Sensors --> B --> QC --> NWP & ENS --> WAT
+    WAT --> API & WEB & APP & TV
+
+    style Sensors fill:#0e1424,stroke:#0ea5e9,color:#e2e8f0
+    style Ingest fill:#131a2e,stroke:#0ea5e9,color:#e2e8f0
+    style Models fill:#0e1424,stroke:#0ea5e9,color:#e2e8f0
+    style Delivery fill:#131a2e,stroke:#0ea5e9,color:#e2e8f0
+      </div>
+    </div>
+    <p style="margin-top: 24px;">The pipeline runs continuously — weather data is perishable. A temperature reading 10 minutes old is already outdated for nowcasting purposes. IBM's infrastructure processes billions of data points per day to keep every forecast current down to the hyperlocal level.</p>
+  </div>
+</section>
+
+<!-- ── Ad mid-content after section 3 ── -->
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ── SECTION 4: Architecture Mindmap ── -->
+<section>
+  <div class="container">
+    <div class="section-label">Platform Architecture</div>
+    <h2>The Weather Company Ecosystem</h2>
+    <p>The Weather Company is not just a website — it is an entire data ecosystem that spans consumer products, enterprise APIs, broadcast services, and AI research. Weather.com is the most visible leaf on a much larger tree.</p>
+    <div class="diagram-wrap">
+      <div class="mermaid">
+mindmap
+  root((The Weather Company))
+    Consumer Products
+      Weather.com Website
+      Weather Channel App
+      Wunderground Community
+      Weather Underground API
+    Enterprise APIs
+      Aviation Routing Data
+      Agricultural Forecasting
+      Retail Demand Planning
+      Insurance Risk Models
+      Emergency Management
+    Data Infrastructure
+      Global Sensor Network
+      IBM Cloud Processing
+      Ensemble NWP Models
+      Watson AI Integration
+    Broadcast & Media
+      The Weather Channel TV
+      Local TV Station Data
+      International Broadcast Partners
+      Severe Weather Alerts
+      </div>
+    </div>
+    <p style="margin-top:24px;">The Weather Company's B2B arm is arguably more strategically important than its consumer website. Enterprise clients — airlines, insurers, commodity traders, emergency services — pay premium subscription rates for accurate, hyperlocal, real-time data that directly impacts life-or-death and billion-dollar decisions.</p>
+  </div>
+</section>
+
+<!-- ── SECTION 5: Features ── -->
+<section>
+  <div class="container">
+    <div class="section-label">Platform Features</div>
+    <h2>What Weather.com Offers</h2>
+    <p>Weather.com provides a comprehensive suite of weather intelligence tools spanning daily consumer needs through to enterprise-grade climate intelligence.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🌡️</div>
+        <h3>Current Conditions</h3>
+        <p>Real-time temperature, humidity, wind speed, UV index, and feels-like data updated every few minutes from the nearest sensor network.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📅</div>
+        <h3>10–15 Day Forecast</h3>
+        <p>Extended outlooks using ensemble modeling, with confidence indicators that communicate forecast certainty across the full period.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔴</div>
+        <h3>Severe Weather Alerts</h3>
+        <p>Push notifications and emergency broadcasts for tornadoes, hurricanes, blizzards, and flash floods — potentially life-saving for millions in vulnerable regions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📡</div>
+        <h3>Radar & Satellite Imagery</h3>
+        <p>Interactive, animated radar overlays and satellite cloud imagery — the same tools professional meteorologists use, made accessible to consumers.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💨</div>
+        <h3>Air Quality Index</h3>
+        <p>Hyperlocal AQI tracking integrating EPA sensors and satellite-derived particulate data — critical for asthma sufferers and outdoor workers.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌸</div>
+        <h3>Pollen Count</h3>
+        <p>Daily allergen-level forecasts by pollen type (tree, grass, weed, mold) down to the ZIP-code level for allergy management.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🗺️</div>
+        <h3>Weather Maps</h3>
+        <p>Interactive global maps showing pressure systems, jet streams, precipitation type, wind patterns, and temperature anomalies.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Historical Data</h3>
+        <p>Access to decades of archived weather records — used by researchers, legal professionals, insurers, and climate analysts.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔌</div>
+        <h3>Developer API</h3>
+        <p>The backbone of the weather internet: a tiered API offering real-time conditions, forecasts, historical data, and severe weather alerts to 95% of weather-powered apps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 6: Who Uses It ── -->
+<section>
+  <div class="container">
+    <div class="section-label">User Segments</div>
+    <h2>Who Relies on Weather.com Data?</h2>
+    <p>Weather data is one of the most universally consumed forms of information on Earth. Weather.com's audience spans from a parent checking if kids need a raincoat to a hedge fund modeling crop yield futures.</p>
+    <div class="users-grid">
+      <div class="user-card"><div class="user-icon">👨‍👩‍👧</div><h3>General Public</h3><p>Daily forecast checks, activity planning, travel preparation</p></div>
+      <div class="user-card"><div class="user-icon">✈️</div><h3>Aviation</h3><p>Flight routing, turbulence avoidance, fuel load optimization</p></div>
+      <div class="user-card"><div class="user-icon">🚨</div><h3>Emergency Services</h3><p>Disaster preparedness, evacuation route planning, resource staging</p></div>
+      <div class="user-card"><div class="user-icon">🌾</div><h3>Agriculture</h3><p>Planting schedules, irrigation management, frost-risk windows</p></div>
+      <div class="user-card"><div class="user-icon">📺</div><h3>TV Broadcasters</h3><p>Local news weather segments, storm coverage, graphics feeds</p></div>
+      <div class="user-card"><div class="user-icon">🚚</div><h3>Logistics & Freight</h3><p>Route planning, delay risk modeling, last-mile delivery optimization</p></div>
+    </div>
+
+    <div class="two-col" style="margin-top:32px;">
+      <div class="info-box">
+        <h3>Consumer Use Cases</h3>
+        <ul>
+          <li>Daily weather check before leaving home</li>
+          <li>Weekend and vacation trip planning</li>
+          <li>Severe storm alerts and safety</li>
+          <li>Pollen and AQI checks for health</li>
+          <li>School and event weather planning</li>
+          <li>Gardening and outdoor project timing</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>Enterprise Use Cases</h3>
+        <ul>
+          <li>Airline fuel-efficiency route planning</li>
+          <li>Insurance catastrophe risk modeling</li>
+          <li>Commodity and crop yield forecasting</li>
+          <li>Energy demand and grid load prediction</li>
+          <li>Retail inventory demand planning</li>
+          <li>Municipal infrastructure maintenance scheduling</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Ad mid-content after section 6 ── -->
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ── SECTION 7: Timeline ── -->
+<section>
+  <div class="container">
+    <div class="section-label">History</div>
+    <h2>Four Decades of Weather Intelligence</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-year">1988</div>
+        <div class="timeline-content">
+          <h3>The Weather Channel Founded</h3>
+          <p>Meteorologist John Jacobs launches The Weather Channel as a cable TV network — the first 24-hour weather broadcast in history. Investors initially skeptical.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-year">1995</div>
+        <div class="timeline-content">
+          <h3>Weather.com Launches</h3>
+          <p>One of the earliest major consumer websites on the commercial internet, weather.com arrives the same year as Amazon and eBay — before Google even existed.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-year">2008</div>
+        <div class="timeline-content">
+          <h3>NBC Universal Acquisition</h3>
+          <p>NBC Universal and two private equity firms acquire The Weather Channel for $3.5B, recognizing its dual value as a media brand and data company.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-year">2012</div>
+        <div class="timeline-content">
+          <h3>The Weather Company Spin-Off</h3>
+          <p>The digital data and API business is separated from the TV channel into The Weather Company — a signal that the data empire is distinct from broadcast.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-year">2015</div>
+        <div class="timeline-content">
+          <h3>IBM Acquires for $2 Billion</h3>
+          <p>IBM purchases The Weather Company's technology and data assets for $2B — not the TV channel (retained by others) but the data, APIs, and digital products, including weather.com.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-year">2016</div>
+        <div class="timeline-content">
+          <h3>Watson AI Integration</h3>
+          <p>IBM integrates Watson AI into Weather Company forecasting, enabling machine-learning refinement of ensemble models and personalized weather intelligence products.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div class="timeline-year">Present</div>
+        <div class="timeline-content">
+          <h3>AI-Powered Global Forecasting</h3>
+          <p>Today weather.com processes billions of sensor readings daily, serves 100M+ monthly users, and remains the foundational data layer beneath 95% of the world's weather apps.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 8: Comparison ── -->
+<section>
+  <div class="container">
+    <div class="section-label">Comparison</div>
+    <h2>Weather.com vs. Competitors</h2>
+    <p>The weather app landscape is crowded, but the underlying data hierarchy means most "competitors" are actually weather.com customers at the API level.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Weather.com</th>
+            <th>AccuWeather</th>
+            <th>Weather Underground</th>
+            <th>Dark Sky (Apple)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Data Sources</td><td class="tag-yes">Global Network (billions/day)</td><td class="tag-yes">Proprietary + Third-Party</td><td class="tag-mid">Crowdsourced PWS</td><td class="tag-mid">Dark Sky Sensors + TWC</td></tr>
+          <tr><td>Forecast Range</td><td class="tag-yes">15 Days</td><td class="tag-yes">90 Days (MinuteCast)</td><td class="tag-mid">7 Days</td><td class="tag-mid">7 Days (iOS Only)</td></tr>
+          <tr><td>Enterprise API</td><td class="tag-yes">Yes — market leader</td><td class="tag-yes">Yes</td><td class="tag-mid">Limited</td><td class="tag-no">Acquired/Closed</td></tr>
+          <tr><td>Hyperlocal Accuracy</td><td class="tag-yes">High</td><td class="tag-yes">High</td><td class="tag-yes">Very High (micro-local)</td><td class="tag-yes">High</td></tr>
+          <tr><td>Monthly Users</td><td class="tag-yes">100M+</td><td class="tag-mid">~80M</td><td class="tag-mid">~20M</td><td class="tag-no">iOS-only, limited</td></tr>
+          <tr><td>Severe Alerts</td><td class="tag-yes">Yes</td><td class="tag-yes">Yes</td><td class="tag-mid">Limited</td><td class="tag-mid">Basic</td></tr>
+          <tr><td>Radar Quality</td><td class="tag-yes">Professional Grade</td><td class="tag-yes">Professional Grade</td><td class="tag-mid">Good</td><td class="tag-mid">Good</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── Ad before footer ── -->
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ── Summary ── -->
+<section>
+  <div class="container">
+    <div class="section-label">Verdict</div>
+    <h2>Summary & Key Takeaways</h2>
+    <p>Weather.com is far more than a consumer website — it is the invisible infrastructure layer beneath the global weather information ecosystem. IBM's $2B acquisition was a bet on data, not media: owning the world's most comprehensive weather sensor network and the APIs that pipe that data into nearly every app on your phone is a durable, strategic business with defensible network effects.</p>
+    <div class="summary-box">
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>Weather.com is one of the internet's oldest major consumer sites (1995), predating Google, Facebook, and most of the modern web.</li>
+        <li>IBM's 2015 acquisition for $2B was strategically about data infrastructure — the ability to sell weather intelligence to enterprises — not the media brand.</li>
+        <li>An estimated 95% of weather-enabled apps globally use The Weather Company's API, making it a utility-like dependency for the entire weather tech ecosystem.</li>
+        <li>Processing billions of data points per day from tens of thousands of sensors, it is one of the largest real-time data pipelines on Earth.</li>
+        <li>Watson AI integration allows ensemble model outputs to be refined with machine learning, meaningfully improving forecast accuracy at the hyperlocal level.</li>
+        <li>Enterprise B2B clients — airlines, insurers, commodity traders — likely generate more revenue than the consumer advertising model, though both are significant.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-brand">
+    <img src="/logo.svg" alt="JustSimple.Online" />
+    <span>JustSimple.Online</span>
+  </div>
+  <a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
+</footer>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      primaryColor: '#0ea5e9',
+      primaryTextColor: '#e2e8f0',
+      primaryBorderColor: '#1e2a45',
+      lineColor: '#64748b',
+      sectionBkgColor: '#131a2e',
+      altSectionBkgColor: '#0e1424',
+      gridColor: '#1e2a45',
+      secondaryColor: '#131a2e',
+      tertiaryColor: '#0e1424',
+      background: '#080b14',
+      mainBkgColor: '#131a2e',
+      nodeBorder: '#1e2a45',
+      clusterBkg: '#0e1424',
+      titleColor: '#e2e8f0',
+      edgeLabelBackground: '#131a2e',
+      fontFamily: 'Segoe UI, system-ui, sans-serif'
+    }
+  });
+</script>
+</body>
+</html>

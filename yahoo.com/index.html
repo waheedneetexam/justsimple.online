@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yahoo — JustSimple.Online</title>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TSFVXECJ40');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root {
+      --bg: #080b14;
+      --surface: #0e1424;
+      --card: #131a2e;
+      --accent: #7c3aed;
+      --accent2: #51cf66;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --border: #1e2a45;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Navbar ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      background: rgba(8,11,20,.95);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-tagline { font-size: .75rem; color: var(--muted); display: none; }
+    @media(min-width:500px){ .nav-tagline { display: block; } }
+    .nav-right { display: flex; align-items: center; gap: 16px; font-size: .85rem; }
+    .nav-right a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-right a:hover { color: var(--accent); }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #080b14 0%, #0e0718 50%, #080b14 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 72px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,.12), transparent);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(124,58,237,.15);
+      border: 1px solid rgba(124,58,237,.4);
+      color: var(--accent);
+      padding: 4px 16px;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff 30%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+    .hero-url {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 20px;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .hero-url span { color: var(--accent); font-weight: 600; }
+
+    /* ── Layout ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px 100px;
+    }
+    section { margin-bottom: 72px; }
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    h2 .emoji { margin-right: 10px; }
+    .section-intro {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    /* ── Kid Box ── */
+    .kid-box {
+      background: linear-gradient(135deg, rgba(124,58,237,.08), rgba(81,207,102,.05));
+      border: 1.5px solid rgba(124,58,237,.35);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .kid-box::before {
+      content: '👦';
+      position: absolute;
+      right: 24px;
+      top: 20px;
+      font-size: 3rem;
+      opacity: .18;
+    }
+    .kid-box h3 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .kid-box p { color: var(--text); line-height: 1.8; }
+    .kid-box p + p { margin-top: 12px; }
+
+    /* ── Cards grid ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color .2s, transform .2s;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .card h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .card p { font-size: .9rem; color: var(--muted); }
+
+    /* ── Stat strip ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+    .stat .num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent);
+      display: block;
+    }
+    .stat .label { font-size: .85rem; color: var(--muted); margin-top: 4px; }
+
+    /* ── Diagram container ── */
+    .diagram-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      overflow-x: auto;
+    }
+    .diagram-wrap + .diagram-wrap { margin-top: 24px; }
+    .diagram-title {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .mermaid { display: flex; justify-content: center; }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+    .tl-item { position: relative; margin-bottom: 28px; }
+    .tl-dot {
+      position: absolute;
+      left: -28px;
+      top: 4px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+    }
+    .tl-item h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .tl-item p  { font-size: .88rem; color: var(--muted); }
+
+    /* ── Highlight box ── */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(124,58,237,.1), rgba(124,58,237,.04));
+      border: 1.5px solid rgba(124,58,237,.4);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-top: 24px;
+    }
+    .highlight-box h4 { color: var(--accent); font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .highlight-box p { color: var(--text); font-size: .95rem; }
+
+    /* ── Ad unit ── */
+    .ad-unit {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 24px 0;
+      text-align: center;
+    }
+    .ad-unit-label {
+      font-size: .68rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      opacity: .5;
+    }
+    .ad-unit ins { border-radius: 8px; overflow: hidden; }
+    .ad-unit-inline {
+      margin: 0 0 48px;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer .footer-logo { height: 26px; width: auto; vertical-align: middle; margin-right: 6px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .kid-box { padding: 20px; }
+      .diagram-wrap { padding: 20px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Independent Analysis Banner ── -->
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+
+<!-- ── Navbar ── -->
+<nav>
+  <a class="nav-logo" href="/"><img src="/logo.svg" alt="JustSimple.Online" style="height:34px;"/><span class="nav-tagline">Making the web understandable</span></a>
+  <div class="nav-right"><a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a></div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;" /></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>Yahoo</h1>
+  <p>A deep-dive into one of the internet's original giants — the web portal that shaped a generation, explained simply with diagrams.</p>
+  <div class="hero-url">
+    🌐 Analysed: <span>yahoo.com</span>
+  </div>
+</div>
+
+<!-- ── Ad 1: Below Hero ── -->
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- ── Disclaimer ── -->
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. We are not affiliated with, endorsed by, or connected to the website being analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+
+
+<!-- ── Main ── -->
+<main>
+
+  <!-- 1. KID EXPLANATION -->
+  <section id="simple">
+    <h2>What is Yahoo?</h2>
+    <p class="section-intro">Let's start simple — the kind of explanation that actually makes sense.</p>
+    <div class="kid-box">
+      <h3>📰 Imagine a big newspaper that also has email, sports scores, and a search engine...</h3>
+      <p>
+        You know how some big newspapers have different sections — news, sports, business, weather, puzzles? Yahoo is like that, but on the internet. It was one of the very first places people went on the web to find out what was happening in the world.
+      </p>
+      <p>
+        When the internet was new (around 1994), there was no Google. Yahoo was <em>the</em> place you went to search for websites — like a giant organised list of everything on the internet. Two university students named Jerry Yang and David Filo built it in their Stanford trailer, and they named it <strong>"Yet Another Hierarchical Officious Oracle"</strong> — which is a very fancy way of saying "a big organised list of stuff."
+      </p>
+      <p>
+        Today Yahoo is most famous for Yahoo Mail (email), Yahoo Finance (stock prices and money news), and Yahoo News (headlines). Even now, over <strong>1 billion people</strong> use Yahoo every year.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. STATS -->
+  <section id="stats">
+    <h2><span class="emoji">📊</span>Yahoo by the Numbers</h2>
+    <p class="section-intro">Despite many writing Yahoo off, its scale remains remarkable.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">1B+</span><div class="label">Global users</div></div>
+      <div class="stat"><span class="num">700M</span><div class="label">Monthly visitors</div></div>
+      <div class="stat"><span class="num">3.5B</span><div class="label">Monthly page views</div></div>
+      <div class="stat"><span class="num">225M</span><div class="label">Yahoo Mail monthly active users</div></div>
+      <div class="stat"><span class="num">180M</span><div class="label">Yahoo News unique US visitors/month</div></div>
+      <div class="stat"><span class="num">93M</span><div class="label">Yahoo Finance unique US visitors/month</div></div>
+    </div>
+  </section>
+
+  <!-- 3. HOW IT WORKS FLOW -->
+  <section id="how">
+    <h2><span class="emoji">⚙️</span>How Does Yahoo Work?</h2>
+    <p class="section-intro">Yahoo is a web portal — it aggregates content and services, then monetises through advertising.</p>
+
+    <div class="diagram-wrap">
+      <div class="diagram-title">Yahoo Revenue Model — How It Makes Money</div>
+      <div class="mermaid">
+flowchart TD
+    A([👤 User visits Yahoo.com]) --> B{What are\nthey doing?}
+
+    B -->|Checking email| C[Yahoo Mail\n225M active users]
+    B -->|Reading news| D[Yahoo News\n180M US visitors/month]
+    B -->|Checking stocks| E[Yahoo Finance\n93M US visitors/month]
+    B -->|Searching| F[Yahoo Search\npowered by Bing]
+    B -->|Sports scores| G[Yahoo Sports\nFantasy leagues]
+
+    C --> H[User stays on Yahoo\nfor extended session]
+    D --> H
+    E --> H
+    F --> H
+    G --> H
+
+    H --> I[Yahoo shows\ntargeted ads]
+    I --> J[Advertisers pay\nper click or impression]
+    J --> K([💰 Yahoo earns\nadvertising revenue])
+
+    style A fill:#131a2e,stroke:#7c3aed,color:#e2e8f0
+    style K fill:#0e2e1a,stroke:#51cf66,color:#e2e8f0
+    style I fill:#131a2e,stroke:#7c3aed,color:#e2e8f0
+      </div>
+    </div>
+
+    <div class="diagram-wrap" style="margin-top:24px">
+      <div class="diagram-title">Yahoo Platform Architecture</div>
+      <div class="mermaid">
+graph LR
+    subgraph Services["📦 Yahoo's Core Services"]
+        Mail["Yahoo Mail\n(Email)"]
+        News["Yahoo News\n(Aggregated headlines)"]
+        Finance["Yahoo Finance\n(Stocks &amp; markets)"]
+        Sports["Yahoo Sports\n(Scores &amp; fantasy)"]
+        Search["Yahoo Search\n(Bing-powered)"]
+    end
+
+    subgraph Backend["⚙️ Backend Systems"]
+        Ads["Ad Platform\n(Display &amp; search ads)"]
+        Data["User Data\n&amp; personalisation"]
+        Content["Content\nAggregation"]
+    end
+
+    subgraph Owners["🏢 Ownership"]
+        Apollo["Apollo Global\nManagement 90%"]
+        Verizon["Verizon 10%"]
+    end
+
+    Services --> Ads
+    Services --> Data
+    Content --> News
+    Content --> Finance
+    Apollo --> Services
+    Verizon --> Services
+
+    style Services fill:#0e1424,stroke:#7c3aed
+    style Backend  fill:#0e1424,stroke:#64748b
+    style Owners   fill:#0e1424,stroke:#7c3aed
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Ad 2: Mid-content ── -->
+  <div class="ad-unit-inline">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-2662293899276634"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- 4. FEATURES -->
+  <section id="features">
+    <h2><span class="emoji">🚀</span>Yahoo's Key Services</h2>
+    <p class="section-intro">Yahoo is many things to many people — here are its main products today.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">📧</div>
+        <h4>Yahoo Mail</h4>
+        <p>One of the world's largest email providers with 225M monthly active users. Offers generous storage and a clean interface.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📰</div>
+        <h4>Yahoo News</h4>
+        <p>Aggregates headlines from thousands of publishers. 180M unique US visitors per month make it one of America's biggest news destinations.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💹</div>
+        <h4>Yahoo Finance</h4>
+        <p>Real-time stock quotes, market data, earnings reports, and financial news. 93M unique US visitors rely on it monthly.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏆</div>
+        <h4>Yahoo Sports</h4>
+        <p>Live scores, team news, and the hugely popular Yahoo Fantasy Sports platform with millions of active league players.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <h4>Yahoo Search</h4>
+        <p>Yahoo's search engine, now powered by Microsoft Bing under a long-term partnership deal signed in 2009.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎮</div>
+        <h4>Yahoo Fantasy Sports</h4>
+        <p>Millions of people manage fantasy football, baseball, basketball, and hockey leagues on Yahoo's fantasy platform every season.</p>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Did You Know?</h4>
+      <p>Yahoo's full name is <strong>"Yet Another Hierarchical Officious Oracle"</strong> — coined by founders Jerry Yang and David Filo, who were doctoral students at Stanford. The name was meant to be a joke, reflecting the chaos of early internet directories. They also liked that "yahoo" was slang for someone who is rude and unsophisticated — the opposite of how they saw themselves.</p>
+    </div>
+  </section>
+
+  <!-- 5. USE CASES MINDMAP -->
+  <section id="usecases">
+    <h2><span class="emoji">🗺️</span>Who Uses Yahoo &amp; Why</h2>
+    <p class="section-intro">Yahoo's billion-plus users come for very different reasons.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Yahoo User Base Mindmap</div>
+      <div class="mermaid">
+mindmap
+  root((Yahoo))
+    Yahoo Mail Users
+      People who've had accounts since the 2000s
+      Users who prefer free email with storage
+      International users in Asia &amp; Latin America
+    Yahoo Finance Readers
+      Individual retail investors
+      Day traders watching stocks
+      Business professionals
+      Students studying markets
+    Yahoo News Readers
+      People wanting quick headline overview
+      Users who prefer aggregated news
+      Older demographics comfortable with Yahoo
+    Yahoo Sports Fans
+      Fantasy football managers
+      NFL, NBA, MLB score-checkers
+      Sports bettors following odds
+    Yahoo Search Users
+      Default browser users
+      People who never changed from Yahoo
+      Older internet users
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. THE MICROSOFT BID — FASCINATING STORY -->
+  <section id="microsoft">
+    <h2><span class="emoji">💡</span>The $44.6 Billion Story</h2>
+    <p class="section-intro">One of the most famous decisions in tech history — and what it meant for Yahoo.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Yahoo's Corporate Journey</div>
+      <div class="mermaid">
+flowchart LR
+    A([1994\nFounded at\nStanford]) --> B([1996\nIPO —\n$848M raised])
+    B --> C([2000\nDot-com peak\n$125B market cap])
+    C --> D([2008\nMicrosoft bids\n$44.6B — REJECTED])
+    D --> E([2012\nMarissa Mayer\nbecomes CEO])
+    E --> F([2016\nCore business\nsold to Verizon $4.48B])
+    F --> G([2021\nApollo buys 90%\nfrom Verizon])
+    G --> H([Today\nIndependent company\n1B+ users])
+
+    style A fill:#131a2e,stroke:#7c3aed,color:#e2e8f0
+    style D fill:#2e1a1a,stroke:#ef4444,color:#e2e8f0
+    style H fill:#0e2e1a,stroke:#51cf66,color:#e2e8f0
+      </div>
+    </div>
+    <div class="highlight-box">
+      <h4>The Rejected $44.6 Billion Offer</h4>
+      <p>In February 2008, Microsoft made an unsolicited bid to acquire Yahoo for $44.6 billion — a 62% premium over Yahoo's stock price at the time. Yahoo's board, led by co-founder Jerry Yang, rejected it as undervaluing the company. Microsoft walked away. Yahoo's market cap eventually fell to under $5 billion, and the core business sold to Verizon for just $4.48 billion in 2017. It remains one of the most debated decisions in Silicon Valley history.</p>
+    </div>
+  </section>
+
+  <!-- ── Ad 3: Mid-content ── -->
+  <div class="ad-unit-inline">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-2662293899276634"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- 7. TIMELINE -->
+  <section id="timeline">
+    <h2><span class="emoji">📅</span>Yahoo's History</h2>
+    <p class="section-intro">From a Stanford trailer to a billion-dollar acquisition saga.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>January 1994 — Born at Stanford</h4>
+        <p>Jerry Yang and David Filo, PhD students at Stanford, create "Jerry's Guide to the World Wide Web" as a way to keep track of websites they liked. It becomes Yahoo — "Yet Another Hierarchical Officious Oracle."</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>1996 — IPO and Explosive Growth</h4>
+        <p>Yahoo goes public, raising $848 million. It becomes the internet's most popular destination. Millions of people use Yahoo as their browser homepage and entry point to the web.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2000 — Peak of the Dot-Com Boom</h4>
+        <p>Yahoo reaches a market cap of $125 billion at the height of the dot-com bubble. But when the bubble bursts, Yahoo loses 97% of its peak market value. The collapse reshapes the internet industry.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2008 — The Microsoft Rejection</h4>
+        <p>Microsoft offers $44.6 billion to acquire Yahoo — one of the largest tech acquisition bids ever. Yahoo's board rejects it as undervaluing the company. The decision is widely criticised in hindsight as Google dominates search and Yahoo declines.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2013 — Marissa Mayer Takes Over</h4>
+        <p>Former Google executive Marissa Mayer becomes CEO, promising a turnaround. She acquires Tumblr for $1.1 billion and brings fresh energy, but fails to reverse Yahoo's declining advertising revenue.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2017 — Verizon Acquisition ($4.48B)</h4>
+        <p>Verizon buys Yahoo's core internet business for $4.48 billion — a fraction of the $44.6 billion Microsoft once offered. The deal is complicated by two massive data breaches affecting all 3 billion Yahoo accounts.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2021 — Apollo Global Management</h4>
+        <p>Private equity firm Apollo Global Management acquires 90% of Yahoo from Verizon for $5 billion, with Verizon retaining 10%. Yahoo operates as an independent company once more, focused on its profitable media and finance properties.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. SUMMARY -->
+  <section id="summary">
+    <h2><span class="emoji">✨</span>Summary</h2>
+    <div class="kid-box">
+      <h3>🎯 The one-sentence version</h3>
+      <p>
+        <strong>Yahoo is the internet's original web portal</strong> — once worth $125 billion at the height of the dot-com boom, it's now a profitable media company with 1 billion users, owned by Apollo Global Management, best known for Yahoo Mail, Yahoo Finance, and Yahoo News.
+      </p>
+      <p style="margin-top:16px; font-size:.95rem; color: var(--muted);">
+        Yahoo's story is one of missed opportunities (rejecting Google acquisition talks in 2002, rejecting Microsoft's $44.6B bid in 2008), but also remarkable resilience — billions of people still rely on its services every single month.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Ad 4: Before Footer ── -->
+<div class="ad-unit" style="padding-bottom:32px;">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <img class="footer-logo" src="/logo.svg" alt="JustSimple.Online" />
+  <strong style="color:#fff;">JustSimple.Online</strong> — Making the web understandable, one site at a time.
+  <br><br>
+  Analysis of <a href="https://yahoo.com" target="_blank">yahoo.com</a>
+  &nbsp;·&nbsp; <a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
+</footer>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      primaryColor: '#131a2e',
+      primaryTextColor: '#e2e8f0',
+      primaryBorderColor: '#7c3aed',
+      lineColor: '#7c3aed',
+      secondaryColor: '#0e1424',
+      tertiaryColor: '#0e1424',
+      background: '#080b14',
+      mainBkg: '#131a2e',
+      nodeBorder: '#7c3aed',
+      clusterBkg: '#0e1424',
+      titleColor: '#e2e8f0',
+      edgeLabelBackground: '#131a2e',
+      attributeBackgroundColorEven: '#131a2e',
+      attributeBackgroundColorOdd: '#0e1424'
+    }
+  });
+</script>
+</body>
+</html>

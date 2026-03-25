@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatGPT — JustSimple.Online</title>
+  <meta name="description" content="Deep-dive analysis of ChatGPT.com: how OpenAI's AI chatbot works, how it learned from human text, and why it became the fastest-growing app in history." />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#09100e;--surface:#0d1a16;--card:#11211b;--accent:#10a37f;--accent2:#51cf66;--text:#e8eaf6;--muted:#8892b0;--border:#1a3528;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,#09100e 0%,#0a1812 50%,#09100e 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(16,163,127,.12),transparent);}
+    .hero-badge{display:inline-block;background:rgba(16,163,127,.15);border:1px solid rgba(16,163,127,.4);color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,rgba(16,163,127,.08),rgba(81,207,102,.05));border:1.5px solid rgba(16,163,127,.35);border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'🤖';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+    .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;}
+    .stat .num{font-size:2.2rem;font-weight:800;color:var(--accent);display:block;}
+    .stat .label{font-size:.85rem;color:var(--muted);margin-top:4px;}
+    .diagram-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;overflow-x:auto;}
+    .diagram-wrap+.diagram-wrap{margin-top:24px;}
+    .diagram-title{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+    .mermaid{display:flex;justify-content:center;}
+    .timeline{position:relative;padding-left:28px;}
+    .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--accent),transparent);}
+    .tl-item{position:relative;margin-bottom:28px;}
+    .tl-dot{position:absolute;left:-28px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px;}
+    .tl-item p{font-size:.88rem;color:var(--muted);}
+    .ad-unit{max-width:1100px;margin:0 auto;padding:28px 24px 0;text-align:center;}
+    .ad-unit-label{font-size:.68rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;opacity:.5;}
+    footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;}
+    footer a{color:var(--accent);text-decoration:none;}
+    footer .footer-logo{height:26px;width:auto;vertical-align:middle;margin-right:6px;}
+    @media(max-width:600px){.kid-box{padding:20px;}.diagram-wrap{padding:20px 12px;}}
+    #diag-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;}
+    #diag-modal.open{display:flex;}
+    #diag-modal-inner{position:relative;max-width:95vw;max-height:92vh;overflow:auto;background:#1a1d27;border:1px solid #2d3250;border-radius:16px;padding:48px 32px 32px;box-shadow:0 24px 80px rgba(0,0,0,.8);}
+    #diag-close{position:absolute;top:12px;right:16px;background:none;border:none;color:#8892b0;font-size:1.6rem;cursor:pointer;line-height:1;transition:color .2s;}
+    #diag-close:hover{color:#fff;}
+    #diag-modal-inner svg{display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:78vh;width:auto!important;height:auto!important;}
+  </style>
+</head>
+<body>
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+<nav>
+  <a class="nav-logo" href="/"><img src="/logo.svg" alt="JustSimple.Online" style="height:34px;"/><span class="nav-tagline">Making the web understandable</span></a>
+  <div class="nav-right"><a href="/">← All Analyses</a>&nbsp;·&nbsp;<a href="/privacy.html">Privacy</a>&nbsp;·&nbsp;<a href="/terms.html">Terms</a></div>
+</nav>
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;"/></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>Inside ChatGPT: The AI That Changed Everything Overnight</h1>
+  <p>From zero to 100 million users in 2 months — how OpenAI built the fastest-growing application in history and kicked off the AI revolution the world is still processing.</p>
+  <div class="hero-url">🌐 Analysed: <span>chatgpt.com</span></div>
+</div>
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. We are not affiliated with, endorsed by, or connected to the website being analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+
+<main>
+
+  <section id="simple">
+    <h2>What is ChatGPT?</h2>
+    <p class="section-intro">The AI assistant that made artificial intelligence accessible to everyone.</p>
+    <div class="kid-box">
+      <h3>🤖 Imagine a computer that has read almost every book and website ever written...</h3>
+      <p>Imagine if you read millions of books, articles, and websites, and then someone could ask you any question and you'd always have a thoughtful answer. That's kind of what ChatGPT is — except it's a computer program, not a person. It learned from a huge amount of text written by humans, and now it can write essays, answer questions, write computer code, tell stories, and have conversations — almost like a very knowledgeable assistant.</p>
+      <p>ChatGPT doesn't actually "know" things the way people do — it predicts what words should come next based on patterns it learned. But it's so good at this that the answers usually seem very intelligent. It's like a very sophisticated autocomplete that can write paragraphs instead of just words.</p>
+      <p><strong>Simple version:</strong> ChatGPT is an AI chatbot made by a company called OpenAI. You type a question or request, and it writes back a helpful, detailed, and surprisingly human-sounding answer — instantly, on almost any topic.</p>
+    </div>
+  </section>
+
+  <section id="stats">
+    <h2><span class="emoji">📊</span>ChatGPT by the Numbers</h2>
+    <div class="stats">
+      <div class="stat"><span class="num">200M+</span><div class="label">Weekly active users (2024)</div></div>
+      <div class="stat"><span class="num">2 months</span><div class="label">To reach 100M users — fastest ever</div></div>
+      <div class="stat"><span class="num">$3.7B</span><div class="label">OpenAI revenue (2024)</div></div>
+      <div class="stat"><span class="num">$13B+</span><div class="label">Microsoft investment in OpenAI</div></div>
+      <div class="stat"><span class="num">$20/mo</span><div class="label">ChatGPT Plus subscription</div></div>
+      <div class="stat"><span class="num">Nov 2022</span><div class="label">Launch date</div></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2><span class="emoji">⚙️</span>How Does ChatGPT Actually Work?</h2>
+    <p class="section-intro">The technology behind the magic — explained without a PhD.</p>
+    <p>ChatGPT is built on a Large Language Model (LLM) — specifically, OpenAI's GPT-4o. An LLM is a neural network trained on vast amounts of text: books, websites, academic papers, code repositories, and more. During training, the model learns statistical patterns — which words tend to follow which other words, how sentences are structured, what answers typically follow what questions. It doesn't "understand" in the human sense; it predicts.</p>
+    <p>But raw prediction isn't enough to make a helpful assistant. OpenAI used a technique called Reinforcement Learning from Human Feedback (RLHF): human trainers rated thousands of model outputs, and the model was adjusted to produce responses humans rated as more helpful, harmless, and honest. This fine-tuning is what turns a generic text predictor into something that feels genuinely useful and coherent.</p>
+    <p>When you send a message, it's broken into "tokens" (roughly pieces of words), processed through billions of parameters in the neural network, and the model generates a response token by token — each word informed by everything that came before it in the conversation. A context window (up to 128,000 tokens in GPT-4 Turbo) determines how much of the conversation the model can "see" at once.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">How ChatGPT Generates a Response</div>
+      <div class="mermaid">
+flowchart LR
+    A([💬 Your message]) --> B[Tokenisation\ntext split into tokens]
+    B --> C[Transformer\nNeural Network\nGPT-4o]
+    C --> D[Attention mechanism\nweighs context]
+    D --> E[Token prediction\nnext most likely word]
+    E --> F{More tokens\nneeded?}
+    F -->|Yes| E
+    F -->|No| G([📝 Complete response\nshown to you])
+      </div>
+    </div>
+  </section>
+
+  <section id="money">
+    <h2><span class="emoji">💰</span>How OpenAI Makes Money</h2>
+    <p class="section-intro">From non-profit origins to a $157 billion valuation.</p>
+    <p>OpenAI was founded in 2015 as a non-profit research lab. By 2019 it had restructured into a "capped-profit" company to attract investment — with a cap on investor returns (originally 100x) to preserve the non-profit mission. Microsoft invested $1 billion in 2019, then $10 billion more in 2023, making it OpenAI's primary cloud partner and integrating ChatGPT into Bing, Office 365, and Azure.</p>
+    <p>Revenue comes from three main streams: ChatGPT Plus and Team subscriptions ($20–$30/month), enterprise contracts (ChatGPT Enterprise, used by 93% of Fortune 500 companies), and the API (developers paying per token to integrate GPT-4 into their own products). OpenAI's revenue grew from essentially zero in 2022 to $3.7 billion in 2024, with projections of $11.6 billion in 2025.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">OpenAI's Revenue Model</div>
+      <div class="mermaid">
+graph TB
+    OAI["🏢 OpenAI"]
+    OAI --> PLUS["💳 ChatGPT Plus\n$20/month\nIndividual subscribers"]
+    OAI --> ENT["🏢 ChatGPT Enterprise\nCustom pricing\n93% of Fortune 500"]
+    OAI --> API["⚡ API Access\nPer-token pricing\nDevelopers &amp; startups"]
+    OAI --> TEAM["👥 ChatGPT Team\n$25/user/month\nSmall businesses"]
+    PLUS & ENT & API & TEAM --> REV["💰 $3.7B Revenue\n2024"]
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <h2><span class="emoji">✨</span>Key Products &amp; Features</h2>
+    <div class="cards">
+      <div class="card"><div class="card-icon">💬</div><h4>ChatGPT Free</h4><p>Access to GPT-4o mini. Unlimited conversations, image uploads, limited GPT-4o access. Available to anyone with an account.</p></div>
+      <div class="card"><div class="card-icon">⭐</div><h4>ChatGPT Plus</h4><p>$20/month. Full GPT-4o access, faster responses, image generation via DALL-E 3, voice mode, and custom GPTs.</p></div>
+      <div class="card"><div class="card-icon">🏢</div><h4>ChatGPT Enterprise</h4><p>No usage limits, longer context windows, admin controls, data not used for training, SSO, and compliance features.</p></div>
+      <div class="card"><div class="card-icon">🎨</div><h4>DALL-E Image Generation</h4><p>Generate photorealistic images and artwork from text descriptions, integrated directly into ChatGPT conversations.</p></div>
+      <div class="card"><div class="card-icon">🎙️</div><h4>Voice Mode</h4><p>Real-time spoken conversations with natural-sounding AI voices. GPT-4o can detect and respond to tone and emotion.</p></div>
+      <div class="card"><div class="card-icon">🔌</div><h4>GPTs &amp; Plugins</h4><p>Custom AI assistants built on ChatGPT's foundation. Thousands available in the GPT Store for specific tasks.</p></div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <h2><span class="emoji">📅</span>OpenAI's History</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><h4>2015 — OpenAI Founded</h4><p>Sam Altman, Elon Musk, Greg Brockman, Ilya Sutskever, and others co-found OpenAI as a non-profit in San Francisco. Elon Musk pledges $1 billion.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2018 — GPT-1 Released</h4><p>OpenAI publishes GPT-1 (117M parameters) — demonstrating that large language models trained on internet text could generate coherent prose.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2019 — Capped-Profit &amp; Microsoft</h4><p>OpenAI restructures into a capped-profit entity. Microsoft invests $1 billion. Elon Musk departs the board (later sues OpenAI).</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2020 — GPT-3: A Sensation</h4><p>GPT-3 (175B parameters) is released via API. Its ability to write code, essays, and poetry stuns researchers. Waitlist has 300K+ people.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2022 — ChatGPT Launches</h4><p>November 30, 2022: ChatGPT goes live. 1 million users in 5 days. 100 million in 2 months — the fastest-growing consumer application in history.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2023 — GPT-4 &amp; $13B Microsoft</h4><p>GPT-4 releases with multimodal capabilities. Microsoft invests $10 billion more. OpenAI briefly fires then reinstates CEO Sam Altman in a dramatic boardroom crisis.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2024 — GPT-4o &amp; $157B Valuation</h4><p>GPT-4o ("omni") launches with real-time voice, vision, and text. OpenAI raises $6.6 billion at a $157 billion valuation — one of the largest private funding rounds ever.</p></div>
+    </div>
+  </section>
+
+  <div class="ad-unit" style="margin-bottom:56px;">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <section id="concerns">
+    <h2><span class="emoji">⚖️</span>Controversies &amp; Concerns</h2>
+    <p class="section-intro">Transformative technology always comes with difficult questions.</p>
+    <p>ChatGPT's rapid rise sparked intense debates about job displacement, academic integrity, misinformation, and AI safety. Within months of launch, universities scrambled to update plagiarism policies; news organisations found AI-generated articles being submitted as original journalism; and studies showed AI could pass bar exams, medical licensing tests, and MBA finals. The economic implications are real — McKinsey estimates generative AI could automate 30% of working hours globally by 2030.</p>
+    <p>Training data is a persistent controversy. GPT models were trained on vast amounts of internet text without explicit permission from creators, leading to multiple lawsuits from authors (including John Grisham and George R.R. Martin) and news organisations (The New York Times). The legal question of whether training on copyrighted content constitutes infringement remains unresolved in most jurisdictions.</p>
+    <p>On AI safety, OpenAI's own mission is to ensure artificial general intelligence benefits all of humanity — yet the company races to release increasingly powerful models. Co-founder Ilya Sutskever departed in 2024 citing safety concerns. The tension between safety research and commercial pressure is openly acknowledged within the organisation, and regulators in the EU, UK, and US are all working on AI governance frameworks prompted largely by ChatGPT's breakout success.</p>
+  </section>
+
+  <section id="summary">
+    <h2><span class="emoji">✨</span>Summary</h2>
+    <div class="kid-box">
+      <h3>🎯 The one-sentence version</h3>
+      <p><strong>ChatGPT is an AI assistant that learned from almost everything humans have ever written, and can now write, explain, code, and converse on any topic with startling competence — changing how millions of people work, learn, and create.</strong></p>
+      <p style="margin-top:16px;font-size:.95rem;color:var(--muted);">Whether it's a tool or a threat depends entirely on how humanity chooses to use it.</p>
+    </div>
+  </section>
+
+</main>
+
+<div class="ad-unit" style="padding-bottom:32px;">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<footer>
+  <img class="footer-logo" src="/logo.svg" alt="JustSimple.Online" />
+  <strong style="color:#fff;">JustSimple.Online</strong> — Making the web understandable, one site at a time.<br><br>
+  Analysis of <a href="https://chatgpt.com" target="_blank">chatgpt.com</a>
+  &nbsp;·&nbsp; <a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
+</footer>
+<div id="diag-modal" role="dialog" aria-modal="true" aria-label="Diagram viewer">
+  <div id="diag-modal-inner"><button id="diag-close" aria-label="Close diagram">&times;</button></div>
+</div>
+<script>
+  mermaid.initialize({startOnLoad:true,theme:'dark',themeVariables:{primaryColor:'#11211b',primaryTextColor:'#e8eaf6',primaryBorderColor:'#10a37f',lineColor:'#10a37f',secondaryColor:'#0d1a16',tertiaryColor:'#0d1a16',background:'#09100e',mainBkg:'#11211b',nodeBorder:'#10a37f',clusterBkg:'#0d1a16',titleColor:'#e8eaf6',edgeLabelBackground:'#11211b',attributeBackgroundColorEven:'#11211b',attributeBackgroundColorOdd:'#0d1a16'}});
+  (function(){var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');if(!modal||!inner||!closeBtn)return;document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});function openModal(mDiv){inner.querySelectorAll('svg,.diag-msg').forEach(function(el){el.remove();});modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}function showSvg(svg){inner.querySelectorAll('svg').forEach(function(s){s.remove();});inner.insertAdjacentHTML('beforeend',svg.outerHTML);var s=inner.querySelector('svg');if(s){s.removeAttribute('width');s.removeAttribute('height');s.style.cssText='display:block;margin:0 auto;width:100%;height:auto;max-height:78vh;';}}function closeModal(){modal.classList.remove('open');document.body.style.overflow='';}closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});}());
+</script>
+</body>
+</html>

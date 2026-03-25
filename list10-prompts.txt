@@ -1,0 +1,499 @@
+1. Google
+
+Create a new static HTML explainer page using /home/waheed/WebCrawl/btcpayserver.org/index.html as the reference.
+
+Target:
+- New folder/file: /home/waheed/WebCrawl/google.com/index.html
+- Topic/site: google.com
+
+What to do:
+- Reuse the BTCPay page's overall structure, visual quality, section flow, and single-file approach
+- Adapt the page for the new topic with fully original content about https://www.google.com
+- Update all topic-specific content, including:
+  - page title
+  - hero section
+  - stats
+  - diagrams
+  - explanation sections
+  - comparison table
+  - timeline/history
+  - FAQ
+  - summary
+  - footer text and relevant nav links
+- Preserve shared site branding where appropriate, including JustSimple.Online styling, `/logo.svg`, and links to existing pages
+- Add this Google tag in the `<head>` if not already present:
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-TSFVXECJ40');
+</script>
+
+Quality checks:
+- Scan the whole target folder for anomalies
+- Check for broken local links or missing assets
+- Check for malformed HTML or duplicate scripts
+- Check for leftover placeholder or source-topic text
+- Add `rel="noopener noreferrer"` to any `target="_blank"` links
+- Confirm the final page is internally consistent
+
+Optional:
+- Update /home/waheed/WebCrawl/index.html so the new page is linked from the homepage if needed
+
+At the end:
+- summarize what was created
+- list any anomalies found and fixed
+- mention anything that still needs manual review
+
+2. YouTube
+
+Create a new static HTML explainer page using /home/waheed/WebCrawl/btcpayserver.org/index.html as the reference.
+
+Target:
+- New folder/file: /home/waheed/WebCrawl/youtube.com/index.html
+- Topic/site: youtube.com
+
+What to do:
+- Reuse the BTCPay page's overall structure, visual quality, section flow, and single-file approach
+- Adapt the page for the new topic with fully original content about https://www.youtube.com
+- Update all topic-specific content, including:
+  - page title
+  - hero section
+  - stats
+  - diagrams
+  - explanation sections
+  - comparison table
+  - timeline/history
+  - FAQ
+  - summary
+  - footer text and relevant nav links
+- Preserve shared site branding where appropriate, including JustSimple.Online styling, `/logo.svg`, and links to existing pages
+- Add this Google tag in the `<head>` if not already present:
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-TSFVXECJ40');
+</script>
+
+Quality checks:
+- Scan the whole target folder for anomalies
+- Check for broken local links or missing assets
+- Check for malformed HTML or duplicate scripts
+- Check for leftover placeholder or source-topic text
+- Add `rel="noopener noreferrer"` to any `target="_blank"` links
+- Confirm the final page is internally consistent
+
+Optional:
+- Update /home/waheed/WebCrawl/index.html so the new page is linked from the homepage if needed
+
+At the end:
+- summarize what was created
+- list any anomalies found and fixed
+- mention anything that still needs manual review
+
+3. Facebook
+
+Create a new static HTML explainer page using /home/waheed/WebCrawl/btcpayserver.org/index.html as the reference.
+
+Target:
+- New folder/file: /home/waheed/WebCrawl/facebook.com/index.html
+- Topic/site: facebook.com
+
+What to do:
+- Reuse the BTCPay page's overall structure, visual quality, section flow, and single-file approach
+- Adapt the page for the new topic with fully original content about https://www.facebook.com
+- Update all topic-specific content, including:
+  - page title
+  - hero section
+  - stats
+  - diagrams
+  - explanation sections
+  - comparison table
+  - timeline/history
+  - FAQ
+  - summary
+  - footer text and relevant nav links
+- Preserve shared site branding where appropriate, including JustSimple.Online styling, `/logo.svg`, and links to existing pages
+- Add this Google tag in the `<head>` if not already present:
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-TSFVXECJ40');
+</script>
+
+Quality checks:
+- Scan the whole target folder for anomalies
+- Check for broken local links or missing assets
+- Check for malformed HTML or duplicate scripts
+- Check for leftover placeholder or source-topic text
+- Add `rel="noopener noreferrer"` to any `target="_blank"` links
+- Confirm the final page is internally consistent
+
+Optional:
+- Update /home/waheed/WebCrawl/index.html so the new page is linked from the homepage if needed
+
+At the end:
+- summarize what was created
+- list any anomalies found and fixed
+- mention anything that still needs manual review
+
+4. Instagram
+
+Create a new static HTML explainer page using /home/waheed/WebCrawl/btcpayserver.org/index.html as the reference.
+
+Target:
+- New folder/file: /home/waheed/WebCrawl/instagram.com/index.html
+- Topic/site: instagram.com
+
+What to do:
+- Reuse the BTCPay page's overall structure, visual quality, section flow, and single-file approach
+- Adapt the page for the new topic with fully original content about https://www.instagram.com
+- Update all topic-specific content, including:
+  - page title
+  - hero section
+  - stats
+  - diagrams
+  - explanation sections
+  - comparison table
+  - timeline/history
+  - FAQ
+  - summary
+- footer text and relevant nav links
+- Preserve shared site branding where appropriate, including JustSimple.Online styling, `/logo.svg`, and links to existing pages
+- Add this Google tag in the `<head>` if not already present:
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-TSFVXECJ40');
+</script>
+
+Quality checks:
+- Scan the whole target folder for anomalies
+- Check for broken local links or missing assets
+- Check for malformed HTML or duplicate scripts
+- Check for leftover placeholder or source-topic text
+- Add `rel="noopener noreferrer"` to any `target="_blank"` links
+- Confirm the final page is internally consistent
+
+Optional:
+- Update /home/waheed/WebCrawl/index.html so the new page is linked from the homepage if needed
+
+At the end:
+- summarize what was created
+- list any anomalies found and fixed
+- mention anything that still needs manual review
+
+5. ChatGPT
+
+Create a new static HTML explainer page using /home/waheed/WebCrawl/btcpayserver.org/index.html as the reference.
+
+Target:
+- New folder/file: /home/waheed/WebCrawl/chatgpt.com/index.html
+- Topic/site: chatgpt.com
+
+What to do:
+- Reuse the BTCPay page's overall structure, visual quality, section flow, and single-file approach
+- Adapt the page for the new topic with fully original content about https://www.chatgpt.com
+- Update all topic-specific content, including:
+  - page title
+  - hero section
+  - stats
+  - diagrams
+  - explanation sections
+  - comparison table
+  - timeline/history
+  - FAQ
+  - summary
+  - footer text and relevant nav links
+- Preserve shared site branding where appropriate, including JustSimple.Online styling, `/logo.svg`, and links to existing pages
+- Add this Google tag in the `<head>` if not already present:
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-TSFVXECJ40');
+</script>
+
+Quality checks:
+- Scan the whole target folder for anomalies
+- Check for broken local links or missing assets
+- Check for malformed HTML or duplicate scripts
+- Check for leftover placeholder or source-topic text
+- Add `rel="noopener noreferrer"` to any `target="_blank"` links
+- Confirm the final page is internally consistent
+
+Optional:
+- Update /home/waheed/WebCrawl/index.html so the new page is linked from the homepage if needed
+
+At the end:
+- summarize what was created
+- list any anomalies found and fixed
+- mention anything that still needs manual review
+
+6. Reddit
+
+Create a new static HTML explainer page using /home/waheed/WebCrawl/btcpayserver.org/index.html as the reference.
+
+Target:
+- New folder/file: /home/waheed/WebCrawl/reddit.com/index.html
+- Topic/site: reddit.com
+
+What to do:
+- Reuse the BTCPay page's overall structure, visual quality, section flow, and single-file approach
+- Adapt the page for the new topic with fully original content about https://www.reddit.com
+- Update all topic-specific content, including:
+  - page title
+  - hero section
+  - stats
+  - diagrams
+  - explanation sections
+  - comparison table
+  - timeline/history
+  - FAQ
+  - summary
+  - footer text and relevant nav links
+- Preserve shared site branding where appropriate, including JustSimple.Online styling, `/logo.svg`, and links to existing pages
+- Add this Google tag in the `<head>` if not already present:
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-TSFVXECJ40');
+</script>
+
+Quality checks:
+- Scan the whole target folder for anomalies
+- Check for broken local links or missing assets
+- Check for malformed HTML or duplicate scripts
+- Check for leftover placeholder or source-topic text
+- Add `rel="noopener noreferrer"` to any `target="_blank"` links
+- Confirm the final page is internally consistent
+
+Optional:
+- Update /home/waheed/WebCrawl/index.html so the new page is linked from the homepage if needed
+
+At the end:
+- summarize what was created
+- list any anomalies found and fixed
+- mention anything that still needs manual review
+
+7. Wikipedia
+
+Create a new static HTML explainer page using /home/waheed/WebCrawl/btcpayserver.org/index.html as the reference.
+
+Target:
+- New folder/file: /home/waheed/WebCrawl/wikipedia.org/index.html
+- Topic/site: wikipedia.org
+
+What to do:
+- Reuse the BTCPay page's overall structure, visual quality, section flow, and single-file approach
+- Adapt the page for the new topic with fully original content about https://www.wikipedia.org
+- Update all topic-specific content, including:
+  - page title
+  - hero section
+  - stats
+  - diagrams
+  - explanation sections
+  - comparison table
+  - timeline/history
+  - FAQ
+  - summary
+  - footer text and relevant nav links
+- Preserve shared site branding where appropriate, including JustSimple.Online styling, `/logo.svg`, and links to existing pages
+- Add this Google tag in the `<head>` if not already present:
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-TSFVXECJ40');
+</script>
+
+Quality checks:
+- Scan the whole target folder for anomalies
+- Check for broken local links or missing assets
+- Check for malformed HTML or duplicate scripts
+- Check for leftover placeholder or source-topic text
+- Add `rel="noopener noreferrer"` to any `target="_blank"` links
+- Confirm the final page is internally consistent
+
+Optional:
+- Update /home/waheed/WebCrawl/index.html so the new page is linked from the homepage if needed
+
+At the end:
+- summarize what was created
+- list any anomalies found and fixed
+- mention anything that still needs manual review
+
+8. Pornhub
+
+Create a new static HTML explainer page using /home/waheed/WebCrawl/btcpayserver.org/index.html as the reference.
+
+Target:
+- New folder/file: /home/waheed/WebCrawl/pornhub.com/index.html
+- Topic/site: pornhub.com
+
+What to do:
+- Reuse the BTCPay page's overall structure, visual quality, section flow, and single-file approach
+- Adapt the page for the new topic with fully original content about https://www.pornhub.com
+- Update all topic-specific content, including:
+  - page title
+  - hero section
+  - stats
+  - diagrams
+  - explanation sections
+  - comparison table
+  - timeline/history
+  - FAQ
+  - summary
+  - footer text and relevant nav links
+- Preserve shared site branding where appropriate, including JustSimple.Online styling, `/logo.svg`, and links to existing pages
+- Add this Google tag in the `<head>` if not already present:
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-TSFVXECJ40');
+</script>
+
+Quality checks:
+- Scan the whole target folder for anomalies
+- Check for broken local links or missing assets
+- Check for malformed HTML or duplicate scripts
+- Check for leftover placeholder or source-topic text
+- Add `rel="noopener noreferrer"` to any `target="_blank"` links
+- Confirm the final page is internally consistent
+
+Optional:
+- Update /home/waheed/WebCrawl/index.html so the new page is linked from the homepage if needed
+
+At the end:
+- summarize what was created
+- list any anomalies found and fixed
+- mention anything that still needs manual review
+
+9. X
+
+Create a new static HTML explainer page using /home/waheed/WebCrawl/btcpayserver.org/index.html as the reference.
+
+Target:
+- New folder/file: /home/waheed/WebCrawl/x.com/index.html
+- Topic/site: x.com
+
+What to do:
+- Reuse the BTCPay page's overall structure, visual quality, section flow, and single-file approach
+- Adapt the page for the new topic with fully original content about https://www.x.com
+- Update all topic-specific content, including:
+  - page title
+  - hero section
+  - stats
+  - diagrams
+  - explanation sections
+  - comparison table
+  - timeline/history
+  - FAQ
+  - summary
+  - footer text and relevant nav links
+- Preserve shared site branding where appropriate, including JustSimple.Online styling, `/logo.svg`, and links to existing pages
+- Add this Google tag in the `<head>` if not already present:
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-TSFVXECJ40');
+</script>
+
+Quality checks:
+- Scan the whole target folder for anomalies
+- Check for broken local links or missing assets
+- Check for malformed HTML or duplicate scripts
+- Check for leftover placeholder or source-topic text
+- Add `rel="noopener noreferrer"` to any `target="_blank"` links
+- Confirm the final page is internally consistent
+
+Optional:
+- Update /home/waheed/WebCrawl/index.html so the new page is linked from the homepage if needed
+
+At the end:
+- summarize what was created
+- list any anomalies found and fixed
+- mention anything that still needs manual review
+
+10. WhatsApp
+
+Create a new static HTML explainer page using /home/waheed/WebCrawl/btcpayserver.org/index.html as the reference.
+
+Target:
+- New folder/file: /home/waheed/WebCrawl/whatsapp.com/index.html
+- Topic/site: whatsapp.com
+
+What to do:
+- Reuse the BTCPay page's overall structure, visual quality, section flow, and single-file approach
+- Adapt the page for the new topic with fully original content about https://www.whatsapp.com
+- Update all topic-specific content, including:
+  - page title
+  - hero section
+  - stats
+  - diagrams
+  - explanation sections
+  - comparison table
+  - timeline/history
+  - FAQ
+  - summary
+  - footer text and relevant nav links
+- Preserve shared site branding where appropriate, including JustSimple.Online styling, `/logo.svg`, and links to existing pages
+- Add this Google tag in the `<head>` if not already present:
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-TSFVXECJ40');
+</script>
+
+Quality checks:
+- Scan the whole target folder for anomalies
+- Check for broken local links or missing assets
+- Check for malformed HTML or duplicate scripts
+- Check for leftover placeholder or source-topic text
+- Add `rel="noopener noreferrer"` to any `target="_blank"` links
+- Confirm the final page is internally consistent
+
+Optional:
+- Update /home/waheed/WebCrawl/index.html so the new page is linked from the homepage if needed
+
+At the end:
+- summarize what was created
+- list any anomalies found and fixed
+- mention anything that still needs manual review

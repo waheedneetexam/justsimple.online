@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BTCPay Server — JustSimple.Online</title>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TSFVXECJ40');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --card: #21253a;
+      --accent: #f7931a;
+      --accent2: #51cf66;
+      --text: #e8eaf6;
+      --muted: #8892b0;
+      --border: #2d3250;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #0f1117 0%, #1a1427 50%, #0f1117 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 72px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(247,147,26,.12), transparent);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(247,147,26,.15);
+      border: 1px solid rgba(247,147,26,.4);
+      color: var(--accent);
+      padding: 4px 16px;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff 30%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+    .hero-url {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 20px;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .hero-url span { color: var(--accent); font-weight: 600; }
+
+    /* ── Layout ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px 100px;
+    }
+    section { margin-bottom: 72px; }
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    h2 .emoji { margin-right: 10px; }
+    .section-intro {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    /* ── Kid Box ── */
+    .kid-box {
+      background: linear-gradient(135deg, rgba(247,147,26,.08), rgba(81,207,102,.05));
+      border: 1.5px solid rgba(247,147,26,.35);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .kid-box::before {
+      content: '👦';
+      position: absolute;
+      right: 24px;
+      top: 20px;
+      font-size: 3rem;
+      opacity: .18;
+    }
+    .kid-box h3 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .kid-box p { color: var(--text); line-height: 1.8; }
+    .kid-box p + p { margin-top: 12px; }
+
+    /* ── Cards grid ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color .2s, transform .2s;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .card h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .card p { font-size: .9rem; color: var(--muted); }
+
+    /* ── Stat strip ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+    .stat .num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent);
+      display: block;
+    }
+    .stat .label { font-size: .85rem; color: var(--muted); margin-top: 4px; }
+
+    /* ── Diagram container ── */
+    .diagram-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      overflow-x: auto;
+    }
+    .diagram-wrap + .diagram-wrap { margin-top: 24px; }
+    .diagram-title {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .mermaid { display: flex; justify-content: center; }
+
+    /* ── Comparison table ── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9rem;
+    }
+    .compare-table th {
+      background: var(--card);
+      color: var(--accent);
+      padding: 14px 18px;
+      text-align: left;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+    }
+    .compare-table td {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .compare-table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+    .yes { color: var(--accent2); font-weight: 700; }
+    .no  { color: #ff6b6b;       font-weight: 700; }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+    .tl-item { position: relative; margin-bottom: 28px; }
+    .tl-dot {
+      position: absolute;
+      left: -28px;
+      top: 4px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+    }
+    .tl-item h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .tl-item p  { font-size: .88rem; color: var(--muted); }
+
+    /* ── Navbar ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      background: rgba(15,17,23,.95);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-tagline { font-size: .75rem; color: var(--muted); display: none; }
+    @media(min-width:500px){ .nav-tagline { display: block; } }
+    .nav-right { display: flex; align-items: center; gap: 16px; font-size: .85rem; }
+    .nav-right a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-right a:hover { color: var(--accent); }
+
+    /* ── Ad unit ── */
+    .ad-unit {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 24px 0;
+      text-align: center;
+    }
+    .ad-unit-label {
+      font-size: .68rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      opacity: .5;
+    }
+    .ad-unit ins { border-radius: 8px; overflow: hidden; }
+    .ad-unit-inline {
+      margin: 0 0 48px;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer .footer-logo { height: 26px; width: auto; vertical-align: middle; margin-right: 6px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .kid-box { padding: 20px; }
+      .diagram-wrap { padding: 20px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Independent Analysis Banner ── -->
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+
+<!-- ── Navbar ── -->
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="/logo.svg" alt="JustSimple.Online logo" />
+    <span class="nav-tagline">Making the web understandable</span>
+  </a>
+  <div class="nav-right">
+    <a href="/">← All Analyses</a>
+  </div>
+</nav>
+
+<!-- ──────────────── HERO ──────────────── -->
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;" /></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>BTCPay Server</h1>
+  <p>A deep-dive into the world's leading open-source Bitcoin payment processor — explained simply, with diagrams.</p>
+  <div class="hero-url">
+    🌐 Analysed: <span>btcpayserver.org</span>
+  </div>
+</div>
+
+<!-- ── Ad 1: Below Hero ── -->
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- ── Disclaimer ── -->
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. We are not affiliated with, endorsed by, or connected to the website being analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+
+
+<!-- ──────────────── MAIN ──────────────── -->
+<main>
+
+  <!-- ── 1. KID EXPLANATION ── -->
+  <section id="simple">
+    <h2>What is BTCPay Server?</h2>
+    <p class="section-intro">Forget the technical words for a second. Let's use a simple story.</p>
+    <div class="kid-box">
+      <h3>🍭 Imagine you have a lemonade stand...</h3>
+      <p>
+        Normally, when someone pays you with a card, a big bank in the middle takes a small cut of your money — like a fee — just for passing the money to you. That's annoying, right?
+      </p>
+      <p>
+        <strong>Bitcoin</strong> is like digital coins that you and your friend can send to each other <em>without any bank in the middle.</em>
+      </p>
+      <p>
+        But to accept Bitcoin at your lemonade stand, you need a special machine — like a cash register — that handles Bitcoin payments. That's exactly what <strong>BTCPay Server</strong> is! It's a <em>free</em> cash register for Bitcoin that you set up yourself, so nobody can charge you fees or tell you what to do.
+      </p>
+      <p>
+        You put it on your own computer (or rent a tiny computer online), and <em>boom</em> — anyone in the world can pay you in Bitcoin, the money goes <strong>directly into your pocket</strong>, and no one can stop you or take a cut. Pretty cool for a lemonade stand! 🍋
+      </p>
+    </div>
+  </section>
+
+  <!-- ── 2. STATS ── -->
+  <section id="stats">
+    <h2><span class="emoji">📊</span>By the Numbers</h2>
+    <p class="section-intro">Real-world impact of BTCPay Server in production.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">$73M</span><div class="label">BTC revenue processed by Namecheap</div></div>
+      <div class="stat"><span class="num">1.1M</span><div class="label">Transactions via Namecheap</div></div>
+      <div class="stat"><span class="num">200+</span><div class="label">Stores in Costa Rica (Bitcoin Jungle)</div></div>
+      <div class="stat"><span class="num">0%</span><div class="label">Fees charged by BTCPay Server</div></div>
+      <div class="stat"><span class="num">25+</span><div class="label">E-commerce platform integrations</div></div>
+      <div class="stat"><span class="num">∞</span><div class="label">Open-source & free forever</div></div>
+    </div>
+  </section>
+
+  <!-- ── 3. HOW IT WORKS FLOW ── -->
+  <section id="how">
+    <h2><span class="emoji">⚙️</span>How Does It Work?</h2>
+    <p class="section-intro">The complete payment journey from customer to merchant, with no middleman.</p>
+
+    <div class="diagram-wrap">
+      <div class="diagram-title">Payment Flow — Customer to Merchant</div>
+      <div class="mermaid">
+flowchart TD
+    A([🛒 Customer wants to buy something]) --> B[Clicks 'Pay with Bitcoin']
+    B --> C{BTCPay Server\ngenerates invoice}
+    C --> D[Unique Bitcoin address\n+ QR code created]
+    D --> E([📱 Customer scans QR\nor copies address])
+    E --> F[Customer sends Bitcoin\nfrom their wallet]
+    F --> G{Bitcoin Network\nverifies transaction}
+    G -->|Confirmed| H[✅ Payment detected\nby BTCPay Server]
+    G -->|Waiting| G
+    H --> I[💰 Bitcoin lands directly\nin Merchant's wallet]
+    H --> J[📧 Merchant gets\nautomated notification]
+    H --> K[🏪 Order marked\nas paid]
+
+    style A fill:#1a1d27,stroke:#f7931a,color:#e8eaf6
+    style I fill:#1a2e1a,stroke:#51cf66,color:#e8eaf6
+    style C fill:#21253a,stroke:#f7931a,color:#e8eaf6
+    style G fill:#21253a,stroke:#8892b0,color:#e8eaf6
+      </div>
+    </div>
+
+    <div class="diagram-wrap" style="margin-top:24px">
+      <div class="diagram-title">Architecture — Who Controls What</div>
+      <div class="mermaid">
+graph LR
+    subgraph Merchant["🏪 Merchant's World"]
+        BTCPay["BTCPay Server\n(self-hosted)"]
+        Wallet["Bitcoin Wallet\n(hardware/software)"]
+        Shop["Online Shop\n(WooCommerce etc.)"]
+    end
+
+    subgraph Network["🌐 Bitcoin Network"]
+        Nodes["Bitcoin Nodes"]
+        LN["Lightning Network\n(fast payments)"]
+    end
+
+    subgraph Customer["👤 Customer"]
+        CWallet["Customer's\nBitcoin Wallet"]
+    end
+
+    Shop -->|plugin| BTCPay
+    BTCPay -->|creates invoices| Wallet
+    BTCPay -->|monitors| Nodes
+    BTCPay -->|optional| LN
+    CWallet -->|sends BTC| Nodes
+    Nodes -->|confirms| BTCPay
+
+    style Merchant fill:#1a1d27,stroke:#f7931a
+    style Network fill:#1a2027,stroke:#8892b0
+    style Customer fill:#1a1d27,stroke:#51cf66
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Ad 2: Mid-content — after How it Works ── -->
+  <div class="ad-unit-inline">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-2662293899276634"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ── 4. FEATURES ── -->
+  <section id="features">
+    <h2><span class="emoji">🚀</span>Key Features</h2>
+    <p class="section-intro">Everything that comes built-in — for free.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🏪</div>
+        <h4>Point of Sale</h4>
+        <p>A full POS app for physical shops — show a QR code and let customers pay with their phone.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <h4>Payment Links</h4>
+        <p>Share a link with anyone in the world. They click it and pay you Bitcoin directly.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📄</div>
+        <h4>Invoices</h4>
+        <p>Auto-generate professional invoices with real-time exchange rates and payment tracking.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎁</div>
+        <h4>Crowdfunding</h4>
+        <p>Run a fundraiser where supporters send Bitcoin directly to your campaign goal.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💱</div>
+        <h4>Multi-Currency</h4>
+        <p>Accept Bitcoin, Lightning Network payments, and other cryptocurrencies simultaneously.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔌</div>
+        <h4>25+ Integrations</h4>
+        <p>Plugins for WooCommerce, Shopify, Magento, OpenCart, and many more platforms.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔐</div>
+        <h4>Hardware Wallet</h4>
+        <p>Connect your Ledger or Trezor — funds go directly to cold storage, ultra secure.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h4>Accounting Exports</h4>
+        <p>Export transaction data in multiple formats for bookkeeping and tax purposes.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h4>Full API</h4>
+        <p>Automate everything — create stores, manage invoices, handle users via REST API.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. USE CASE DIAGRAM ── -->
+  <section id="usecases">
+    <h2><span class="emoji">🗺️</span>Who Uses It & How</h2>
+    <p class="section-intro">BTCPay Server works for many different types of people and businesses.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Use Case Map</div>
+      <div class="mermaid">
+mindmap
+  root((BTCPay Server))
+    Online Merchants
+      E-commerce stores
+      Digital downloads
+      SaaS subscriptions
+    Physical Retail
+      Restaurants
+      Shops & boutiques
+      Market stalls
+    Freelancers
+      Invoicing clients
+      Payment links
+      Global payments
+    Non-Profits
+      Donation buttons
+      Crowdfunding
+      Fundraising campaigns
+    Developers
+      API integration
+      Custom plugins
+      Automation
+    Communities
+      Local Bitcoin adoption
+      Community wallets
+      Education projects
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. COMPARISON ── -->
+  <section id="comparison">
+    <h2><span class="emoji">⚖️</span>BTCPay vs Traditional Payment Processors</h2>
+    <p class="section-intro">Why would someone choose BTCPay over Stripe or PayPal?</p>
+    <div class="diagram-wrap" style="padding: 0; overflow: hidden;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>BTCPay Server</th>
+            <th>PayPal / Stripe</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Transaction Fees</td><td class="yes">0%</td><td class="no">1.5%–3.5% per transaction</td></tr>
+          <tr><td>Account Freezing</td><td class="yes">Impossible — you own it</td><td class="no">Can freeze your account</td></tr>
+          <tr><td>Privacy</td><td class="yes">No KYC required</td><td class="no">Full identity verification</td></tr>
+          <tr><td>Censorship Resistance</td><td class="yes">Cannot be shut down</td><td class="no">Can ban users/countries</td></tr>
+          <tr><td>Cost to Use</td><td class="yes">Free &amp; open-source</td><td class="no">Monthly fees + per-transaction</td></tr>
+          <tr><td>Data Ownership</td><td class="yes">100% yours</td><td class="no">Shared with company</td></tr>
+          <tr><td>Setup Complexity</td><td class="no">Requires technical setup</td><td class="yes">Instant signup</td></tr>
+          <tr><td>Currency</td><td>Bitcoin &amp; crypto only</td><td>Fiat + some crypto</td></tr>
+          <tr><td>Chargeback Risk</td><td class="yes">Zero (Bitcoin is final)</td><td class="no">Chargebacks possible</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── Ad 3: Mid-content — after Comparison ── -->
+  <div class="ad-unit-inline">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-2662293899276634"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ── 7. DEPLOYMENT FLOW ── -->
+  <section id="deploy">
+    <h2><span class="emoji">🛠️</span>How Do You Set It Up?</h2>
+    <p class="section-intro">Three ways to get your own BTCPay Server running.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Deployment Options Flowchart</div>
+      <div class="mermaid">
+flowchart TD
+    Start([🚀 I want to accept Bitcoin payments]) --> Q1{Do you have\ntechnical skills?}
+
+    Q1 -->|Yes| Q2{Do you have a\nserver or VPS?}
+    Q1 -->|No| Easy[🤝 Use a Third-Party\nBTCPay Host\nSomeone else runs it\nfor you — community supported]
+
+    Q2 -->|Yes, cloud VPS| Cloud[☁️ Self-Host on VPS\nDigitalOcean, Vultr, etc.\nRun BTCPay on your own\ncloud server]
+    Q2 -->|Yes, home hardware| Home[🏠 Self-Host at Home\nOld PC or Raspberry Pi\nFull control, no monthly cost]
+    Q2 -->|Not yet| Buy[💳 Get a VPS\n~$6/month\nThen self-host]
+
+    Cloud --> Done([✅ Accept Bitcoin payments\nwith 0% fees])
+    Home  --> Done
+    Easy  --> Done
+    Buy   --> Cloud
+
+    style Start fill:#1a1d27,stroke:#f7931a,color:#e8eaf6
+    style Done fill:#1a2e1a,stroke:#51cf66,color:#e8eaf6
+    style Easy fill:#21253a,stroke:#8892b0,color:#e8eaf6
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 8. TECH STACK ── -->
+  <section id="tech">
+    <h2><span class="emoji">🧱</span>Technology Behind It</h2>
+    <p class="section-intro">What's powering BTCPay Server under the hood.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">System Architecture</div>
+      <div class="mermaid">
+graph TB
+    subgraph Frontend["🖥️ Frontend"]
+        UI["Web UI\n(Razor / Bootstrap)"]
+        POS["POS App"]
+        CF["Crowdfund App"]
+    end
+
+    subgraph Backend["⚙️ Backend (ASP.NET Core / C#)"]
+        API["REST API"]
+        InvMgr["Invoice Manager"]
+        WalletMgr["Wallet Manager"]
+        Notif["Notification Service"]
+    end
+
+    subgraph Bitcoin["₿ Bitcoin Layer"]
+        Node["Bitcoin Full Node\n(Bitcoin Core)"]
+        LN2["Lightning Network\n(LND / CLN / Eclair)"]
+        NBX["NBXplorer\n(wallet indexer)"]
+    end
+
+    subgraph Store["💾 Storage"]
+        DB["PostgreSQL\nor SQLite"]
+    end
+
+    UI --> API
+    POS --> API
+    CF  --> API
+    API --> InvMgr
+    API --> WalletMgr
+    InvMgr --> DB
+    WalletMgr --> NBX
+    NBX --> Node
+    WalletMgr --> LN2
+    Notif --> DB
+
+    style Frontend fill:#1a1d27,stroke:#f7931a
+    style Backend  fill:#21253a,stroke:#8892b0
+    style Bitcoin  fill:#1a2027,stroke:#f7931a
+    style Store    fill:#1a1d27,stroke:#51cf66
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 9. TIMELINE ── -->
+  <section id="timeline">
+    <h2><span class="emoji">📅</span>Brief History</h2>
+    <p class="section-intro">From a forum post to a global payment infrastructure.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2017 — The Beginning</h4>
+        <p>Nicolas Dorier created BTCPay Server in response to BitPay (a competing service) supporting a controversial Bitcoin fork. His famous tweet: <em>"This is lies, my trust in you is broken, I will make you obsolete."</em></p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2018 — Open Source Launch</h4>
+        <p>Released publicly on GitHub. Community contributors begin joining from around the world.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2019 — BTCPay Server Foundation</h4>
+        <p>A non-profit foundation established to fund development and ensure long-term sustainability.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2020–2022 — Rapid Growth</h4>
+        <p>Lightning Network support added. Shopify integration. Thousands of merchants worldwide adopt BTCPay.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2023–Present — Enterprise Scale</h4>
+        <p>Namecheap processes $73M through BTCPay. Bitcoin Jungle enables 200+ Costa Rican stores. Continuous feature development.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 10. SUMMARY ── -->
+  <section id="summary">
+    <h2><span class="emoji">✨</span>Summary</h2>
+    <div class="kid-box">
+      <h3>🎯 The one-sentence version</h3>
+      <p>
+        <strong>BTCPay Server is a free, self-hosted Bitcoin cash register</strong> — it lets anyone in the world accept Bitcoin payments directly, with zero fees, no middleman, and no one who can shut you down.
+      </p>
+      <p style="margin-top:16px; font-size:.95rem; color: var(--muted);">
+        It's like owning your own bank branch — but for the internet, and built with Bitcoin.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Ad 4: Before Footer ── -->
+<div class="ad-unit" style="padding-bottom: 32px;">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ──────────────── FOOTER ──────────────── -->
+<footer>
+  <img class="footer-logo" src="/logo.svg" alt="JustSimple.Online" />
+  <strong style="color:#fff;">JustSimple.Online</strong> — Making the web understandable, one site at a time.
+  <br><br>
+  Analysis of <a href="https://btcpayserver.org" target="_blank">btcpayserver.org</a>
+  &nbsp;·&nbsp; <a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
+</footer>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      primaryColor: '#21253a',
+      primaryTextColor: '#e8eaf6',
+      primaryBorderColor: '#f7931a',
+      lineColor: '#f7931a',
+      secondaryColor: '#1a1d27',
+      tertiaryColor: '#1a1d27',
+      background: '#0f1117',
+      mainBkg: '#21253a',
+      nodeBorder: '#f7931a',
+      clusterBkg: '#1a1d27',
+      titleColor: '#e8eaf6',
+      edgeLabelBackground: '#21253a',
+      attributeBackgroundColorEven: '#21253a',
+      attributeBackgroundColorOdd: '#1a1d27'
+    }
+  });
+</script>
+</body>
+</html>

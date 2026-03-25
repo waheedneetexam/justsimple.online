@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yahoo Japan (yahoo.co.jp) — JustSimple.Online</title>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TSFVXECJ40');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root {
+      --bg: #080b14;
+      --surface: #0e1424;
+      --card: #131a2e;
+      --accent: #f72585;
+      --accent2: #ff85b3;
+      --accent3: #c9184a;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --border: #1e2a45;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Navbar ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      background: rgba(8,11,20,.95);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-tagline { font-size: .75rem; color: var(--muted); display: none; }
+    @media(min-width:500px){ .nav-tagline { display: block; } }
+    .nav-right { display: flex; align-items: center; gap: 16px; font-size: .85rem; }
+    .nav-right a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-right a:hover { color: var(--accent); }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #080b14 0%, #12040e 40%, #080b14 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(247,37,133,.1), transparent);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(247,37,133,.15);
+      border: 1px solid rgba(247,37,133,.4);
+      color: var(--accent);
+      padding: 4px 16px;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff 30%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+    .hero-url {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 20px;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .hero-url span { color: var(--accent); font-weight: 600; }
+
+    /* ── Layout ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px 100px;
+    }
+    section { margin-bottom: 72px; }
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    h2 .emoji { margin-right: 10px; }
+    .section-intro {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    /* ── Kid Box ── */
+    .kid-box {
+      background: linear-gradient(135deg, rgba(247,37,133,.08), rgba(201,24,74,.05));
+      border: 1.5px solid rgba(247,37,133,.35);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .kid-box::before {
+      content: '🗾';
+      position: absolute;
+      right: 24px;
+      top: 20px;
+      font-size: 3rem;
+      opacity: .18;
+    }
+    .kid-box h3 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .kid-box p { color: var(--text); line-height: 1.8; }
+    .kid-box p + p { margin-top: 12px; }
+
+    /* ── Cards grid ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color .2s, transform .2s;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .card h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .card p { font-size: .9rem; color: var(--muted); }
+
+    /* ── Stats grid ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+    .stat .num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent);
+      display: block;
+    }
+    .stat .label { font-size: .85rem; color: var(--muted); margin-top: 4px; }
+
+    /* ── Diagram container ── */
+    .diagram-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      overflow-x: auto;
+    }
+    .diagram-wrap + .diagram-wrap { margin-top: 24px; }
+    .diagram-title {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .mermaid { display: flex; justify-content: center; }
+
+    /* ── Comparison table ── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9rem;
+    }
+    .compare-table th {
+      background: var(--card);
+      color: var(--accent);
+      padding: 14px 18px;
+      text-align: left;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+    }
+    .compare-table td {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .compare-table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+    .yes { color: #f72585; font-weight: 700; }
+    .no  { color: #ff6b6b; font-weight: 700; }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+    .tl-item { position: relative; margin-bottom: 28px; }
+    .tl-dot {
+      position: absolute;
+      left: -28px;
+      top: 4px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+    }
+    .tl-item h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .tl-item p  { font-size: .88rem; color: var(--muted); }
+
+    /* ── Ad unit ── */
+    .ad-unit {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 24px 0;
+      text-align: center;
+    }
+    .ad-unit-label {
+      font-size: .68rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      opacity: .5;
+    }
+    .ad-unit ins { border-radius: 8px; overflow: hidden; }
+    .ad-unit-inline {
+      margin: 0 0 48px;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer .footer-logo { height: 26px; width: auto; vertical-align: middle; margin-right: 6px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .kid-box { padding: 20px; }
+      .diagram-wrap { padding: 20px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Independent Analysis Banner ── -->
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+
+<!-- ── Navbar ── -->
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="/logo.svg" alt="JustSimple.Online logo" />
+    <span class="nav-tagline">Making the web understandable</span>
+  </a>
+  <div class="nav-right">
+    <a href="/">← All Analyses</a>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;" /></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>Yahoo Japan</h1>
+  <p>A deep-dive into Japan's #1 web portal — the super-site that powers daily life for over 83 million Japanese users.</p>
+  <div class="hero-url">
+    🌐 Analysed: <span>yahoo.co.jp</span>
+  </div>
+</div>
+
+<!-- ── Ad 1: Below Hero ── -->
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- ── Disclaimer ── -->
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. We are not affiliated with, endorsed by, or connected to the website being analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+
+
+<!-- ── Main ── -->
+<main>
+
+  <!-- ── 1. KID EXPLANATION ── -->
+  <section id="simple">
+    <h2>What is Yahoo Japan?</h2>
+    <p class="section-intro">Let's forget the technical stuff and use a simple story first.</p>
+    <div class="kid-box">
+      <h3>🏙️ Imagine if one website was your entire city...</h3>
+      <p>
+        In Japan, there's a website so popular that almost <em>every single person</em> uses it. It's called <strong>Yahoo Japan</strong>, and it's like having your newspaper, your shopping mall, your weather forecast, your train schedule, your online auction house, and your digital wallet — all in one place, all in Japanese.
+      </p>
+      <p>
+        It's a bit like if Google, Amazon, eBay, PayPal, and a newspaper were all squished together into one single super-website — and that website became the most important place on the internet for an entire country.
+      </p>
+      <p>
+        Yahoo Japan is so popular in Japan that almost <strong>91% of all smartphone users</strong> in Japan use it. That's nearly everyone with a phone! It started in 1996 — the same year that the internet was still brand new for most people — and today it has over 100 services built into it.
+      </p>
+      <p>
+        The interesting thing is: Yahoo Japan and the US Yahoo are completely different companies. Yahoo Japan is a joint venture with <strong>SoftBank</strong>, one of Japan's biggest tech companies. It's far more powerful and deeply woven into daily Japanese life than US Yahoo ever was.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── 2. STATS ── -->
+  <section id="stats">
+    <h2><span class="emoji">📊</span>By the Numbers</h2>
+    <p class="section-intro">The extraordinary scale of Yahoo Japan's dominance in one country.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">83.35M</span><div class="label">Monthly users in Japan</div></div>
+      <div class="stat"><span class="num">#1</span><div class="label">Most visited site in Japan</div></div>
+      <div class="stat"><span class="num">#12</span><div class="label">Global website ranking (Sep 2025)</div></div>
+      <div class="stat"><span class="num">91%</span><div class="label">Japanese smartphone users who use it</div></div>
+      <div class="stat"><span class="num">67.7%</span><div class="label">Japanese PC users who use it</div></div>
+      <div class="stat"><span class="num">100+</span><div class="label">Services bundled into one portal</div></div>
+    </div>
+  </section>
+
+  <!-- ── 3. HOW IT WORKS FLOW ── -->
+  <section id="how">
+    <h2><span class="emoji">⚙️</span>How Does Yahoo Japan Work?</h2>
+    <p class="section-intro">Yahoo Japan is not just a search engine — it's a vast interconnected ecosystem of services.</p>
+
+    <div class="diagram-wrap">
+      <div class="diagram-title">User Journey — How a Japanese User Experiences Yahoo Japan</div>
+      <div class="mermaid">
+flowchart TD
+    A([👤 Japanese user opens yahoo.co.jp]) --> B[Personalised homepage\nNews · Weather · Stocks · Sports]
+    B --> C{What does the user need?}
+    C -->|Search| D[Yahoo Search\npowered by Google technology]
+    C -->|Shopping| E[Yahoo Shopping\nMillions of products]
+    C -->|Sell something| F[Yahoo Auctions\nJapan's eBay equivalent]
+    C -->|Pay for something| G[PayPay Integration\nJapan's #1 cashless payment]
+    C -->|Read news| H[Yahoo News Japan\nTop news aggregator]
+    C -->|Check weather| I[Yahoo Weather\nHyper-local Japan forecasts]
+    D --> J([✅ Need fulfilled within Yahoo ecosystem])
+    E --> J
+    F --> J
+    G --> J
+    H --> J
+    I --> J
+
+    style A fill:#0e1424,stroke:#f72585,color:#e2e8f0
+    style J fill:#1a0e14,stroke:#f72585,color:#e2e8f0
+    style C fill:#131a2e,stroke:#f72585,color:#e2e8f0
+    style G fill:#131a2e,stroke:#ff85b3,color:#e2e8f0
+      </div>
+    </div>
+
+    <div class="diagram-wrap" style="margin-top:24px">
+      <div class="diagram-title">Yahoo Japan Corporate Structure & Key Relationships</div>
+      <div class="mermaid">
+graph TB
+    subgraph Parent["🏢 Z Holdings (Parent)"]
+        ZH["Z Holdings Corp\n(listed on Tokyo Stock Exchange)"]
+    end
+
+    subgraph Owners["👥 Shareholders"]
+        SB["SoftBank Group\n~45% stake"]
+        US_Yahoo["Yahoo Inc USA\n~35% stake"]
+        Public["Public Float\n~20%"]
+    end
+
+    subgraph Core["🌐 Yahoo Japan Core Platform"]
+        Search["Yahoo Search\n(Google technology)"]
+        Portal["Portal &amp; News"]
+        ID["Yahoo! JAPAN ID\n50M+ registered users"]
+    end
+
+    subgraph Commerce["🛒 Commerce Ecosystem"]
+        Shopping["Yahoo Shopping"]
+        Auctions["Yahoo Auctions\n(Japan's eBay)"]
+        Travel["Yahoo Travel"]
+        Finance["Yahoo Finance Japan"]
+    end
+
+    subgraph Payments["💳 Payment Ecosystem"]
+        PayPay["PayPay\nJapan's #1 cashless payment"]
+        PayPayBank["PayPay Bank"]
+        PayPayInsurance["PayPay Insurance"]
+    end
+
+    SB --> ZH
+    US_Yahoo --> ZH
+    Public --> ZH
+    ZH --> Core
+    ZH --> Commerce
+    ZH --> Payments
+    Core --> Commerce
+    Core --> Payments
+
+    style Parent fill:#0e1424,stroke:#f72585
+    style Owners fill:#0e1424,stroke:#64748b
+    style Core fill:#131a2e,stroke:#f72585
+    style Commerce fill:#0e1424,stroke:#ff85b3
+    style Payments fill:#131a2e,stroke:#c9184a
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Ad 2: Mid-content after section 3 ── -->
+  <div class="ad-unit-inline">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-2662293899276634"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ── 4. FEATURES ── -->
+  <section id="features">
+    <h2><span class="emoji">🚀</span>Key Services & Features</h2>
+    <p class="section-intro">Over 100 services — here are the most important ones.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">📰</div>
+        <h4>Yahoo News Japan</h4>
+        <p>The most-read news aggregator in Japan. Pulls from hundreds of publishers and editorial partners, updated every minute.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛒</div>
+        <h4>Yahoo Shopping</h4>
+        <p>One of Japan's largest e-commerce platforms, hosting millions of products from thousands of merchants with PayPay integration.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔨</div>
+        <h4>Yahoo Auctions</h4>
+        <p>Japan's equivalent of eBay — the dominant online auction platform where used goods, rare items, and antiques are bought and sold daily.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💳</div>
+        <h4>PayPay Integration</h4>
+        <p>Seamlessly linked to PayPay — Japan's #1 cashless payment app. Shared user base across shopping, auctions and financial services.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌤️</div>
+        <h4>Yahoo Weather Japan</h4>
+        <p>Hyper-local weather forecasts critical for a country with typhoons, earthquakes and dramatic seasonal changes. Used by millions daily.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <h4>Yahoo Finance Japan</h4>
+        <p>Real-time stock quotes, portfolio tracking, financial news and market data — deeply embedded in Japan's investor community.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">✈️</div>
+        <h4>Yahoo Travel</h4>
+        <p>Hotel and travel booking, heavily used for domestic Japanese travel — linking to ryokan, onsen resorts and city hotels.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🗂️</div>
+        <h4>Yahoo! JAPAN ID</h4>
+        <p>Single sign-on identity used across all 100+ Yahoo Japan services — with 50M+ registered accounts linking everything together.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <h4>Yahoo Search</h4>
+        <p>Japan's second-most-used search engine, powered by Google's underlying technology since 2010 but branded and integrated as Yahoo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. USE CASE MINDMAP ── -->
+  <section id="usecases">
+    <h2><span class="emoji">🗺️</span>Who Uses Yahoo Japan & How</h2>
+    <p class="section-intro">Yahoo Japan is woven into virtually every aspect of Japanese digital life.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Yahoo Japan Ecosystem Map</div>
+      <div class="mermaid">
+mindmap
+  root((Yahoo Japan))
+    Daily Information
+      News headlines
+      Weather forecasts
+      Sports scores
+      Stock prices
+    Shopping &amp; Commerce
+      Yahoo Shopping
+      Yahoo Auctions
+      Yahoo Travel bookings
+      Price comparison
+    Financial Services
+      PayPay payments
+      PayPay Bank
+      Insurance products
+      Credit services
+    Search
+      Web search via Google
+      Local business search
+      Image search
+      News search
+    Entertainment
+      Sports news
+      TV guides
+      Music
+      Horoscopes
+    Communication
+      Yahoo Mail Japan
+      Yahoo Answers Japan
+      Community forums
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. COMPARISON ── -->
+  <section id="comparison">
+    <h2><span class="emoji">⚖️</span>Yahoo Japan vs Google Japan</h2>
+    <p class="section-intro">The only market in the world where Yahoo genuinely rivals Google — and in some respects dominates.</p>
+    <div class="diagram-wrap" style="padding: 0; overflow: hidden;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Yahoo Japan (yahoo.co.jp)</th>
+            <th>Google Japan (google.co.jp)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Monthly Users in Japan</td><td class="yes">83.35M</td><td>84.60M</td></tr>
+          <tr><td>Japan Site Rank</td><td class="yes">#1</td><td>#2</td></tr>
+          <tr><td>PC User Reach</td><td class="yes">67.7%</td><td>~65%</td></tr>
+          <tr><td>Smartphone User Reach</td><td class="yes">91%</td><td>~87%</td></tr>
+          <tr><td>Search Technology</td><td>Google-powered</td><td class="yes">Google native</td></tr>
+          <tr><td>E-commerce</td><td class="yes">Yahoo Shopping + Auctions</td><td>Google Shopping only</td></tr>
+          <tr><td>Payment Service</td><td class="yes">PayPay (Japan's #1)</td><td>Google Pay (smaller in JP)</td></tr>
+          <tr><td>News Aggregation</td><td class="yes">Leading platform in Japan</td><td>Google News (smaller)</td></tr>
+          <tr><td>Auction Platform</td><td class="yes">Yahoo Auctions (dominant)</td><td class="no">None</td></tr>
+          <tr><td>Age of Majority Users</td><td>35-44 years (58.81% male)</td><td>Broader demographic</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── Ad 3: Mid-content after section 6 ── -->
+  <div class="ad-unit-inline">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block;"
+         data-ad-client="ca-pub-2662293899276634"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ── 7. WHY JAPAN IS DIFFERENT ── -->
+  <section id="unique">
+    <h2><span class="emoji">🗾</span>Why Japan Is Different</h2>
+    <p class="section-intro">Yahoo Japan defied global trends — here's why it succeeded where every other Yahoo failed.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Why Yahoo Japan Survived While Global Yahoo Collapsed</div>
+      <div class="mermaid">
+flowchart TD
+    A["Yahoo Japan Founded 1996\nJoint venture: Yahoo + SoftBank"] --> B{Key Decisions}
+    B --> C["Local Independence\nSoftBank takes operational control\n— not US Yahoo management"]
+    B --> D["Deep Localisation\n100% Japanese language &amp; culture\nServices Japanese people actually need"]
+    B --> E["Early Mobile Dominance\nFirst mover in Japan's\nmobile internet boom"]
+    B --> F["Ecosystem Lock-In\nYahoo! JAPAN ID links\nall 100+ services together"]
+    C --> G["Survived US Yahoo's decline\nwhile thriving independently"]
+    D --> G
+    E --> G
+    F --> G
+    G --> H["2019: Z Holdings formed\n(Yahoo Japan + SoftBank digital assets)"]
+    H --> I["2023: LINE integration\nJapan's most popular messaging app\njoins the ecosystem"]
+    I --> J(["🏆 Japan's undisputed #1 web property"])
+
+    style A fill:#0e1424,stroke:#f72585,color:#e2e8f0
+    style J fill:#1a0e14,stroke:#f72585,color:#e2e8f0
+    style G fill:#131a2e,stroke:#ff85b3,color:#e2e8f0
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 8. TIMELINE ── -->
+  <section id="timeline">
+    <h2><span class="emoji">📅</span>Timeline</h2>
+    <p class="section-intro">Nearly three decades of digital dominance in Japan.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>April 1, 1996 — Founded</h4>
+        <p>Yahoo Japan Corporation established as a joint venture between US Yahoo Inc and SoftBank. One of the very first major Japanese internet portals, launching while most Japanese had never used the web.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>1997 — Listed on JASDAQ</h4>
+        <p>Yahoo Japan becomes one of the first internet companies to go public in Japan. Investor excitement is enormous as Japan's internet adoption accelerates rapidly.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>January 2000 — Historic ¥100M Stock Price</h4>
+        <p>Yahoo Japan becomes the first stock in Japanese history to trade above ¥100 million per share — a legendary milestone that made it a symbol of Japan's dot-com era.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2000 — Yahoo Auctions Launch</h4>
+        <p>Yahoo Auctions launches and rapidly becomes Japan's dominant online auction platform, overtaking local competitors and establishing a position that lasts to this day.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2010 — Google Search Technology</h4>
+        <p>Yahoo Japan switches its search engine backend to Google's technology — a quiet but significant move. Yahoo Japan branding remains, but results are powered by Google's index.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2018 — PayPay Launch</h4>
+        <p>Yahoo Japan and SoftBank jointly launch PayPay — a cashless payment app that through aggressive promotions (including cashback campaigns up to ¥10B) quickly becomes Japan's #1 digital payment platform.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2019 — Z Holdings Formation</h4>
+        <p>Yahoo Japan's parent company restructures into Z Holdings Corporation to manage its expanding ecosystem of digital assets, commerce, and financial services.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2023 — LINE Integration</h4>
+        <p>Z Holdings merges Yahoo Japan and LINE Corporation (Japan's most popular messaging app with 95M users) into a unified digital giant, creating one of Asia's most powerful tech conglomerates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 9. AUDIENCE ── -->
+  <section id="audience">
+    <h2><span class="emoji">👥</span>Who Uses Yahoo Japan</h2>
+    <p class="section-intro">Understanding the demographics behind Japan's most-visited website.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Yahoo Japan User Demographics</div>
+      <div class="mermaid">
+pie title Yahoo Japan — Gender Split
+    "Male Users" : 58.81
+    "Female Users" : 41.19
+      </div>
+    </div>
+    <div class="diagram-wrap" style="margin-top:24px">
+      <div class="diagram-title">Age Group Distribution</div>
+      <div class="mermaid">
+xychart-beta
+    title "Yahoo Japan Users by Age Group (%)"
+    x-axis ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"]
+    y-axis "Percentage of Users" 0 --> 35
+    bar [8, 18, 28, 22, 14, 10]
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 10. SUMMARY ── -->
+  <section id="summary">
+    <h2><span class="emoji">✨</span>Summary</h2>
+    <div class="kid-box">
+      <h3>🎯 The one-sentence version</h3>
+      <p>
+        <strong>Yahoo Japan is Japan's #1 web portal and digital super-ecosystem</strong> — a joint venture between Yahoo and SoftBank that built an empire of 100+ services including Japan's top news aggregator, largest auction site, biggest cashless payment system (PayPay), and a shopping platform used by 91% of all Japanese smartphone users.
+      </p>
+      <p style="margin-top:16px; font-size:.95rem; color: var(--muted);">
+        Unlike the US Yahoo which faded into irrelevance, Yahoo Japan became an indispensable part of daily life in Japan — proving that deep local focus and ecosystem integration can defeat even the most powerful global competitors.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Ad 4: Before Footer ── -->
+<div class="ad-unit" style="padding-bottom: 32px;">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-2662293899276634"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <img class="footer-logo" src="/logo.svg" alt="JustSimple.Online" />
+  <strong style="color:#fff;">JustSimple.Online</strong> — Making the web understandable, one site at a time.
+  <br><br>
+  Analysis of <a href="https://yahoo.co.jp" target="_blank">yahoo.co.jp</a>
+  &nbsp;·&nbsp; <a href="/">← All Analyses</a>
+  &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a>
+  &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
+</footer>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      primaryColor: '#131a2e',
+      primaryTextColor: '#e2e8f0',
+      primaryBorderColor: '#f72585',
+      lineColor: '#f72585',
+      secondaryColor: '#0e1424',
+      tertiaryColor: '#0e1424',
+      background: '#080b14',
+      mainBkg: '#131a2e',
+      nodeBorder: '#f72585',
+      clusterBkg: '#0e1424',
+      titleColor: '#e2e8f0',
+      edgeLabelBackground: '#131a2e',
+      attributeBackgroundColorEven: '#131a2e',
+      attributeBackgroundColorOdd: '#0e1424'
+    }
+  });
+</script>
+</body>
+</html>
