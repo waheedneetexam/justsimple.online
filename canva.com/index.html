@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canva — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Canva: how the Australian design platform works, its freemium business model, revenue, and how it disrupted Adobe's design empire." />
+  <meta name="keywords" content="Canva analysis, Canva business model, how Canva works, Canva revenue, design platform, Canva vs Adobe, Canva AI" />
+  <link rel="canonical" href="https://justsimple.online/canva.com/" />
+  <meta property="og:title" content="Canva — Independent Analysis by JustSimple.Online" />
+  <meta property="og:description" content="How Canva grew from an Australian startup to a $26B design empire used by 185 million people — and why it terrifies Adobe." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://justsimple.online/canva.com/" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TSFVXECJ40');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#00c4cc;--text:#e8eaf6;--muted:#8892b0;--border:#003a3b;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#001a1b 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#00c4cc18,transparent);}
+    .hero-badge{display:inline-block;background:#00c4cc26;border:1px solid #00c4cc66;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#00c4cc14,#00c4cc0a);border:1.5px solid #00c4cc59;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+    .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;}
+    .stat .num{font-size:2.2rem;font-weight:800;color:var(--accent);display:block;}
+    .stat .label{font-size:.85rem;color:var(--muted);margin-top:4px;}
+    .diagram-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;overflow-x:auto;}
+    .diagram-wrap+.diagram-wrap{margin-top:24px;}
+    .diagram-title{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+    .mermaid{display:flex;justify-content:center;}
+    .timeline{position:relative;padding-left:28px;}
+    .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--accent),transparent);}
+    .tl-item{position:relative;margin-bottom:28px;}
+    .tl-dot{position:absolute;left:-28px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px;}
+    .tl-item p{font-size:.88rem;color:var(--muted);}
+    .yes{color:#51cf66;font-weight:700;} .no{color:#ff6b6b;font-weight:700;}
+    .ad-unit{max-width:1100px;margin:0 auto;padding:28px 24px 0;text-align:center;}
+    .ad-unit-label{font-size:.68rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;opacity:.5;}
+    .ad-unit ins{border-radius:8px;overflow:hidden;}
+    footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;}
+    footer a{color:var(--accent);text-decoration:none;}
+    footer .footer-logo{height:26px;width:auto;vertical-align:middle;margin-right:6px;}
+    @media(max-width:600px){.kid-box{padding:20px;}.diagram-wrap{padding:20px 12px;}}
+    #diag-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;}
+    #diag-modal.open{display:flex;}
+    #diag-modal-inner{position:relative;min-width:60vw;min-height:30vh;max-width:95vw;max-height:92vh;overflow:auto;background:#1a1d27;border:1px solid #2d3250;border-radius:16px;padding:48px 32px 32px;box-shadow:0 24px 80px rgba(0,0,0,.8);}
+    #diag-close{position:absolute;top:12px;right:16px;background:none;border:none;color:#8892b0;font-size:1.6rem;cursor:pointer;line-height:1;transition:color .2s;}
+    #diag-close:hover{color:#fff;}
+    #diag-modal-inner svg{display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:78vh;width:auto!important;height:auto!important;}
+  </style>
+</head>
+<body>
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+<nav>
+  <a class="nav-logo" href="/"><img src="/logo.svg" alt="JustSimple.Online" style="height:34px;"/><span class="nav-tagline">Making the web understandable</span></a>
+  <div class="nav-right"><a href="/">← All Analyses</a>&nbsp;·&nbsp;<a href="/privacy.html">Privacy</a>&nbsp;·&nbsp;<a href="/terms.html">Terms</a></div>
+</nav>
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;"/></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>Canva: How an Australian Startup Democratised Professional Design</h1>
+  <p>An independent deep-dive into Canva's technology, freemium model, AI features, and how it disrupted the design industry by making professional-quality graphics accessible to everyone.</p>
+  <div class="hero-url">🌐 Analysed: <span>canva.com</span></div>
+</div>
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. Not affiliated with, endorsed by, or connected to the website analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+<main>
+  <section>
+    <h2><span class="emoji">🎨</span>What is Canva?</h2>
+    <p class="section-intro">Canva is the design tool that eliminated the excuse "I'm not a designer" — a drag-and-drop platform that turns anyone into a capable visual creator.</p>
+    <div class="kid-box" style="margin-bottom:28px;">
+      <h3>Explain it like I'm 10</h3>
+      <p>You know how making a poster used to require either being really good at art, or using complicated programmes like Photoshop that take years to learn? Canva solves that. You pick a template — a birthday invitation, a school presentation, a social media post — and then just click and type to customise it. The photos, fonts, and layouts all look professional because designers already made them beautiful. You just put in your words and pictures.</p>
+      <p>Canva is used by massive companies to make their marketing materials, by students to make presentations, and by small businesses to create logos and flyers. The basic version is free, so anyone can start using it immediately. If you want extra features — like more templates or the ability to remove backgrounds from photos with one click — you pay a monthly fee. It's the design programme that even your parents and grandparents can figure out.</p>
+    </div>
+    <p style="color:var(--muted);margin-bottom:16px;">Canva Pty Ltd is an Australian graphic design platform founded in 2013 by Melanie Perkins, Cliff Obrecht, and Cameron Adams in Perth, Western Australia. The founding story is often cited as a masterclass in persistence: Perkins spent three years pitching to over 100 venture capital investors and was rejected by all of them before finally securing funding from Lars Rasmussen (co-founder of Google Maps) through a connection made at a kite-surfing lesson. The company was valued at $26 billion in a 2021 funding round, making it Australia's most valuable privately held technology company.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">Canva's core insight was that professional design tools like Adobe Photoshop, InDesign, and Illustrator had enormous barriers to entry: expensive subscription costs, steep learning curves requiring months of training, and workflows designed for professional designers rather than everyday users. The vast majority of people who needed to create visual content — social media posts, presentations, flyers, business cards — were not professional designers but were forced to use either these complex tools or generic clip-art software with poor results.</p>
+    <p style="color:var(--muted);">Today Canva serves 185 million monthly active users across 190 countries, including 95% of Fortune 500 companies. Its template library contains over 1 million designs, and users collectively create over 300 million new designs monthly. The platform has expanded beyond static graphics into video editing, website building, presentation tools, and AI-powered design features including Magic Design (AI template generation from a photo or prompt) and Magic Eraser (AI background removal). Canva's most recent strategic priority is becoming a complete visual communication suite for teams, competing directly with tools like Figma, PowerPoint, and Google Slides simultaneously.</p>
+  </section>
+
+  <section>
+    <h2><span class="emoji">📊</span>Canva by the Numbers</h2>
+    <p class="section-intro">Canva's growth from a Perth bedroom to global design giant in a decade is one of the most impressive in technology history.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">185M</span><span class="label">Monthly active users globally</span></div>
+      <div class="stat"><span class="num">$2.3B</span><span class="label">Annual revenue (2024 estimate)</span></div>
+      <div class="stat"><span class="num">$26B</span><span class="label">Valuation at last funding round (2021)</span></div>
+      <div class="stat"><span class="num">2013</span><span class="label">Year founded in Perth, Australia</span></div>
+      <div class="stat"><span class="num">1M+</span><span class="label">Templates in the design library</span></div>
+      <div class="stat"><span class="num">300M+</span><span class="label">Designs created every month</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="emoji">⚙️</span>How Canva Works</h2>
+    <p class="section-intro">Canva's engineering combines a browser-based vector graphics engine, a massive template library, and increasingly powerful AI design tools.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">Canva's rendering engine is built in the browser using a combination of HTML5 Canvas and SVG, allowing complex design operations — layering, masking, transparency, gradient fills — to run entirely client-side without server round trips. The Canva editor's responsiveness depends on this client-side rendering: when you drag an element, the change is processed locally in your browser before being synced to Canva's servers. This architecture requires careful management of the canvas state and conflict resolution when multiple collaborators edit simultaneously.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">The template recommendation system uses a combination of tag-based filtering and machine-learning-based semantic similarity to suggest templates. When a user types "birthday invitation" in the search bar, the system must return templates that not only match those keywords but also match the user's inferred design preferences (formal vs. playful, minimal vs. busy) based on their editing history. Canva's photo library (over 100 million licensed images from Getty, Unsplash, and Pexels) is indexed with computer vision tags to make images searchable by visual content.</p>
+    <p style="color:var(--muted);margin-bottom:28px;">Canva's AI suite — branded as Magic Studio — includes Magic Design (generates complete design templates from a text prompt or uploaded image), Magic Write (AI text generation for copy within designs), Magic Edit (AI inpainting to replace or modify elements of a photo), and Background Remover. These features are powered by a combination of Canva's proprietary models and third-party AI APIs. The integration of generative AI has significantly accelerated Canva's value proposition: users can now create complete, professional-looking designs from a single sentence description.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">How Canva Turns a Blank Page into a Professional Design</div>
+      <div class="mermaid">
+graph TB
+    A[User opens Canva] --> B{Starting Point}
+    B --> C[Choose from 1M+ Templates]
+    B --> D[Start from Blank Canvas]
+    B --> E[Magic Design — AI generates from prompt]
+    C --> F[Drag and Drop Editor in Browser]
+    D --> F
+    E --> F
+    F --> G[Add Text, Images, Icons, Videos]
+    G --> H[AI Tools: Background Remove, Magic Edit]
+    H --> I[Share, Download, or Publish]
+    I --> J{Output Format}
+    J --> K[PNG, JPG, PDF Download]
+    J --> L[Share Link for Collaboration]
+    J --> M[Publish to Social Media Directly]
+    J --> N[Present as Slideshow]
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-unit" style="padding:0 0 56px;">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <section>
+    <h2><span class="emoji">💰</span>How Does Canva Make Money?</h2>
+    <p class="section-intro">Canva's freemium model converts a tiny percentage of its massive free user base into paying customers — but at 185 million users, even a small conversion rate generates billions.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">Canva's business model is based on <strong style="color:var(--text);">freemium subscriptions</strong>. The free tier provides access to approximately 250,000 templates, 1 million stock images, and the core editor. Canva Pro ($14.99/month or $119.99/year per person) unlocks the full template library, premium stock photos and videos, Brand Kit (consistent brand colours and fonts), background remover, content planner for social media scheduling, and unlimited storage. Canva Teams ($29.99/month for the first 5 people) adds collaboration features and team brand management.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">The conversion from free to paid is driven by hitting specific "magic moments" where users encounter premium-only features during their creative workflow. When a user wants to remove a background, save a brand colour, or access a premium template, the upgrade prompt appears at precisely the moment of maximum desire to use the feature — a classic freemium conversion mechanic. Canva's conversion rate from free to paid is estimated at 4-6%, which at 185 million users generates tens of millions of paying customers.</p>
+    <p style="color:var(--muted);margin-bottom:28px;"><strong style="color:var(--text);">Canva for Enterprise</strong> is the fastest-growing revenue segment, targeting large organisations that want centralised brand management, advanced permissions, and dedicated support. Enterprise deals are typically six-figure or seven-figure annual contracts. The enterprise push is a direct response to the realisation that large companies with thousands of employees creating marketing materials represent enormous untapped value — and that Canva's ease of use makes it uniquely positioned to replace fragmented design tool ecosystems within these organisations.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Canva Freemium Business Model — From Free User to Enterprise Customer</div>
+      <div class="mermaid">
+graph TB
+    A[185M Monthly Users] --> B[Free Tier 80%+ of Users]
+    A --> C[Canva Pro $14.99/month]
+    A --> D[Canva Teams $29.99/month]
+    A --> E[Canva Enterprise Custom Pricing]
+    B --> F[Hit Premium Feature Limit]
+    F --> C
+    C --> G[Access full template library and AI tools]
+    D --> H[Collaborative brand management]
+    E --> I[Centralised enterprise design platform]
+    C --> J[Annual revenue contribution]
+    D --> J
+    E --> J
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="emoji">🧩</span>What Makes Canva Remarkable</h2>
+    <p class="section-intro">Canva's success is built on a series of product decisions that seem obvious in retrospect but were genuinely innovative when they were made.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🖱️</div>
+        <h4>No Design Skills Needed</h4>
+        <p>The drag-and-drop interface with smart alignment guides, auto-resize, and one-click colour palettes makes professional design achievable for anyone in minutes.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h4>Magic Studio AI</h4>
+        <p>AI-powered design generation, background removal, image editing, and copywriting — integrated directly into the editor without switching tools.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👥</div>
+        <h4>Real-Time Collaboration</h4>
+        <p>Multiple team members can edit the same design simultaneously, with live cursors and comments — like Google Docs for visual design.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📐</div>
+        <h4>Brand Kit</h4>
+        <p>Store your company's exact colours, fonts, and logo, then apply them across thousands of templates in one click. Ensures brand consistency at scale.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <h4>Education and Nonprofit Free Plans</h4>
+        <p>Free Canva Pro for educational institutions and nonprofits creates massive grassroots adoption, training the next generation of users who will later pay at work.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h4>Content Scheduler</h4>
+        <p>Canva Pro includes direct social media publishing and scheduling — replacing separate tools like Buffer or Hootsuite for visual content creators.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="emoji">📅</span>Canva History</h2>
+    <p class="section-intro">From a Perth bedroom in 2013 to a $26 billion design empire used by 95% of Fortune 500 companies.</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><h4>2007 — Melanie Perkins's First Startup</h4><p>Perkins launches Fusion Books, an online school yearbook tool in Perth. The experience convinces her that design tools should be accessible to everyone.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2013 — Canva Launches After 100 Rejections</h4><p>After three years and over 100 VC rejections, Canva officially launches. 50,000 designs are created on the first day.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2018 — Enterprise Launch and Unicorn Status</h4><p>Canva reaches $1B valuation (unicorn status) after launching Canva for Work (now Teams), targeting business customers.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2019 — $3.2B Valuation</h4><p>A $85M funding round values Canva at $3.2B — remarkable growth for an Australian startup with no major US presence at launch.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2021 — $26B Valuation</h4><p>Reaches $26B in a $200M funding round, becoming Australia's most valuable private tech company. 60M users at the time.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2023 — Magic Studio AI Launches</h4><p>Canva launches comprehensive AI design suite including Magic Design, Magic Write, and Magic Edit, positioning itself as the AI-native design platform.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2024 — Acquires Affinity Suite</h4><p>Acquires the Affinity design software suite (professional competitor to Adobe) for $380M, expanding into the professional designer market.</p></div>
+    </div>
+  </section>
+
+  <!-- Diagram modal -->
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>
+    #diag-modal{display:none;}
+    #diag-modal.open{display:flex;}
+    .diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}
+    .diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}
+  </style>
+</main>
+
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<footer>
+  <img src="/logo.svg" alt="JustSimple.Online" class="footer-logo" />
+  <a href="/">JustSimple.Online</a> — Independent website analysis. Not affiliated with Canva.
+  &nbsp;·&nbsp;<a href="/privacy.html">Privacy</a>&nbsp;·&nbsp;<a href="/terms.html">Terms</a>
+</footer>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true, theme: 'dark',
+    themeVariables: {
+      primaryColor: '#002829', primaryTextColor: '#e8eaf6',
+      primaryBorderColor: '#00c4cc', lineColor: '#00c4cc',
+      secondaryColor: '#001a1b', tertiaryColor: '#001a1b',
+      background: '#0a0d1a', mainBkg: '#002829', nodeBorder: '#00c4cc',
+      clusterBkg: '#001a1b', titleColor: '#e8eaf6',
+      edgeLabelBackground: '#002829',
+      attributeBackgroundColorEven: '#002829', attributeBackgroundColorOdd: '#001a1b'
+    }
+  });
+</script>
+
+<div id="diag-modal" role="dialog" aria-modal="true" aria-label="Diagram viewer">
+  <div id="diag-modal-inner"><button id="diag-close" aria-label="Close diagram">&times;</button></div>
+</div>
+
+<script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){
+    var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;
+    if(!wrap)return;
+    var mDiv=wrap.querySelector('.mermaid');
+    if(mDiv)openModal(mDiv);
+  });
+  function openModal(mDiv){
+    clearInner();modal.classList.add('open');document.body.style.overflow='hidden';
+    var svg=mDiv.querySelector('svg');
+    if(svg){showSvg(svg);return;}
+    var msg=document.createElement('p');msg.className='diag-msg';
+    msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';
+    msg.textContent='Rendering diagram...';inner.appendChild(msg);
+    var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);
+  }
+  function clearInner(){
+    inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});
+    if(onMove)document.removeEventListener('mousemove',onMove);
+    if(onUp)document.removeEventListener('mouseup',onUp);
+    onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;
+  }
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){
+    clearInner();
+    var xml=new XMLSerializer().serializeToString(svg);
+    var img=document.createElement('img');
+    img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);
+    inner.appendChild(img);activeImg=img;
+    var hint=document.createElement('p');hint.className='diag-hint';
+    hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';
+    hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';
+    inner.appendChild(hint);
+    inner.addEventListener('wheel',function(e){
+      e.preventDefault();
+      var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;
+      var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));
+      tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;
+      img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();
+    },{passive:false});
+    img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});
+    onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};
+    onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};
+    document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);
+    img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});
+    var lastDist=0;
+    img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});
+    img.addEventListener('touchmove',function(e){
+      if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}
+    },{passive:false});
+  }
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+<script>
+(function(){
+  var modal=document.getElementById('diag-modal'),
+      inner=document.getElementById('diag-modal-inner'),
+      closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0;
+  var activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){
+    var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;
+    if(!wrap)return;
+    var mDiv=wrap.querySelector('.mermaid');
+    if(mDiv)openModal(mDiv);
+  });
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';
+    var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}
+    var msg=document.createElement('p');msg.className='diag-msg';
+    msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';
+    msg.textContent='Rendering diagram...';inner.appendChild(msg);
+    var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);
+  }
+  function clearInner(){
+    inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});
+    if(onMove)document.removeEventListener('mousemove',onMove);
+    if(onUp)document.removeEventListener('mouseup',onUp);
+    onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;
+  }
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){
+    clearInner();
+    var xml=new XMLSerializer().serializeToString(svg);
+    var img=document.createElement('img');
+    img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);
+    inner.appendChild(img);activeImg=img;
+    var hint=document.createElement('p');hint.className='diag-hint';
+    hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';
+    hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';
+    inner.appendChild(hint);
+    inner.addEventListener('wheel',function(e){
+      e.preventDefault();
+      var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;
+      var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));
+      tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;
+      img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();
+    },{passive:false});
+    img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});
+    onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};
+    onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};
+    document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);
+    img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});
+    var lastDist=0;
+    img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});
+    img.addEventListener('touchmove',function(e){
+      if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}
+    },{passive:false});
+  }
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

@@ -2,6 +2,7 @@ const express = require('express');
 const cors    = require('cors');
 const search   = require('./routes/search');
 const featured = require('./routes/featured');
+const sites = require('./routes/sites');
 
 const app  = express();
 const PORT = 3011;
@@ -11,6 +12,7 @@ app.use(express.json());
 
 app.use('/api/search',   search);
 app.use('/api/featured', featured);
+app.use('/api/sites', sites);
 
 app.get('/api/health', (req, res) => res.json({ ok: true, ts: new Date() }));
 

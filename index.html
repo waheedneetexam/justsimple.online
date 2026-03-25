@@ -273,7 +273,7 @@
     footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
     footer .footer-logo { height: 28px; width: auto; vertical-align: middle; margin-right: 8px; }
     footer a { color: #a78bfa; text-decoration: none; }
-    .site-count-toggle {
+    .site-count-link {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -283,32 +283,9 @@
       color: #ddd6fe;
       border-radius: 999px;
       padding: 8px 14px;
-      font: inherit;
-      cursor: pointer;
-    }
-    .site-count-toggle:hover { background: rgba(124,58,237,.18); }
-    .site-directory {
-      max-width: 960px;
-      margin: 18px auto 0;
-      padding: 18px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: rgba(255,255,255,.02);
-      display: none;
-    }
-    .site-directory.open { display: block; }
-    .site-directory-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 10px 16px;
-      margin-top: 8px;
-    }
-    .site-directory-grid a {
-      color: #c4b5fd;
       text-decoration: none;
-      font-size: .84rem;
     }
-    .site-directory-grid a:hover { color: #fff; }
+    .site-count-link:hover { background: rgba(124,58,237,.18); }
   </style>
 </head>
 <body>
@@ -369,33 +346,6 @@
 
 <script>
 (function () {
-  // ── Fallback list (used if API is unreachable) ──────────────────────────
-  var ALL_SITES = [
-    { folder_path:'/btcpayserver.org/', name:'BTCPay Server',  description:'Open-source Bitcoin payment processor. Accept crypto with 0% fees, no middleman, fully self-hosted.', tags:['Bitcoin','Payments','Open Source'] },
-    { folder_path:'/phoenix.acinq.co/', name:'Phoenix Wallet', description:'Self-custodial Lightning Network Bitcoin wallet by ACINQ. Send Bitcoin instantly with auto channel management.', tags:['Lightning','Bitcoin','Mobile Wallet'] },
-    { folder_path:'/amazon.com/',   name:'Amazon',    description:'World\'s largest online retailer + AWS cloud computing. 315M+ customers, Prime, Alexa, and much more.', tags:['E-Commerce','Cloud','Streaming'] },
-    { folder_path:'/yahoo.com/',    name:'Yahoo',     description:'Pioneer web portal with 1B+ users. Yahoo Mail, News, Finance, Sports — all in one place since 1994.', tags:['Web Portal','Email','News'] },
-    { folder_path:'/tiktok.com/',   name:'TikTok',    description:'Short-form video platform by ByteDance. 1.6B users, AI-powered For You feed, $23B revenue in 2024.', tags:['Video','Social','Entertainment'] },
-    { folder_path:'/bing.com/',     name:'Bing',      description:'Microsoft\'s AI-powered search engine with Copilot. 3.36B monthly visits and growing fast.', tags:['Search','AI','Microsoft'] },
-    { folder_path:'/duckduckgo.com/', name:'DuckDuckGo', description:'Privacy-first search engine that never tracks you. 71.9B searches in 2024, #2 mobile search in 20+ countries.', tags:['Privacy','Search','No Tracking'] },
-    { folder_path:'/netflix.com/',  name:'Netflix',   description:'The world\'s leading streaming service. 230M+ subscribers, $17B content spend, originals in 190 countries.', tags:['Streaming','Entertainment','Originals'] },
-    { folder_path:'/google.com/',   name:'Google',    description:'The world\'s search engine. 92% market share, 8.5B daily searches, $307B revenue.', tags:['Search','Ads','Cloud','AI'] },
-    { folder_path:'/youtube.com/',  name:'YouTube',   description:'2.7 billion users, 500 hours of video uploaded every minute. The second largest search engine.', tags:['Video','Streaming','Creators'] },
-    { folder_path:'/facebook.com/', name:'Facebook',  description:'3 billion users, $164B in ad revenue. The social network that connected the world.', tags:['Social','Ads','Meta'] },
-    { folder_path:'/instagram.com/', name:'Instagram', description:'2 billion users, 95M photos daily, and the app that created the influencer economy.', tags:['Photos','Reels','Meta'] },
-    { folder_path:'/chatgpt.com/',  name:'ChatGPT',   description:'100 million users in 2 months. OpenAI\'s AI assistant that kicked off the global AI revolution.', tags:['AI','OpenAI','LLM'] },
-    { folder_path:'/reddit.com/',   name:'Reddit',    description:'850M monthly users, 100K+ communities. The front page of the internet since 2005.', tags:['Community','Forums','Upvotes'] },
-    { folder_path:'/wikipedia.org/', name:'Wikipedia', description:'60 million articles, 1.8 billion visitors, zero ads. The free encyclopaedia anyone can edit.', tags:['Reference','Non-profit','Knowledge'] },
-    { folder_path:'/x.com/',        name:'X (Twitter)', description:'550M users, $44B Musk acquisition. The real-time global conversation platform.', tags:['Social','News','Musk'] },
-    { folder_path:'/whatsapp.com/', name:'WhatsApp',  description:'3 billion users, 100 billion messages daily, end-to-end encryption.', tags:['Messaging','Encryption','Meta'] },
-    { folder_path:'/temu.com/',     name:'Temu',      description:'Gamified ultra-discount shopping. 1B+ downloads, 180+ countries, direct from manufacturers.', tags:['E-Commerce','Deals','Shopping'] },
-    { folder_path:'/weather.com/',  name:'Weather.com', description:'IBM\'s global weather platform. Powers 95% of weather apps worldwide.', tags:['Weather','IBM','Forecasting'] },
-    { folder_path:'/yahoo.co.jp/',  name:'Yahoo Japan', description:'Japan\'s #1 web portal with 83M+ monthly users and 100+ services.', tags:['Japan','Web Portal','Payments'] },
-    { folder_path:'/live.com/',     name:'Live', description:'Microsoft\'s identity and web entry point tying Outlook, account services, and consumer access together.', tags:['Microsoft','Identity','Email'] },
-    { folder_path:'/naver.com/',    name:'Naver', description:'South Korea\'s dominant portal combining search, news, shopping, maps, and local internet services.', tags:['Search','Portal','Korea'] },
-    { folder_path:'/pinterest.com/', name:'Pinterest', description:'Visual discovery platform for ideas, inspiration, shopping intent, and saved collections.', tags:['Visual Search','Social','Shopping'] }
-  ];
-
   function shuffle(arr) {
     var a = arr.slice();
     for (var i = a.length - 1; i > 0; i--) {
@@ -440,10 +390,10 @@
       return r.json();
     })
     .then(function (data) {
-      renderCards(data.sites && data.sites.length ? data.sites : ALL_SITES);
+      renderCards(data.sites || []);
     })
     .catch(function () {
-      renderCards(ALL_SITES);  // API down → use fallback silently
+      renderCards([]);  // API unavailable
     });
 }());
 </script>
@@ -466,11 +416,7 @@
   <br><br>
   <a href="/">justsimple.online</a> &nbsp;·&nbsp; <a href="/what-we-do.html">What We Do</a> &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms of Use</a>
   <br><br>
-  <button id="site-count-toggle" class="site-count-toggle" type="button" aria-expanded="false" aria-controls="site-directory">Website Analyses: <span id="site-count">0</span></button>
-  <div id="site-directory" class="site-directory" aria-hidden="true">
-    <div style="font-size:.78rem;margin-bottom:10px;">Processed website pages</div>
-    <div id="site-directory-grid" class="site-directory-grid"></div>
-  </div>
+  <a id="site-count-link" class="site-count-link" href="/analyses.html">Website Analyses: <span id="site-count">0</span></a>
   <br><br>
   <span style="font-size:.78rem;">All analyses are independent editorial content. JustSimple.Online is not affiliated with any website analysed.</span>
 </footer>
@@ -480,36 +426,8 @@
   const input    = document.getElementById('site-search');
   const dropdown = document.getElementById('search-dropdown');
   const clearBtn = document.getElementById('search-clear');
-  const footerToggle = document.getElementById('site-count-toggle');
   const siteCount = document.getElementById('site-count');
-  const siteDirectory = document.getElementById('site-directory');
-  const siteDirectoryGrid = document.getElementById('site-directory-grid');
   let debounce   = null;
-  const ALL_SITES = [
-    { folder_path:'/amazon.com/', name:'Amazon', description:'World\'s largest online retailer + AWS cloud computing. 315M+ customers, Prime, Alexa, and much more.', tags:['E-Commerce','Cloud','Streaming'] },
-    { folder_path:'/bing.com/', name:'Bing', description:'Microsoft\'s AI-powered search engine with Copilot. 3.36B monthly visits and growing fast.', tags:['Search','AI','Microsoft'] },
-    { folder_path:'/btcpayserver.org/', name:'BTCPay Server', description:'Open-source Bitcoin payment processor. Accept crypto with 0% fees, no middleman, fully self-hosted.', tags:['Bitcoin','Payments','Open Source'] },
-    { folder_path:'/chatgpt.com/', name:'ChatGPT', description:'OpenAI\'s conversational AI interface for chat, reasoning, writing, coding, and task assistance.', tags:['AI','OpenAI','Assistant'] },
-    { folder_path:'/duckduckgo.com/', name:'DuckDuckGo', description:'Privacy-first search engine that never tracks you. 71.9B searches in 2024, #2 mobile search in 20+ countries.', tags:['Privacy','Search','No Tracking'] },
-    { folder_path:'/facebook.com/', name:'Facebook', description:'Global social network for feeds, groups, messaging, communities, and Meta\'s advertising ecosystem.', tags:['Social','Meta','Ads'] },
-    { folder_path:'/google.com/', name:'Google', description:'The world\'s search engine. 92% market share, 8.5B daily searches, $307B revenue.', tags:['Search','Ads','Cloud','AI'] },
-    { folder_path:'/instagram.com/', name:'Instagram', description:'2 billion users, 95M photos daily, and the app that created the influencer economy.', tags:['Photos','Reels','Meta'] },
-    { folder_path:'/live.com/', name:'Live', description:'Microsoft\'s identity and web entry point tying Outlook, account services, and consumer access together.', tags:['Microsoft','Identity','Email'] },
-    { folder_path:'/naver.com/', name:'Naver', description:'South Korea\'s dominant portal combining search, news, shopping, maps, and local internet services.', tags:['Search','Portal','Korea'] },
-    { folder_path:'/netflix.com/', name:'Netflix', description:'The world\'s leading streaming service. 230M+ subscribers, $17B content spend, originals in 190 countries.', tags:['Streaming','Entertainment','Originals'] },
-    { folder_path:'/phoenix.acinq.co/', name:'Phoenix Wallet', description:'Self-custodial Lightning Network Bitcoin wallet by ACINQ. Send Bitcoin instantly with auto channel management.', tags:['Lightning','Bitcoin','Mobile Wallet'] },
-    { folder_path:'/pinterest.com/', name:'Pinterest', description:'Visual discovery platform for ideas, inspiration, shopping intent, and saved collections.', tags:['Visual Search','Social','Shopping'] },
-    { folder_path:'/reddit.com/', name:'Reddit', description:'850M monthly users, 100K+ communities. The front page of the internet since 2005.', tags:['Community','Forums','Upvotes'] },
-    { folder_path:'/temu.com/', name:'Temu', description:'Gamified ultra-discount shopping. 1B+ downloads, 180+ countries, direct from manufacturers.', tags:['E-Commerce','Deals','Shopping'] },
-    { folder_path:'/tiktok.com/', name:'TikTok', description:'Short-form video platform by ByteDance. 1.6B users, AI-powered For You feed, $23B revenue in 2024.', tags:['Video','Social','Entertainment'] },
-    { folder_path:'/weather.com/', name:'Weather.com', description:'IBM\'s global weather platform. Powers 95% of weather apps worldwide.', tags:['Weather','IBM','Forecasting'] },
-    { folder_path:'/whatsapp.com/', name:'WhatsApp', description:'3 billion users, 100 billion messages daily, end-to-end encryption.', tags:['Messaging','Encryption','Meta'] },
-    { folder_path:'/wikipedia.org/', name:'Wikipedia', description:'60 million articles, 1.8 billion visitors, zero ads. The free encyclopaedia anyone can edit.', tags:['Reference','Non-profit','Knowledge'] },
-    { folder_path:'/x.com/', name:'X (Twitter)', description:'550M users, $44B Musk acquisition. The real-time global conversation platform.', tags:['Social','News','Musk'] },
-    { folder_path:'/yahoo.co.jp/', name:'Yahoo Japan', description:'Japan\'s #1 web portal with 83M+ monthly users and 100+ services.', tags:['Japan','Web Portal','Payments'] },
-    { folder_path:'/yahoo.com/', name:'Yahoo', description:'Pioneer web portal with 1B+ users. Yahoo Mail, News, Finance, Sports — all in one place since 1994.', tags:['Web Portal','Email','News'] },
-    { folder_path:'/youtube.com/', name:'YouTube', description:'2.7 billion users, 500 hours of video uploaded every minute. The second largest search engine.', tags:['Video','Streaming','Creators'] }
-  ];
 
   function esc(str) {
     return String(str)
@@ -526,14 +444,6 @@
     const words = cleaned.split(/\s+/).filter(Boolean);
     if (words.length >= 2) return (words[0][0] + words[1][0]).toUpperCase();
     return cleaned.slice(0, 2).toUpperCase();
-  }
-
-  function renderSiteDirectory() {
-    const sites = ALL_SITES.slice().sort((a, b) => a.name.localeCompare(b.name));
-    siteCount.textContent = String(sites.length);
-    siteDirectoryGrid.innerHTML = sites.map(site =>
-      `<a href="${esc(site.folder_path)}">${esc(site.name)}</a>`
-    ).join('');
   }
 
   function renderResults(results, query) {
@@ -602,13 +512,17 @@
     }
   });
 
-  renderSiteDirectory();
-
-  footerToggle.addEventListener('click', function () {
-    const isOpen = siteDirectory.classList.toggle('open');
-    footerToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    siteDirectory.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-  });
+  fetch('/api/sites')
+    .then(function (res) {
+      if (!res.ok) throw new Error('API ' + res.status);
+      return res.json();
+    })
+    .then(function (data) {
+      siteCount.textContent = String(data.count || 0);
+    })
+    .catch(function () {
+      siteCount.textContent = '0';
+    });
 })();
 </script>
 </body>

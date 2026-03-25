@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Discord — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Discord: how the gaming communication platform works, its Nitro subscription model, server architecture, and evolution into a general community platform."/>
+  <meta name="keywords" content="Discord analysis, Discord business model, how Discord works, Discord Nitro, gaming communication, community platform"/>
+  <link rel="canonical" href="https://justsimple.online/discord.com/"/>
+  <meta property="og:title" content="Discord — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How Discord grew from a gaming chat tool to the default platform for 19M+ online communities — and how it monetises without ads."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/discord.com/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#5865f2;--text:#e8eaf6;--muted:#8892b0;--border:#1e1f40;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#0a0b1a 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#5865f218,transparent);}
+    .hero-badge{display:inline-block;background:#5865f226;border:1px solid #5865f266;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#5865f214,#5865f20a);border:1.5px solid #5865f259;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>Discord: How the World's Most Popular Community Platform Works</h1>
+    <p>An independent deep-dive into Discord's voice channel architecture, Nitro subscription model, server permissions system, and evolution from gaming chat to the default home for online communities of every kind.</p>
+    <div class="hero-url">🌐 <span>discord.com</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by Discord. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">🎮</span>What is Discord?</h2>
+      <p class="section-intro">Discord is the platform that replaced a dozen gaming communication tools at once — voice channels, text chat, screen sharing, and community servers, all free, all in one app.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>Discord is a messaging app but it works differently from WhatsApp or iMessage. Instead of just chatting with individual friends, you join Servers — which are like private clubs or group chats for a specific topic or community. Your school might have a Discord server for homework help. Your favourite game might have a server where thousands of fans discuss the game together.</p>
+        <p>The really special thing about Discord is the voice channels. Imagine a room you can walk in and out of whenever you want — you just click the channel and you can hear and talk to everyone else in there, like they're in the same room. This is perfect for gaming where you need to talk to teammates, or for just hanging out with friends while you do other things. The basic version is completely free.</p>
+      </div>
+      <div class="prose">
+        <p>Discord was founded in 2015 by Jason Citron and Stan Vishnevskiy. Citron had previously sold OpenFeint (a mobile gaming social network) to GREE for $104 million and used the proceeds to fund Hammer & Chisel, the game studio where Discord was initially an internal communication tool. Realising the communication tool was more valuable than the games being made with it, the team pivoted to focus entirely on Discord. The original target audience was specifically gamers who needed low-latency voice chat while playing multiplayer games — a category served poorly by Skype, TeamSpeak, and Mumble.</p>
+        <p>Discord's growth was initially driven entirely by the gaming community. Dedicated server communities formed around specific games, game publishers, streamers, and esports teams. The platform's server model — where users join persistent communities with text channels, voice channels, and roles — proved to be the natural organisation structure for online communities of every kind. By 2020, non-gaming communities (study groups, hobby servers, investment communities, creator fan servers) had grown to represent the majority of Discord's active users.</p>
+        <p>In 2021, Microsoft reportedly offered $10 billion to acquire Discord, which Discord declined — one of the most significant acquisitions that didn't happen in tech. Discord instead raised $500M at a $15B valuation and pursued an independent path. The platform has since grown to 200M+ registered users with 19M+ active daily servers. Discord's monetisation challenge has been significant: with a strong culture of free access, introducing paid features requires careful positioning.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">Discord's growth from a gaming tool to the world's default community platform.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">200M+</span><span class="label">Registered users</span></div><div class="stat"><span class="num">19M+</span><span class="label">Active servers daily</span></div><div class="stat"><span class="num">2015</span><span class="label">Year founded</span></div><div class="stat"><span class="num">$560M</span><span class="label">Annual revenue estimate (2024)</span></div><div class="stat"><span class="num">$10B</span><span class="label">Microsoft acquisition offer — declined</span></div><div class="stat"><span class="num">500K+</span><span class="label">Active communities</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How Discord Works</h2>
+      <p class="section-intro">Discord's server and channel architecture creates persistent community spaces with voice, video, and text integrated seamlessly.</p>
+      <div class="prose">
+        <p>Discord's core architecture is built around <strong style="color:var(--text);">Servers</strong> and <strong style="color:var(--text);">Channels</strong>. A Server is a community space owned by one or more administrators, containing multiple channels. Text channels function like persistent chat rooms with scrollable message history. Voice channels are always-on audio rooms — users enter and leave freely without needing to 'call' anyone. Stage channels allow large-audience broadcasts where only designated speakers have microphones active. This architecture allows communities to maintain ongoing conversations across many topics in an organised way impossible in a flat group chat.</p>
+        <p>Discord's voice technology uses Opus audio codec with low-latency settings (typically 20-60ms) tuned for real-time gaming communication. The voice infrastructure handles millions of simultaneous voice connections across globally distributed voice servers, with automatic server region selection for minimum latency. Discord uses a WebRTC-based architecture for peer connectivity but routes through Discord's servers rather than direct peer-to-peer connections — providing reliability at the cost of slightly higher latency than pure P2P alternatives.</p>
+        <p>Discord's permissions system is one of its most powerful and complex features. Server administrators can create Roles (groups of permissions), assign those roles to members, and configure permissions at the server, category, and individual channel level. A large server might have dozens of roles — Moderator, Premium Member, Verified Fan, Bot Developer — each with specific access rights. This granular permissions model allows server owners to run sophisticated community structures with paid membership tiers, exclusive channels, and verified identities.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Discord Server Architecture — How Communities Are Organised</div>
+        <div class="mermaid">
+graph TB
+    A[Discord Server — community hub] --> B[Text Channels — persistent chat]
+    A --> C[Voice Channels — always-on audio rooms]
+    A --> D[Stage Channels — broadcast to audience]
+    A --> E[Forum Channels — threaded discussions]
+    A --> F[Roles and Permissions System]
+    F --> G[Admin — full control]
+    F --> H[Moderator — manage messages and users]
+    F --> I[Member — basic access]
+    F --> J[Premium Member — exclusive channels]
+    C --> K[Screen share and video available]
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How Discord Makes Money</h2>
+      <p class="section-intro">Discord generates revenue through Nitro subscriptions and server boosts — carefully designed not to create pay-to-win dynamics that would alienate its community.</p>
+      <div class="prose">
+        <p><strong style="color:var(--text);">Discord Nitro</strong> ($9.99/month or $99.99/year) is Discord's premium subscription. Nitro subscribers get larger file uploads (500MB vs 25MB), animated profile pictures, custom emojis across all servers (not just where they were created), server profile customisation, enhanced video quality (1080p 60fps vs 720p 30fps), and two free Server Boosts per month. Crucially, Nitro does not give access to exclusive functionality that free users need — it's purely cosmetic and quality enhancements, maintaining the free tier's full functionality.</p>
+        <p><strong style="color:var(--text);">Server Boosts</strong> are a unique monetisation mechanic. Discord users can Boost a specific server (using Nitro boosts or purchasing additional boosts for $4.99/month each), and as a server accumulates boosts, it unlocks server-wide perks: higher audio quality in voice channels, more emoji slots, a custom server banner, increased video quality for all members, and a vanity URL. This creates a community investment dynamic — fans boost a creator's or community's server to collectively unlock better features for everyone.</p>
+        <p>Discord has experimented with <strong style="color:var(--text);">Server Subscriptions</strong> (allowing community owners to charge members for premium access to their servers), <strong style="color:var(--text);">App Directory</strong> (a marketplace for Discord bots and apps), and various B2B offerings for game developers and content creators. Unlike Twitter/X or Facebook, Discord has explicitly refused to introduce advertising into its platform — a philosophical commitment that has maintained user trust but limits revenue scale. The company's $560M annual revenue estimate reflects this constraint.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Discord Revenue — Nitro + Boosts + Creator Tools</div>
+        <div class="mermaid">
+graph LR
+    A[Discord Revenue $560M est.] --> B[Discord Nitro Subscriptions]
+    A --> C[Server Boosts]
+    A --> D[Server Subscriptions — creator revenue share]
+    A --> E[App Directory]
+    B --> F[$9.99/month for premium cosmetics and quality]
+    C --> G[$4.99/month per boost — community-funded upgrades]
+    D --> H[Community owners charge for premium server access]
+    E --> I[Bot and app marketplace commission]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes Discord Special</h2>
+      <p class="section-intro">Discord's design decisions reflect a deep understanding of online community dynamics that traditional social networks missed.</p>
+      <div class="cards"><div class="card"><div class="card-icon">🎙️</div><h4>Voice Channels</h4><p>Always-on audio rooms you can drop in and out of like a physical space. The most natural online audio experience ever designed — no dialling, no accepting calls.</p></div><div class="card"><div class="card-icon">🏠</div><h4>Persistent Servers</h4><p>Servers with organised channels maintain community history and context. Unlike group chats, communities can grow to millions without losing structure.</p></div><div class="card"><div class="card-icon">🤖</div><h4>Bot Ecosystem</h4><p>Millions of Discord bots handle moderation, music playback, games, polls, and integrations. The bot API has generated one of the richest third-party ecosystems of any platform.</p></div><div class="card"><div class="card-icon">🎭</div><h4>No Ads Ever</h4><p>Discord has firmly committed to never showing ads. This preserves a quality of experience rare in social platforms and is central to its user trust and culture.</p></div><div class="card"><div class="card-icon">🌐</div><h4>Threads and Forums</h4><p>Forum channels and threads allow organised long-form discussions within servers — addressing the depth limitation of pure chat.</p></div><div class="card"><div class="card-icon">🎁</div><h4>Nitro Gift Subs</h4><p>Nitro subscriptions can be gifted to friends — a viral growth mechanism that lets satisfied users introduce friends to the premium tier.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From a game studio's internal tool to the world's most popular community platform.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>2015 — Discord Launches</h4><p>Pivots from a game studio to focus entirely on the communication tool. Rapid adoption in gaming communities replaces TeamSpeak and Skype.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2017 — Voice Activity Detection</h4><p>VAD mode (only transmits when voice detected) makes Discord natural for background gaming chat without push-to-talk interruptions.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2020 — Non-Gaming Majority</h4><p>Non-gaming communities (study groups, hobby servers, creator fan communities) surpass gaming communities as Discord's primary use case.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2021 — Declines Microsoft's $10B Offer</h4><p>Passes on the largest acquisition offer in platform history. Raises $500M at $15B valuation instead. Commits to independence.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2023 — Forum Channels and AI Moderation</h4><p>Forum channels launch for structured community discussions. AI moderation tools help server admins manage large communities.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2024 — Server Subscriptions Expansion</h4><p>Creator monetisation through server subscriptions grows. Discord positions itself as the community layer for content creators.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#12132a',primaryTextColor:'#e8eaf6',primaryBorderColor:'#5865f2',lineColor:'#5865f2',secondaryColor:'#0a0b1a',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#12132a',nodeBorder:'#5865f2',clusterBkg:'#0a0b1a',titleColor:'#e8eaf6',edgeLabelBackground:'#0a0b1a',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

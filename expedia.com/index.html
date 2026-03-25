@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Expedia — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Expedia: how one of the world's largest OTAs works, its hotel and flight booking revenue model, Vrbo vacation rental strategy, and competition with Booking.com."/>
+  <meta name="keywords" content="Expedia analysis, Expedia business model, how Expedia works, OTA hotel booking, Expedia vs Booking.com, Expedia Group brands"/>
+  <link rel="canonical" href="https://justsimple.online/expedia.com/"/>
+  <meta property="og:title" content="Expedia — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How Expedia became one of the world's largest travel companies with $12B revenue — the OTA model, hotel merchant versus agency economics, and Vrbo's vacation rental bet."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/expedia.com/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#00355F;--text:#e8eaf6;--muted:#8892b0;--border:#001820;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#000810 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#00355F18,transparent);}
+    .hero-badge{display:inline-block;background:#00355F26;border:1px solid #00355F66;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#00355F14,#00355F0a);border:1.5px solid #00355F59;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>Expedia: How One of the World's Largest Travel Agencies Works</h1>
+    <p>An independent deep-dive into Expedia's online travel agency model, the merchant and agency booking economics, its portfolio of brands (Hotels.com, Vrbo, Orbitz), and competition with Booking.com in the $750B global travel market.</p>
+    <div class="hero-url">🌐 <span>expedia.com</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by Expedia. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">✈️</span>What is Expedia?</h2>
+      <p class="section-intro">Expedia is one of the world's largest online travel agencies — a platform where travellers book flights, hotels, car rentals, vacation packages, and experiences, while hotels and airlines pay commissions for reaching Expedia's customers.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>Expedia is a website where you can book flights, hotels, rental cars, and holiday packages all in one place. Instead of going to each airline and hotel website separately to compare prices, you can search on Expedia and it shows you options from hundreds of airlines and thousands of hotels. Expedia earns money by taking a commission from hotels and airlines each time someone books through Expedia. Hotels pay Expedia because Expedia brings them customers they might not have found on their own hotel website.</p>
+        <p>Expedia owns several other travel brands you might know: Hotels.com (hotels specifically), Vrbo (vacation home rentals, competing with Airbnb), Orbitz, Cheaptickets, Hotwire (for last-minute deals), and Wotif (Australia). By owning multiple travel booking websites, Expedia can reach different types of travellers — budget travellers through Hotwire, business travellers through Expedia, and vacation rental travellers through Vrbo.</p>
+      </div>
+      <div class="prose">
+        <p>Expedia was launched in 1996 as a division of Microsoft before spinning off as an independent company in 1999. Microsoft's early internet investment in travel booking was prescient — online travel became one of the largest e-commerce categories. Expedia pioneered the online travel agency model where travellers could search, compare, and book travel without calling a travel agent. The platform grew rapidly as internet penetration increased and consumers embraced online booking for its transparency and convenience.</p>
+        <p>Expedia Group has assembled a portfolio of travel brands through acquisitions: Hotels.com (2001), Classic Vacations (2002), Hotwire (2003), Orbitz (2015), HomeAway/Vrbo (2015, $3.9B), Cheaptickets, and international properties. This multi-brand portfolio allows Expedia to capture different traveller segments and price points under separate brand identities while sharing common back-end infrastructure, hotel/airline content, and booking technology.</p>
+        <p>Vrbo (Vacation Rentals By Owner) is Expedia's strategic investment in the vacation rental market created by Airbnb. Vrbo focuses on whole-property rentals (entire homes, not rooms) in family vacation destinations — a positioning distinct from Airbnb's broader accommodation model. Vrbo represents Expedia's largest growth investment and is critical to competing in the vacation rental category that took significant market share from traditional hotel bookings.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">Expedia's scale as one of the world's largest OTA platforms.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">$12B+</span><span class="label">Annual revenue (2023)</span></div><div class="stat"><span class="num">145M+</span><span class="label">Loyalty programme members</span></div><div class="stat"><span class="num">6+</span><span class="label">Major travel brands in Expedia Group</span></div><div class="stat"><span class="num">1996</span><span class="label">Year Expedia launched as Microsoft division</span></div><div class="stat"><span class="num">200+</span><span class="label">Countries where Expedia Group operates</span></div><div class="stat"><span class="num">1M+</span><span class="label">Properties listed across Expedia platforms</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How Expedia Works</h2>
+      <p class="section-intro">Expedia's booking model connects travellers with hotels, airlines, and other suppliers through two distinct revenue arrangements: agency model (commissions) and merchant model (markup).</p>
+      <div class="prose">
+        <p>Expedia operates two booking models. In the agency model, Expedia acts as the booking agent for the hotel or airline — the traveller pays the supplier directly at check-in, and Expedia receives a commission (typically 10-20% for hotels). In the merchant model (more common), Expedia prepays hotels for rooms at a contracted rate and resells them to travellers at a markup, collecting the full payment upfront. The merchant model provides Expedia with higher revenue control but also inventory risk (unsold hotel rooms). The choice of model varies by supplier relationship and market conditions.</p>
+        <p>Expedia's package booking feature (combining flights and hotels) is one of its most profitable products. Packages create bundling value for travellers (lower combined price than booking separately) while providing Expedia with higher total booking revenue per customer. The opaque pricing in some bundle products (travellers see total price but not individual component prices) protects supplier pricing integrity while allowing discounting. Packages also reduce the influence of price-comparison meta-search by making it harder to compare package components individually.</p>
+        <p>One Key is Expedia's loyalty programme unifying rewards across Expedia.com, Hotels.com, and Vrbo — allowing members to earn and redeem OneKeyCash across all brands. The unified loyalty programme incentivises multi-brand usage within Expedia's portfolio (earn on Hotels.com, redeem on Vrbo) and reduces churn to Booking.com by creating cross-brand switching costs within the Expedia ecosystem.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Expedia OTA Model</div>
+        <div class="mermaid">
+graph TB
+    A[Traveller searches Expedia] --> B[Flight Hotel Car Package results]
+    B --> C{Booking model?}
+    C --> D[Merchant Model]
+    C --> E[Agency Model]
+    D --> F[Expedia pre-buys rooms at wholesale rate]
+    D --> G[Traveller pays Expedia retail rate]
+    D --> H[Expedia earns markup]
+    E --> I[Traveller pays hotel directly at check-in]
+    E --> J[Expedia earns commission 10-20pct]
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How Expedia Makes Money</h2>
+      <p class="section-intro">Expedia generates revenue through hotel and vacation rental commissions/markups, flight booking fees, and advertising from travel suppliers.</p>
+      <div class="prose">
+        <p><strong>Hotel booking revenue</strong> (commissions and markups) is Expedia's largest revenue segment. Hotels pay 15-25% commissions to Expedia for booking referrals, or accept merchant model pre-purchased room blocks at contracted rates. With millions of hotel nights booked annually, commission revenue represents the bulk of Expedia's $12B+ revenue. Large hotel chains negotiate lower commission rates due to volume; independent hotels often pay higher rates for access to Expedia's customer base.</p>
+        <p><strong>Vrbo vacation rental commissions</strong> (approximately 5-15% of booking value from property owners and/or guests) represent a growing segment as vacation rental bookings grow relative to hotel bookings. Vrbo's whole-home rental positioning gives it higher average booking values than hotel rooms, making commission revenue per booking higher.</p>
+        <p>Flight booking fees (from airlines and service fees charged to travellers), car rental commissions, and Expedia Media Solutions (advertising sold to travel suppliers promoting their properties within Expedia's search results) contribute additional revenue. Expedia's loyalty programme drives repeat bookings that reduce customer acquisition costs per booking — loyal members who book through Expedia repeatedly have significantly lower CAC than one-time buyers acquired through search advertising.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Expedia Revenue Model</div>
+        <div class="mermaid">
+graph LR
+    A[Expedia Revenue 12B annual] --> B[Hotel Commissions and Markups]
+    A --> C[Vrbo Vacation Rental Commissions]
+    A --> D[Flight Booking Fees]
+    A --> E[Car Rental Commissions]
+    A --> F[Media Solutions Advertising]
+    B --> G[1M plus properties 15-25pct commission]
+    C --> H[Growing vacation rental market]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes Expedia Unique</h2>
+      <p class="section-intro">Expedia's multi-brand travel portfolio, One Key loyalty currency, and global scale create a travel booking ecosystem that serves travellers across all segments and trip types.</p>
+      <div class="cards"><div class="card"><div class="card-icon">🏨</div><h4>Multi-Brand Portfolio</h4><p>Expedia.com, Hotels.com, Vrbo, Orbitz, Hotwire, Cheaptickets under one group. Each brand serves different traveller segments while sharing booking infrastructure.</p></div><div class="card"><div class="card-icon">🏠</div><h4>Vrbo Whole-Home Rentals</h4><p>Strategic response to Airbnb. Vrbo focuses on whole-home vacation rentals, particularly for families — a distinct market segment with higher average booking values than shared accommodation.</p></div><div class="card"><div class="card-icon">🎁</div><h4>One Key Loyalty</h4><p>Unified loyalty currency across Expedia, Hotels.com, and Vrbo. Cross-brand earning and redemption creates switching costs within the Expedia ecosystem.</p></div><div class="card"><div class="card-icon">📦</div><h4>Package Bookings</h4><p>Flight + hotel bundling creates value for travellers and reduces exposure to price-comparison meta-search. Packages represent one of Expedia's highest-margin booking types.</p></div><div class="card"><div class="card-icon">🌍</div><h4>200+ Country Global Scale</h4><p>Expedia operates in 200+ countries with localised pricing, currency, and content. Global scale provides access to inventory breadth that regional competitors cannot match.</p></div><div class="card"><div class="card-icon">💡</div><h4>Trivago and Meta-Search Investment</h4><p>Expedia invested in Trivago (hotel price comparison meta-search) to participate in the meta-search traffic layer between Google and OTA booking, capturing demand at multiple funnel stages.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From a 1996 Microsoft division to one of the world's largest travel companies.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>1996 — Expedia Launches as Microsoft Division</h4><p>Expedia.com launches as an online travel booking division within Microsoft.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>1999 — Expedia Spins Off and IPOs</h4><p>Expedia spins off from Microsoft and lists publicly. Online travel booking market growing rapidly as internet adoption increases.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2001 — Hotels.com Acquisition</h4><p>Expedia acquires Hotels.com, beginning the multi-brand portfolio strategy.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2015 — HomeAway/Vrbo Acquisition</h4><p>Expedia acquires HomeAway (including Vrbo) for $3.9B, entering the vacation rental market in direct competition with Airbnb.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2020 — COVID-19 Travel Collapse</h4><p>Expedia loses $2.9B in 2020 as global travel halts. Restructures with significant cost reductions.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2023 — One Key Loyalty Launch</h4><p>Expedia launches One Key unified loyalty programme across Expedia, Hotels.com, and Vrbo, creating cross-brand switching costs.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#001018',primaryTextColor:'#e8eaf6',primaryBorderColor:'#00355F',lineColor:'#00355F',secondaryColor:'#000810',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#001018',nodeBorder:'#00355F',clusterBkg:'#000810',titleColor:'#e8eaf6',edgeLabelBackground:'#000810',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

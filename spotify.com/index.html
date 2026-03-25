@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Spotify — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Spotify: how the music streaming platform works, its licensing model, royalty economics, podcast strategy, and path to profitability."/>
+  <meta name="keywords" content="Spotify analysis, Spotify business model, how Spotify works, Spotify royalties, music streaming, Spotify podcasts"/>
+  <link rel="canonical" href="https://justsimple.online/spotify.com/"/>
+  <meta property="og:title" content="Spotify — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How Spotify became the world's dominant music streaming platform — and why paying $7B in royalties annually makes profitability so challenging."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/spotify.com/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#1db954;--text:#e8eaf6;--muted:#8892b0;--border:#003a18;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#001a08 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#1db95418,transparent);}
+    .hero-badge{display:inline-block;background:#1db95426;border:1px solid #1db95466;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#1db95414,#1db9540a);border:1.5px solid #1db95459;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>Spotify: How the World's Largest Music Platform Works</h1>
+    <p>An independent deep-dive into Spotify's licensing economics, recommendation algorithms, podcast strategy, and the challenging path to profitability when you pay $7B+ annually in royalties.</p>
+    <div class="hero-url">🌐 <span>spotify.com</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by Spotify. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">🎵</span>What is Spotify?</h2>
+      <p class="section-intro">Spotify put the world's entire music catalogue on your phone for $10/month — and in doing so, created the biggest disruption to the music industry since the MP3.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>Spotify is an app that lets you listen to almost any song ever made, whenever you want, on your phone or computer. Before Spotify, you had to buy songs one by one, or download them illegally. Spotify pays the music companies for the right to play their songs, and then charges you a monthly subscription. For $10 a month, you get access to 100 million songs.</p>
+        <p>Spotify also has a free version with ads, which is how they got so many people to try it before paying. The app learns what kind of music you like and creates personalised playlists for you — like a DJ who knows exactly what you want to hear. Spotify is from Sweden and is used by over 640 million people around the world.</p>
+      </div>
+      <div class="prose">
+        <p>Spotify was founded in 2006 by Daniel Ek and Martin Lorentzon in Stockholm, Sweden, launching publicly in 2008. The company's founding insight was that music piracy could be defeated not by legal enforcement but by offering a streaming service that was more convenient than piracy and priced low enough to attract mass adoption. Ek's argument to the major labels — that a piracy-free stream of legal revenue was better than zero revenue from pirated content — eventually won them over.</p>
+        <p>Spotify's product differentiation is built on music discovery and personalisation. Discover Weekly (personalised weekly playlist of 30 songs launched 2015), Daily Mixes, and Release Radar use collaborative filtering and audio analysis to surface relevant music. These algorithmic playlist features have been transformative for artists — a placement in Discover Weekly can expose a small artist to millions of new listeners in a single day.</p>
+        <p>Spotify's expansion beyond music into podcasts — through acquisitions of Gimlet Media, Anchor, and exclusive deals with Joe Rogan and others — was an attempt to reduce structural dependence on music royalties. Podcasts are higher-margin than music (no per-play royalties to labels). However, the $1B+ podcast investment has generated mixed returns, and Spotify restructured its podcast business with layoffs in 2023-2024.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">Spotify's scale as the world's music streaming leader.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">640M+</span><span class="label">Monthly active users</span></div><div class="stat"><span class="num">252M+</span><span class="label">Premium subscribers</span></div><div class="stat"><span class="num">$14B+</span><span class="label">Annual revenue</span></div><div class="stat"><span class="num">$7B+</span><span class="label">Annual royalties paid to rights holders</span></div><div class="stat"><span class="num">100M+</span><span class="label">Songs in the catalogue</span></div><div class="stat"><span class="num">2008</span><span class="label">Year Spotify launched publicly</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How Spotify Works</h2>
+      <p class="section-intro">Spotify's recommendation engine, audio analysis pipeline, and global CDN deliver 100M+ songs to 640M users with personalised discovery.</p>
+      <div class="prose">
+        <p>Spotify's recommendation system uses three main techniques: <strong style="color:var(--text);">collaborative filtering</strong> (users who listened to the same songs also listened to these other songs), <strong style="color:var(--text);">natural language processing</strong> (analysing music journalism and playlist names to understand cultural associations), and <strong style="color:var(--text);">audio analysis</strong> (analysing the audio signal for tempo, key, loudness, and energy). These three signals are combined to model user taste and predict which unheard songs a user is likely to enjoy.</p>
+        <p>Spotify's audio delivery infrastructure transcodes every song into multiple bitrate versions (Ogg Vorbis format: 24kbps, 96kbps, 160kbps, 320kbps) and stores them on a globally distributed CDN. When you press play, Spotify's client selects the appropriate bitrate based on your connection speed and quality settings, then downloads audio in chunks slightly ahead of playback. The system buffers aggressively on good connections to eliminate dropouts.</p>
+        <p>The royalty payment system is central to Spotify's relationship with artists. Spotify pays royalties based on a pro-rata share of total streaming — the artist's share of all streams multiplied by the total royalty pool. Per-stream rates are approximately $0.003-0.005, meaning a song needs 300,000 streams to generate $1,000 for its rights holders. This rate structure heavily favours high-volume mainstream artists and has driven criticism that the model underpays independent artists.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Spotify's Recommendation Engine — From Listening History to Discover Weekly</div>
+        <div class="mermaid">
+graph TB
+    A[You listen to songs on Spotify] --> B[Collaborative Filtering who else listened to these?]
+    A --> C[Audio Analysis tempo key energy of each song]
+    A --> D[NLP what do journalists say about these artists?]
+    B --> E[Find users with similar taste]
+    E --> F[Surface songs they loved that you have not heard]
+    C --> G[Match audio features to your taste profile]
+    D --> H[Cultural context genres moods scenes]
+    F --> I[Discover Weekly personalised every Monday]
+    G --> I
+    H --> I
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How Spotify Makes Money</h2>
+      <p class="section-intro">Spotify's business model is under perpetual pressure: it pays 70%+ of revenue to rights holders, making profitability dependent on scale and premium conversion.</p>
+      <div class="prose">
+        <p><strong style="color:var(--text);">Premium subscriptions</strong> ($10.99/month individual, $16.99/month family in the US) generate 88% of Spotify's revenue. With 252M+ subscribers paying approximately $55-60 per year on average (blended across international markets), Spotify generates $14B+ annually. However, approximately 70% of subscription revenue must be paid out in music royalties — leaving only 30% for all of Spotify's operating costs.</p>
+        <p><strong style="color:var(--text);">Advertising</strong> on the free tier generates approximately 12% of Spotify's revenue. Free tier users hear audio ads between songs and see display ads. The free tier serves two purposes: it generates direct ad revenue and acts as a conversion funnel for Premium subscriptions. The free tier's limitations are deliberately designed to create friction that motivates Premium upgrades.</p>
+        <p>Spotify's margin improvement strategy focuses on <strong style="color:var(--text);">Spotify for Artists</strong> (direct distribution bypassing record labels), <strong style="color:var(--text);">audiobooks</strong> (more favourable licensing economics than music), and <strong style="color:var(--text);">Spotify Wrapped</strong> (the annual personalised year-in-review that generates enormous organic marketing reach at essentially zero cost). Despite its scale, Spotify only became consistently profitable in 2024 after significant cost reductions including layoffs of 17% of its workforce.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Spotify Economics — Why the Music Business Is Hard</div>
+        <div class="mermaid">
+graph LR
+    A[Spotify Revenue $14B+] --> B[Premium Subscriptions 88%]
+    A --> C[Advertising 12%]
+    B --> D[70% paid as royalties to labels]
+    C --> E[Royalties on ad-supported streams too]
+    D --> F[Major labels receive majority]
+    D --> G[Independent artists receive tiny per-stream rate]
+    B --> H[30% for all Spotify operating costs]
+    H --> I[Engineering Marketing Offices Podcasts]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes Spotify Irreplaceable</h2>
+      <p class="section-intro">Spotify's combination of discovery algorithms, social features, and cross-platform availability has created switching costs that keep users from leaving.</p>
+      <div class="cards"><div class="card"><div class="card-icon">🎯</div><h4>Discover Weekly</h4><p>The personalised weekly playlist that introduced the world to algorithmic music discovery. Users have reported emotional attachment when it was briefly unavailable.</p></div><div class="card"><div class="card-icon">🎁</div><h4>Spotify Wrapped</h4><p>Annual personalised year-in-review generates hundreds of millions of social shares. The most effective free marketing campaign in streaming.</p></div><div class="card"><div class="card-icon">🎙️</div><h4>Podcast Integration</h4><p>3.2M+ podcasts alongside music in one app. Spotify is the only platform where users can seamlessly move between music and podcasts.</p></div><div class="card"><div class="card-icon">💚</div><h4>Free Tier</h4><p>Ad-supported free tier onboards users who might not pay immediately, creating a conversion pipeline. 388M+ free users represent future paying subscribers.</p></div><div class="card"><div class="card-icon">🎵</div><h4>100M Songs</h4><p>Every artist, every language, every genre. The catalogue comprehensiveness means no competitor can offer something Spotify doesn't have.</p></div><div class="card"><div class="card-icon">👥</div><h4>Social Features</h4><p>Collaborative playlists, friend activity feed, and real-time listening parties create social connections within the music experience.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From illegal downloads to legal streams — Spotify's journey from Swedish startup to global music infrastructure.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>2006 — Founded in Stockholm</h4><p>Daniel Ek and Martin Lorentzon found Spotify. The mission: make streaming so good that piracy becomes pointless.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2008 — Public Launch</h4><p>Spotify launches in Europe with free and premium tiers. Word spreads rapidly — every song ever made, instantly, on any device.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2011 — US Launch</h4><p>Launches in the US after securing all major label agreements. Grows to 10 million users by year end.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2015 — Discover Weekly Launch</h4><p>Discover Weekly becomes the first viral algorithmic playlist. 40 million users listen in the first month.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2018 — IPO via Direct Listing</h4><p>Spotify goes public via direct listing on NYSE. Valued at $26B.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2024 — First Full Year of Profitability</h4><p>After layoffs and podcast restructuring, Spotify achieves consistent profitability. Premium subscriber growth continues despite price increases.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#002a10',primaryTextColor:'#e8eaf6',primaryBorderColor:'#1db954',lineColor:'#1db954',secondaryColor:'#001a08',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#002a10',nodeBorder:'#1db954',clusterBkg:'#001a08',titleColor:'#e8eaf6',edgeLabelBackground:'#001a08',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

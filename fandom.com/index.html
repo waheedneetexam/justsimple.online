@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Fandom — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Fandom: how the world's largest wiki platform works, its advertising model, acquisition strategy, and its role in fan communities."/>
+  <meta name="keywords" content="Fandom analysis, Fandom business model, how Fandom works, Wikia, fan wikis, Fandom revenue"/>
+  <link rel="canonical" href="https://justsimple.online/fandom.com/"/>
+  <meta property="og:title" content="Fandom — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How Fandom (formerly Wikia) became the world's largest fan community platform with 250,000+ wikis and 1.5 billion monthly visitors."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/fandom.com/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#00d6d6;--text:#e8eaf6;--muted:#8892b0;--border:#003838;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#001a1a 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#00d6d618,transparent);}
+    .hero-badge{display:inline-block;background:#00d6d626;border:1px solid #00d6d666;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#00d6d614,#00d6d60a);border:1.5px solid #00d6d659;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>Fandom: How the World's Largest Wiki Platform Works</h1>
+    <p>An independent deep-dive into Fandom's wiki technology, community model, advertising revenue, and how it became the definitive home for fan knowledge about games, TV, and film.</p>
+    <div class="hero-url">🌐 <span>fandom.com</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by Fandom. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">📖</span>What is Fandom?</h2>
+      <p class="section-intro">Fandom is the Wikipedia of pop culture — 250,000+ fan-built wikis covering every game, TV show, film, and fictional universe imaginable, visited by 1.5 billion people monthly.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>Have you ever searched for information about a video game character, a Harry Potter spell, or a Marvel superhero and ended up on a website with millions of details written by fans? That's probably Fandom. It's like Wikipedia, but instead of facts about history and science, it's all about games, movies, TV shows, and comics. Every page is written by fans who love that thing and want to share everything they know about it.</p>
+        <p>Fandom hosts over 250,000 different wikis — one for almost every game, show, or movie you can think of. The Minecraft wiki has millions of pages. The Star Wars wiki has 175,000 articles. All of this is created for free by fans who just want to help other fans find information. Fandom makes money by showing ads to all the people who visit to look things up.</p>
+      </div>
+      <div class="prose">
+        <p>Fandom, Inc. was founded in 2004 as Wikia by Jimmy Wales (co-founder of Wikipedia) and Angela Beesley. The platform was built on the same MediaWiki software that powers Wikipedia, but with a different mission: while Wikipedia covers factual, encyclopaedic content, Wikia (later Fandom) was designed for fan communities to document fictional universes, game guides, and entertainment properties without Wikipedia's notability requirements. The platform was rebranded as Fandom in 2016 to reflect its focus on entertainment and fan culture.</p>
+        <p>Fandom's growth model is based on the network effects of user-generated content at scale. Each wiki attracts fans who create and improve content; high-quality content attracts more visitors; more visitors attract more contributors. The platform has been a primary beneficiary of search traffic for entertainment queries — if you search for almost any video game character, movie plot point, or TV episode on Google, a Fandom wiki typically ranks in the top results. This search dominance has made Fandom one of the most visited sites on the internet.</p>
+        <p>Fandom has expanded beyond pure wiki hosting through acquisitions. In 2018, it acquired GameSpot, Giant Bomb, Metacritic, GameFAQs, and TV Guide from Viacom's CBS Interactive — adding established games journalism and review sites to its portfolio. These acquisitions brought professional editorial content alongside the user-generated wiki content, positioning Fandom as a comprehensive entertainment discovery platform rather than just a wiki host.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">Fandom's scale as the home of fan knowledge is remarkable.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">1.5B</span><span class="label">Monthly unique visitors</span></div><div class="stat"><span class="num">250K+</span><span class="label">Individual wikis hosted</span></div><div class="stat"><span class="num">60M+</span><span class="label">Total wiki articles</span></div><div class="stat"><span class="num">2004</span><span class="label">Founded as Wikia by Jimmy Wales</span></div><div class="stat"><span class="num">#1</span><span class="label">Fan entertainment wiki platform globally</span></div><div class="stat"><span class="num">175K</span><span class="label">Articles on the Star Wars wiki alone</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How Fandom Works</h2>
+      <p class="section-intro">Fandom's technical foundation is the same MediaWiki software that powers Wikipedia, scaled to host 250,000+ independent wikis.</p>
+      <div class="prose">
+        <p>Fandom's platform is built on MediaWiki, the open-source wiki engine developed for Wikipedia. Each of Fandom's 250,000+ wikis is a separate MediaWiki instance with its own namespace, templates, categories, and community of editors. Fandom provides the hosting infrastructure, the unified login system (Fandom account works across all wikis), the ad serving, and the MediaWiki software updates. The technical challenge of running 250,000 simultaneous wiki instances at massive scale requires careful multi-tenancy architecture where each wiki shares infrastructure but maintains independent content and community settings.</p>
+        <p>Fandom's search integration is critical to its traffic. The platform has invested heavily in technical SEO — structured markup, clean URLs, fast page loads, and content optimisation — to ensure Fandom wikis rank highly for entertainment-related search queries. Each wiki page is automatically marked up with structured data (Schema.org) to help Google understand the content as a knowledge base about a specific character, game, or media property. This SEO investment generates the majority of Fandom's 1.5 billion monthly visitors as organic search traffic.</p>
+        <p>Fandom's wiki editor has evolved from the raw MediaWiki markup editor to a visual editor (VisualEditor) that allows contributors to edit wiki pages without knowing wiki syntax. This lowered the barrier to contribution significantly. Fandom also developed custom tools for wiki administrators including abuse filters, vandalism detection, and community management tools. The platform integrates discussion boards, fan theories sections, and interactive polls alongside traditional wiki articles to keep communities engaged beyond pure encyclopaedic content.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">How a Fandom Wiki Page Reaches 1.5 Billion Monthly Visitors</div>
+        <div class="mermaid">
+graph TB
+    A[Fan creates or edits wiki page] --> B[MediaWiki stores content]
+    B --> C[Fandom CDN serves page globally]
+    C --> D[Google indexes and ranks page]
+    D --> E[User searches for game character or TV episode]
+    E --> F[Fandom wiki appears in top results]
+    F --> G[Visitor reads the wiki page]
+    G --> H[Display and video ads shown]
+    H --> I[Ad revenue funds the platform]
+    G --> J[Visitor becomes contributor]
+    J --> A
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How Fandom Makes Money</h2>
+      <p class="section-intro">Fandom's business model is built almost entirely on digital advertising served to its massive audience of engaged entertainment fans.</p>
+      <div class="prose">
+        <p><strong style="color:var(--text);">Display and video advertising</strong> is Fandom's primary revenue source. With 1.5 billion monthly visitors spending significant time reading detailed wiki content, Fandom offers advertisers access to highly engaged fans of specific entertainment properties. A game publisher advertising a new release can target visitors to that game's Fandom wiki — one of the most precise targeting opportunities in digital advertising. Video game and entertainment companies are among the highest-value digital advertisers, making Fandom's audience particularly premium.</p>
+        <p>Fandom has developed direct partnerships with entertainment companies who sponsor specific wikis or work with Fandom to create official content hubs. A film studio releasing a new franchise might partner with Fandom to launch an official wiki, driving fan engagement while creating a premium, brand-safe advertising environment. These branded partnerships command higher CPMs than standard programmatic advertising. Fandom also runs <strong style="color:var(--text);">Fandom for Business</strong>, a suite of advertising products targeting the entertainment fan demographic.</p>
+        <p>The acquisitions of GameSpot, Metacritic, and TV Guide added direct subscription and transactional revenue opportunities. Metacritic's review aggregation is licensed to entertainment companies for official use. GameSpot operates a GameSpot Premium subscription. These diversified revenue streams reduce Fandom's dependence on programmatic advertising CPMs, which fluctuate with broader digital advertising market conditions. The combined editorial and user-generated content portfolio makes Fandom one of the most comprehensive entertainment information platforms online.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Fandom Business Model</div>
+        <div class="mermaid">
+graph LR
+    A[Fandom Revenue] --> B[Programmatic Display Ads]
+    A --> C[Video Advertising]
+    A --> D[Brand Partnerships and Sponsorships]
+    A --> E[Acquired Properties — GameSpot, Metacritic]
+    B --> F[Served across 250K wikis to targeted fans]
+    C --> G[Pre-roll and in-content video ads]
+    D --> H[Studio partnerships for franchise wikis]
+    E --> I[Reviews, guides, subscriptions]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes Fandom Unique</h2>
+      <p class="section-intro">Fandom's combination of user-generated depth and search reach creates a platform that no competitor has been able to replicate.</p>
+      <div class="cards"><div class="card"><div class="card-icon">📚</div><h4>250,000+ Wikis</h4><p>A separate wiki for almost every game, show, movie, or franchise imaginable. From major franchises like Star Wars to niche fandoms with dozens of contributors.</p></div><div class="card"><div class="card-icon">🔍</div><h4>Search Dominance</h4><p>Fandom wikis typically rank #1 or #2 on Google for entertainment queries. This search moat drives 1.5B monthly visits without significant marketing spend.</p></div><div class="card"><div class="card-icon">🎮</div><h4>GameSpot and Metacritic</h4><p>Acquired professional gaming journalism and review aggregation, adding editorial credibility alongside user-generated wiki content.</p></div><div class="card"><div class="card-icon">👥</div><h4>Fan Community Tools</h4><p>Discussion boards, theories sections, polls, and voting — built into every wiki to keep fan communities engaged beyond reading.</p></div><div class="card"><div class="card-icon">🌍</div><h4>Multilingual Coverage</h4><p>Major wikis are translated into dozens of languages by their communities. The Dragon Age wiki exists in English, German, French, Polish, and more.</p></div><div class="card"><div class="card-icon">⚡</div><h4>Instant Wiki Creation</h4><p>Any fan community can create a new Fandom wiki in minutes. No technical knowledge required — the platform provides the infrastructure instantly.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From Jimmy Wales's wiki experiment to the internet's fan knowledge database.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>2004 — Wikia Founded</h4><p>Jimmy Wales and Angela Beesley launch Wikia as a for-profit companion to Wikipedia for topics that don't meet Wikipedia's notability standards.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2006 — Star Wars and Harry Potter Wikis</h4><p>Major entertainment wikis launch on Wikia, demonstrating the platform's potential for fan encyclopaedias of fictional universes.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2016 — Rebranded as Fandom</h4><p>Wikia rebrands as Fandom to focus the platform's identity on entertainment and fan culture rather than the generic wiki concept.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2018 — Acquires GameSpot and Metacritic</h4><p>Buys CBS Interactive's gaming and entertainment properties for an estimated $80M+, adding professional editorial content to the wiki platform.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2022 — 1.5 Billion Monthly Visitors</h4><p>Crosses 1.5 billion monthly unique visitors, making Fandom one of the most visited website networks on the internet.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2024 — AI and Content Moderation</h4><p>Fandom integrates AI tools for wiki editors and invests in content quality and moderation to maintain search rankings amid AI-generated content competition.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#002828',primaryTextColor:'#e8eaf6',primaryBorderColor:'#00d6d6',lineColor:'#00d6d6',secondaryColor:'#001a1a',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#002828',nodeBorder:'#00d6d6',clusterBkg:'#001a1a',titleColor:'#e8eaf6',edgeLabelBackground:'#001a1a',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

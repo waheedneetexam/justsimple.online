@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dzen — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Dzen (Яндекс Дзен): how Russia's largest content platform works, its business model, and Yandex's role in Russian media." />
+  <meta name="keywords" content="Dzen analysis, Yandex Zen, Russian content platform, Дзен бизнес модель, Yandex media" />
+  <link rel="canonical" href="https://justsimple.online/dzen.ru/" />
+  <meta property="og:title" content="Dzen — Independent Analysis by JustSimple.Online" />
+  <meta property="og:description" content="How Dzen became Russia's largest content recommendation platform with 60M monthly users, powered by Yandex's AI." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://justsimple.online/dzen.ru/" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TSFVXECJ40');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#ff6600;--text:#e8eaf6;--muted:#8892b0;--border:#2d1e00;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#1a0e00 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#ff660018,transparent);}
+    .hero-badge{display:inline-block;background:#ff660026;border:1px solid #ff660066;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#ff660014,#ff66000a);border:1.5px solid #ff660059;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+    .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;}
+    .stat .num{font-size:2.2rem;font-weight:800;color:var(--accent);display:block;}
+    .stat .label{font-size:.85rem;color:var(--muted);margin-top:4px;}
+    .diagram-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;overflow-x:auto;}
+    .diagram-wrap+.diagram-wrap{margin-top:24px;}
+    .diagram-title{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+    .mermaid{display:flex;justify-content:center;}
+    .timeline{position:relative;padding-left:28px;}
+    .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--accent),transparent);}
+    .tl-item{position:relative;margin-bottom:28px;}
+    .tl-dot{position:absolute;left:-28px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px;}
+    .tl-item p{font-size:.88rem;color:var(--muted);}
+    .yes{color:#51cf66;font-weight:700;} .no{color:#ff6b6b;font-weight:700;}
+    .ad-unit{max-width:1100px;margin:0 auto;padding:28px 24px 0;text-align:center;}
+    .ad-unit-label{font-size:.68rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;opacity:.5;}
+    .ad-unit ins{border-radius:8px;overflow:hidden;}
+    footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;}
+    footer a{color:var(--accent);text-decoration:none;}
+    footer .footer-logo{height:26px;width:auto;vertical-align:middle;margin-right:6px;}
+    @media(max-width:600px){.kid-box{padding:20px;}.diagram-wrap{padding:20px 12px;}}
+    #diag-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;}
+    #diag-modal.open{display:flex;}
+    #diag-modal-inner{position:relative;min-width:60vw;min-height:30vh;max-width:95vw;max-height:92vh;overflow:auto;background:#1a1d27;border:1px solid #2d3250;border-radius:16px;padding:48px 32px 32px;box-shadow:0 24px 80px rgba(0,0,0,.8);}
+    #diag-close{position:absolute;top:12px;right:16px;background:none;border:none;color:#8892b0;font-size:1.6rem;cursor:pointer;line-height:1;transition:color .2s;}
+    #diag-close:hover{color:#fff;}
+    #diag-modal-inner svg{display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:78vh;width:auto!important;height:auto!important;}
+  </style>
+</head>
+<body>
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+<nav>
+  <a class="nav-logo" href="/"><img src="/logo.svg" alt="JustSimple.Online" style="height:34px;"/><span class="nav-tagline">Making the web understandable</span></a>
+  <div class="nav-right"><a href="/">← All Analyses</a>&nbsp;·&nbsp;<a href="/privacy.html">Privacy</a>&nbsp;·&nbsp;<a href="/terms.html">Terms</a></div>
+</nav>
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;"/></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>Dzen: Inside Russia's Largest Content Recommendation Platform</h1>
+  <p>An independent deep-dive into Dzen (formerly Yandex Zen) — how Russia's AI-powered content feed works, its media ecosystem, and its role in the Russian internet.</p>
+  <div class="hero-url">🌐 Analysed: <span>dzen.ru</span></div>
+</div>
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. Not affiliated with, endorsed by, or connected to the website analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+<main>
+  <section>
+    <h2><span class="emoji">📰</span>What is Dzen?</h2>
+    <p class="section-intro">Dzen is Russia's answer to a Medium-meets-YouTube-meets-news-aggregator — a personalised content platform that reaches the majority of Russia's internet users.</p>
+    <div class="kid-box" style="margin-bottom:28px;">
+      <h3>Explain it like I'm 10</h3>
+      <p>Imagine an app that watches what kind of articles and videos you enjoy, then fills your screen with more things just like them. You might get cooking recipes, football news, funny stories, or science videos — all chosen just for you based on what you've read before. That's Dzen. It's like having a magazine that reshuffles itself every time you open it to show exactly what you want.</p>
+      <p>Dzen also lets ordinary people write their own articles and videos and share them with millions of readers. A doctor can write health advice, a traveller can post trip stories, a chef can share recipes — and Dzen's algorithm decides who sees them based on their interests. So both readers and creators benefit from the same smart recommendation system.</p>
+    </div>
+    <p style="color:var(--muted);margin-bottom:16px;">Dzen (Дзен) is a Russian content recommendation and publishing platform operated by VK Company Limited (formerly known as Mail.ru Group) following its spin-off from Yandex in 2022. Originally launched as "Yandex.Zen" in 2017, it was Yandex's attempt to build a personalised content feed similar to what Facebook News Feed or Google Discover provides in the West. The platform aggregates articles, blog posts, short videos, and podcasts from both professional media outlets and individual creators, serving them through a machine-learning-powered recommendation engine.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">Dzen was spun off from Yandex in October 2022 as part of a broader restructuring of Yandex's businesses amid geopolitical pressures following Russia's invasion of Ukraine. The Zen and News products were sold to VK Company (the operator of Russia's largest social network VKontakte) for approximately 1 billion rubles, while Yandex retained its core search, maps, taxi, and cloud businesses. This transfer represented a significant reshaping of the Russian internet landscape.</p>
+    <p style="color:var(--muted);">Today Dzen reaches over 60 million monthly users in Russia, making it one of the country's most trafficked web properties. The platform serves as a critical distribution channel for Russian media publishers — from major news outlets like RBC and Kommersant to independent bloggers and niche content creators. Its short video feature, added in 2021, competes directly with TikTok and YouTube Shorts for Russian Gen-Z attention.</p>
+  </section>
+
+  <section>
+    <h2><span class="emoji">📊</span>Dzen by the Numbers</h2>
+    <p class="section-intro">Dzen's reach across Russia makes it one of the dominant forces in Russian digital media consumption.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">60M+</span><span class="label">Monthly active users in Russia</span></div>
+      <div class="stat"><span class="num">180K+</span><span class="label">Active content channels on platform</span></div>
+      <div class="stat"><span class="num">2017</span><span class="label">Launched as Yandex.Zen</span></div>
+      <div class="stat"><span class="num">2022</span><span class="label">Transferred to VK Company</span></div>
+      <div class="stat"><span class="num">30M+</span><span class="label">Daily active users</span></div>
+      <div class="stat"><span class="num">#1</span><span class="label">Content recommendation platform in Russia</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="emoji">⚙️</span>How Dzen's Recommendation Engine Works</h2>
+    <p class="section-intro">Dzen's core technology is a personalised content feed built on years of Yandex's machine learning expertise in understanding Russian-language text and user behaviour.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">Dzen's recommendation algorithm works by building a detailed interest profile for each user based on their reading behaviour, viewing time, scroll patterns, and explicit interactions (likes, saves, shares). The system uses <strong style="color:var(--text);">collaborative filtering</strong> combined with <strong style="color:var(--text);">content-based filtering</strong> — matching users with content that similar users enjoyed while also directly modelling the content's topics against the user's declared and inferred interests. Russian-language NLP capabilities inherited from Yandex's decade of search research give Dzen strong semantic understanding of article content.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">Content creators on Dzen publish through a dedicated web editor. Articles are analysed immediately upon publication: the algorithm classifies the topic, assesses content quality signals (length, image quality, formatting, originality), and makes an initial distribution decision. New creators start with small test distributions to gauge early engagement; strong engagement signals trigger broader amplification. This cold-start handling is critical for making the platform viable for new creators who have no existing follower base.</p>
+    <p style="color:var(--muted);margin-bottom:28px;">The short video feed on Dzen uses computer vision to analyse video content alongside text descriptions, applying a separate recommendation model trained on video engagement signals: completion rate, replays, and shares. Given the intense competition from TikTok (blocked in Russia but still accessible via VPN) and VK Clips, Dzen's video product must compete on recommendation quality to retain users. The platform has invested in vertical video production tools and creator monetisation to incentivise Reels-style content.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">How Dzen Personalises Content — The Recommendation Pipeline</div>
+      <div class="mermaid">
+graph TB
+    A[User Opens Dzen] --> B[Interest Profile Loaded]
+    B --> C[Candidate Content Retrieved from Index]
+    C --> D[Multi-Signal Ranking Model]
+    D --> E{Content Type}
+    E --> F[Articles from Media Publishers]
+    E --> G[Creator Blog Posts]
+    E --> H[Short Videos]
+    E --> I[Podcasts and Long Video]
+    F --> J[Personalised Feed Assembled]
+    G --> J
+    H --> J
+    I --> J
+    J --> K[User Reads, Watches, Scrolls]
+    K --> L[Engagement Signals Captured]
+    L --> M[Interest Profile Updated]
+    M --> B
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-unit" style="padding:0 0 56px;">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <section>
+    <h2><span class="emoji">💰</span>How Does Dzen Make Money?</h2>
+    <p class="section-intro">Dzen monetises through advertising placed within the content feed and revenue sharing with creators — a model that aligns platform and creator incentives.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">Dzen's primary revenue model is <strong style="color:var(--text);">native advertising</strong> inserted into personalised feeds. Promoted articles and sponsored videos are designed to match the format of organic content, making them less disruptive than traditional banner ads. Advertisers pay on a CPM or CPC basis, and Dzen's targeting capabilities — built on rich behavioural data from millions of daily users — allow precise audience segmentation by age, geography, interests, and device type.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">Dzen operates a <strong style="color:var(--text);">creator monetisation programme</strong> that shares advertising revenue with content creators based on the views and engagement their content generates. This revenue-sharing model incentivises creators to produce high-quality, engaging content, which in turn makes the feed more valuable to users and more attractive to advertisers — a classic platform flywheel. Creators with large audiences can earn meaningful income, ranging from small supplementary earnings for casual bloggers to significant monthly revenue for popular channels.</p>
+    <p style="color:var(--muted);margin-bottom:28px;">As part of the VK ecosystem since 2022, Dzen benefits from cross-platform integration with VKontakte, Mail.ru, and OK.ru (Odnoklassniki). This allows shared user accounts, unified advertising inventory, and content distribution across multiple Russian social platforms simultaneously. For advertisers, this creates a compelling one-stop Russian digital media buy; for creators, it offers multi-platform distribution from a single dashboard.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Dzen Business Model — Content Platform Revenue Flows</div>
+      <div class="mermaid">
+graph LR
+    A[Advertisers pay Dzen] --> B[Native Ads inserted into Feed]
+    B --> C[Users see relevant promoted content]
+    C --> D[Clicks and engagement measured]
+    D --> A
+    E[Creators publish content] --> F[Content attracts Users]
+    F --> G[Ad revenue generated from Creator content]
+    G --> H[70% share paid to Creator]
+    H --> E
+    F --> I[More users attracted to platform]
+    I --> J[More advertiser demand]
+    J --> A
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="emoji">🧩</span>Dzen Key Features</h2>
+    <p class="section-intro">A content ecosystem built specifically for Russian-language users with strong personalisation and creator tools.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h4>AI Personalisation</h4>
+        <p>Recommendation algorithm built on Yandex's decade of Russian NLP research — understands nuance and context in Russian-language content far better than global platforms.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">✍️</div>
+        <h4>Creator Publishing Platform</h4>
+        <p>Built-in article editor, video uploader, and analytics dashboard. Any person or brand can become a Dzen publisher with no technical skills required.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h4>Short Video Feed</h4>
+        <p>Vertical video format competing with TikTok and YouTube Shorts for Russian users, with creator monetisation tied to video performance.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🗞️</div>
+        <h4>Major Media Integration</h4>
+        <p>Russia's top news outlets (RBC, Kommersant, Meduza) distribute content via Dzen, giving the platform credibility as a primary news aggregation source.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <h4>VK Ecosystem</h4>
+        <p>Part of Russia's largest digital media group, sharing user data and advertising infrastructure with VKontakte, Mail.ru, and Odnoklassniki.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💰</div>
+        <h4>Revenue Share for Creators</h4>
+        <p>Creators earn a share of advertising revenue generated by their content — one of few platforms that pays bloggers without requiring a minimum follower count.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="emoji">📅</span>Dzen History</h2>
+    <p class="section-intro">From a Yandex experiment to Russia's dominant content platform in under a decade.</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><h4>2015 — Internal Project at Yandex</h4><p>Yandex begins experimenting with personalised news feeds as a feature for Yandex Browser and Yandex mobile homepage.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2017 — Yandex.Zen Launches Publicly</h4><p>Released as a standalone product; the recommendation engine and creator publishing tools go live for all users.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2019 — Creator Monetisation Launched</h4><p>Revenue sharing for creators begins, triggering rapid growth in the number of content channels and content volume on the platform.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2021 — Short Video Added</h4><p>Launches vertical short video format to compete with TikTok and Instagram Reels for Russian user attention.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2022 — Transferred to VK Company</h4><p>As Yandex restructures amid geopolitical pressures, Zen and Yandex News are sold to VK Company and rebranded as simply "Dzen".</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2023 — Full VK Integration</h4><p>Deep integration with VKontakte and Mail.ru completed, creating unified advertising and content distribution across Russia's largest digital media group.</p></div>
+    </div>
+  </section>
+
+  <!-- Diagram modal -->
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>
+    #diag-modal{display:none;}
+    #diag-modal.open{display:flex;}
+    .diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}
+    .diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}
+  </style>
+</main>
+
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<footer>
+  <img src="/logo.svg" alt="JustSimple.Online" class="footer-logo" />
+  <a href="/">JustSimple.Online</a> — Independent website analysis. Not affiliated with Dzen.
+  &nbsp;·&nbsp;<a href="/privacy.html">Privacy</a>&nbsp;·&nbsp;<a href="/terms.html">Terms</a>
+</footer>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true, theme: 'dark',
+    themeVariables: {
+      primaryColor: '#2a1800', primaryTextColor: '#e8eaf6',
+      primaryBorderColor: '#ff6600', lineColor: '#ff6600',
+      secondaryColor: '#1a0e00', tertiaryColor: '#1a0e00',
+      background: '#0a0d1a', mainBkg: '#2a1800', nodeBorder: '#ff6600',
+      clusterBkg: '#1a0e00', titleColor: '#e8eaf6',
+      edgeLabelBackground: '#2a1800',
+      attributeBackgroundColorEven: '#2a1800', attributeBackgroundColorOdd: '#1a0e00'
+    }
+  });
+</script>
+
+<div id="diag-modal" role="dialog" aria-modal="true" aria-label="Diagram viewer">
+  <div id="diag-modal-inner"><button id="diag-close" aria-label="Close diagram">&times;</button></div>
+</div>
+
+<script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){
+    var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;
+    if(!wrap)return;
+    var mDiv=wrap.querySelector('.mermaid');
+    if(mDiv)openModal(mDiv);
+  });
+  function openModal(mDiv){
+    clearInner();modal.classList.add('open');document.body.style.overflow='hidden';
+    var svg=mDiv.querySelector('svg');
+    if(svg){showSvg(svg);return;}
+    var msg=document.createElement('p');msg.className='diag-msg';
+    msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';
+    msg.textContent='Rendering diagram...';inner.appendChild(msg);
+    var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);
+  }
+  function clearInner(){
+    inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});
+    if(onMove)document.removeEventListener('mousemove',onMove);
+    if(onUp)document.removeEventListener('mouseup',onUp);
+    onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;
+  }
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){
+    clearInner();
+    var xml=new XMLSerializer().serializeToString(svg);
+    var img=document.createElement('img');
+    img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);
+    inner.appendChild(img);activeImg=img;
+    var hint=document.createElement('p');hint.className='diag-hint';
+    hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';
+    hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';
+    inner.appendChild(hint);
+    inner.addEventListener('wheel',function(e){
+      e.preventDefault();
+      var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;
+      var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));
+      tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;
+      img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();
+    },{passive:false});
+    img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});
+    onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};
+    onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};
+    document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);
+    img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});
+    var lastDist=0;
+    img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});
+    img.addEventListener('touchmove',function(e){
+      if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}
+    },{passive:false});
+  }
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+<script>
+(function(){
+  var modal=document.getElementById('diag-modal'),
+      inner=document.getElementById('diag-modal-inner'),
+      closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0;
+  var activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){
+    var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;
+    if(!wrap)return;
+    var mDiv=wrap.querySelector('.mermaid');
+    if(mDiv)openModal(mDiv);
+  });
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';
+    var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}
+    var msg=document.createElement('p');msg.className='diag-msg';
+    msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';
+    msg.textContent='Rendering diagram...';inner.appendChild(msg);
+    var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);
+  }
+  function clearInner(){
+    inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});
+    if(onMove)document.removeEventListener('mousemove',onMove);
+    if(onUp)document.removeEventListener('mouseup',onUp);
+    onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;
+  }
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){
+    clearInner();
+    var xml=new XMLSerializer().serializeToString(svg);
+    var img=document.createElement('img');
+    img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);
+    inner.appendChild(img);activeImg=img;
+    var hint=document.createElement('p');hint.className='diag-hint';
+    hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';
+    hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';
+    inner.appendChild(hint);
+    inner.addEventListener('wheel',function(e){
+      e.preventDefault();
+      var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;
+      var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));
+      tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;
+      img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();
+    },{passive:false});
+    img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});
+    onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};
+    onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};
+    document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);
+    img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});
+    var lastDist=0;
+    img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});
+    img.addEventListener('touchmove',function(e){
+      if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}
+    },{passive:false});
+  }
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

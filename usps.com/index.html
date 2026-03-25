@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>USPS — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of USPS: how America's postal service works, its revenue model, package delivery growth, the Delivering for America modernisation plan, and USPS vs FedEx vs UPS."/>
+  <meta name="keywords" content="USPS analysis, how USPS works, USPS business model, postal service revenue, USPS vs FedEx UPS, Delivering for America"/>
+  <link rel="canonical" href="https://justsimple.online/usps.com/"/>
+  <meta property="og:title" content="USPS — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How USPS delivers to every address in America — the $81B postal service business model, package delivery growth, and what it means for Amazon and e-commerce."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/usps.com/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#004B87;--text:#e8eaf6;--muted:#8892b0;--border:#000028;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#00000f 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#004B8718,transparent);}
+    .hero-badge{display:inline-block;background:#004B8726;border:1px solid #004B8766;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#004B8714,#004B870a);border:1.5px solid #004B8759;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>USPS: How America's Postal Service Works</h1>
+    <p>An independent deep-dive into USPS's universal service obligation, the shift from letter mail to package delivery, the Delivering for America modernisation plan, and why USPS is both a government agency and a competitive $81B logistics business.</p>
+    <div class="hero-url">🌐 <span>usps.com</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by USPS. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">📬</span>What is USPS?</h2>
+      <p class="section-intro">USPS is America's postal service — a government agency that is also a $81B business delivering to every single address in the country, six days a week, regardless of profitability.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>The United States Postal Service (USPS) is the government organisation that delivers letters and packages to every house, apartment, and business in America. Every weekday (and Saturday too), a USPS mail carrier delivers to your address whether you live in New York City or a remote farm in Montana. Private companies like FedEx and UPS do not do that — they only deliver to addresses that make business sense. USPS is required by law to deliver everywhere.</p>
+        <p>USPS makes money by charging for stamps (letters) and shipping (packages). When you buy something from Amazon, USPS often delivers the package for Amazon at a cost much lower than FedEx or UPS. Because USPS has to deliver everywhere anyway, it can offer Amazon a good rate to add packages to its existing mail routes. People also use USPS to ship packages themselves — Priority Mail gets things there in 1-3 days, and Priority Mail Express guarantees next-day delivery.</p>
+      </div>
+      <div class="prose">
+        <p>The United States Postal Service was established in 1971 as an independent agency of the US federal government, replacing the older Post Office Department (which dates to 1775 and Benjamin Franklin as the first Postmaster General). USPS operates under a unique legal mandate: the Universal Service Obligation (USO) requires USPS to provide postal services to every address in the United States at uniform prices — a letter costs the same stamp to send from Manhattan to rural Alaska. No private carrier is obligated to offer this universal service.</p>
+        <p>USPS operates as a self-funding agency — it receives no taxpayer appropriations for operating expenses and must generate revenue to cover its costs. The tension between its public service mandate (serve all addresses at uniform prices) and its commercial requirement (financial self-sufficiency) is a persistent structural challenge. Letter mail volumes have declined over 50% since 2000 as email replaced physical correspondence. Package delivery has grown significantly as e-commerce expanded, though parcel delivery has different economics than letter mail.</p>
+        <p>The Delivering for America plan, announced in 2021, is a 10-year $40B investment to modernise USPS. The plan includes a new fleet of 66,000 Next Generation Delivery Vehicles (NGDVs) including electric vehicles, new processing facilities, and operational reforms. The plan targets long-term financial sustainability through package delivery growth, service improvements, and cost reduction.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">USPS's scale as America's universal delivery network.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">167M+</span><span class="label">Delivery points (addresses) served</span></div><div class="stat"><span class="num">421M</span><span class="label">Pieces delivered per day at peak</span></div><div class="stat"><span class="num">$81B+</span><span class="label">Annual revenue from operations</span></div><div class="stat"><span class="num">230K</span><span class="label">Vehicles in USPS fleet</span></div><div class="stat"><span class="num">31,000</span><span class="label">Post Office locations nationwide</span></div><div class="stat"><span class="num">516K</span><span class="label">Employees (third largest US civilian employer)</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How USPS Works</h2>
+      <p class="section-intro">USPS operates as a universal delivery network using a network of processing facilities, transportation routes, and carrier routes to reach every US address six days per week.</p>
+      <div class="prose">
+        <p>USPS processes mail and packages through a network of approximately 270 processing and distribution facilities across the US. Letters and flat mail are sorted by optical character recognition machines that read addresses and apply barcodes, enabling automated sortation to carrier routes. Packages use barcode scanning at each transfer point for tracking. The network uses dedicated USPS trucks (230,000 vehicles), contracted air carriers, and contracted surface transportation for cross-country movement of mail and packages.</p>
+        <p>Carrier routes are USPS's last-mile delivery network. Each carrier route covers a specific geographic area — typically 500-600 addresses for walking routes (urban) or up to 1,000+ for driving routes (suburban/rural). Letter carriers walk or drive their routes daily, delivering whatever is assigned to that address. This universal last-mile coverage is USPS's structural advantage for e-commerce companies: USPS can add a package to an existing route at a marginal cost much lower than FedEx or UPS.</p>
+        <p>USPS.com provides digital services including package tracking, Rate Calculator, Click-N-Ship (online label creation with discounted rates), USPS Informed Delivery (email preview of incoming mail and packages), Hold Mail, Change of Address, PO Box management, and passport application scheduling. USPS APIs enable e-commerce platforms and shipping software to integrate USPS rates and tracking.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">How a USPS Package Gets Delivered</div>
+        <div class="mermaid">
+graph TB
+    A[Sender prints Click-N-Ship label or visits Post Office] --> B[Package accepted at USPS intake point]
+    B --> C[Transported to nearest Processing and Distribution Center]
+    C --> D[Automated barcode scanning and sortation]
+    D --> E[Transported to destination city]
+    E --> F[Processed at destination distribution center]
+    F --> G[Dispatched to local Post Office carrier unit]
+    G --> H[Letter carrier loads route and delivers]
+    H --> I[Delivered to 167M+ possible US addresses]
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How USPS Makes Money</h2>
+      <p class="section-intro">USPS generates revenue from package delivery (now the majority), stamps and letter mail, marketing mail (advertising), and services like passport and PO Box rental.</p>
+      <div class="prose">
+        <p><strong>Package delivery</strong> is now USPS's largest revenue source, surpassing letter mail revenue. Amazon (USPS's largest package customer) ships millions of packages daily through USPS, using USPS last-mile delivery for residential addresses. Priority Mail, Priority Mail Express, and Parcel Select generate the majority of package revenue. Flat-rate products (Flat Rate boxes) are particularly popular with small businesses and online sellers for predictable pricing.</p>
+        <p><strong>Stamps and First-Class Mail</strong> remain significant revenue sources despite declining volumes. The First-Class Mail price is regulated — USPS cannot set prices freely but must apply through the Postal Regulatory Commission. First-Class Mail volume has declined from 100B pieces/year in 2000 to under 50B/year as email and electronic billing replaced physical correspondence.</p>
+        <p>Marketing mail (advertising circulars, catalogs, and promotional mail) is sent at lower per-piece rates in bulk, representing approximately 30% of USPS revenue. Services revenue — money orders, passport acceptance, PO Box rentals, and special services — contributes supplemental income across USPS's retail network of 31,000 Post Office locations.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">USPS Revenue Breakdown</div>
+        <div class="mermaid">
+graph LR
+    A[USPS Revenue 81B annual] --> B[Package Delivery Priority and Parcel]
+    A --> C[First-Class Mail Stamps and Letters]
+    A --> D[Marketing Mail Advertising Circulars]
+    A --> E[Parcel Select Amazon Last-Mile]
+    A --> F[Services PO Boxes Passports]
+    B --> G[Amazon largest customer]
+    C --> H[Declining from 100B to 50B pieces annually]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes USPS Unique</h2>
+      <p class="section-intro">USPS's universal service mandate, scale of physical infrastructure, and last-mile reach create a delivery network that private carriers cannot fully replicate.</p>
+      <div class="cards"><div class="card"><div class="card-icon">🌎</div><h4>Universal Service Obligation</h4><p>Required by law to deliver to every US address at uniform rates. No private carrier does this — FedEx and UPS don't serve every rural address or charge the same regardless of distance.</p></div><div class="card"><div class="card-icon">📦</div><h4>Amazon Partnership</h4><p>USPS delivers a large share of Amazon's residential packages, particularly the final mile for suburban and rural addresses where existing USPS routes provide cost advantages over FedEx or UPS.</p></div><div class="card"><div class="card-icon">💰</div><h4>Flat Rate Shipping</h4><p>Flat Rate boxes with one price regardless of weight (up to 70 lbs) are uniquely popular with small businesses and online sellers shipping heavy items affordably.</p></div><div class="card"><div class="card-icon">📱</div><h4>Informed Delivery</h4><p>Free email preview of incoming mail and package tracking notifications. A unique USPS service that pre-notifies recipients before delivery — popular with households monitoring important mail.</p></div><div class="card"><div class="card-icon">🚚</div><h4>World's Largest Civilian Fleet</h4><p>230,000 vehicles operating the most extensive civilian delivery fleet in the world. New electric vehicles being added through the Delivering for America plan.</p></div><div class="card"><div class="card-icon">🏛️</div><h4>Government Trust</h4><p>As a government agency, USPS carries institutional trust for sensitive documents, legal notices, medication delivery (VA prescriptions), and voting by mail.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From Benjamin Franklin's post office to America's modern last-mile delivery network.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>1775 — Benjamin Franklin Named First Postmaster General</h4><p>The Continental Congress establishes the US postal system with Benjamin Franklin as Postmaster General, predating the Constitution itself.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>1863 — Free City Delivery Launches</h4><p>USPS introduces free home delivery in cities, replacing the model where recipients had to collect mail from post offices.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>1971 — USPS Reorganised as Independent Agency</h4><p>Post Office Department becomes the United States Postal Service, an independent establishment required to be financially self-sufficient.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2006 — Postal Accountability Act</h4><p>Legislation requires USPS to pre-fund retiree health benefits 75 years in advance — an obligation cited as a primary source of USPS financial losses.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2021 — Delivering for America Plan</h4><p>USPS announces $40B 10-year modernisation plan including electric vehicles, new sorting equipment, and operational reforms.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2024 — Electric Vehicle Fleet Transition</h4><p>USPS begins deploying electric Next Generation Delivery Vehicles across the US fleet.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#00001a',primaryTextColor:'#e8eaf6',primaryBorderColor:'#004B87',lineColor:'#004B87',secondaryColor:'#00000f',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#00001a',nodeBorder:'#004B87',clusterBkg:'#00000f',titleColor:'#e8eaf6',edgeLabelBackground:'#00000f',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Steam (Steampowered) — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Steam (Steampowered): how Valve's gaming platform dominates PC game distribution, its 30% revenue share model, Steam Deck hardware, and why it became the definitive PC gaming ecosystem."/>
+  <meta name="keywords" content="Steam analysis, Steam business model, how Steam works, Valve Steam PC gaming, Steam 30 percent cut, Steam vs Epic Games Store"/>
+  <link rel="canonical" href="https://justsimple.online/steampowered.com/"/>
+  <meta property="og:title" content="Steam (Steampowered) — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How Valve's Steam platform dominates PC gaming with 75%+ market share and 130M+ accounts — the digital distribution model that redefined game publishing."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/steampowered.com/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#1B2838;--text:#e8eaf6;--muted:#8892b0;--border:#1b2a38;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#070d14 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#1B283818,transparent);}
+    .hero-badge{display:inline-block;background:#1B283826;border:1px solid #1B283866;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#1B283814,#1B28380a);border:1.5px solid #1B283859;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>Steam: How Valve's Gaming Platform Dominates PC Gaming</h1>
+    <p>An independent deep-dive into Steam's PC game distribution monopoly, the 30% revenue share model that Epic Games challenged, Valve's business model, and why Steam's network effects have proved almost impossible to displace.</p>
+    <div class="hero-url">🌐 <span>steampowered.com</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by Steam (Steampowered). All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">🎮</span>What is Steam?</h2>
+      <p class="section-intro">Steam is the world's largest PC gaming store and community platform — the place where over 130 million gamers buy, download, and play the vast majority of their PC games.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>Steam is like a huge app store, but specifically for PC games. Instead of going to different websites or shops to buy computer games, you can go to Steam and find almost any game you want. You buy the game, download it through the Steam app on your computer, and then play it. Steam also has a community where you can chat with friends, see what games they're playing, and share reviews. It's free to use Steam — you only pay for the games you buy.</p>
+        <p>Steam is made by Valve, a game company that also makes famous games like Half-Life, Portal, Counter-Strike, and Dota 2. Counter-Strike and Dota 2 are free to play on Steam but you can spend money on cosmetic items for your character. Steam makes money by taking 30% of every game sale that happens through Steam. If a game sells for $60, Steam keeps $18 and the game developer gets $42. Because Steam has over 130 million users, almost every game developer wants to sell their game on Steam even if they dislike the 30% fee.</p>
+      </div>
+      <div class="prose">
+        <p>Steam was launched by Valve Corporation in September 2003, initially as a platform for distributing updates to Valve's own games (notably Counter-Strike). Valve founder Gabe Newell and Valve's leadership recognised the emerging shift from physical game distribution to digital and positioned Steam as the infrastructure for that transition. Steam's initial unpopularity (gamers resisted required software installation) reversed dramatically when Half-Life 2 (2004) required Steam for installation — forcing the gaming audience onto the platform.</p>
+        <p>Steam's market dominance grew through a positive feedback loop: the largest user base attracted the most publishers; the most publishers attracted the most users. By 2010, Steam controlled approximately 70% of PC game digital distribution. This near-monopoly attracted anti-monopoly scrutiny but also created enormous value for both Valve and the game development ecosystem by providing a single storefront with 100M+ potential buyers. Steam's Greenlight (2012) and later Steam Direct (2017) programs opened the platform to independent game developers.</p>
+        <p>Steam's network effects extend beyond game sales into community features: friends lists, screenshots, game reviews, Workshop (user-generated content), Trading Cards, the Steam Community Market (real-money trading of cosmetic items), and Steam Family Sharing. These community features increase switching costs — a player with 500 games, thousands of hours logged, and hundreds of Workshop items has enormous sunk costs that make switching to an alternative platform very difficult, regardless of that platform's financial advantages.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">Steam's scale as the dominant PC gaming platform.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">130M+</span><span class="label">Registered Steam accounts</span></div><div class="stat"><span class="num">50M+</span><span class="label">Daily active users (peak concurrent record: 34M)</span></div><div class="stat"><span class="num">50K+</span><span class="label">Games available on Steam</span></div><div class="stat"><span class="num">75%+</span><span class="label">PC digital game distribution market share</span></div><div class="stat"><span class="num">2003</span><span class="label">Year Steam launched by Valve</span></div><div class="stat"><span class="num">30%</span><span class="label">Revenue share Valve takes on game sales</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How Steam Works</h2>
+      <p class="section-intro">Steam operates as a digital distribution marketplace combining game sales, community features, anti-piracy DRM, and in-game item marketplaces to create the most comprehensive PC gaming ecosystem.</p>
+      <div class="prose">
+        <p>Steam's game distribution model uses Steamworks — the developer SDK for integrating games with Steam features (achievements, cloud saves, multiplayer lobbies, workshop). Developers submit games for review and upon approval, list their game on Steam at their chosen price. Steam handles payment processing, digital delivery, DRM (the Steamworks DRM prevents unauthorised play outside Steam), and customer service for refunds. This turnkey distribution service is why even developers who dislike Steam's 30% fee use the platform.</p>
+        <p>Steam's revenue share is tiered: 30% on the first $10M in revenue, 25% on $10M-$50M, and 20% on revenue above $50M. This tiering was introduced in 2018 in response to competitive pressure from Epic Games Store (which offers 12% take rate to developers). Despite Epic's lower rate, Steam's user base of 130M+ remains the most valuable distribution channel for PC games — a game exclusively on Epic Games Store reaches a fraction of the audience it would on Steam.</p>
+        <p>Steam's seasonal sales (Summer Sale, Winter Sale, Autumn Sale) are major gaming events where thousands of games are discounted 25-90%. These sales generate billions in revenue for Valve and publishers and are so significant that PC gamers maintain a 'wait for the Steam sale' culture before purchasing games at full price. Steam's recommendation algorithm surfaces games to users based on wishlist activity, purchase history, and community popularity, driving discovery for smaller indie games that could not afford significant marketing budgets.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">How Steam Distribution Works</div>
+        <div class="mermaid">
+graph TB
+    A[Game Developer submits to Steam] --> B[Valve Review and Approval]
+    B --> C[Game Listed on Steam Store]
+    C --> D[130M Plus users discover game]
+    D --> E[User purchases game]
+    E --> F[Valve takes 30pct to 20pct revenue share]
+    F --> G[Developer receives 70pct to 80pct]
+    E --> H[Steam DRM binds game to account]
+    H --> I[User downloads and plays via Steam client]
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How Steam (Valve) Makes Money</h2>
+      <p class="section-intro">Valve generates revenue from Steam game sales commissions, in-game marketplace transaction fees, and Steam hardware (Steam Deck).</p>
+      <div class="prose">
+        <p><strong>Game sales commission</strong> (30% down to 20%) is the primary Steam revenue source. With billions of dollars in PC game sales annually flowing through Steam, Valve's commission generates extraordinary revenue. Valve is estimated to generate $3-6B+ in annual revenue from Steam, though Valve is a private company that does not publish financials. The effective near-monopoly on PC gaming distribution means this commission is very difficult for the industry to avoid, despite developer frustration.</p>
+        <p><strong>Steam Community Market transaction fees</strong> are charged on every trade of cosmetic items (skins, cards, stickers) between users. Items from games like CS:GO, Dota 2, and Team Fortress 2 are traded on the Steam Community Market with real money. Valve takes approximately 5% plus a 10% game-specific fee on each transaction. CS:GO skin trading has become a significant secondary market with some rare skins selling for thousands of dollars.</p>
+        <p>Steam Deck, Valve's handheld gaming PC launched in 2022, extends Steam's software ecosystem to portable hardware. At $399-649, Steam Deck generates hardware revenue while also locking Steam games (and therefore Steam's ecosystem) to a Valve-controlled device. Steam Deck's success demonstrates the potential for Steam's software moat to support hardware expansion. Additional Steam Controller, Steam Link, and SteamVR hardware represent Valve's ongoing investment in the ecosystem beyond software distribution.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Steam Revenue Model</div>
+        <div class="mermaid">
+graph LR
+    A[Steam Revenue Valve] --> B[Game Sales Commission 30pct to 20pct]
+    A --> C[Steam Marketplace Transaction Fees]
+    A --> D[Steam Deck Hardware]
+    A --> E[In-Game Items Dota 2 CS:GO]
+    B --> F[Billions in PC game sales annually]
+    C --> G[CS:GO and Dota 2 skin trading marketplace]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes Steam Unique</h2>
+      <p class="section-intro">Steam's network effects, community features, and 20-year head start in PC digital distribution create a platform moat that even Epic Games with Fortnite revenues cannot overcome.</p>
+      <div class="cards"><div class="card"><div class="card-icon">👥</div><h4>130M Account Network Effect</h4><p>The more users Steam has, the more publishers want to list there; the more games available, the more users join. A 20-year-old virtuous cycle that Epic Games cannot easily break.</p></div><div class="card"><div class="card-icon">🛒</div><h4>Steam Sales Events</h4><p>Summer Sale, Winter Sale, and other seasonal events are cultural gaming moments. The 'wait for the Steam sale' mentality among PC gamers is a testament to Steam's commercial importance.</p></div><div class="card"><div class="card-icon">🎮</div><h4>Steam Deck</h4><p>Valve's portable gaming PC brings Steam games to handheld form. A successful hardware bet that extends Steam's software ecosystem to a new device category.</p></div><div class="card"><div class="card-icon">🔧</div><h4>Steam Workshop</h4><p>User-generated content platform for mods, maps, skins, and custom content. Workshop mods extend game longevity for years and drive Steam platform stickiness.</p></div><div class="card"><div class="card-icon">💰</div><h4>Item Trading Economy</h4><p>CS:GO and Dota 2 cosmetic item trading markets generate hundreds of millions in transaction fees. Some rare CS:GO skins trade for thousands of dollars.</p></div><div class="card"><div class="card-icon">📚</div><h4>Gaming Library Sunk Cost</h4><p>A user with 500+ Steam games has invested thousands of dollars in a library that is non-transferable. This sunk cost creates enormous platform retention regardless of competitor pricing.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From a 2003 Counter-Strike update tool to the world's dominant gaming platform.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>2003 — Steam Launches as Valve Update Platform</h4><p>Steam launches in September 2003. Initially unpopular with gamers who resent required software installation for Counter-Strike updates.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2004 — Half-Life 2 Forces Steam Adoption</h4><p>Half-Life 2 requires Steam installation to play. Millions of gamers install Steam to access the most anticipated game of 2004, establishing the platform's user base.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2010 — Steam Controls 70% of PC Digital Distribution</h4><p>Steam achieves dominant market share in PC digital game distribution, with major publishers including EA, Ubisoft, and Activision selling through the platform.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2012 — Steam Greenlight Opens to Indie Developers</h4><p>Steam Greenlight allows independent game developers to submit games for community voting and potential Steam listing, opening the platform to indie game distribution.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2018 — Epic Games Store Launches with 88/12 Split</h4><p>Epic Games launches Epic Games Store with a 12% revenue share vs Steam's 30%. Fortnite revenues fund exclusive game deals to attract developers. Steam maintains dominant market share.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2022 — Steam Deck Launch</h4><p>Steam Deck portable gaming PC launches at $399. 35M units estimated sold in first year. Extends Steam ecosystem to handheld gaming hardware.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#0f1923',primaryTextColor:'#e8eaf6',primaryBorderColor:'#1B2838',lineColor:'#1B2838',secondaryColor:'#070d14',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#0f1923',nodeBorder:'#1B2838',clusterBkg:'#070d14',titleColor:'#e8eaf6',edgeLabelBackground:'#070d14',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Quora — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Quora: how the world's largest Q&A platform works, its advertising business model, Quora+ subscription, and how it dominates search results for informational queries."/>
+  <meta name="keywords" content="Quora analysis, Quora business model, how Quora works, Q&A platform, Quora advertising, Quora vs Reddit"/>
+  <link rel="canonical" href="https://justsimple.online/quora.com/"/>
+  <meta property="og:title" content="Quora — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How Quora became the world's largest Q&A platform with 400M monthly visitors — the knowledge-sharing model that dominates informational search queries."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/quora.com/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#B92B27;--text:#e8eaf6;--muted:#8892b0;--border:#3a0000;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#1a0000 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#B92B2718,transparent);}
+    .hero-badge{display:inline-block;background:#B92B2726;border:1px solid #B92B2766;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#B92B2714,#B92B270a);border:1.5px solid #B92B2759;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>Quora: How the World's Largest Q&A Platform Works</h1>
+    <p>An independent deep-dive into Quora's question-answer model, how it dominates informational search queries, its advertising business, and the Quora+ subscription launched to diversify revenue beyond advertising.</p>
+    <div class="hero-url">🌐 <span>quora.com</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by Quora. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">❓</span>What is Quora?</h2>
+      <p class="section-intro">Quora is the world's largest question-and-answer platform — a knowledge community where people post questions and receive answers from experts, professionals, and other knowledgeable members.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>Quora is a website where you can ask any question and get answers from real people who know about that topic. If you wonder why the sky is blue, how to fix a bicycle tyre, or what it's like to be a doctor, you can ask on Quora and get detailed answers from people with that knowledge. What makes Quora special is that experts and professionals (doctors, engineers, former CIA agents, famous entrepreneurs) often answer questions about their field.</p>
+        <p>Quora makes money by showing advertisements to people who read answers. If you're reading about investing, you might see ads for financial services. You can also pay for Quora+ which removes ads and gives you access to exclusive content from expert writers. Quora pages rank very highly on Google, so millions of people arrive at Quora answers every day through Google search without even knowing Quora exists.</p>
+      </div>
+      <div class="prose">
+        <p>Quora was founded in June 2009 by Adam D'Angelo and Charlie Cheever, both former Facebook employees. D'Angelo had been Facebook's CTO and left to start Quora with a vision of creating a resource of high-quality knowledge organized as questions and answers. Quora launched to the public in 2010 and grew rapidly by attracting Silicon Valley insiders, venture capitalists, and technology executives who answered questions about their industry with unusual candour and depth, establishing the platform's reputation for high-quality expert content.</p>
+        <p>Quora's early growth was driven by the quality and credibility of early adopters. When prominent figures like Barack Obama (2016 questions session), Ashton Kutcher, Elon Musk, and prominent VCs answered questions on Quora, their answers attracted massive traffic and established Quora as a credible knowledge source. This early credibility created an ongoing cycle: quality answers attracted more readers, who attracted more quality answerers. Quora's voting and collapse features allowed the community to surface the best answers while burying low-quality responses.</p>
+        <p>Quora's content library has grown to tens of millions of questions with hundreds of millions of answers across virtually every topic. The platform's SEO dominance is remarkable — Quora pages rank in the top 5 Google results for thousands of informational queries because Google values the community-validated, long-form answers that Quora produces. This organic search traffic drives the majority of Quora's 400M+ monthly visitors without requiring direct search advertising investment.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">Quora's scale as the world's knowledge Q&A platform.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">400M+</span><span class="label">Monthly website visitors</span></div><div class="stat"><span class="num">10M+</span><span class="label">Topics covered on the platform</span></div><div class="stat"><span class="num">2009</span><span class="label">Year founded by Adam D'Angelo and Charlie Cheever</span></div><div class="stat"><span class="num">$2B</span><span class="label">Valuation at peak funding round</span></div><div class="stat"><span class="num">300M+</span><span class="label">Questions answered on the platform</span></div><div class="stat"><span class="num">#1</span><span class="label">Most trusted Q&A site in Google search results</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How Quora Works</h2>
+      <p class="section-intro">Quora's knowledge platform combines question-routing, community curation, and SEO to create a self-reinforcing knowledge resource that grows with every question answered.</p>
+      <div class="prose">
+        <p>Quora's question routing system notifies relevant experts when new questions are asked. Users can 'Request Answers' from specific people, and Quora's algorithm suggests questions to users based on their stated expertise and answer history. This directed question routing is more effective than Reddit's passive posting model — asking a question to a specific expert who has answered similar questions before generates a significantly higher response rate than broadcasting to a general community.</p>
+        <p>Quora's voting system (upvotes) and collapse/reporting features surface the best answers. High-quality answers to popular questions accumulate thousands of upvotes over years, creating canonical answers that dominate search results. The Most Viewed Writers programme highlights the top contributors on specific topics, providing social recognition that incentivises expert contribution without monetary payment. This community curation quality control is how Quora maintains answer quality at scale.</p>
+        <p>Quora Spaces are topic-specific communities within Quora where content creators publish posts (not just Q&A) and followers receive content feeds. Spaces allow Quora to compete with Medium, Substack, and LinkedIn Articles for longer-form content, and provide a monetisation pathway for creators through the Quora Partner Programme (revenue sharing from ad views on content).</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">How Quora Creates Knowledge Value</div>
+        <div class="mermaid">
+graph TB
+    A[User asks question on Quora] --> B[Algorithm notifies relevant experts]
+    B --> C[Experts write detailed answers]
+    C --> D[Community upvotes best answers]
+    D --> E[Top answers rank highly on Google]
+    E --> F[Millions find answers via Google Search]
+    F --> G[Some become Quora members and answer questions]
+    G --> B
+    D --> H[Knowledge library grows continuously]
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How Quora Makes Money</h2>
+      <p class="section-intro">Quora earns revenue primarily through advertising, with Quora+ subscriptions providing a growing alternative revenue stream.</p>
+      <div class="prose">
+        <p><strong>Quora Ads</strong> (the advertising platform) is Quora's primary revenue source. Advertisers target users based on topic interest, question intent, and demographic signals. Quora's high-intent audience — people actively researching specific topics — commands premium CPMs compared to general display advertising. Quora Ads formats include in-feed ads, sponsored content, and promoted questions. The platform is particularly valuable for B2B, financial services, and technology advertisers reaching research-oriented audiences.</p>
+        <p><strong>Quora+</strong> is a subscription service offering ad-free reading and access to exclusive content from Quora's top writers. Launched in 2021, Quora+ represents a strategic diversification from pure ad revenue toward subscription. The service is priced at approximately $5/month or $50/year. Revenue sharing with participating writers creates an incentive for quality long-form content creation within the Quora+ paywall.</p>
+        <p>The Quora Partner Programme pays question-askers a share of advertising revenue generated from their questions — incentivising the creation of high-search-volume questions that attract advertising inventory. This program is controversial (it can incentivise low-quality clickbait questions) but drives content creation at scale. Quora has also explored enterprise licensing of its knowledge base for AI training datasets.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Quora Revenue Model</div>
+        <div class="mermaid">
+graph LR
+    A[Quora Revenue] --> B[Quora Ads CPM and CPC]
+    A --> C[Quora Plus Subscription]
+    A --> D[Partner Programme Ad Revenue Share]
+    B --> E[400M monthly visitors high-intent research audience]
+    C --> F[Ad-free reading exclusive writer content]
+    D --> G[Question-askers earn from ad views]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes Quora Unique</h2>
+      <p class="section-intro">Quora's expert-credentialed answer quality and SEO dominance for informational queries create a knowledge platform with compounding value over time.</p>
+      <div class="cards"><div class="card"><div class="card-icon">🎓</div><h4>Expert Credentialing</h4><p>Users state their credentials (former CIA analyst, Stanford professor, 20-year software engineer) which appear under their answers. This credentialing makes answers from experts more trustworthy than anonymous forum posts.</p></div><div class="card"><div class="card-icon">🔍</div><h4>Google SEO Dominance</h4><p>Quora pages rank in the top 5 Google results for thousands of 'how', 'why', and 'what' queries. The community-validated long-form answers satisfy Google's quality signals for informational intent.</p></div><div class="card"><div class="card-icon">💬</div><h4>Request Answers Feature</h4><p>Users can specifically request answers from experts they admire. Getting a direct answer from a notable expert creates the same experience as a personalised response to an email.</p></div><div class="card"><div class="card-icon">🌍</div><h4>Global Knowledge Base</h4><p>Questions and answers in 80+ languages with cultural context that Wikipedia's neutral-point-of-view requirements cannot provide. Personal opinions and first-hand experiences are Quora's differentiator.</p></div><div class="card"><div class="card-icon">📰</div><h4>Quora Spaces</h4><p>Topic-specific communities within Quora for longer-form content. Spaces allow subject-matter experts to build followings on Quora beyond the Q&A format.</p></div><div class="card"><div class="card-icon">💡</div><h4>Insider Knowledge</h4><p>What is it really like to work at Google? What actually happens in a VC funding round? Quora's insider answers provide access to knowledge typically shared only within closed professional networks.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From a Silicon Valley insider Q&A to the world's knowledge platform.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>2009 — Quora Founded by Ex-Facebook Executives</h4><p>Adam D'Angelo and Charlie Cheever found Quora after D'Angelo left his role as Facebook's CTO.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2010 — Public Launch</h4><p>Quora opens to the public. Silicon Valley executives, VCs, and technology figures establish Quora's early reputation for high-quality expert answers.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2014 — International Expansion</h4><p>Quora expands to Spanish, French, and German, beginning its global knowledge platform strategy.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2017 — Quora Ads Launches</h4><p>Quora launches its advertising platform, establishing the revenue model that funds operations today.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2021 — Quora+ Subscription Launches</h4><p>Quora launches its subscription tier offering ad-free reading and exclusive writer content, diversifying beyond advertising revenue.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2023 — Poe AI Platform</h4><p>Quora launches Poe, an AI chatbot aggregator allowing users to access Claude, GPT-4, and other AI models in one interface — Quora's bet on the AI era.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#2a0000',primaryTextColor:'#e8eaf6',primaryBorderColor:'#B92B27',lineColor:'#B92B27',secondaryColor:'#1a0000',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#2a0000',nodeBorder:'#B92B27',clusterBkg:'#1a0000',titleColor:'#e8eaf6',edgeLabelBackground:'#1a0000',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

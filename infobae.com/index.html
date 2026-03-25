@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Infobae — JustSimple.Online</title>
+  <meta name="description" content="Infobae is Latin America's leading digital news portal, delivering breaking news, analysis, and multimedia content to 100M+ monthly Spanish-language readers."/>
+  <meta name="keywords" content="Infobae, Infobae noticias, noticias Argentina, noticias Latin America, portal noticias, Infobae.com, medios Argentina"/>
+  <link rel="canonical" href="https://justsimple.online/infobae.com/"/>
+  <meta property="og:title" content="Infobae — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="Infobae — Latin America's most-read digital news portal, delivering 24/7 breaking news and analysis in Spanish."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/infobae.com/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#E30613;--text:#e8eaf6;--muted:#8892b0;--border:#E30613;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#1a0000 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#E3061318,transparent);}
+    .hero-badge{display:inline-block;background:#E3061326;border:1px solid #E3061366;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#E3061314,#E306130a);border:1.5px solid #E3061359;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>Infobae</h1>
+    <p>Latin America's Leading Digital News Portal</p>
+    <div class="hero-url">🌐 <span>infobae.com</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by Infobae. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">🌎</span>What is Infobae?</h2>
+      <p class="section-intro">Infobae is Latin America's most-read Spanish-language digital news portal, delivering 24/7 breaking news, politics, economy, and culture coverage to readers across the Americas.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>Infobae is like a big news website that millions of people in South America and beyond read every day. It started in Argentina but now people all over Latin America use it to find out what is happening in the world.</p>
+        <p>Unlike old newspaper websites, Infobae was born on the internet so it updates its news all day and night, very fast, whenever something important happens.</p>
+      </div>
+      <div class="prose">
+        <p>Founded in 2002 by Daniel Hadad in Buenos Aires, Infobae was one of the first major Argentine news sources built entirely for digital distribution rather than adapting a print publication. This digital-native approach allowed it to innovate rapidly in content formats and distribution.</p>
+        <p>Infobae expanded beyond Argentina to launch regional editions for Mexico, Colombia, the United States (Spanish-language), and broader Latin America. This multi-market strategy has made it the most-read Spanish-language news portal in the region, surpassing traditional media organizations with much longer histories.</p>
+        <p>The site is known for its aggressive coverage pace, publishing hundreds of articles daily across politics, crime, economy, entertainment, health, and technology. Infobae's breaking news speed and willingness to cover controversial topics have made it a primary source for journalists and political observers across Latin America.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">Infobae's reach across Latin America:</p>
+      <div class="stats-grid"><div class="stat"><span class="num">100M+</span><span class="label">Monthly Unique Visitors</span></div><div class="stat"><span class="num">5</span><span class="label">Regional Editions</span></div><div class="stat"><span class="num">2002</span><span class="label">Year Founded</span></div><div class="stat"><span class="num">#1</span><span class="label">Spanish News Portal</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>Multi-Country Digital Strategy</h2>
+      <p class="section-intro">Infobae built a pan-Latin American presence by adapting its model to each market.</p>
+      <div class="prose">
+        <p>Each regional edition (Argentina, Mexico, Colombia, US) has a dedicated editorial team producing locally relevant content while sharing resources and infrastructure. This distributed editorial model allows Infobae to compete with local news sources in each market while benefiting from the broader network.</p>
+        <p>The US Spanish-language edition targets the large and growing US Hispanic community, a market traditionally underserved by major digital news platforms. With 60+ million Spanish speakers in the US, this represents a significant and undermonetized audience.</p>
+        <p>Video content has been a major investment area, with Infobae producing news videos, documentary series, and live coverage of major events. The video strategy supports both the website and strong social media distribution, particularly on YouTube and Facebook where Spanish-language news content generates high engagement.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Infobae Multi-Market Structure</div>
+        <div class="mermaid">
+graph TB
+    A[Infobae Headquarters] --> B[Infobae Argentina]
+    A --> C[Infobae Mexico]
+    A --> D[Infobae Colombia]
+    A --> E[Infobae US Hispanic]
+    B --> F[100M+ Combined Users]
+    C --> F
+    D --> F
+    E --> F
+    style A fill:#E30613,color:#fff
+    style F fill:#E30613,color:#fff
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>Digital Advertising and Business</h2>
+      <p class="section-intro">Infobae has built a sustainable digital media business in Latin America's challenging advertising market.</p>
+      <div class="prose">
+        <p>Infobae generates revenue primarily through digital advertising — programmatic display, video pre-roll, branded content, and sponsored sections. The scale of its audience across five markets makes it an efficient buy for advertisers seeking pan-Latin American reach.</p>
+        <p>Infobae has developed branded content capabilities, producing sponsored journalism, native advertising sections, and event coverage for major regional and multinational advertisers. This premium advertising formats generate higher CPMs than programmatic inventory.</p>
+        <p>The site's data infrastructure enables sophisticated audience targeting, allowing advertisers to reach specific demographic and interest segments across Infobae's properties — a significant advantage in markets where third-party data has historically been limited.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Revenue Model</div>
+        <div class="mermaid">
+graph LR
+    A[Programmatic Ads] --> E[Revenue]
+    B[Branded Content] --> E
+    C[Video Advertising] --> E
+    D[Events Sponsorship] --> E
+    style E fill:#E30613,color:#fff
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>Infobae Content and Features</h2>
+      <p class="section-intro">Infobae combines breaking news speed with multimedia storytelling.</p>
+      <div class="cards"><div class="card"><div class="card-icon">⚡</div><h4>Breaking News</h4><p>24/7 breaking news coverage with one of Latin America's fastest editorial turnarounds on major events.</p></div><div class="card"><div class="card-icon">🎬</div><h4>Infobae Video</h4><p>Original video journalism, documentary series, and live event coverage across all regional editions.</p></div><div class="card"><div class="card-icon">🔬</div><h4>Deep Analysis</h4><p>In-depth investigative pieces and political analysis complementing the site's real-time news coverage.</p></div><div class="card"><div class="card-icon">📱</div><h4>Mobile Apps</h4><p>Native iOS and Android apps with push notifications, personalized feeds, and offline reading capabilities.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">Infobae's rise to Latin American digital media leadership:</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>2002 — Founded in Argentina</h4><p>Daniel Hadad launches Infobae.com in Buenos Aires as a digital-native news site focused on Argentine politics and business.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2010 — Expansion Begins</h4><p>Infobae begins expanding beyond Argentina, launching Mexico edition to serve the region's largest Spanish-speaking market.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2015 — 50M Monthly Users</h4><p>Infobae surpasses 50 million monthly unique visitors, establishing itself as Latin America's most-read digital news site.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2018 — Colombia and US Editions</h4><p>New editions launch for Colombia and US Spanish-speaking audiences, completing the core multi-market expansion strategy.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2023 — 100M Users</h4><p>Infobae reaches 100 million monthly unique visitors, cementing its position as the leading Spanish-language digital news portal.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#B00010',primaryTextColor:'#e8eaf6',primaryBorderColor:'#E30613',lineColor:'#E30613',secondaryColor:'#1a0000',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#B00010',nodeBorder:'#E30613',clusterBkg:'#1a0000',titleColor:'#e8eaf6',edgeLabelBackground:'#1a0000',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>PayPal — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of PayPal: how the digital payments platform works, its business model, Venmo and Braintree operations, and its place in the competitive fintech landscape."/>
+  <meta name="keywords" content="PayPal analysis, PayPal business model, how PayPal works, PayPal revenue, Venmo, digital payments fintech"/>
+  <link rel="canonical" href="https://justsimple.online/paypal.com/"/>
+  <meta property="og:title" content="PayPal — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How PayPal pioneered digital payments and built a 430M+ account network processing $1.5T annually — the original fintech company."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/paypal.com/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#0070ba;--text:#e8eaf6;--muted:#8892b0;--border:#001a45;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#000818 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#0070ba18,transparent);}
+    .hero-badge{display:inline-block;background:#0070ba26;border:1px solid #0070ba66;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#0070ba14,#0070ba0a);border:1.5px solid #0070ba59;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>PayPal: How the World's Original Fintech Works</h1>
+    <p>An independent deep-dive into PayPal's payment processing architecture, Venmo social payments, Braintree developer platform, and how it processes $1.5T+ annually across 200+ markets.</p>
+    <div class="hero-url">🌐 <span>paypal.com</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by PayPal. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">💳</span>What is PayPal?</h2>
+      <p class="section-intro">PayPal invented the idea that you could send money online to anyone, anywhere, using only an email address — and in doing so, made e-commerce possible for the early internet.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>PayPal is a way to pay for things online without giving your credit card number to every website. Instead of entering your card details everywhere, you give them to PayPal once, and then you can pay anywhere that accepts PayPal by just logging into your PayPal account. This is safer because fewer companies have your card details.</p>
+        <p>PayPal also has Venmo, which is an app that lets you send money to friends instantly — like splitting a restaurant bill or paying someone back for a movie ticket. PayPal started at the same time as eBay and the two grew together. Today PayPal processes more than $1.5 trillion in payments every year — that's more money than many countries' entire economies.</p>
+      </div>
+      <div class="prose">
+        <p>PayPal was founded in December 1998 by Max Levchin, Peter Thiel, and Luke Nosek as Confinity (originally developing security software for handheld devices). The company pivoted to internet payments in 2000 and merged with X.com (Elon Musk's internet banking startup). PayPal's growth was largely driven by eBay adoption — eBay buyers and sellers found it the easiest payment method, and PayPal grew from 1 million to 5 million accounts in 2000 alone. eBay acquired PayPal for $1.5 billion in 2002.</p>
+        <p>PayPal's business model is built on <strong style="color:var(--text);">payment processing fees</strong> charged to merchants. Merchants pay 2.9% + $0.30 per transaction for standard card payments through PayPal, with lower rates for high-volume merchants. The consumer-facing PayPal is free for buyers (paid by merchants). This two-sided market — attract buyers with convenience and security, monetise through merchant fees — is the foundational structure of most digital payment platforms.</p>
+        <p>PayPal was spun off from eBay in 2015 as an independent public company. Following the separation, PayPal has grown its payment volume from $282B (2015) to $1.5T+ (2024) while expanding its product portfolio to include Venmo (social payments), Braintree (developer payment API), Hyperwallet (mass payouts), Honey (deal discovery), and Zettle (point-of-sale hardware). Despite this growth, PayPal faces intense competition from Apple Pay, Google Pay, Stripe, Square, and banking sector digital wallets.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">PayPal's scale as a global payments infrastructure.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">430M+</span><span class="label">Active accounts globally</span></div><div class="stat"><span class="num">$1.5T+</span><span class="label">Annual total payment volume (TPV)</span></div><div class="stat"><span class="num">$28B</span><span class="label">Annual revenue</span></div><div class="stat"><span class="num">200+</span><span class="label">Markets where PayPal operates</span></div><div class="stat"><span class="num">150+</span><span class="label">Currencies supported</span></div><div class="stat"><span class="num">1998</span><span class="label">Year founded</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How PayPal Works</h2>
+      <p class="section-intro">PayPal operates a global payments network that handles authorisation, fraud detection, currency conversion, and settlement across 200+ markets.</p>
+      <div class="prose">
+        <p>PayPal's payment flow involves three main operations: <strong style="color:var(--text);">authorisation</strong> (verifying the funding source has sufficient funds), <strong style="color:var(--text);">fraud detection</strong> (scoring the transaction risk using machine learning models trained on billions of historical transactions), and <strong style="color:var(--text);">settlement</strong> (transferring funds from buyer to seller, netting PayPal's fee). PayPal's fraud detection system analyses hundreds of signals per transaction — device fingerprint, IP location, transaction velocity, merchant category, buyer history — to approve or flag transactions in milliseconds.</p>
+        <p>Braintree is PayPal's developer-facing payment API, processing payments for companies including Uber, Airbnb, GitHub, and thousands of other digital platforms. Braintree's architecture allows platforms to embed PayPal, Venmo, cards, Apple Pay, and Google Pay in a single integration, managing the complexity of multi-method payment acceptance. Braintree's Vault feature tokenises payment methods so platforms can charge returning customers without storing card numbers — a security and compliance simplification.</p>
+        <p>Venmo is PayPal's social payment app with 90M+ users, particularly popular among Gen Z and Millennials for peer-to-peer payments. Venmo's social feed (showing friends' payments with emoji descriptions) created a social layer around payments that traditional banking cannot replicate. Venmo monetises through instant transfer fees (1.75% to instantly access funds vs free next-day transfer), Venmo debit card interchange fees, and Venmo for Business merchant fees.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">How a PayPal Payment Works</div>
+        <div class="mermaid">
+graph TB
+    A[Customer clicks Pay with PayPal at checkout] --> B[Redirect to PayPal login]
+    B --> C[Customer authenticates with PayPal]
+    C --> D[PayPal fraud scoring hundreds of signals]
+    D --> E{Risk Score}
+    E --> F[Low risk -- approve instantly]
+    E --> G[High risk -- additional verification required]
+    F --> H[Funds reserved from customer account or card]
+    H --> I[Merchant receives payment confirmation]
+    I --> J[Customer returned to merchant checkout]
+    J --> K[Settlement PayPal net fee sent to merchant]
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How PayPal Makes Money</h2>
+      <p class="section-intro">PayPal earns a small percentage on every transaction it processes — across $1.5T in annual volume, small percentages become very large numbers.</p>
+      <div class="prose">
+        <p><strong style="color:var(--text);">Transaction revenue</strong> is PayPal's primary revenue source — approximately 2.9% + $0.30 per transaction for merchants using standard PayPal, with Braintree fees starting lower. With $1.5T in TPV and an average take rate of approximately 1.9%, PayPal generates $28B+ in revenue. The take rate has declined over time as PayPal wins higher-volume merchant accounts that negotiate lower rates and as the mix shifts toward Braintree (lower take rate, higher volume).</p>
+        <p><strong style="color:var(--text);">Value-added services</strong> including PayPal Credit (buy now pay later), working capital loans to merchants, and interest income from PayPal Cash balance holdings contribute additional revenue. PayPal holds customer balances in accounts and earns interest on these float balances — particularly valuable in high-interest rate environments. PayPal Credit (formerly Bill Me Later) extends credit at the point of purchase, earning interest income from consumers who carry balances.</p>
+        <p>Venmo's monetisation has expanded beyond peer-to-peer transfers. <strong style="color:var(--text);">Venmo for Business</strong> charges merchants 1.9% + $0.10 per transaction — a competitive rate that leverages Venmo's consumer adoption to create a merchant network. The Venmo debit card generates interchange fee revenue on every card purchase. PayPal's <strong style="color:var(--text);">advertising</strong> business (using transaction data to target ads to relevant consumers) is an emerging revenue stream that could be significant given the depth of purchase history data PayPal holds.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">PayPal Revenue Model — Take Rate on $1.5T</div>
+        <div class="mermaid">
+graph LR
+    A[PayPal Revenue $28B] --> B[Transaction Fees 1.9% avg take rate]
+    A --> C[Venmo Monetisation]
+    A --> D[PayPal Credit and Working Capital]
+    A --> E[Interest Income on Balances]
+    B --> F[$1.5T TPV generates $28B at 1.9% take rate]
+    C --> G[Instant transfer fees debit card interchange]
+    D --> H[BNPL interest and merchant loans]
+    E --> I[Float income from $20B+ customer balances]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes PayPal Endure</h2>
+      <p class="section-intro">PayPal's 430M account network, fraud detection depth, and Venmo social payments create advantages that newer fintech entrants struggle to replicate quickly.</p>
+      <div class="cards"><div class="card"><div class="card-icon">🛡️</div><h4>Buyer Protection</h4><p>Full refund guarantee if purchases are unauthorised or items not received as described. This buyer protection drives consumer trust that merchant-direct payments cannot offer.</p></div><div class="card"><div class="card-icon">📱</div><h4>Venmo Social Payments</h4><p>90M+ users. The social feed, split bills, and instant peer-to-peer transfers made Venmo a verb for Gen Z — 'just Venmo me.'</p></div><div class="card"><div class="card-icon">🔧</div><h4>Braintree Developer Platform</h4><p>One integration for PayPal, Venmo, cards, Apple Pay, Google Pay. The preferred payment API for digital-native companies like Uber and Airbnb.</p></div><div class="card"><div class="card-icon">🌍</div><h4>200+ Markets</h4><p>Global coverage including difficult-to-reach markets with local payment methods, currency support, and compliance expertise that smaller competitors lack.</p></div><div class="card"><div class="card-icon">🔒</div><h4>Fraud Detection</h4><p>Machine learning models trained on billions of historical transactions detect fraud that new payment processors, without equivalent data, miss.</p></div><div class="card"><div class="card-icon">💰</div><h4>Float Income</h4><p>$20B+ in customer balances earns interest income that grows automatically with interest rates — a financial services benefit that pure technology fee models lack.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From a Palm Pilot payment app to the world's largest independent payments network.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>1998 — Confinity Founded</h4><p>Max Levchin, Peter Thiel, and Luke Nosek found Confinity. Pivot from Palm Pilot security software to internet payments.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2000 — Merger with X.com</h4><p>Confinity merges with Elon Musk's X.com internet bank. Combined entity focuses on PayPal email payments.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2002 — eBay Acquires PayPal for $1.5B</h4><p>eBay buys PayPal at peak adoption. The acquisition validates digital payments and provides PayPal with eBay's captive marketplace.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2013 — Braintree and Venmo Acquired</h4><p>PayPal acquires Braintree ($800M) including Venmo. Both prove transformative — Braintree for developer payments, Venmo for social payments.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2015 — Spun Off from eBay</h4><p>PayPal becomes independent public company. Market cap immediately exceeds eBay's.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2024 — AI and Advertising Push</h4><p>PayPal Advertising platform launches using transaction data for targeting. AI-powered checkout personalisation to combat declining take rates.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#001230',primaryTextColor:'#e8eaf6',primaryBorderColor:'#0070ba',lineColor:'#0070ba',secondaryColor:'#000818',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#001230',nodeBorder:'#0070ba',clusterBkg:'#000818',titleColor:'#e8eaf6',edgeLabelBackground:'#000818',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

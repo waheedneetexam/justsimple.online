@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Rutube — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Rutube: how Russia's state-backed video platform works, its Gazprom-Media ownership, growth following YouTube restrictions in Russia, and comparison with YouTube's global model."/>
+  <meta name="keywords" content="Rutube analysis, Rutube business model, how Rutube works, Russian YouTube, Gazprom Media video platform, Rutube vs YouTube Russia"/>
+  <link rel="canonical" href="https://justsimple.online/rutube.ru/"/>
+  <meta property="og:title" content="Rutube — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How Rutube became Russia's largest domestic video platform with 50M+ monthly users — the state-backed YouTube alternative that grew dramatically following geopolitical platform restrictions."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/rutube.ru/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#204A9D;--text:#e8eaf6;--muted:#8892b0;--border:#000028;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#00000f 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#204A9D18,transparent);}
+    .hero-badge{display:inline-block;background:#204A9D26;border:1px solid #204A9D66;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#204A9D14,#204A9D0a);border:1.5px solid #204A9D59;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>Rutube: How Russia's State-Backed Video Platform Works</h1>
+    <p>An independent deep-dive into Rutube's Gazprom-Media ownership structure, growth as a YouTube alternative following restrictions on international platforms in Russia, and how Russia is building domestic internet infrastructure across video, search, and social media.</p>
+    <div class="hero-url">🌐 <span>rutube.ru</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by Rutube. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">📹</span>What is Rutube?</h2>
+      <p class="section-intro">Rutube is Russia's largest domestic video platform — a state-backed YouTube alternative owned by Gazprom-Media that has grown dramatically as Russia restricts access to international social media platforms.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>Rutube is like YouTube, but Russian. You can upload videos, watch videos, and subscribe to channels on Rutube — it works very similarly to YouTube. The big difference is that Rutube is owned by Gazprom-Media, which is part of Gazprom, the Russian government's energy company. This means the Russian government has significant influence over what content appears on Rutube and what content gets removed.</p>
+        <p>In 2022 and since, Russia has restricted access to many international social media platforms. This pushed many Russian content creators and viewers toward Russian platforms like Rutube, VK Video, and Yandex Video. Rutube's monthly users grew dramatically during this period as it became a major destination for Russian video content that was no longer accessible through international platforms. The Russian government actively promotes Rutube as part of Russia's digital sovereignty strategy.</p>
+      </div>
+      <div class="prose">
+        <p>Rutube was founded in 2006, the same year as Twitter and just one year after YouTube. Initially, Rutube was simply a Russian video sharing platform competing with early YouTube. The platform was acquired by Gazprom-Media in 2010, aligning Rutube with Russia's state-connected media infrastructure. Gazprom-Media owns multiple major Russian TV channels (NTV, TNT, TV-3, Pyatnitsa), radio stations, and entertainment properties, making Rutube part of a broader state-affiliated media ecosystem.</p>
+        <p>Rutube's user growth was significantly accelerated by geopolitical events in 2022, when Russia introduced restrictions on international social media platforms and some platforms limited their services in Russia. Russian content creators who had built audiences on international platforms migrated to Rutube and VK Video. Russian TV channels (many of which are state-owned) began streaming their content on Rutube, providing premium licensed content that improved the platform's content quality significantly.</p>
+        <p>Rutube's infrastructure received significant investment to handle increased demand, though the platform experienced major technical difficulties in 2022 when it was targeted by cyberattacks that took the service offline for extended periods. The Russian government has expressed explicit support for Rutube as part of Russia's 'digital sovereignty' strategy — creating domestic alternatives to international platforms to reduce dependence on Western technology companies. This government backing provides Rutube with financial and regulatory support that commercially-funded competitors lack.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">Rutube's scale as Russia's primary domestic video platform.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">50M+</span><span class="label">Monthly active users</span></div><div class="stat"><span class="num">2006</span><span class="label">Year Rutube was founded</span></div><div class="stat"><span class="num">2010</span><span class="label">Year acquired by Gazprom-Media</span></div><div class="stat"><span class="num">3x</span><span class="label">User growth following 2022 platform restrictions</span></div><div class="stat"><span class="num">State</span><span class="label">Ownership through Gazprom-Media / Gazprom</span></div><div class="stat"><span class="num">1B+</span><span class="label">Monthly video views across the platform</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How Rutube Works</h2>
+      <p class="section-intro">Rutube operates as a video hosting and streaming platform with creator channels, live streaming, and catch-up TV, backed by Gazprom-Media's content partnerships and state support.</p>
+      <div class="prose">
+        <p>Rutube's video platform allows individual creators and organisations to upload, manage, and monetise video content through creator channels. The platform supports standard video hosting (long-form, short-form), live streaming, and catch-up TV from Russian broadcasters. Rutube has invested in creator monetisation tools (revenue sharing from advertising) to attract content creators away from international platforms. The ability to monetise content without international platform restrictions is a key selling point for Russian creators.</p>
+        <p>Rutube's content library includes user-generated content from individual creators, official channels from Russian TV broadcasters (NTV, TNT, and other Gazprom-Media channels have their own Rutube channels), music videos from Russian artists, sports content, and educational content. The Gazprom-Media ownership provides Rutube with preferential access to premium Russian broadcast content, giving the platform licensed TV content that increases its appeal beyond user-generated video.</p>
+        <p>Rutube's recommendation and search algorithms surface Russian-language content to Russian users. Content moderation policies enforce Russian law requirements regarding political content, which differs significantly from YouTube's policies. This content moderation context makes Rutube a more constrained platform for certain types of political speech but also provides regulatory compliance clarity for Russian-based content creators and businesses.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Rutube Platform Structure</div>
+        <div class="mermaid">
+graph TB
+    A[Rutube Gazprom-Media] --> B[User Generated Creator Channels]
+    A --> C[Official Russian TV Broadcaster Channels]
+    A --> D[Live Streaming]
+    A --> E[Short Video Format]
+    B --> F[Content creators monetised via ads]
+    C --> G[NTV TNT other Gazprom-Media channels]
+    A --> H[50M Plus Monthly Users]
+    H --> I[Primarily Russian language audience]
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How Rutube Makes Money</h2>
+      <p class="section-intro">Rutube generates revenue through advertising displayed against video content and through Gazprom-Media's broader media group synergies.</p>
+      <div class="prose">
+        <p><strong>Video advertising</strong> (pre-roll, mid-roll, and display advertising) is Rutube's primary revenue model. Russian brands advertising to Russian audiences pay for video ad inventory across Rutube's 50M+ monthly user base. Rutube shares advertising revenue with content creators who reach qualifying thresholds, similar to YouTube's Partner Programme. The Russian digital advertising market shifted toward domestic platforms following restrictions on Google Ads and other international advertising platforms in Russia.</p>
+        <p><strong>Gazprom-Media synergies</strong> provide Rutube with structural advantages beyond advertising revenue. Content from Gazprom-Media's TV channels reduces content acquisition costs. Gazprom-Media's sales network (selling advertising across its TV channels, radio stations, and digital properties) can package Rutube advertising with other Gazprom-Media properties. This cross-platform advertising sales approach benefits Rutube versus standalone competitors.</p>
+        <p>State support and government-directed traffic contribute to Rutube's growth. Russian government ministries, state-owned enterprises, and official institutions are encouraged to host content on Rutube rather than international platforms. This government institutional content increases Rutube's total video inventory and creates an official content ecosystem that supplements creator and broadcaster content.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Rutube Revenue Model</div>
+        <div class="mermaid">
+graph LR
+    A[Rutube Revenue] --> B[Video Advertising Pre-roll Mid-roll]
+    A --> C[Gazprom-Media Cross-Platform Ad Sales]
+    A --> D[State and Institutional Support]
+    B --> E[50M monthly users Russian advertisers]
+    C --> F[Bundled with NTV TNT and other channels]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes Rutube Unique</h2>
+      <p class="section-intro">Rutube's state backing, Gazprom-Media content partnerships, and position as Russia's primary domestic video platform create a distinct role in Russia's internet ecosystem.</p>
+      <div class="cards"><div class="card"><div class="card-icon">🏛️</div><h4>State-Backed Platform</h4><p>Gazprom-Media ownership provides Rutube financial stability and regulatory protection that commercially-funded video platforms cannot match. State backing ensures survival regardless of commercial performance.</p></div><div class="card"><div class="card-icon">📺</div><h4>Broadcaster Content</h4><p>Official channels from NTV, TNT, and other Gazprom-Media properties provide licensed premium TV content alongside user-generated video, differentiating Rutube from pure creator platforms.</p></div><div class="card"><div class="card-icon">🇷🇺</div><h4>Digital Sovereignty Tool</h4><p>Rutube is explicitly promoted as part of Russia's digital sovereignty strategy — reducing dependence on international video platforms through domestic infrastructure investment.</p></div><div class="card"><div class="card-icon">📈</div><h4>Geopolitical Growth</h4><p>User base grew approximately 3x following 2022 international platform restrictions. Geopolitical events effectively transferred a significant portion of Russian video consumption to domestic platforms.</p></div><div class="card"><div class="card-icon">💰</div><h4>Domestic Ad Market Access</h4><p>Following restrictions on Google and international ad networks in Russia, Rutube gained access to Russian advertising budgets previously spent on YouTube and international platforms.</p></div><div class="card"><div class="card-icon">🌐</div><h4>Russian Language First</h4><p>Russian-language content moderation, discovery, and creator tools designed specifically for Russian creators and audiences — a localisation advantage international platforms partly surrendered.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From a 2006 startup to Russia's state-backed YouTube alternative.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>2006 — Rutube Founded</h4><p>Rutube launches as a Russian video sharing platform in the same year as Twitter, positioning itself as a Russian-language YouTube alternative from the start.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2010 — Gazprom-Media Acquisition</h4><p>Gazprom-Media acquires Rutube, aligning the video platform with Russia's state-connected media infrastructure.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2012 — Official TV Channel Integration</h4><p>Major Russian TV broadcasters including NTV and TNT create official Rutube channels, adding premium licensed content to the platform.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2020 — Creator Monetisation Launch</h4><p>Rutube introduces revenue sharing for content creators, competing with YouTube's Partner Programme to attract Russian video creators.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2022 — Dramatic User Growth</h4><p>Following geopolitical events and international platform restrictions, Rutube's monthly users grow approximately 3x as Russian content consumption shifts to domestic platforms.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2023 — Infrastructure Investment</h4><p>Rutube invests heavily in platform infrastructure, content delivery network capacity, and creator tools to handle increased demand and compete more effectively with YouTube.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#00001a',primaryTextColor:'#e8eaf6',primaryBorderColor:'#204A9D',lineColor:'#204A9D',secondaryColor:'#00000f',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#00001a',nodeBorder:'#204A9D',clusterBkg:'#00000f',titleColor:'#e8eaf6',edgeLabelBackground:'#00000f',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

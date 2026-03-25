@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twitch — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Twitch: how Amazon's live streaming platform works, its subscription model, revenue, and its dominance in gaming and esports broadcasting." />
+  <meta name="keywords" content="Twitch analysis, Twitch business model, how Twitch works, Twitch revenue, Amazon Twitch, game streaming platform" />
+  <link rel="canonical" href="https://justsimple.online/twitch.tv/" />
+  <meta property="og:title" content="Twitch — Independent Analysis by JustSimple.Online" />
+  <meta property="og:description" content="How Twitch became the world's #1 live streaming platform with 35M daily visitors and a creator economy worth billions." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://justsimple.online/twitch.tv/" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TSFVXECJ40');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#9146ff;--text:#e8eaf6;--muted:#8892b0;--border:#1e1540;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#0d0a1f 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#9146ff18,transparent);}
+    .hero-badge{display:inline-block;background:#9146ff26;border:1px solid #9146ff66;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#9146ff14,#9146ff0a);border:1.5px solid #9146ff59;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+    .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;}
+    .stat .num{font-size:2.2rem;font-weight:800;color:var(--accent);display:block;}
+    .stat .label{font-size:.85rem;color:var(--muted);margin-top:4px;}
+    .diagram-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;overflow-x:auto;}
+    .diagram-wrap+.diagram-wrap{margin-top:24px;}
+    .diagram-title{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+    .mermaid{display:flex;justify-content:center;}
+    .timeline{position:relative;padding-left:28px;}
+    .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--accent),transparent);}
+    .tl-item{position:relative;margin-bottom:28px;}
+    .tl-dot{position:absolute;left:-28px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px;}
+    .tl-item p{font-size:.88rem;color:var(--muted);}
+    .yes{color:#51cf66;font-weight:700;} .no{color:#ff6b6b;font-weight:700;}
+    .ad-unit{max-width:1100px;margin:0 auto;padding:28px 24px 0;text-align:center;}
+    .ad-unit-label{font-size:.68rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;opacity:.5;}
+    .ad-unit ins{border-radius:8px;overflow:hidden;}
+    footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;}
+    footer a{color:var(--accent);text-decoration:none;}
+    footer .footer-logo{height:26px;width:auto;vertical-align:middle;margin-right:6px;}
+    @media(max-width:600px){.kid-box{padding:20px;}.diagram-wrap{padding:20px 12px;}}
+    #diag-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;}
+    #diag-modal.open{display:flex;}
+    #diag-modal-inner{position:relative;min-width:60vw;min-height:30vh;max-width:95vw;max-height:92vh;overflow:auto;background:#1a1d27;border:1px solid #2d3250;border-radius:16px;padding:48px 32px 32px;box-shadow:0 24px 80px rgba(0,0,0,.8);}
+    #diag-close{position:absolute;top:12px;right:16px;background:none;border:none;color:#8892b0;font-size:1.6rem;cursor:pointer;line-height:1;transition:color .2s;}
+    #diag-close:hover{color:#fff;}
+    #diag-modal-inner svg{display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:78vh;width:auto!important;height:auto!important;}
+  </style>
+</head>
+<body>
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+<nav>
+  <a class="nav-logo" href="/"><img src="/logo.svg" alt="JustSimple.Online" style="height:34px;"/><span class="nav-tagline">Making the web understandable</span></a>
+  <div class="nav-right"><a href="/">← All Analyses</a>&nbsp;·&nbsp;<a href="/privacy.html">Privacy</a>&nbsp;·&nbsp;<a href="/terms.html">Terms</a></div>
+</nav>
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;"/></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>Twitch: How Amazon's Live Streaming Empire Works</h1>
+  <p>An independent deep-dive into Twitch's technology, creator economy, subscription model, and how it became the defining platform for live game streaming.</p>
+  <div class="hero-url">🌐 Analysed: <span>twitch.tv</span></div>
+</div>
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. Not affiliated with, endorsed by, or connected to the website analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+<main>
+  <section>
+    <h2><span class="emoji">🎮</span>What is Twitch?</h2>
+    <p class="section-intro">Twitch is the platform that turned watching other people play video games into a multi-billion-dollar entertainment industry — and then became the home for live creative content of every kind.</p>
+    <div class="kid-box" style="margin-bottom:28px;">
+      <h3>Explain it like I'm 10</h3>
+      <p>Imagine watching your favourite sports team live, but instead of football, they're playing a video game, and instead of a stadium you're watching on your phone or computer. You can type messages that the player sees immediately, cheer with special animated graphics, and even pay a small subscription fee to support them like a fan club membership. That's Twitch. Millions of people stream themselves playing games, making music, cooking, painting, or just chatting with their audience in real time.</p>
+      <p>The special thing about Twitch is how interactive it is. On YouTube you might watch a video someone made weeks ago. On Twitch, everything is live — the streamer can respond to your comment right now, ask the audience to vote on what happens next, or react to something funny you said. This real-time connection between creator and viewer creates a very different, much more social kind of entertainment.</p>
+    </div>
+    <p style="color:var(--muted);margin-bottom:16px;">Twitch Interactive, Inc. is a live streaming video platform owned by Amazon.com, Inc. It originated as a spin-off of Justin.tv — a general-purpose live streaming site founded in 2007 by Justin Kan, Emmett Shear, Michael Seibel, and Kyle Vogt. The gaming-specific channel on Justin.tv became so popular that it was spun off as Twitch in June 2011, named after the twitchy, fast-reflex demands of video game play. Amazon acquired Twitch in August 2014 for approximately $970 million in cash — at the time, one of the largest acquisitions in gaming and streaming history.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">Twitch's core model is built around <strong style="color:var(--text);">live streaming</strong> with interactive chat. Unlike YouTube or Netflix where content is pre-recorded, virtually all Twitch content is broadcast live. This real-time constraint creates a fundamentally different dynamic: the creator cannot edit out mistakes, must respond to audience reactions in the moment, and the unpredictability of live events makes each broadcast unique and inherently worth watching when it happens rather than later.</p>
+    <p style="color:var(--muted);">While gaming remains Twitch's identity and largest category by viewership, the platform has diversified into music performances, art creation (IRL streams of people drawing, painting, and sculpting), "Just Chatting" (talk show-style conversations), cooking, travel, and sports commentary. The "Just Chatting" category is now consistently among the most-watched on the platform, reflecting Twitch's evolution from a gaming utility into a broader live entertainment platform.</p>
+  </section>
+
+  <section>
+    <h2><span class="emoji">📊</span>Twitch by the Numbers</h2>
+    <p class="section-intro">Twitch's scale as the world's dominant live streaming platform is reflected in its daily usage numbers.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">35M</span><span class="label">Daily visitors to Twitch</span></div>
+      <div class="stat"><span class="num">8M+</span><span class="label">Unique streamers broadcasting monthly</span></div>
+      <div class="stat"><span class="num">2.5M</span><span class="label">Average concurrent viewers</span></div>
+      <div class="stat"><span class="num">2011</span><span class="label">Year Twitch launched</span></div>
+      <div class="stat"><span class="num">$970M</span><span class="label">Amazon acquisition price in 2014</span></div>
+      <div class="stat"><span class="num">140M+</span><span class="label">Unique monthly visitors</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="emoji">⚙️</span>How Twitch Works</h2>
+    <p class="section-intro">Delivering millions of simultaneous live streams with sub-second latency requires some of the most complex video infrastructure on the internet.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">Twitch's video delivery infrastructure faces a unique engineering challenge: not only must it stream video to potentially millions of concurrent viewers, but it must do so with very low latency (ideally under 5 seconds) to maintain the interactive real-time chat experience. Traditional video CDN architectures designed for on-demand content are poorly suited to this — Twitch built a custom low-latency streaming protocol called <strong style="color:var(--text);">Low Latency HLS (LLHLS)</strong>, which breaks streams into very small 2-second segments rather than the standard 6-10 second segments, reducing end-to-end latency to 3-5 seconds for most viewers.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">Twitch's chat system is technically one of the most demanding real-time text systems ever built. Major Twitch streams can have 200,000 concurrent viewers all sending messages simultaneously — a throughput of tens of thousands of chat messages per second that must be delivered to all viewers, filtered for prohibited content, parsed for commands (like channel point redemptions), and processed for third-party integrations. The system uses a combination of IRC (Internet Relay Chat, the 40-year-old protocol that Twitch still uses for chat delivery) and custom message queue infrastructure.</p>
+    <p style="color:var(--muted);margin-bottom:28px;">Twitch's discovery system for surfacing streamers to new viewers has historically been a point of creator frustration. The default Browse page ranks streams primarily by concurrent viewer count, creating a winner-takes-all dynamic where streams with more viewers appear higher, attracting even more viewers. Twitch has attempted to address this through algorithmic recommendations on the home page, a tagging system for content classification, and the Hype Train feature that rewards engaged communities. However, discoverability for small and mid-sized streamers remains a structural challenge compared to YouTube's recommendation algorithm.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">How a Twitch Live Stream Flows from Streamer to Viewer</div>
+      <div class="mermaid">
+graph TB
+    A[Streamer opens OBS or Twitch Studio] --> B[Video encoded locally H.264/H.265]
+    B --> C[RTMP stream sent to nearest Twitch ingest server]
+    C --> D[Twitch transcodes stream into multiple quality levels]
+    D --> E[Stream distributed across global CDN]
+    E --> F[Viewer opens Twitch on any device]
+    F --> G[Adaptive bitrate player selects best quality]
+    G --> H[Video plays with 3-5 second latency]
+    H --> I[Viewer types in chat]
+    I --> J[IRC message delivered to all viewers in real time]
+    J --> K[Streamer sees chat and responds live]
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-unit" style="padding:0 0 56px;">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <section>
+    <h2><span class="emoji">💰</span>How Does Twitch Make Money?</h2>
+    <p class="section-intro">Twitch monetises through subscriptions, advertising, and virtual currency — splitting significant revenue with its creator community.</p>
+    <p style="color:var(--muted);margin-bottom:20px;"><strong style="color:var(--text);">Channel subscriptions</strong> are Twitch's most distinctive revenue stream. Viewers pay $4.99, $9.99, or $24.99 per month to subscribe to individual streamers, receiving ad-free viewing on that channel, custom emotes (small images used in chat), and other perks. Twitch historically split subscription revenue 50/50 with streamers; top partners received a more favourable 70/30 split. In 2022, Twitch controversially reduced most streamers to a 50/50 split, triggering significant creator backlash. For top creators, subscriptions alone can generate hundreds of thousands of dollars monthly.</p>
+    <p style="color:var(--muted);margin-bottom:20px;"><strong style="color:var(--text);">Bits</strong> are Twitch's virtual currency system — viewers purchase Bits for approximately $1.40 per 100, then "cheer" them in chat at 1 cent per Bit, with the streamer receiving the Bit value. This micropayment system allows viewers to financially support streamers in small increments during live broadcasts, displayed with animated graphics in chat. The system generates significant transaction revenue from the spread between Bit purchase price and payout value. <strong style="color:var(--text);">Advertising</strong> — pre-roll, mid-roll, and display ads — provides additional revenue, though viewer backlash against mid-roll ads has led Twitch to experiment with different ad formats.</p>
+    <p style="color:var(--muted);margin-bottom:28px;">Twitch's financial performance has been a source of concern for Amazon. The platform has reportedly not been consistently profitable, with high content delivery costs, creator payment obligations, and intense competition from YouTube Live and emerging platforms eating into margins. Amazon has reduced Twitch's workforce in multiple rounds of layoffs since 2023 and has explored integrating Twitch more deeply with Prime Video and Amazon's advertising infrastructure to improve unit economics. Monetising Twitch's massive viewership more effectively through Amazon's advanced advertising technology is seen as the clearest path to profitability.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Twitch Revenue Streams — How Creator and Platform Economics Work</div>
+      <div class="mermaid">
+graph TB
+    A[Twitch Revenue Sources] --> B[Channel Subscriptions]
+    A --> C[Bits Virtual Currency]
+    A --> D[Advertising Pre-roll and Mid-roll]
+    A --> E[Prime Gaming Integration]
+    B --> F[50 percent to Twitch, 50 percent to Streamer]
+    C --> G[Spread between purchase price and payout]
+    D --> H[CPM advertising sold to brands]
+    E --> I[Amazon Prime members get free channel sub]
+    F --> J[Top streamers earn millions per year]
+    I --> K[Drives Prime subscriber acquisition for Amazon]
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="emoji">🧩</span>What Makes Twitch Unique</h2>
+    <p class="section-intro">Several features set Twitch apart from every other video platform and explain its enduring dominance in live streaming.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">💬</div>
+        <h4>Real-Time Interactive Chat</h4>
+        <p>Live chat with hundreds of thousands of simultaneous users creates a shared communal experience unlike any pre-recorded video platform.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h4>Channel Points and Predictions</h4>
+        <p>Viewers earn points for watching and spend them on channel rewards — polls, highlighted messages, or letting the audience predict game outcomes.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚂</div>
+        <h4>Hype Train</h4>
+        <p>When multiple viewers subscribe or cheer within a short window, a "Hype Train" visual event fires, encouraging group momentum and further spending.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎭</div>
+        <h4>Emote Culture</h4>
+        <p>Custom channel emotes are a unique social currency on Twitch — having access to a streamer's emotes is a key benefit of subscribing and a form of community identity.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏆</div>
+        <h4>Esports Broadcasting</h4>
+        <p>Major esports tournaments (League of Legends Worlds, CS:GO Majors) broadcast exclusively or primarily on Twitch, driving tens of millions of concurrent viewers.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔴</div>
+        <h4>Raids</h4>
+        <p>Streamers can send their entire audience to another streamer's channel at broadcast end — a discovery mechanism that builds community and rewards smaller creators.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="emoji">📅</span>Twitch History</h2>
+    <p class="section-intro">From a university student streaming his life 24/7 to Amazon's crown jewel in live entertainment.</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><h4>2007 — Justin.tv Founded</h4><p>Justin Kan broadcasts his entire life via a camera mounted on his head — one of the first 24/7 live streams on the internet.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2011 — Twitch Spins Off from Justin.tv</h4><p>The gaming section of Justin.tv becomes its own platform. Twitch.tv launches with a focus on video game live streaming.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2013 — The League of Legends Effect</h4><p>Twitch's deal to stream League of Legends tournaments drives massive traffic growth and establishes esports broadcasting as a viable category.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2014 — Amazon Acquires Twitch for $970M</h4><p>Outbids Google (YouTube) to acquire the platform. Amazon gains a live streaming network, gaming community, and a path to gaming commerce.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2019 — 1M Concurrent Viewers Milestone</h4><p>Ninja's Fortnite stream with Drake reaches 635K concurrent viewers; Twitch frequently tops 1M concurrent viewers for major esports events.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2021 — Non-Gaming Explodes</h4><p>Just Chatting, IRL, and music categories grow to rival gaming viewership. Twitch cements its identity as a general live entertainment platform.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2024 — Restructuring and Layoffs</h4><p>Amazon cuts Twitch staff as it works to improve profitability, integrating Twitch more deeply with Amazon's advertising and Prime ecosystem.</p></div>
+    </div>
+  </section>
+
+  <!-- Diagram modal -->
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>
+    #diag-modal{display:none;}
+    #diag-modal.open{display:flex;}
+    .diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}
+    .diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}
+  </style>
+</main>
+
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<footer>
+  <img src="/logo.svg" alt="JustSimple.Online" class="footer-logo" />
+  <a href="/">JustSimple.Online</a> — Independent website analysis. Not affiliated with Twitch.
+  &nbsp;·&nbsp;<a href="/privacy.html">Privacy</a>&nbsp;·&nbsp;<a href="/terms.html">Terms</a>
+</footer>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true, theme: 'dark',
+    themeVariables: {
+      primaryColor: '#1a1035', primaryTextColor: '#e8eaf6',
+      primaryBorderColor: '#9146ff', lineColor: '#9146ff',
+      secondaryColor: '#0d0a1f', tertiaryColor: '#0d0a1f',
+      background: '#0a0d1a', mainBkg: '#1a1035', nodeBorder: '#9146ff',
+      clusterBkg: '#0d0a1f', titleColor: '#e8eaf6',
+      edgeLabelBackground: '#1a1035',
+      attributeBackgroundColorEven: '#1a1035', attributeBackgroundColorOdd: '#0d0a1f'
+    }
+  });
+</script>
+
+<div id="diag-modal" role="dialog" aria-modal="true" aria-label="Diagram viewer">
+  <div id="diag-modal-inner"><button id="diag-close" aria-label="Close diagram">&times;</button></div>
+</div>
+
+<script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){
+    var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;
+    if(!wrap)return;
+    var mDiv=wrap.querySelector('.mermaid');
+    if(mDiv)openModal(mDiv);
+  });
+  function openModal(mDiv){
+    clearInner();modal.classList.add('open');document.body.style.overflow='hidden';
+    var svg=mDiv.querySelector('svg');
+    if(svg){showSvg(svg);return;}
+    var msg=document.createElement('p');msg.className='diag-msg';
+    msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';
+    msg.textContent='Rendering diagram...';inner.appendChild(msg);
+    var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);
+  }
+  function clearInner(){
+    inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});
+    if(onMove)document.removeEventListener('mousemove',onMove);
+    if(onUp)document.removeEventListener('mouseup',onUp);
+    onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;
+  }
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){
+    clearInner();
+    var xml=new XMLSerializer().serializeToString(svg);
+    var img=document.createElement('img');
+    img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);
+    inner.appendChild(img);activeImg=img;
+    var hint=document.createElement('p');hint.className='diag-hint';
+    hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';
+    hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';
+    inner.appendChild(hint);
+    inner.addEventListener('wheel',function(e){
+      e.preventDefault();
+      var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;
+      var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));
+      tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;
+      img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();
+    },{passive:false});
+    img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});
+    onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};
+    onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};
+    document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);
+    img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});
+    var lastDist=0;
+    img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});
+    img.addEventListener('touchmove',function(e){
+      if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}
+    },{passive:false});
+  }
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+<script>
+(function(){
+  var modal=document.getElementById('diag-modal'),
+      inner=document.getElementById('diag-modal-inner'),
+      closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0;
+  var activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){
+    var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;
+    if(!wrap)return;
+    var mDiv=wrap.querySelector('.mermaid');
+    if(mDiv)openModal(mDiv);
+  });
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';
+    var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}
+    var msg=document.createElement('p');msg.className='diag-msg';
+    msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';
+    msg.textContent='Rendering diagram...';inner.appendChild(msg);
+    var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);
+  }
+  function clearInner(){
+    inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});
+    if(onMove)document.removeEventListener('mousemove',onMove);
+    if(onUp)document.removeEventListener('mouseup',onUp);
+    onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;
+  }
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){
+    clearInner();
+    var xml=new XMLSerializer().serializeToString(svg);
+    var img=document.createElement('img');
+    img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);
+    inner.appendChild(img);activeImg=img;
+    var hint=document.createElement('p');hint.className='diag-hint';
+    hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';
+    hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';
+    inner.appendChild(hint);
+    inner.addEventListener('wheel',function(e){
+      e.preventDefault();
+      var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;
+      var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));
+      tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;
+      img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();
+    },{passive:false});
+    img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});
+    onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};
+    onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};
+    document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);
+    img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});
+    var lastDist=0;
+    img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});
+    img.addEventListener('touchmove',function(e){
+      if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}
+    },{passive:false});
+  }
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

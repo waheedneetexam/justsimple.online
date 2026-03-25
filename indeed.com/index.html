@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Indeed — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Indeed: how the world's largest job search engine works, its pay-per-click business model, and why it dominates global recruitment traffic."/>
+  <meta name="keywords" content="Indeed analysis, Indeed business model, how Indeed works, job search engine, recruitment platform, Indeed vs LinkedIn"/>
+  <link rel="canonical" href="https://justsimple.online/indeed.com/"/>
+  <meta property="og:title" content="Indeed — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How Indeed became the world's most visited job site with 350M monthly visitors — the pay-per-click aggregation model that disrupted traditional recruitment advertising."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/indeed.com/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#2164F3;--text:#e8eaf6;--muted:#8892b0;--border:#00003a;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#00001a 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#2164F318,transparent);}
+    .hero-badge{display:inline-block;background:#2164F326;border:1px solid #2164F366;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#2164F314,#2164F30a);border:1.5px solid #2164F359;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>Indeed: How the World's Largest Job Search Engine Works</h1>
+    <p>An independent deep-dive into Indeed's job aggregation model, pay-per-click employer revenue system, and how it built a 350M monthly visitor audience by making job searching genuinely free.</p>
+    <div class="hero-url">🌐 <span>indeed.com</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by Indeed. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">💼</span>What is Indeed?</h2>
+      <p class="section-intro">Indeed is the Google of job search — aggregating millions of listings from across the web into one searchable database, free for job seekers, monetised through pay-per-click advertising from employers.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>Indeed is a website where you can search for jobs. Instead of going to 50 different company websites, you can go to Indeed and it shows jobs from all of those websites in one place. You type in what job you want and what city, and it shows you hundreds of options. Using Indeed to find and apply for jobs is completely free for job seekers.</p>
+        <p>Companies pay Indeed when a job seeker clicks on their job listing — this is called pay-per-click. Companies can also pay more to have their listings shown at the top of search results, similar to how Google Ads work. Indeed uses this money to keep the site free for job seekers and to run its operations in over 60 countries.</p>
+      </div>
+      <div class="prose">
+        <p>Indeed was founded in 2004 by Paul Forster and Rony Kahan, launching with a simple insight: the fragmented job market was inefficient for job seekers who had to search dozens of sites individually. Indeed applied web crawling technology pioneered by search engines to job listings, indexing positions from company career pages, job boards, staffing agencies, and newspapers into a single searchable database. The result was a job search experience that was genuinely more useful than any single job board.</p>
+        <p>Indeed's growth was explosive because both sides of its marketplace had strong incentives to participate: job seekers found the largest selection anywhere, and employers found their listings automatically distributed to millions of job seekers without paying to post. This aggregation model was a direct threat to traditional job boards like Monster and CareerBuilder that charged employers for listings. Indeed disrupted these incumbents by making basic listing distribution free and charging only for performance (clicks).</p>
+        <p>Recruit Holdings, Japan's largest human resources company, acquired Indeed in 2012 for a reported $1 billion. Under Recruit ownership, Indeed expanded to 60+ countries, acquired Glassdoor (company reviews), and invested in resume database access and assessment tools. The acquisition allowed Recruit to build a global end-to-end human resources platform connecting job seekers, employers, and staffing agencies worldwide.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">Indeed's scale as the global job search standard.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">350M+</span><span class="label">Monthly unique visitors</span></div><div class="stat"><span class="num">250M+</span><span class="label">Job listings globally</span></div><div class="stat"><span class="num">60+</span><span class="label">Countries served</span></div><div class="stat"><span class="num">2004</span><span class="label">Year founded by Paul Forster and Rony Kahan</span></div><div class="stat"><span class="num">$1B</span><span class="label">Acquisition price by Recruit Holdings (2012)</span></div><div class="stat"><span class="num">10+</span><span class="label">Job applications submitted per second</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How Indeed Works</h2>
+      <p class="section-intro">Indeed's job aggregation engine crawls the web continuously, combining organic listings with employer-paid sponsored placements to create the world's largest job database.</p>
+      <div class="prose">
+        <p>Indeed's web crawler (the Indeed Spider) continuously indexes job listings from millions of sources — company career pages, Applicant Tracking Systems, staffing agencies, regional job boards, and newspapers. Jobs are parsed for structured data (title, location, salary, requirements) and indexed into Indeed's search database. Employers can also post directly to Indeed through the employer portal for free organic listings. This dual-source model ensures comprehensive coverage that cannot be replicated by competitors without Indeed's crawler infrastructure.</p>
+        <p>Indeed's search algorithm ranks job listings using relevance signals (keyword match, job title normalisation, location precision) and quality signals (employer response rate, application completion rate, job freshness). Sponsored listings are inserted above organic results using the pay-per-click model. Indeed's algorithm balances employer willingness to pay (CPCs) against job seeker relevance, because showing irrelevant sponsored jobs damages engagement and trust in the platform.</p>
+        <p>Indeed's resume database allows job seekers to post public resumes that employers can search and contact. Employers pay for resume access credits or unlimited access subscriptions. Indeed Assessments allows employers to add skills tests to job applications. The company reviews from Glassdoor are integrated into Indeed employer profiles, giving job seekers research tools alongside job search — a powerful combination that keeps job seekers on Indeed throughout their job search journey.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">How Indeed Connects Job Seekers and Employers</div>
+        <div class="mermaid">
+graph TB
+    A[Job Seeker visits Indeed] --> B[Search by keyword and location]
+    B --> C[Results from organic and sponsored listings]
+    C --> D{Job seeker clicks listing}
+    D --> E[Apply on Indeed or redirect to company site]
+    E --> F[Application delivered to employer ATS]
+    G[Employer posts job free or sponsored] --> H[Listed in Indeed database]
+    H --> C
+    D --> I[Employer charged per click if sponsored]
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How Indeed Makes Money</h2>
+      <p class="section-intro">Indeed's revenue model is built on pay-per-click sponsored job listings and employer access to the resume database.</p>
+      <div class="prose">
+        <p><strong>Pay-per-click sponsored listings</strong> are Indeed's primary revenue stream. Employers set a daily budget and pay a cost-per-click (typically $0.25-$5.00 per click) when job seekers click their sponsored listings. With 350M monthly visitors and high commercial intent, Indeed's inventory is extremely valuable to employers. Organic listings generate no direct revenue but attract job seekers who then click on sponsored listings.</p>
+        <p><strong>Resume database subscriptions</strong> give employers access to Indeed's database of 200M+ resumes. Subscription tiers range from pay-per-contact to unlimited monthly access. Recruiting teams use the resume database for proactive candidate sourcing, particularly for hard-to-fill roles. Remote work expanded the geographic reach of recruiting searches, increasing the value of database access.</p>
+        <p>Indeed Assessments and hiring tools generate additional revenue from employers integrating skill tests, background checks, and interview scheduling into their recruiting workflows. Glassdoor's employer branding products (Enhanced Profiles, employer response tools) are sold to companies concerned about their public reputation and review scores on the platform.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Indeed Revenue Model</div>
+        <div class="mermaid">
+graph LR
+    A[Indeed Revenue] --> B[Sponsored Job Listings CPC]
+    A --> C[Resume Database Subscriptions]
+    A --> D[Indeed Assessments]
+    A --> E[Glassdoor Employer Branding]
+    B --> F[350M visitors high-intent job seekers]
+    C --> G[200M+ resumes available to employers]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes Indeed Unique</h2>
+      <p class="section-intro">Indeed's aggregation model, free job seeker access, and 20-year head start in job search data make it extremely difficult for competitors to displace.</p>
+      <div class="cards"><div class="card"><div class="card-icon">🆓</div><h4>Free for Job Seekers</h4><p>Zero cost to job seekers for search, applications, resume posting, and company research. This unconditional free access drove network effects that LinkedIn's paid premium model cannot match for volume.</p></div><div class="card"><div class="card-icon">🌐</div><h4>Aggregation Model</h4><p>By crawling the entire web rather than relying on employer-posted listings, Indeed achieved broader coverage than any single job board — the completeness that became a competitive moat.</p></div><div class="card"><div class="card-icon">📊</div><h4>Indeed Salary Data</h4><p>Salary ranges sourced from millions of job listings and user-submitted salaries. One of the most-used salary research tools for compensation benchmarking by both job seekers and employers.</p></div><div class="card"><div class="card-icon">🏢</div><h4>Company Reviews</h4><p>Glassdoor company reviews integrated into Indeed profiles. Job seekers research employer culture, interview processes, and compensation before applying.</p></div><div class="card"><div class="card-icon">🤝</div><h4>Recruit Holdings Backing</h4><p>Japanese HR giant's ownership gives Indeed deep pockets for global expansion and integration with Recruit's staffing agencies in 60+ countries.</p></div><div class="card"><div class="card-icon">📱</div><h4>Mobile Job Search</h4><p>Indeed's mobile app is the most downloaded job search app globally. Over 70% of Indeed traffic is mobile — Indeed pioneered mobile-first job application experiences.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From a 2004 startup to the world's most visited job site.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>2004 — Indeed Launches in Austin, Texas</h4><p>Paul Forster and Rony Kahan launch Indeed.com, applying search engine crawling technology to job listings for the first time.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2008 — International Expansion Begins</h4><p>Indeed launches in the UK and other English-speaking markets, beginning global expansion that would reach 60+ countries.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2012 — Recruit Holdings Acquires Indeed</h4><p>Japan's Recruit Holdings acquires Indeed for approximately $1 billion, providing capital for global scaling.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2016 — Indeed Surpasses Monster and CareerBuilder</h4><p>Indeed becomes the most visited job site in the US, overtaking legacy job boards that charged employers flat listing fees.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2018 — Indeed Assessments Launches</h4><p>Employer assessment tools allow skills testing during the application process, expanding Indeed's value beyond search into hiring workflow.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2021 — Glassdoor Integration</h4><p>Indeed and Glassdoor deepen integration, combining job search with employer reputation research in one experience.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#00002a',primaryTextColor:'#e8eaf6',primaryBorderColor:'#2164F3',lineColor:'#2164F3',secondaryColor:'#00001a',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#00002a',nodeBorder:'#2164F3',clusterBkg:'#00001a',titleColor:'#e8eaf6',edgeLabelBackground:'#00001a',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>AccuWeather — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of AccuWeather: how the world's largest commercial weather company works, its MinuteCast hyperlocal forecast technology, B2B enterprise data sales, and competition with the National Weather Service."/>
+  <meta name="keywords" content="AccuWeather analysis, AccuWeather business model, how AccuWeather works, weather data company, AccuWeather vs Weather Channel, weather forecasting business"/>
+  <link rel="canonical" href="https://justsimple.online/accuweather.com/"/>
+  <meta property="og:title" content="AccuWeather — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How AccuWeather serves 1.5B users daily across 2M locations — the commercial weather data business behind the world's most widely distributed weather information."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/accuweather.com/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#F26724;--text:#e8eaf6;--muted:#8892b0;--border:#3a1400;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#1a0800 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#F2672418,transparent);}
+    .hero-badge{display:inline-block;background:#F2672426;border:1px solid #F2672466;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#F2672414,#F267240a);border:1.5px solid #F2672459;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>AccuWeather: How the World's Largest Commercial Weather Service Works</h1>
+    <p>An independent deep-dive into AccuWeather's hyperlocal MinuteCast technology, the B2B weather data business serving airlines, utilities, and broadcasters, and how a Pennsylvania weather company became the world's most widely distributed weather information service.</p>
+    <div class="hero-url">🌐 <span>accuweather.com</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by AccuWeather. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">🌤️</span>What is AccuWeather?</h2>
+      <p class="section-intro">AccuWeather is the world's largest private weather company — providing weather data to 1.5 billion users daily through consumer apps, media partners, and enterprise clients ranging from airlines to utilities.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>AccuWeather is a company that predicts the weather. They have very sophisticated computer models and weather scientists who study weather patterns to predict what the weather will be tomorrow, next week, and even up to 90 days in advance. AccuWeather's forecasts appear on hundreds of TV stations, radio stations, and on smartphones around the world. One of their special features is called MinuteCast — it can tell you exactly what minute it will start raining at your exact location.</p>
+        <p>AccuWeather makes money in two main ways. First, they sell weather forecasts and data to businesses — airlines, power companies, construction firms, event organisers, and governments all need accurate weather information to plan their operations. Second, they show advertisements on their weather apps and website, which hundreds of millions of people check every day. The more accurate AccuWeather's forecasts are, the more people trust and use their apps, which means more advertising revenue.</p>
+      </div>
+      <div class="prose">
+        <p>AccuWeather was founded in 1962 by Dr. Joel N. Myers, then a graduate student at Penn State University, as a commercial weather forecasting service for businesses. Myers identified that businesses needed better weather information than the government's National Weather Service provided — more localised, more timely, and with commercial applications in mind. AccuWeather started by providing forecasts to ski resorts and utilities, building the commercial weather data model that would grow into the world's largest private weather company.</p>
+        <p>AccuWeather's MinuteCast is its most distinctive consumer technology — a hyper-local precipitation forecast that predicts exactly when rain or snow will start and stop at a specific address, in one-minute intervals up to 120 minutes ahead. This precision — 'it will start raining at your location at 3:47 PM and stop at 4:12 PM' — represents a fundamental advancement over traditional weather forecasting that provided hourly or daily precipitation probability. MinuteCast was developed using proprietary radar data analysis and machine learning techniques.</p>
+        <p>AccuWeather operates what it describes as the largest weather forecasting operation in the world, with over 150 meteorologists and scientists providing forecasts for 2 million locations globally. The company's proprietary data processing combines data from 10,000+ weather observation stations, radar networks, satellites, and ocean buoys with proprietary machine learning algorithms. AccuWeather's data is distributed through its consumer app (available in 100+ countries), media partnerships with 500+ TV stations, broadcasters, and websites, and B2B enterprise data APIs.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">AccuWeather's scale as the world's largest commercial weather service.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">1.5B+</span><span class="label">Users served daily across all platforms</span></div><div class="stat"><span class="num">2M+</span><span class="label">Locations with AccuWeather forecasts</span></div><div class="stat"><span class="num">1962</span><span class="label">Year founded by Dr. Joel N. Myers</span></div><div class="stat"><span class="num">150+</span><span class="label">Meteorologists and scientists on staff</span></div><div class="stat"><span class="num">500+</span><span class="label">Media and broadcaster partners worldwide</span></div><div class="stat"><span class="num">100+</span><span class="label">Countries with AccuWeather app availability</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How AccuWeather Works</h2>
+      <p class="section-intro">AccuWeather combines massive weather data ingestion, proprietary forecasting algorithms, and a global distribution network to serve weather information across consumer, media, and enterprise channels.</p>
+      <div class="prose">
+        <p>AccuWeather's forecasting process integrates data from multiple sources: National Weather Service models (publicly available US government weather data), European Centre for Medium-Range Weather Forecasts (ECMWF) model data, AccuWeather's own proprietary observation networks, satellite imagery, radar data, ocean buoy readings, and aircraft weather observations. This data is processed through AccuWeather's proprietary forecasting algorithms — developed and refined over 60+ years — to produce forecasts more precise and localised than government weather services typically offer.</p>
+        <p>AccuWeather's consumer app and website are the primary consumer touchpoints, offering hourly forecasts, daily forecasts up to 90 days, severe weather alerts, radar maps, and MinuteCast precipitation timing. The consumer platform is ad-supported for free users and offers subscription tiers for premium features (ad-free, extended forecasts, radar radar access). Consumer engagement is driven by daily weather-checking habits — weather is one of the most frequently checked types of information on smartphones.</p>
+        <p>AccuWeather's B2B enterprise business provides weather data APIs, custom forecasting solutions, and weather risk consulting to airlines (for flight planning), utilities (for demand forecasting and grid management), construction companies (for project scheduling), agriculture (for crop management), event venues (for operations planning), and governments (for emergency management). Enterprise clients pay subscription or data licensing fees for access to AccuWeather's forecasting models and historical weather data archives.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">AccuWeather Data and Distribution Model</div>
+        <div class="mermaid">
+graph TB
+    A[Weather Data Sources] --> B[NWS and ECMWF Government Models]
+    A --> C[AccuWeather Observation Network]
+    A --> D[Satellite and Radar Data]
+    B --> E[AccuWeather Proprietary Algorithms]
+    C --> E
+    D --> E
+    E --> F[MinuteCast Hyperlocal Forecasts]
+    E --> G[Standard Hourly and Daily Forecasts]
+    F --> H[Consumer App 1.5B Users]
+    G --> H
+    G --> I[Media Partners 500 Plus Broadcasters]
+    G --> J[Enterprise APIs Airlines Utilities]
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How AccuWeather Makes Money</h2>
+      <p class="section-intro">AccuWeather generates revenue through consumer digital advertising, B2B weather data licensing, media content distribution, and enterprise consulting.</p>
+      <div class="prose">
+        <p><strong>Consumer digital advertising</strong> is AccuWeather's largest revenue segment. The AccuWeather app and website serve hundreds of millions of monthly users who check weather as a daily habit, generating high-volume, high-frequency ad inventory. Weather apps have unusually high daily active usage — people check weather multiple times per day — making AccuWeather's advertising inventory particularly valuable for reaching mobile users with time-sensitive intent.</p>
+        <p><strong>Enterprise and B2B weather data licensing</strong> generates substantial revenue from companies that need accurate weather data for operational decisions. Airlines (weather-related flight delays cost the US economy $3B+ annually), utilities (power demand spikes in extreme weather), construction firms (weather delays are the leading cause of construction cost overruns), and insurers (weather risk assessment) all pay significant fees for AccuWeather's enterprise data and forecasting tools.</p>
+        <p>Media partnerships generate licensing fees from TV stations, radio broadcasters, and digital media properties that use AccuWeather's forecasts and branding. The AccuWeather brand appearing on local TV weather segments represents a licensing relationship where the broadcaster pays for the credibility of the AccuWeather name and proprietary forecast data. AccuWeather's subscription revenue (AccuWeather Premium) adds a direct-to-consumer subscription stream for ad-free access and enhanced features.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">AccuWeather Revenue Model</div>
+        <div class="mermaid">
+graph LR
+    A[AccuWeather Revenue] --> B[Consumer Digital Advertising]
+    A --> C[Enterprise Data Licensing]
+    A --> D[Media Partnership Licensing]
+    A --> E[AccuWeather Premium Subscription]
+    B --> F[1.5B users daily habit weather checking]
+    C --> G[Airlines utilities construction governments]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes AccuWeather Unique</h2>
+      <p class="section-intro">AccuWeather's 60-year proprietary forecasting database, MinuteCast technology, and B2B distribution scale create a weather data business with unrivalled global coverage.</p>
+      <div class="cards"><div class="card"><div class="card-icon">⏱️</div><h4>MinuteCast Precision</h4><p>Predicts exactly when rain will start and stop at your specific address, in one-minute intervals. A 60-year forecasting edge translated into a hyperlocal consumer product.</p></div><div class="card"><div class="card-icon">📡</div><h4>60-Year Data Archive</h4><p>Six decades of proprietary weather observations and forecasting data create a training dataset for machine learning models that no newer competitor can replicate.</p></div><div class="card"><div class="card-icon">✈️</div><h4>Enterprise Weather Intelligence</h4><p>Airlines, utilities, construction, and agriculture pay for AccuWeather's enterprise forecasting. Weather-related economic impact exceeds $700B annually in the US — creating massive B2B demand.</p></div><div class="card"><div class="card-icon">📺</div><h4>500+ Media Partners</h4><p>AccuWeather branding appears on hundreds of local TV weather broadcasts worldwide. Media partnerships provide revenue and consumer brand reinforcement simultaneously.</p></div><div class="card"><div class="card-icon">🌍</div><h4>2M+ Location Coverage</h4><p>Forecasts for over 2 million specific locations globally, including many that government weather services do not cover with the same resolution.</p></div><div class="card"><div class="card-icon">🔬</div><h4>Proprietary Forecasting Science</h4><p>150+ meteorologists continuously refining proprietary algorithms. Government weather services (NWS) provide raw data; AccuWeather adds the proprietary forecasting layer that improves accuracy.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From a Penn State graduate student project to the world's largest commercial weather service.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>1962 — AccuWeather Founded</h4><p>Dr. Joel N. Myers founds AccuWeather as a graduate student at Penn State, providing commercial weather forecasts to ski resorts and utilities.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>1971 — First Commercial Weather Forecast for Retail</h4><p>AccuWeather provides the first weather forecast specifically designed for retail businesses, establishing the commercial weather applications model.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>1996 — AccuWeather.com Launches</h4><p>AccuWeather launches its consumer website, beginning direct consumer distribution alongside B2B operations.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2007 — AccuWeather Mobile App</h4><p>AccuWeather launches mobile weather apps for smartphones, capitalising on the iPhone era's daily-checking behaviour.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2012 — MinuteCast Launches</h4><p>AccuWeather introduces MinuteCast, the minute-by-minute precipitation timing forecast for specific addresses — a major technological differentiator.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2022 — AccuWeather Reaches 1.5B Daily Users</h4><p>AccuWeather announces 1.5 billion daily users across consumer apps, media partners, and enterprise clients — establishing its position as the world's most widely distributed weather service.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#2a0e00',primaryTextColor:'#e8eaf6',primaryBorderColor:'#F26724',lineColor:'#F26724',secondaryColor:'#1a0800',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#2a0e00',nodeBorder:'#F26724',clusterBkg:'#1a0800',titleColor:'#e8eaf6',edgeLabelBackground:'#1a0800',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

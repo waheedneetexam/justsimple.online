@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Wildberries — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Wildberries: how Russia's largest e-commerce company works, its pickup point model, seller ecosystem, and how founder Tatiana Bakalchuk built a $6B business from scratch."/>
+  <meta name="keywords" content="Wildberries analysis, Wildberries business model, Russian e-commerce, how Wildberries works, Tatiana Bakalchuk, Wildberries vs Ozon"/>
+  <link rel="canonical" href="https://justsimple.online/wildberries.ru/"/>
+  <meta property="og:title" content="Wildberries — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How Wildberries became Russia's largest e-commerce company with 300M monthly visits — the pickup point model that dominates Russian online retail."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/wildberries.ru/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#CB11AB;--text:#e8eaf6;--muted:#8892b0;--border:#3a0038;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#1a0018 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#CB11AB18,transparent);}
+    .hero-badge{display:inline-block;background:#CB11AB26;border:1px solid #CB11AB66;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#CB11AB14,#CB11AB0a);border:1.5px solid #CB11AB59;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>Wildberries: How Russia's Largest E-Commerce Company Works</h1>
+    <p>An independent deep-dive into Wildberries' marketplace model, its distinctive pickup point delivery network, the seller ecosystem of 500K+ merchants, and how Tatiana Bakalchuk built Russia's most valuable privately-held internet company from a home-based clothing store.</p>
+    <div class="hero-url">🌐 <span>wildberries.ru</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by Wildberries. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">🛍️</span>What is Wildberries?</h2>
+      <p class="section-intro">Wildberries is Russia's version of Amazon — a marketplace where 500K+ sellers offer everything from fast fashion to electronics, with a delivery network built around 50K+ convenient pickup points rather than home delivery.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>Wildberries is the biggest online shop in Russia. You can buy almost anything there — clothes, phones, books, toys, kitchen appliances, sports equipment. What makes Wildberries unusual compared to Amazon is how delivery works: instead of delivering to your home, many orders go to a nearby Wildberries pickup point (a small shop or locker) where you collect your order at a convenient time. There are over 50,000 of these pickup points across Russia.</p>
+        <p>Wildberries was started in 2004 by a woman named Tatiana Bakalchuk, who began selling clothes from her home in Moscow while raising small children. She built it entirely from profits without any venture capital investment, making her one of Russia's richest women and one of the most successful self-made entrepreneurs in Russian business history. The company is still privately owned by her family.</p>
+      </div>
+      <div class="prose">
+        <p>Wildberries was founded in 2004 by Tatiana Bakalchuk, initially operating as a small online fashion retailer from her Moscow apartment. Bakalchuk started the business while pregnant and unable to work in the traditional sense — selling clothing ordered from foreign catalogues to Russian consumers via the internet. The business grew rapidly as Russian internet penetration expanded, and Wildberries evolved from a direct retailer to a marketplace model where third-party sellers could list their own products.</p>
+        <p>Wildberries' distinctive delivery model is built around Wildberries Points — pickup locations where customers collect orders. Unlike Western e-commerce models dominated by home delivery, Russian consumer preferences (driven by security concerns, irregular home schedules, and Soviet-era delivery culture) make pickup points extremely popular. Wildberries expanded its pickup point network aggressively to over 50,000 locations — including both Wildberries-operated locations and franchised partner locations — making Wildberries Points one of the densest retail pickup networks in the world.</p>
+        <p>Wildberries expanded its seller marketplace from primarily Russian brands to global sellers, with particular strength in Chinese goods categories and domestic Russian brands across fashion, food, and household categories. The platform expanded geographically to Belarus, Kazakhstan, Armenia, Kyrgyzstan, and other CIS countries, maintaining its pickup point model in each market. Wildberries' valuation has been estimated at $6-10B, making it one of Russia's most valuable private companies.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">Wildberries' scale as Russia's dominant e-commerce platform.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">300M+</span><span class="label">Monthly website visits</span></div><div class="stat"><span class="num">500K+</span><span class="label">Active sellers on the marketplace</span></div><div class="stat"><span class="num">50K+</span><span class="label">Pickup points across Russia and CIS</span></div><div class="stat"><span class="num">$18B+</span><span class="label">Annual gross merchandise volume</span></div><div class="stat"><span class="num">25%</span><span class="label">Russian e-commerce market share by GMV</span></div><div class="stat"><span class="num">2004</span><span class="label">Year founded by Tatiana Bakalchuk</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How Wildberries Works</h2>
+      <p class="section-intro">Wildberries operates a marketplace model combining its own branded inventory with third-party seller products, using a pickup point delivery network for last-mile fulfilment.</p>
+      <div class="prose">
+        <p>Wildberries' marketplace onboarding is straightforward for sellers — registration, product listing with photos and descriptions, and logistics integration. Sellers can use Wildberries Fulfilment (storing inventory in Wildberries warehouses) or DBS (Delivery by Seller, where the seller ships directly). Wildberries charges sellers commission rates between 5% and 25% depending on category, plus fulfilment fees for warehouse-stored items.</p>
+        <p>Wildberries Points (pickup points) are the cornerstone of the logistics model. Customers order online, items are shipped from warehouse to local distribution point, and the customer receives a notification when ready. The pickup experience is designed for efficiency — items are organised by order number, collection takes under a minute. Customers can also try on clothing at applicable pickup points before deciding whether to keep items, significantly reducing fashion return rates.</p>
+        <p>Wildberries' search and recommendation algorithm drives product discovery for millions of daily active users. The platform uses purchase history, browsing patterns, and seasonal trends to personalise the homepage and search results. Sellers can purchase advertising placement within search results (Wildberries Boost) to increase visibility. The algorithm also incorporates seller performance metrics — delivery speed, return rates, customer ratings — into ranking, creating incentives for seller quality.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Wildberries Marketplace Flow</div>
+        <div class="mermaid">
+graph TB
+    A[Customer browses Wildberries app] --> B[Search or browse 100M+ products]
+    B --> C[Order placed and payment processed]
+    C --> D{Fulfilment method?}
+    D --> E[Wildberries warehouse ships to pickup point]
+    D --> F[Seller ships directly]
+    E --> G[Customer collects from nearest pickup point]
+    F --> G
+    G --> H[Try on fashion items if applicable]
+    H --> I{Keep or return?}
+    I --> J[Keep - transaction complete]
+    I --> K[Return at pickup point - refund processed]
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How Wildberries Makes Money</h2>
+      <p class="section-intro">Wildberries earns revenue from seller commissions, logistics and fulfilment fees, advertising, and value-added seller services.</p>
+      <div class="prose">
+        <p><strong>Seller commissions</strong> of 5-25% on each completed transaction are Wildberries' primary revenue source. Commission rates vary by category — electronics at lower rates, fashion and accessories at higher rates. On $18B+ in annual GMV, even a blended 10% commission rate generates $1.8B+ in commission revenue. Wildberries' commission structure has been a source of controversy — the company has raised commissions multiple times, and sellers have protested over rate increases.</p>
+        <p><strong>Logistics and fulfilment fees</strong> from sellers using Wildberries warehousing include storage fees, pick-and-pack fees, and delivery fees to pickup points. These logistics fees scale with volume and are a significant revenue source as Wildberries processes millions of shipments daily. Sellers choosing Wildberries Fulfilment benefit from faster delivery and better search ranking.</p>
+        <p>Wildberries Boost (seller advertising within search results and category pages) is a growing CPC-based advertising revenue stream. Sellers pay to appear at the top of relevant search results, similar to Amazon Sponsored Products. As the marketplace becomes more competitive with 500K+ sellers, advertising spend to maintain visibility increases. Pickup point franchising also generates revenue — third-party partners pay for the right to operate a Wildberries pickup point.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Wildberries Revenue Model</div>
+        <div class="mermaid">
+graph LR
+    A[Wildberries Revenue] --> B[Seller Commissions 5-25 percent]
+    A --> C[Logistics and Fulfilment Fees]
+    A --> D[Wildberries Boost Seller Advertising]
+    A --> E[Pickup Point Franchise Fees]
+    A --> F[Financial Services WB Pay]
+    B --> G[18B plus GMV times commission rate]
+    D --> H[CPC advertising similar to Amazon Sponsored Products]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes Wildberries Unique</h2>
+      <p class="section-intro">Wildberries' pickup point model, fashion-first origins, and founder-led culture create a distinctly Russian e-commerce identity.</p>
+      <div class="cards"><div class="card"><div class="card-icon">📍</div><h4>50K+ Pickup Points</h4><p>The densest e-commerce pickup network in Russia. More convenient than home delivery for busy Russian consumers — collect orders on your own schedule from a point near home or work.</p></div><div class="card"><div class="card-icon">👗</div><h4>Fashion-First Origins</h4><p>Wildberries started selling clothing and remains dominant in fashion and apparel. The try-on feature at pickup points reduces fashion return rates and creates a differentiated shopping experience.</p></div><div class="card"><div class="card-icon">💪</div><h4>Self-Made Founder</h4><p>Tatiana Bakalchuk built Wildberries without venture capital or external investors, maintaining full ownership. One of the world's most successful self-made female entrepreneurs.</p></div><div class="card"><div class="card-icon">📱</div><h4>App-First Mobile</h4><p>Wildberries app is consistently among Russia's most downloaded apps. Over 70% of transactions occur through mobile with a highly-rated app experience driving purchase frequency.</p></div><div class="card"><div class="card-icon">🌍</div><h4>CIS Expansion</h4><p>Wildberries operates across Russia, Belarus, Kazakhstan, Armenia, Kyrgyzstan, and other CIS markets — all using the same pickup point delivery model adapted for local logistics.</p></div><div class="card"><div class="card-icon">🏭</div><h4>Seller Ecosystem</h4><p>500K+ active sellers from Russian brands to Chinese manufacturers. The platform's seller tools, analytics, and advertising products create an ecosystem comparable to Amazon Seller Central.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From a home-based fashion store to Russia's dominant marketplace.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>2004 — Wildberries Founded by Tatiana Bakalchuk</h4><p>Tatiana Bakalchuk starts selling foreign fashion catalogues online from her Moscow apartment. The business grows entirely from reinvested profits without any venture capital.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2010 — Pickup Point Network Expansion</h4><p>Wildberries begins rapidly expanding its pickup point network, pioneering the convenience-first delivery model that becomes its primary competitive differentiator.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2016 — Marketplace Opens to Third-Party Sellers</h4><p>Wildberries transitions from pure retailer to marketplace, allowing third-party sellers to list products. Seller count grows from hundreds to tens of thousands within years.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2019 — CIS Expansion Begins</h4><p>Wildberries expands to Belarus and Kazakhstan, exporting its pickup point model to CIS markets.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2021 — Seller Protests Over Commission Increases</h4><p>Wildberries raises seller commissions, triggering protests from sellers who argue the rate increases squeeze margins.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2024 — WB Pay Financial Services Launch</h4><p>Wildberries expands into financial services with WB Pay, offering buy-now-pay-later and payment solutions integrated into the checkout experience.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#2a0028',primaryTextColor:'#e8eaf6',primaryBorderColor:'#CB11AB',lineColor:'#CB11AB',secondaryColor:'#1a0018',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#2a0028',nodeBorder:'#CB11AB',clusterBkg:'#1a0018',titleColor:'#e8eaf6',edgeLabelBackground:'#1a0018',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

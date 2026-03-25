@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bilibili — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Bilibili: how China's favourite Gen-Z video platform works, its bullet-comment culture, business model, and revenue." />
+  <meta name="keywords" content="Bilibili analysis, Bilibili business model, Chinese video platform, danmaku, Bilibili revenue, B站" />
+  <link rel="canonical" href="https://justsimple.online/bilibili.com/" />
+  <meta property="og:title" content="Bilibili — Independent Analysis by JustSimple.Online" />
+  <meta property="og:description" content="How Bilibili became China's favourite Gen-Z video platform with 336M users, bullet comments, and a thriving creator economy." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://justsimple.online/bilibili.com/" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TSFVXECJ40');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#fb7299;--text:#e8eaf6;--muted:#8892b0;--border:#2d1020;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#1a0a10 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#fb729918,transparent);}
+    .hero-badge{display:inline-block;background:#fb729926;border:1px solid #fb729966;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#fb729914,#fb72990a);border:1.5px solid #fb729959;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+    .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;}
+    .stat .num{font-size:2.2rem;font-weight:800;color:var(--accent);display:block;}
+    .stat .label{font-size:.85rem;color:var(--muted);margin-top:4px;}
+    .diagram-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;overflow-x:auto;}
+    .diagram-wrap+.diagram-wrap{margin-top:24px;}
+    .diagram-title{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+    .mermaid{display:flex;justify-content:center;}
+    .timeline{position:relative;padding-left:28px;}
+    .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--accent),transparent);}
+    .tl-item{position:relative;margin-bottom:28px;}
+    .tl-dot{position:absolute;left:-28px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px;}
+    .tl-item p{font-size:.88rem;color:var(--muted);}
+    .yes{color:#51cf66;font-weight:700;} .no{color:#ff6b6b;font-weight:700;}
+    .ad-unit{max-width:1100px;margin:0 auto;padding:28px 24px 0;text-align:center;}
+    .ad-unit-label{font-size:.68rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;opacity:.5;}
+    .ad-unit ins{border-radius:8px;overflow:hidden;}
+    footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;}
+    footer a{color:var(--accent);text-decoration:none;}
+    footer .footer-logo{height:26px;width:auto;vertical-align:middle;margin-right:6px;}
+    @media(max-width:600px){.kid-box{padding:20px;}.diagram-wrap{padding:20px 12px;}}
+    #diag-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;}
+    #diag-modal.open{display:flex;}
+    #diag-modal-inner{position:relative;min-width:60vw;min-height:30vh;max-width:95vw;max-height:92vh;overflow:auto;background:#1a1d27;border:1px solid #2d3250;border-radius:16px;padding:48px 32px 32px;box-shadow:0 24px 80px rgba(0,0,0,.8);}
+    #diag-close{position:absolute;top:12px;right:16px;background:none;border:none;color:#8892b0;font-size:1.6rem;cursor:pointer;line-height:1;transition:color .2s;}
+    #diag-close:hover{color:#fff;}
+    #diag-modal-inner svg{display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:78vh;width:auto!important;height:auto!important;}
+  </style>
+</head>
+<body>
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+<nav>
+  <a class="nav-logo" href="/"><img src="/logo.svg" alt="JustSimple.Online" style="height:34px;"/><span class="nav-tagline">Making the web understandable</span></a>
+  <div class="nav-right"><a href="/">← All Analyses</a>&nbsp;·&nbsp;<a href="/privacy.html">Privacy</a>&nbsp;·&nbsp;<a href="/terms.html">Terms</a></div>
+</nav>
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;"/></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>Bilibili: Inside China's Favourite Gen-Z Video Universe</h1>
+  <p>An independent deep-dive into Bilibili's unique bullet-comment culture, creator ecosystem, business model, and its extraordinary grip on young Chinese internet users.</p>
+  <div class="hero-url">🌐 Analysed: <span>bilibili.com</span></div>
+</div>
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. Not affiliated with, endorsed by, or connected to the website analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+<main>
+  <section>
+    <h2><span class="emoji">🎬</span>What is Bilibili?</h2>
+    <p class="section-intro">Part YouTube, part Twitch, part anime streaming service, part social network — Bilibili defies easy categorisation but dominates Chinese youth culture.</p>
+    <div class="kid-box" style="margin-bottom:28px;">
+      <h3>Explain it like I'm 10</h3>
+      <p>Imagine YouTube, but while you watch a video, hundreds of other people's comments float across the screen in real time — jokes, reactions, corrections — like watching with a crowd. That's Bilibili's famous "bullet comment" (danmaku) system and it completely changes how watching videos feels. Instead of lonely scrolling, it feels like a shared experience even if the video is five years old.</p>
+      <p>Bilibili started as a website for anime fans to watch shows and share reactions, but it grew into a massive platform covering everything: science lectures, cooking tutorials, gaming streams, music, beauty, and more. It's especially popular with Chinese people under 35 who grew up with the internet and want entertainment that feels genuinely created for them, not just imported from TV.</p>
+    </div>
+    <p style="color:var(--muted);margin-bottom:16px;">Bilibili Inc. (哔哩哔哩, nicknamed B站) is a Chinese online entertainment platform listed on both the NASDAQ and Hong Kong Stock Exchange. Founded in June 2009 by Xu Yi (known online as Xu Yi), it began as a community site for fans of the anime series "Magical Girl Madoka Magica" before rapidly expanding into a full-spectrum video and live-streaming platform. The name "Bilibili" derives from a character in the anime series Toaru Kagaku no Railgun, reflecting its deep roots in ACG (Anime, Comics, Games) culture.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">What made Bilibili unusual was its unusually strict community gatekeeping in its early years. New users had to pass a 100-question exam about ACG culture before gaining full membership — a deliberate friction that ensured the early community was composed of genuine enthusiasts rather than casual visitors. This created a highly engaged, knowledgeable user base with strong community identity. While the membership exam has since been relaxed, the community ethos of shared cultural knowledge and respectful engagement remains a distinguishing feature.</p>
+    <p style="color:var(--muted);">Today Bilibili has 336 million monthly active users and serves as the primary video consumption platform for Chinese Gen-Z. Its content spans official anime licences, user-generated videos (UGC), professionally generated content (PGC), live streaming, mobile games, and e-commerce. Unlike Western platforms that treat young users as a demographic to monetise, Bilibili positions itself as a community first — a philosophy that has earned fierce loyalty even as competition from Douyin (TikTok's Chinese version) and Kuaishou intensifies.</p>
+  </section>
+
+  <section>
+    <h2><span class="emoji">📊</span>Bilibili by the Numbers</h2>
+    <p class="section-intro">Bilibili's numbers reveal a platform deeply embedded in Chinese youth culture — not the largest, but among the most engaged.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">336M</span><span class="label">Monthly active users</span></div>
+      <div class="stat"><span class="num">100M+</span><span class="label">Daily active users</span></div>
+      <div class="stat"><span class="num">3.9M+</span><span class="label">Active content creators</span></div>
+      <div class="stat"><span class="num">2009</span><span class="label">Year founded</span></div>
+      <div class="stat"><span class="num">6B+</span><span class="label">Videos watched daily</span></div>
+      <div class="stat"><span class="num">$2.4B</span><span class="label">Annual revenue 2023</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="emoji">⚙️</span>How Bilibili Works</h2>
+    <p class="section-intro">Bilibili's technical architecture balances massive video delivery with its signature danmaku comment system — one of the most complex real-time annotation systems on the internet.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">Bilibili's most distinctive technical feature is the <strong style="color:var(--text);">danmaku</strong> (弹幕) bullet-comment system. When a user posts a comment, it is timestamped to a specific moment in the video. Every subsequent viewer who reaches that timestamp sees the comment float across their screen — creating the effect of a synchronised communal viewing experience regardless of when each viewer watches. Managing millions of timestamped comments per video, rendering them at correct positions, and filtering inappropriate content in real time requires sophisticated infrastructure that Bilibili has refined over 15 years.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">The content recommendation system uses a multi-objective ranking model that optimises simultaneously for completion rate (did the user finish the video?), interaction rate (did they comment, like, or coin?), and sharing behaviour. Bilibili's unique "coin" metric — users can give videos up to two coins as a stronger endorsement than a simple like — gives the algorithm a higher-signal engagement indicator than most platforms. Videos that accumulate coins reliably indicate deep appreciation rather than passive consumption.</p>
+    <p style="color:var(--muted);margin-bottom:28px;">Bilibili operates a dual-channel distribution model: an official content channel for licenced anime and professionally produced series, and a UGC channel for the millions of creator videos uploaded daily. The platform uses a Content Quality Index (CQI) system to surface high-quality UGC alongside professional content, ensuring new creators can break through without needing existing audiences. Creators earn income through a combination of platform revenue sharing, fan subscriptions (charging fees for exclusive content), sponsored content, and Bilibili's own creator support funds.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Bilibili Content & Engagement Architecture</div>
+      <div class="mermaid">
+graph TB
+    A[User Opens Bilibili] --> B[Personalised Feed Algorithm]
+    B --> C{Content Type}
+    C --> D[Official Anime Licences]
+    C --> E[User-Generated Videos UGC]
+    C --> F[Live Streams]
+    C --> G[Professional Content PGC]
+    D --> H[Viewer Watches]
+    E --> H
+    F --> H
+    G --> H
+    H --> I[Danmaku Bullet Comments Float on Screen]
+    H --> J[Like, Coin, Favourite, Share]
+    I --> K[Timestamped Comment Database]
+    J --> L[Engagement Signals Feed Recommendation Model]
+    K --> L
+    L --> B
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-unit" style="padding:0 0 56px;">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <section>
+    <h2><span class="emoji">💰</span>How Does Bilibili Make Money?</h2>
+    <p class="section-intro">Bilibili's monetisation strategy is deliberately diversified to reduce dependence on advertising — a strategic choice that reflects its community-first philosophy.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">Bilibili's largest revenue segment is <strong style="color:var(--text);">value-added services (VAS)</strong>, which includes premium membership subscriptions (大会员, "Grand Member") that grant access to early anime episodes, exclusive content, and platform perks. This subscription model generates predictable recurring revenue and aligns incentives — Bilibili profits when users love the platform enough to pay for it, rather than when they click ads. Over 22 million users hold premium subscriptions, generating significant monthly recurring revenue.</p>
+    <p style="color:var(--muted);margin-bottom:20px;"><strong style="color:var(--text);">Mobile gaming</strong> has historically been Bilibili's second-largest revenue stream. The platform operates as a games publisher and distributor, leveraging its massive anime and gaming community to launch mobile games based on popular IP. Its biggest title, Fate/Grand Order (distributed in China), generated enormous revenue. However, China's gaming licence restrictions have created volatility in this segment, pushing Bilibili to diversify towards advertising and e-commerce.</p>
+    <p style="color:var(--muted);margin-bottom:28px;"><strong style="color:var(--text);">Advertising</strong> is the fastest-growing segment and includes display ads, brand partnerships, and native video ads integrated into creator content. Bilibili has been expanding its ad platform capabilities with better audience targeting and brand safety tools to attract major advertisers. E-commerce integration — allowing creators to link products directly in videos — represents the newest revenue frontier, following the success of similar features on Douyin.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Bilibili Revenue Mix — Four Pillars of Monetisation</div>
+      <div class="mermaid">
+graph TB
+    A[Bilibili Revenue ~$2.4B] --> B[Value-Added Services VAS]
+    A --> C[Mobile Games Distribution]
+    A --> D[Advertising]
+    A --> E[E-Commerce and IP Merchandise]
+    B --> F[22M+ Premium Subscribers paying monthly]
+    C --> G[Licensed mobile games for Chinese market]
+    D --> H[Brand partnerships and creator native ads]
+    E --> I[Creator merchandise and platform store]
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="emoji">🧩</span>What Makes Bilibili Unique</h2>
+    <p class="section-intro">Several features distinguish Bilibili from every other video platform and explain its extraordinary hold on Chinese Gen-Z.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">💬</div>
+        <h4>Danmaku Bullet Comments</h4>
+        <p>Timestamped floating comments create a synchronised communal experience regardless of when you watch — turning every video into a shared event.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎓</div>
+        <h4>Knowledgeable Community</h4>
+        <p>Bilibili hosts some of China's best science, history, and engineering content — creators like "回形针PaperClip" have produced documentary-quality explainers watched 100M+ times.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🪙</div>
+        <h4>The Coin System</h4>
+        <p>Users can give videos up to two virtual coins as a high-signal endorsement. Coins are a more meaningful metric than likes, rewarding genuinely valued content.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎌</div>
+        <h4>ACG Heritage</h4>
+        <p>Deep roots in Anime, Comics, and Games culture give Bilibili a distinct identity. The community speaks a shared cultural language that creates belonging for young Chinese users.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎮</div>
+        <h4>Gaming Integration</h4>
+        <p>The gaming tab within Bilibili is a major distribution platform for Chinese mobile games. Community enthusiasm around game launches drives massive organic marketing.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📺</div>
+        <h4>Multi-Format Creator Economy</h4>
+        <p>Creators can earn via ads, fan subscriptions, platform funds, merchandise, and live-stream gifts — one of the most complete creator income ecosystems in the world.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="emoji">📅</span>Bilibili History</h2>
+    <p class="section-intro">From an anime fan site to China's Gen-Z cultural hub in 15 years.</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><h4>2009 — Founded by Xu Yi</h4><p>Launches as a video site for anime fans (ACG community), initially centred on the Magical Girl Madoka Magica fandom.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2012 — Danmaku Becomes Central</h4><p>The bullet-comment feature matures into Bilibili's defining characteristic, creating a uniquely shared viewing experience.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2018 — NASDAQ IPO</h4><p>Lists on NASDAQ at $11.22/share, raising $483M. The IPO brings international attention to China's Gen-Z entertainment market.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2019 — Anime & Content Expansion</h4><p>Signs major anime licencing deals and launches a dedicated documentary channel, expanding far beyond gaming and ACG.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2021 — Hong Kong Secondary Listing</h4><p>Lists on HKEX to broaden access for Chinese retail investors; reaches 272M monthly users.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2022 — Membership Exam Relaxed</h4><p>Drops the strict ACG entrance exam to lower barriers for new users while maintaining community guidelines.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2024 — Path to Profitability</h4><p>After years of losses, reaches near-breakeven through advertising growth, subscription expansion, and cost discipline.</p></div>
+    </div>
+  </section>
+
+  <!-- Diagram modal -->
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>
+    #diag-modal{display:none;}
+    #diag-modal.open{display:flex;}
+    .diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}
+    .diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}
+  </style>
+</main>
+
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<footer>
+  <img src="/logo.svg" alt="JustSimple.Online" class="footer-logo" />
+  <a href="/">JustSimple.Online</a> — Independent website analysis. Not affiliated with Bilibili.
+  &nbsp;·&nbsp;<a href="/privacy.html">Privacy</a>&nbsp;·&nbsp;<a href="/terms.html">Terms</a>
+</footer>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true, theme: 'dark',
+    themeVariables: {
+      primaryColor: '#2a0d16', primaryTextColor: '#e8eaf6',
+      primaryBorderColor: '#fb7299', lineColor: '#fb7299',
+      secondaryColor: '#1a0a10', tertiaryColor: '#1a0a10',
+      background: '#0a0d1a', mainBkg: '#2a0d16', nodeBorder: '#fb7299',
+      clusterBkg: '#1a0a10', titleColor: '#e8eaf6',
+      edgeLabelBackground: '#2a0d16',
+      attributeBackgroundColorEven: '#2a0d16', attributeBackgroundColorOdd: '#1a0a10'
+    }
+  });
+</script>
+
+<div id="diag-modal" role="dialog" aria-modal="true" aria-label="Diagram viewer">
+  <div id="diag-modal-inner"><button id="diag-close" aria-label="Close diagram">&times;</button></div>
+</div>
+
+<script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){
+    var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;
+    if(!wrap)return;
+    var mDiv=wrap.querySelector('.mermaid');
+    if(mDiv)openModal(mDiv);
+  });
+  function openModal(mDiv){
+    clearInner();modal.classList.add('open');document.body.style.overflow='hidden';
+    var svg=mDiv.querySelector('svg');
+    if(svg){showSvg(svg);return;}
+    var msg=document.createElement('p');msg.className='diag-msg';
+    msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';
+    msg.textContent='Rendering diagram...';inner.appendChild(msg);
+    var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);
+  }
+  function clearInner(){
+    inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});
+    if(onMove)document.removeEventListener('mousemove',onMove);
+    if(onUp)document.removeEventListener('mouseup',onUp);
+    onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;
+  }
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){
+    clearInner();
+    var xml=new XMLSerializer().serializeToString(svg);
+    var img=document.createElement('img');
+    img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);
+    inner.appendChild(img);activeImg=img;
+    var hint=document.createElement('p');hint.className='diag-hint';
+    hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';
+    hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';
+    inner.appendChild(hint);
+    inner.addEventListener('wheel',function(e){
+      e.preventDefault();
+      var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;
+      var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));
+      tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;
+      img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();
+    },{passive:false});
+    img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});
+    onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};
+    onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};
+    document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);
+    img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});
+    var lastDist=0;
+    img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});
+    img.addEventListener('touchmove',function(e){
+      if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}
+    },{passive:false});
+  }
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+<script>
+(function(){
+  var modal=document.getElementById('diag-modal'),
+      inner=document.getElementById('diag-modal-inner'),
+      closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0;
+  var activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){
+    var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;
+    if(!wrap)return;
+    var mDiv=wrap.querySelector('.mermaid');
+    if(mDiv)openModal(mDiv);
+  });
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';
+    var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}
+    var msg=document.createElement('p');msg.className='diag-msg';
+    msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';
+    msg.textContent='Rendering diagram...';inner.appendChild(msg);
+    var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);
+  }
+  function clearInner(){
+    inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});
+    if(onMove)document.removeEventListener('mousemove',onMove);
+    if(onUp)document.removeEventListener('mouseup',onUp);
+    onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;
+  }
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){
+    clearInner();
+    var xml=new XMLSerializer().serializeToString(svg);
+    var img=document.createElement('img');
+    img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);
+    inner.appendChild(img);activeImg=img;
+    var hint=document.createElement('p');hint.className='diag-hint';
+    hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';
+    hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';
+    inner.appendChild(hint);
+    inner.addEventListener('wheel',function(e){
+      e.preventDefault();
+      var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;
+      var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));
+      tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;
+      img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();
+    },{passive:false});
+    img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});
+    onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};
+    onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};
+    document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);
+    img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});
+    var lastDist=0;
+    img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});
+    img.addEventListener('touchmove',function(e){
+      if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}
+    },{passive:false});
+  }
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

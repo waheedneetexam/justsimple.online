@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Medium — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Medium: how the subscription publishing platform works, its Partner Programme writer revenue sharing model, and competition with Substack."/>
+  <meta name="keywords" content="Medium analysis, Medium business model, how Medium works, Medium Partner Programme, Medium vs Substack, subscription blogging platform"/>
+  <link rel="canonical" href="https://justsimple.online/medium.com/"/>
+  <meta property="og:title" content="Medium — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How Medium built a subscription writing platform with 100M readers — the Partner Programme that pays writers based on member reading time."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/medium.com/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#000000;--text:#e8eaf6;--muted:#8892b0;--border:#1a1a1a;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#0a0a0a 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#00000018,transparent);}
+    .hero-badge{display:inline-block;background:#00000026;border:1px solid #00000066;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#00000014,#0000000a);border:1.5px solid #00000059;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>Medium: How the Subscription Writing Platform Works</h1>
+    <p>An independent deep-dive into Medium's metered reading model, the Partner Programme that pays writers based on member engagement, and how Ev Williams' vision of a better internet publishing platform competes in a world of newsletters and Substack.</p>
+    <div class="hero-url">🌐 <span>medium.com</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by Medium. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">✍️</span>What is Medium?</h2>
+      <p class="section-intro">Medium is a publishing platform where millions of writers share long-form articles on any topic — and subscribers pay $5/month for unlimited reading, with revenue distributed to writers based on how much members read their work.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>Medium is a website where people write long articles about almost anything — technology, self-improvement, politics, science, creative writing, personal stories. Unlike newspapers that employ journalists, Medium lets anyone write and publish articles. Some writers are professional journalists or experts, others are just people with interesting things to say. Medium has a subscription (like Netflix) where you pay $5 per month to read unlimited articles. Writers earn money based on how much time paying subscribers spend reading their articles.</p>
+        <p>Medium was founded in 2012 by Ev Williams, who also co-founded Twitter and Blogger. The idea was to create a better home for quality writing on the internet than social media (which is too short) or traditional blogs (which are fragmented and hard to discover). Medium's clean design and built-in audience make it easier for new writers to be discovered than starting a personal blog from scratch. Famous publications and individual writers all use Medium alongside dedicated websites.</p>
+      </div>
+      <div class="prose">
+        <p>Medium was founded by Ev Williams in August 2012. Williams had previously co-founded Blogger (acquired by Google) and Twitter, making him one of the internet's most influential figures in publishing infrastructure. Medium launched as an invitation-only publishing platform, emphasising editorial quality and a clean reading experience. The platform opened to all writers in 2013 and grew through the quality of its early community — technology executives, journalists, and thinkers who found Medium's minimalist design superior to other blogging platforms.</p>
+        <p>Medium's metered paywall (introduced in 2017) allows non-subscribers to read a limited number of articles per month for free before being prompted to subscribe at $5/month (or $50/year). Free visitors who hit the limit must subscribe or leave. This metered model, similar to The New York Times paywall, converts engaged readers who consume multiple articles into subscribers. Medium claims 100M+ monthly visitors with millions of paid subscribers.</p>
+        <p>The Medium Partner Programme (launched 2017) distributes subscription revenue to writers based on member reading time — not pageviews or clicks, but actual reading engagement from paying subscribers. This reading-time model theoretically rewards quality (members read quality articles longer) over virality (clickbait may get clicks but not reading time). Writers can also charge for access to their own publication behind a paywall within Medium. Medium Boost (a curation programme) surfaces articles to broader audiences through the Medium home feed.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">Medium's scale as a subscription writing platform.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">100M+</span><span class="label">Monthly readers</span></div><div class="stat"><span class="num">2012</span><span class="label">Year founded by Ev Williams</span></div><div class="stat"><span class="num">$5</span><span class="label">Monthly subscription price</span></div><div class="stat"><span class="num">750K+</span><span class="label">Estimated paying subscribers</span></div><div class="stat"><span class="num">170M+</span><span class="label">Published stories on the platform</span></div><div class="stat"><span class="num">#1</span><span class="label">Reading-time based writer payment model</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How Medium Works</h2>
+      <p class="section-intro">Medium combines a metered paywall, Partner Programme revenue sharing, and curation algorithms to create an economy where quality writing is rewarded by reader engagement.</p>
+      <div class="prose">
+        <p>Medium's editorial structure combines individual writer articles, publication collections (groups of writers under one editorial brand), and Medium's own curation. Publications on Medium (such as Towards Data Science for AI/ML content, or The Startup for entrepreneurship) function as curated collections with editorial standards. Being accepted into a top Medium publication dramatically increases article distribution through that publication's followers.</p>
+        <p>Medium's distribution algorithm surfaces articles to readers based on their reading history, followed publications and writers, and Medium staff curation picks. Being featured in Medium's Daily Digest (email newsletter to subscribers) provides significant traffic spikes. Articles that perform well in their first 24-48 hours (measured by read-through rate — the percentage of readers who reach the end of the article) receive additional algorithmic distribution.</p>
+        <p>Medium's Writer Dashboard provides writers with detailed analytics: story views, reads (vs. views), read ratio, and earnings from Partner Programme. Writers can see exactly which articles are driving subscriber reading time and earnings. This data transparency helps writers understand what content resonates with paying Medium members specifically, creating a feedback loop that optimises writing toward member preferences.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Medium Metered Reading Model</div>
+        <div class="mermaid">
+graph TB
+    A[Writer publishes article on Medium] --> B[Free readers and paying members]
+    B --> C[Free readers hit paywall after N articles]
+    C --> D[Some free readers subscribe 5 per month]
+    D --> E[Member reads article and spends time]
+    E --> F[Reading time logged to author]
+    F --> G[Partner Programme pays author from subscription pool]
+    G --> H[Quality writing rewarded by engagement]
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How Medium Makes Money</h2>
+      <p class="section-intro">Medium's revenue comes almost entirely from subscriber membership fees, with a portion distributed to writers through the Partner Programme.</p>
+      <div class="prose">
+        <p><strong>Subscription revenue</strong> ($5/month or $50/year) is Medium's primary and almost exclusive revenue source. With an estimated 750K+ paying subscribers at $5/month, Medium generates approximately $4-5M in monthly subscription revenue. The metered paywall converts readers who hit the article limit into subscribers. Medium has deliberately avoided advertising to maintain the clean reading experience and editorial independence that differentiates it from ad-supported media.</p>
+        <p><strong>Partner Programme payments to writers</strong> distribute a significant portion of subscription revenue based on member reading time. Writers who build large Medium audiences with high member engagement can earn thousands of dollars monthly from the Partner Programme. The top 1% of writers earn disproportionate Partner Programme income, while most writers earn small amounts. Medium's payment transparency creates aspirational earning stories that attract new writers to the platform.</p>
+        <p>Medium Plus (enhanced writer features for $9/month) allows writers to add additional features including custom domains, enhanced analytics, and priority distribution for their publications. Medium has experimented with additional revenue streams including promoted distribution for companies wanting to reach Medium's audience, though advertising has been deliberately limited to protect the editorial experience.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Medium Revenue Model</div>
+        <div class="mermaid">
+graph LR
+    A[Medium Revenue] --> B[Member Subscriptions 5 per month]
+    A --> C[Medium Plus Writer Subscriptions]
+    B --> D[Portion distributed to Partner Programme writers]
+    D --> E[Writers paid by member reading time]
+    B --> F[Platform operations and development]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes Medium Unique</h2>
+      <p class="section-intro">Medium's reading-time payment model, metered paywall, and clean design create a writing platform distinct from advertising-supported blogs and newsletter platforms.</p>
+      <div class="cards"><div class="card"><div class="card-icon">⏱️</div><h4>Reading-Time Revenue Model</h4><p>Writers earn based on how long paying subscribers spend reading their work — rewarding quality and engagement over clickbait optimisation or raw pageview counts.</p></div><div class="card"><div class="card-icon">🎨</div><h4>Best-in-Class Reading Design</h4><p>Medium's typography and layout set the standard for online reading experience. The clean, distraction-free design is why so many technology professionals chose Medium as their writing home.</p></div><div class="card"><div class="card-icon">📧</div><h4>Built-In Distribution</h4><p>Unlike starting a personal blog with zero audience, Medium provides immediate distribution through its algorithm and publication system. New writers can reach readers before building their own following.</p></div><div class="card"><div class="card-icon">💸</div><h4>No Advertising</h4><p>Medium deliberately avoids advertising revenue, maintaining editorial integrity and reading experience quality. Subscription-funded journalism without advertiser influence.</p></div><div class="card"><div class="card-icon">🔍</div><h4>SEO and Discovery</h4><p>Medium articles rank well on Google for informational queries, giving writers additional organic discovery beyond Medium's own platform traffic.</p></div><div class="card"><div class="card-icon">🆚</div><h4>Substack Competition</h4><p>Substack's newsletter model (writers own subscriber relationships, charge directly) competes with Medium's platform model. Top Medium writers have migrated to Substack for higher earnings and audience ownership.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From a 2012 Twitter co-founder's vision to a subscription writing platform.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>2012 — Medium Founded by Ev Williams</h4><p>Ev Williams (Twitter co-founder) launches Medium as an invitation-only long-form writing platform emphasising quality over volume.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2013 — Medium Opens to All Writers</h4><p>Medium opens public registration, allowing any writer to publish. Growth accelerates through technology community adoption.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2017 — Metered Paywall and Partner Programme</h4><p>Medium introduces $5/month subscription with metered paywall and Partner Programme paying writers based on member reading time.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2019 — Publications Overhauled</h4><p>Medium revamps its publication system, enabling more editorial structure and curation within the platform.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2021 — Boost Programme Launches</h4><p>Medium introduces Boost, a curation programme that surfaces select articles to broader audiences, providing additional writer distribution beyond organic reach.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2023 — Substack Competition Intensifies</h4><p>Substack's paid newsletter model attracts top Medium writers who prefer owning subscriber relationships. Medium responds with enhanced writer monetisation features.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#111111',primaryTextColor:'#e8eaf6',primaryBorderColor:'#000000',lineColor:'#000000',secondaryColor:'#0a0a0a',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#111111',nodeBorder:'#000000',clusterBkg:'#0a0a0a',titleColor:'#e8eaf6',edgeLabelBackground:'#0a0a0a',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

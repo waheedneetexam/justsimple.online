@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microsoft — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of Microsoft: how the world's second-largest company works, its Azure cloud business model, revenue breakdown, and AI strategy." />
+  <meta name="keywords" content="Microsoft analysis, Microsoft business model, Azure cloud revenue, how Microsoft makes money, Microsoft AI strategy, Windows revenue" />
+  <link rel="canonical" href="https://justsimple.online/microsoft.com/" />
+  <meta property="og:title" content="Microsoft — Independent Analysis by JustSimple.Online" />
+  <meta property="og:description" content="How Microsoft became a $3 trillion company through Windows, Azure, Office 365, LinkedIn, and a billion-dollar AI bet on OpenAI." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://justsimple.online/microsoft.com/" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TSFVXECJ40');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#0078d4;--text:#e8eaf6;--muted:#8892b0;--border:#0d2040;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#050f1f 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#0078d418,transparent);}
+    .hero-badge{display:inline-block;background:#0078d426;border:1px solid #0078d466;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#0078d414,#0078d40a);border:1.5px solid #0078d459;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+    .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;}
+    .stat .num{font-size:2.2rem;font-weight:800;color:var(--accent);display:block;}
+    .stat .label{font-size:.85rem;color:var(--muted);margin-top:4px;}
+    .diagram-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;overflow-x:auto;}
+    .diagram-wrap+.diagram-wrap{margin-top:24px;}
+    .diagram-title{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+    .mermaid{display:flex;justify-content:center;}
+    .timeline{position:relative;padding-left:28px;}
+    .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--accent),transparent);}
+    .tl-item{position:relative;margin-bottom:28px;}
+    .tl-dot{position:absolute;left:-28px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px;}
+    .tl-item p{font-size:.88rem;color:var(--muted);}
+    .yes{color:#51cf66;font-weight:700;} .no{color:#ff6b6b;font-weight:700;}
+    .ad-unit{max-width:1100px;margin:0 auto;padding:28px 24px 0;text-align:center;}
+    .ad-unit-label{font-size:.68rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;opacity:.5;}
+    .ad-unit ins{border-radius:8px;overflow:hidden;}
+    footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;}
+    footer a{color:var(--accent);text-decoration:none;}
+    footer .footer-logo{height:26px;width:auto;vertical-align:middle;margin-right:6px;}
+    @media(max-width:600px){.kid-box{padding:20px;}.diagram-wrap{padding:20px 12px;}}
+    #diag-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;}
+    #diag-modal.open{display:flex;}
+    #diag-modal-inner{position:relative;min-width:60vw;min-height:30vh;max-width:95vw;max-height:92vh;overflow:auto;background:#1a1d27;border:1px solid #2d3250;border-radius:16px;padding:48px 32px 32px;box-shadow:0 24px 80px rgba(0,0,0,.8);}
+    #diag-close{position:absolute;top:12px;right:16px;background:none;border:none;color:#8892b0;font-size:1.6rem;cursor:pointer;line-height:1;transition:color .2s;}
+    #diag-close:hover{color:#fff;}
+    #diag-modal-inner svg{display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:78vh;width:auto!important;height:auto!important;}
+  </style>
+</head>
+<body>
+<div style="background:#7c3aed;color:#fff;text-align:center;padding:8px 16px;font-size:.82rem;font-weight:600;letter-spacing:.01em;z-index:200;position:relative;">
+  ⚠️ Independent analysis by <strong>JustSimple.Online</strong> — not affiliated with, endorsed by, or connected to any company analysed here.
+  <a href="/terms.html" style="color:#d4b8ff;margin-left:8px;">Learn more</a>
+</div>
+<nav>
+  <a class="nav-logo" href="/"><img src="/logo.svg" alt="JustSimple.Online" style="height:34px;"/><span class="nav-tagline">Making the web understandable</span></a>
+  <div class="nav-right"><a href="/">← All Analyses</a>&nbsp;·&nbsp;<a href="/privacy.html">Privacy</a>&nbsp;·&nbsp;<a href="/terms.html">Terms</a></div>
+</nav>
+<div class="hero">
+  <a href="/" style="display:inline-block;margin-bottom:18px;"><img src="/logo.svg" alt="JustSimple.Online" style="height:44px;width:auto;"/></a>
+  <div class="hero-badge">Website Analysis by JustSimple.Online</div>
+  <h1>Microsoft: How the World's Second-Largest Company Was Built</h1>
+  <p>An independent deep-dive into Microsoft's technology empire — from Windows and Office to Azure cloud, LinkedIn, GitHub, Xbox, and its $13 billion bet on OpenAI.</p>
+  <div class="hero-url">🌐 Analysed: <span>microsoft.com</span></div>
+</div>
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<div style="max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:12px 18px;font-size:.8rem;color:#8892b0;display:flex;align-items:center;gap:10px;">
+    <span style="font-size:1rem;flex-shrink:0;">ℹ️</span>
+    <span>This is an <strong style="color:#a78bfa;">independent analysis</strong> by JustSimple.Online. Not affiliated with, endorsed by, or connected to the website analysed. All content is original editorial work based on publicly available information.</span>
+  </div>
+</div>
+<main>
+  <section>
+    <h2><span class="emoji">🪟</span>What is Microsoft?</h2>
+    <p class="section-intro">Microsoft is one of the most consequential technology companies ever built — its software runs on over a billion computers and its cloud serves virtually every major enterprise on Earth.</p>
+    <div class="kid-box" style="margin-bottom:28px;">
+      <h3>Explain it like I'm 10</h3>
+      <p>Imagine if one company made the operating system that runs most of the world's computers (Windows), the most popular productivity software (Word, Excel, PowerPoint), a cloud computer service that thousands of businesses use to run their websites (Azure), the world's biggest professional network (LinkedIn), the most popular place for programmers to store their code (GitHub), and one of the top gaming platforms (Xbox). That's Microsoft. It's not just one product — it's a whole collection of essential technology services.</p>
+      <p>What makes Microsoft interesting is that it nearly failed in the smartphone era — it bet on Windows Phone and lost to Apple's iPhone and Google's Android. But then a new CEO called Satya Nadella arrived in 2014 and changed the whole strategy: instead of fighting to own the device you hold in your hand, Microsoft would own the cloud "brain" that everything connects to. That shift worked brilliantly, and today Microsoft is worth more than $3 trillion.</p>
+    </div>
+    <p style="color:var(--muted);margin-bottom:16px;">Microsoft Corporation was founded in April 1975 by Bill Gates and Paul Allen in Albuquerque, New Mexico, with a vision of "a computer on every desk and in every home" — an audacious goal in an era when computers were the size of refrigerators and cost more than cars. The company's first major breakthrough came in 1980 when IBM needed an operating system for its new personal computer. Microsoft acquired QDOS (Quick and Dirty Operating System) from Seattle Computer Products, licensed it to IBM as MS-DOS, and critically, retained the rights to licence it to other manufacturers. This decision became the foundation of Microsoft's dominance over the PC industry.</p>
+    <p style="color:var(--muted);margin-bottom:16px;">The Windows era, beginning with Windows 3.0 in 1990, transformed Microsoft into the most powerful software company in history. By coupling Windows with the Office productivity suite and leveraging IBM-compatible PC hardware standards, Microsoft established a near-monopoly in personal computing software that drew a landmark antitrust case from the U.S. Department of Justice in 1998. The case alleged that Microsoft illegally bundled Internet Explorer with Windows to crush Netscape Navigator — an early example of the platform leverage concerns that would come to define Big Tech regulation debates decades later.</p>
+    <p style="color:var(--muted);">The most remarkable chapter in Microsoft's history is its cloud transformation under CEO Satya Nadella, who took the helm in February 2014. Recognising that the company had missed the mobile revolution entirely, Nadella pivoted Microsoft's strategy to "cloud-first, mobile-first" — investing heavily in Azure cloud computing, making Office available on iOS and Android, open-sourcing .NET, and acquiring LinkedIn ($26B, 2016), GitHub ($7.5B, 2018), and Activision Blizzard ($69B, 2023). The results have been extraordinary: Microsoft's market capitalisation grew from approximately $300 billion in 2014 to over $3 trillion in 2024, making it briefly the world's most valuable company.</p>
+  </section>
+
+  <section>
+    <h2><span class="emoji">📊</span>Microsoft by the Numbers</h2>
+    <p class="section-intro">Microsoft operates at a scale that makes it one of the most important technology infrastructure providers on Earth.</p>
+    <div class="stats">
+      <div class="stat"><span class="num">$245B</span><span class="label">Total revenue FY2024</span></div>
+      <div class="stat"><span class="num">$3T+</span><span class="label">Market capitalisation (peak 2024)</span></div>
+      <div class="stat"><span class="num">228K+</span><span class="label">Employees worldwide</span></div>
+      <div class="stat"><span class="num">1975</span><span class="label">Year founded by Gates and Allen</span></div>
+      <div class="stat"><span class="num">$110B</span><span class="label">Azure and cloud services revenue FY2024</span></div>
+      <div class="stat"><span class="num">$13B</span><span class="label">Investment in OpenAI (ChatGPT creator)</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="emoji">⚙️</span>How Microsoft's Business Works</h2>
+    <p class="section-intro">Microsoft is organised into three major segments: Productivity and Business Processes, Intelligent Cloud, and More Personal Computing — each a multi-billion-dollar business in its own right.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">The <strong style="color:var(--text);">Intelligent Cloud</strong> segment, centred on Microsoft Azure, is Microsoft's fastest-growing and strategically most important business. Azure is the world's second-largest cloud computing platform (after Amazon Web Services), offering over 200 cloud services including virtual machines, databases, AI/ML services, DevOps tools, and IoT platforms. Azure's revenue grew at over 30% annually for several years and now contributes approximately $110 billion annually to Microsoft's top line. Crucially, Azure is the infrastructure backbone for Microsoft's own services including Office 365, Teams, Xbox Live, LinkedIn, and Bing.</p>
+    <p style="color:var(--muted);margin-bottom:20px;">The <strong style="color:var(--text);">Productivity and Business Processes</strong> segment covers Office 365 commercial and consumer subscriptions, LinkedIn, and Dynamics 365 (CRM and ERP software). LinkedIn, acquired for $26 billion in 2016, has proven to be one of Microsoft's most valuable acquisitions — it now generates over $16 billion annually through premium subscriptions, talent solutions (recruiting tools), marketing solutions, and learning (LinkedIn Learning). The platform's 1 billion members and professional data assets create significant AI training value for Microsoft's models.</p>
+    <p style="color:var(--muted);margin-bottom:28px;">The <strong style="color:var(--text);">More Personal Computing</strong> segment includes Windows OEM licences (paid by PC manufacturers), Xbox hardware and Game Pass subscriptions, Surface devices, and Bing advertising. While this segment is the smallest relative contributor to revenue growth, Windows remains strategically important as the foundation of Microsoft's enterprise relationships. The $13 billion investment in OpenAI — the creator of ChatGPT — represents Microsoft's boldest AI bet, with OpenAI's models now powering Copilot across all Microsoft products.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Microsoft Business Segments — How Revenue Flows Across the Empire</div>
+      <div class="mermaid">
+graph TB
+    A[Microsoft $245B Revenue FY2024] --> B[Intelligent Cloud $110B]
+    A --> C[Productivity and Business Processes $78B]
+    A --> D[More Personal Computing $57B]
+    B --> E[Azure Cloud Platform]
+    B --> F[Server Products and SQL]
+    C --> G[Microsoft 365 Office Subscriptions]
+    C --> H[LinkedIn $16B+]
+    C --> I[Dynamics 365 ERP and CRM]
+    D --> J[Windows OEM Licences]
+    D --> K[Xbox and Game Pass]
+    D --> L[Surface Devices]
+    D --> M[Bing Advertising]
+    E --> N[OpenAI Partnership powers Copilot AI]
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-unit" style="padding:0 0 56px;">
+    <div class="ad-unit-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <section>
+    <h2><span class="emoji">💰</span>How Does Microsoft Make Money?</h2>
+    <p class="section-intro">Microsoft's revenue model spans hardware, software licences, cloud subscriptions, advertising, and gaming — one of the most diversified revenue streams in tech.</p>
+    <p style="color:var(--muted);margin-bottom:20px;"><strong style="color:var(--text);">Azure cloud computing</strong> is Microsoft's primary growth engine. Businesses pay for Azure services on a consumption model — the more computing resources they use, the more they pay. This includes virtual machines, storage, databases, AI services, and networking. Azure's enterprise contracts are typically multi-year commitments worth millions of dollars annually, creating highly predictable revenue. The combination of consumption-based pricing and long-term contracts produces both growth and stability — unusual in any industry.</p>
+    <p style="color:var(--muted);margin-bottom:20px;"><strong style="color:var(--text);">Microsoft 365 subscriptions</strong> are the second pillar. With 400+ million paid commercial seats and growing consumer adoption, the subscription model provides approximately $78 billion annually in highly recurring revenue. The introduction of Copilot at $30/user/month as an add-on creates a significant upsell opportunity — if even 10% of commercial users adopt Copilot, it adds $14+ billion in annual revenue from a single feature launch.</p>
+    <p style="color:var(--muted);margin-bottom:28px;"><strong style="color:var(--text);">Gaming</strong> represents Microsoft's consumer entertainment bet. Xbox hardware, Xbox Game Pass subscriptions ($14.99/month for hundreds of games), and Activision Blizzard's game catalogue (Call of Duty, World of Warcraft, Candy Crush) give Microsoft a comprehensive gaming platform strategy. Game Pass had over 34 million subscribers before the Activision acquisition — a number Microsoft expects to grow significantly as Activision's top titles are added to the subscription.</p>
+    <div class="diagram-wrap">
+      <div class="diagram-title">Microsoft Revenue Model — From Software Licences to Cloud Subscriptions</div>
+      <div class="mermaid">
+graph LR
+    A[Enterprise Customer] --> B[Azure Cloud Consumption]
+    A --> C[Microsoft 365 E3/E5 Subscription]
+    A --> D[Dynamics 365 CRM/ERP]
+    B --> E[Pay per compute, storage, AI usage]
+    C --> F[Fixed monthly per-user fee]
+    D --> G[Per-user per-month SaaS fee]
+    H[Consumer] --> I[Microsoft 365 Personal/Family]
+    H --> J[Xbox Game Pass $14.99/month]
+    H --> K[Surface and hardware]
+    I --> L[Annual subscription]
+    J --> M[Game library access]
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="emoji">🧩</span>Microsoft's Key Products and Acquisitions</h2>
+    <p class="section-intro">Microsoft's portfolio spans every major segment of technology — built through both organic development and strategic acquisitions.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">☁️</div>
+        <h4>Azure Cloud</h4>
+        <p>World's second-largest cloud platform with 200+ services. Runs the infrastructure for enterprises, governments, and Microsoft's own products globally.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💼</div>
+        <h4>Microsoft 365</h4>
+        <p>Office productivity suite serving 1.4 billion people via subscription. Word, Excel, PowerPoint, Teams, Outlook, and Copilot AI all under one license.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💼</div>
+        <h4>LinkedIn</h4>
+        <p>1 billion professional members. Acquired for $26B in 2016, now generating $16B+ annually through recruiting, learning, and marketing solutions.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🐱</div>
+        <h4>GitHub</h4>
+        <p>The world's largest code hosting platform with 100M+ developers. Acquired for $7.5B in 2018 — the home of open-source software and the Copilot AI coding assistant.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎮</div>
+        <h4>Xbox and Activision</h4>
+        <p>End-to-end gaming platform: console hardware, Game Pass subscription, and the world's largest game publisher following the $69B Activision Blizzard acquisition.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h4>OpenAI Partnership</h4>
+        <p>$13B invested in the creator of ChatGPT and GPT-4. OpenAI's models power Bing Chat, Copilot for Microsoft 365, GitHub Copilot, and Azure AI services.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="emoji">📅</span>Microsoft History</h2>
+    <p class="section-intro">Five decades of technology history — from a BASIC interpreter for the Altair to the world's most valuable AI company.</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><h4>1975 — Founded by Gates and Allen</h4><p>Microsoft is incorporated in Albuquerque. First product: BASIC interpreter for the Altair 8800 microcomputer.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>1981 — MS-DOS and the IBM Deal</h4><p>Licenses MS-DOS to IBM for its personal computer. Retaining the right to license to others creates the foundation of Microsoft's OS monopoly.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>1990 — Windows 3.0 Launches</h4><p>The graphical interface makes PCs accessible to mainstream users. Windows becomes the world's dominant operating system within five years.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>1995 — Internet Explorer and the Browser Wars</h4><p>Internet Explorer 1.0 ships with Windows 95. Microsoft's tactics to crush Netscape lead to a landmark DOJ antitrust case.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2014 — Satya Nadella Becomes CEO</h4><p>The cloud-first transformation begins. Azure investment accelerates, Office goes cross-platform, and Microsoft begins its most successful decade.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2016 — LinkedIn Acquired for $26B</h4><p>Largest acquisition in Microsoft's history at the time. LinkedIn's professional data and network become a critical AI and revenue asset.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2019 — $1 Trillion Market Cap</h4><p>Microsoft becomes only the third company in history to reach a $1 trillion valuation, validating the cloud transformation strategy.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><h4>2023 — OpenAI Investment and Copilot</h4><p>$13B invested in OpenAI; Copilot AI launched across all Microsoft products. Microsoft establishes itself as the leading enterprise AI company.</p></div>
+    </div>
+  </section>
+
+  <!-- Diagram modal -->
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>
+    #diag-modal{display:none;}
+    #diag-modal.open{display:flex;}
+    .diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}
+    .diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}
+  </style>
+</main>
+
+<div class="ad-unit">
+  <div class="ad-unit-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-2662293899276634" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<footer>
+  <img src="/logo.svg" alt="JustSimple.Online" class="footer-logo" />
+  <a href="/">JustSimple.Online</a> — Independent website analysis. Not affiliated with Microsoft.
+  &nbsp;·&nbsp;<a href="/privacy.html">Privacy</a>&nbsp;·&nbsp;<a href="/terms.html">Terms</a>
+</footer>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true, theme: 'dark',
+    themeVariables: {
+      primaryColor: '#0a1628', primaryTextColor: '#e8eaf6',
+      primaryBorderColor: '#0078d4', lineColor: '#0078d4',
+      secondaryColor: '#050f1f', tertiaryColor: '#050f1f',
+      background: '#0a0d1a', mainBkg: '#0a1628', nodeBorder: '#0078d4',
+      clusterBkg: '#050f1f', titleColor: '#e8eaf6',
+      edgeLabelBackground: '#0a1628',
+      attributeBackgroundColorEven: '#0a1628', attributeBackgroundColorOdd: '#050f1f'
+    }
+  });
+</script>
+
+<div id="diag-modal" role="dialog" aria-modal="true" aria-label="Diagram viewer">
+  <div id="diag-modal-inner"><button id="diag-close" aria-label="Close diagram">&times;</button></div>
+</div>
+
+<script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){
+    var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;
+    if(!wrap)return;
+    var mDiv=wrap.querySelector('.mermaid');
+    if(mDiv)openModal(mDiv);
+  });
+  function openModal(mDiv){
+    clearInner();modal.classList.add('open');document.body.style.overflow='hidden';
+    var svg=mDiv.querySelector('svg');
+    if(svg){showSvg(svg);return;}
+    var msg=document.createElement('p');msg.className='diag-msg';
+    msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';
+    msg.textContent='Rendering diagram...';inner.appendChild(msg);
+    var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);
+  }
+  function clearInner(){
+    inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});
+    if(onMove)document.removeEventListener('mousemove',onMove);
+    if(onUp)document.removeEventListener('mouseup',onUp);
+    onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;
+  }
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){
+    clearInner();
+    var xml=new XMLSerializer().serializeToString(svg);
+    var img=document.createElement('img');
+    img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);
+    inner.appendChild(img);activeImg=img;
+    var hint=document.createElement('p');hint.className='diag-hint';
+    hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';
+    hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';
+    inner.appendChild(hint);
+    inner.addEventListener('wheel',function(e){
+      e.preventDefault();
+      var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;
+      var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));
+      tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;
+      img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();
+    },{passive:false});
+    img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});
+    onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};
+    onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};
+    document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);
+    img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});
+    var lastDist=0;
+    img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});
+    img.addEventListener('touchmove',function(e){
+      if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}
+    },{passive:false});
+  }
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+<script>
+(function(){
+  var modal=document.getElementById('diag-modal'),
+      inner=document.getElementById('diag-modal-inner'),
+      closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0;
+  var activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){
+    var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;
+    if(!wrap)return;
+    var mDiv=wrap.querySelector('.mermaid');
+    if(mDiv)openModal(mDiv);
+  });
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';
+    var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}
+    var msg=document.createElement('p');msg.className='diag-msg';
+    msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';
+    msg.textContent='Rendering diagram...';inner.appendChild(msg);
+    var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);
+  }
+  function clearInner(){
+    inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});
+    if(onMove)document.removeEventListener('mousemove',onMove);
+    if(onUp)document.removeEventListener('mouseup',onUp);
+    onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;
+  }
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){
+    clearInner();
+    var xml=new XMLSerializer().serializeToString(svg);
+    var img=document.createElement('img');
+    img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);
+    inner.appendChild(img);activeImg=img;
+    var hint=document.createElement('p');hint.className='diag-hint';
+    hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';
+    hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';
+    inner.appendChild(hint);
+    inner.addEventListener('wheel',function(e){
+      e.preventDefault();
+      var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;
+      var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));
+      tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;
+      img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();
+    },{passive:false});
+    img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});
+    onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};
+    onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};
+    document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);
+    img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});
+    var lastDist=0;
+    img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});
+    img.addEventListener('touchmove',function(e){
+      if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}
+    },{passive:false});
+  }
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

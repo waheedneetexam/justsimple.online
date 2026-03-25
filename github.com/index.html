@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>GitHub — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of GitHub: how the world's largest code hosting platform works, its business model, GitHub Copilot, and its role as the backbone of open-source software."/>
+  <meta name="keywords" content="GitHub analysis, GitHub business model, how GitHub works, GitHub Copilot, open source, Microsoft GitHub"/>
+  <link rel="canonical" href="https://justsimple.online/github.com/"/>
+  <meta property="og:title" content="GitHub — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How GitHub became the home of 420M+ code repositories and how Microsoft's $7.5B acquisition is transforming it into the AI coding platform."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/github.com/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#f0f6fc;--text:#e8eaf6;--muted:#8892b0;--border:#30363d;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#0d1117 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#f0f6fc18,transparent);}
+    .hero-badge{display:inline-block;background:#f0f6fc26;border:1px solid #f0f6fc66;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#f0f6fc14,#f0f6fc0a);border:1.5px solid #f0f6fc59;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>GitHub: How the World's Largest Code Platform Works</h1>
+    <p>An independent deep-dive into GitHub's Git infrastructure, Actions CI/CD system, Copilot AI coding assistant, and how it became the indispensable backbone of all software development.</p>
+    <div class="hero-url">🌐 <span>github.com</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by GitHub. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">🐱</span>What is GitHub?</h2>
+      <p class="section-intro">GitHub is the platform where software gets made — 100M+ developers use it to store code, collaborate on projects, and get AI assistance while they write.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>Imagine Google Docs, but for computer code. When programmers write software, they need to save every version of their code so they don't lose work and can undo mistakes. GitHub stores all those versions and lets many programmers work on the same code at the same time without messing up each other's work.</p>
+        <p>GitHub also has something called Copilot — an AI that watches what you're typing in code and suggests the next lines automatically, like autocomplete for programming. This has changed how developers work. GitHub is owned by Microsoft and is free for most uses, which is why almost every programmer in the world has a GitHub account.</p>
+      </div>
+      <div class="prose">
+        <p>GitHub was founded in 2008 by Tom Preston-Werner, Chris Wanstrath, PJ Hyett, and Scott Chacon. They built a hosting service on top of Git — the version control system created by Linus Torvalds in 2005 for Linux kernel development. GitHub added a web interface, social features (following, forking, starring), and pull request workflows that transformed Git from a command-line tool into a collaborative social platform.</p>
+        <p>GitHub's growth was driven by the open-source community. The ability to fork (copy) any public repository, make changes, and submit a pull request to contribute those changes back made GitHub the natural home for collaborative open-source projects. Major projects including Linux, Python, Ruby on Rails, Bootstrap, and React moved to GitHub, creating network effects where any developer wanting to contribute to open-source had to have a GitHub account.</p>
+        <p>Microsoft acquired GitHub in June 2018 for $7.5 billion. Initial concerns from the open-source community proved largely unfounded. The acquisition's strategic value became clear when GitHub Copilot launched in 2021 — an AI coding assistant trained on GitHub's 420M+ repository corpus, representing an enormous first-mover advantage in AI-assisted development.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">GitHub's scale as the backbone of global software development.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">100M+</span><span class="label">Registered developers</span></div><div class="stat"><span class="num">420M+</span><span class="label">Total repositories hosted</span></div><div class="stat"><span class="num">2008</span><span class="label">Year founded</span></div><div class="stat"><span class="num">$7.5B</span><span class="label">Microsoft acquisition price (2018)</span></div><div class="stat"><span class="num">1.8M+</span><span class="label">Organisations using GitHub</span></div><div class="stat"><span class="num">90%</span><span class="label">Fortune 100 companies using GitHub</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How GitHub Works</h2>
+      <p class="section-intro">GitHub layers a collaborative platform and AI tooling on top of Git — the version control system powering all modern software development.</p>
+      <div class="prose">
+        <p>GitHub's core is Git hosting: storing bare Git repositories on distributed infrastructure and providing a web interface for all Git operations. Every repository stores the full history of every file change ever made, allowing any previous version to be restored. GitHub's infrastructure must handle millions of Git push/pull operations daily, with repositories ranging from personal 1-file projects to the Linux kernel with 700,000+ commits.</p>
+        <p>Pull Requests (PRs) are GitHub's most important collaboration innovation. When a developer wants to contribute changes to a codebase, they create a branch, make their changes, and open a PR — a structured proposal for merging those changes. Other developers review the code line-by-line, leave comments, request changes, and ultimately approve or reject the PR. This workflow was invented by GitHub and has fundamentally changed how teams write software together.</p>
+        <p>GitHub Actions is GitHub's CI/CD system, allowing developers to automate workflows triggered by code events. Every push, pull request, or release can trigger automated tasks: run tests, build software, deploy to production. With millions of Actions workflows running daily, it has become one of the largest distributed computing platforms in the developer ecosystem.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">GitHub Developer Workflow — From Code to Deployment</div>
+        <div class="mermaid">
+graph TB
+    A[Developer writes code locally] --> B[git commit saves change with message]
+    B --> C[git push uploads to GitHub repository]
+    C --> D[GitHub Actions triggers automatically]
+    D --> E[Tests run pass or fail]
+    E --> F[Pull Request opened for code review]
+    F --> G[Team reviews code line by line]
+    G --> H{Approved?}
+    H --> I[Merged to main branch]
+    H --> J[Changes requested back to developer]
+    I --> K[GitHub Actions deploys to production]
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How GitHub Makes Money</h2>
+      <p class="section-intro">GitHub's business model combines free hosting for open-source with paid tiers for private repositories and enterprise features.</p>
+      <div class="prose">
+        <p><strong style="color:var(--text);">GitHub Enterprise</strong> is the primary revenue driver — a self-hosted or cloud-managed version of GitHub with enterprise security, SSO, compliance features, and dedicated support. Fortune 100 companies pay GitHub Enterprise to run their internal code infrastructure securely. Enterprise contracts are typically six-figure annual deals.</p>
+        <p><strong style="color:var(--text);">GitHub Copilot</strong> is GitHub's fastest-growing product. Copilot Business ($19/user/month) and Copilot Enterprise ($39/user/month) provide AI code completion, chat, and review features. With 1M+ paid Copilot subscribers, it represents a significant new revenue stream. AI assistance works best when it has access to the organisation's own codebase — reinforcing GitHub's platform lock-in.</p>
+        <p>GitHub Actions compute billing and <strong style="color:var(--text);">GitHub Packages</strong> (container registry and package hosting) add infrastructure revenue. GitHub Marketplace charges a commission on app sales. As part of Microsoft, GitHub's revenue contributes to the Intelligent Cloud segment — estimated at $2B+ annually.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">GitHub Business Model</div>
+        <div class="mermaid">
+graph LR
+    A[GitHub Revenue] --> B[GitHub Enterprise self-hosted and cloud]
+    A --> C[GitHub Copilot AI coding assistant]
+    A --> D[GitHub Actions CI/CD compute]
+    A --> E[GitHub Teams at $4 per user per month]
+    B --> F[Fortune 100 six-figure contracts]
+    C --> G[$19 to $39 per user per month with 1M+ subscribers]
+    D --> H[Minutes-based compute billing]
+    E --> I[SMB and startup teams]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes GitHub Indispensable</h2>
+      <p class="section-intro">GitHub's combination of Git hosting, developer social graph, and AI tooling creates lock-in no competitor has overcome.</p>
+      <div class="cards"><div class="card"><div class="card-icon">🤖</div><h4>GitHub Copilot</h4><p>AI pair programmer trained on 420M+ repositories. Suggests entire functions, explains code, and reviews PRs — the most-used AI coding tool in the world.</p></div><div class="card"><div class="card-icon">⚙️</div><h4>GitHub Actions</h4><p>Automate anything in your development pipeline. 90% of repositories use Actions for testing and deployment — creating significant switching costs.</p></div><div class="card"><div class="card-icon">🌐</div><h4>Open Source Backbone</h4><p>99% of major open-source projects are on GitHub. The entire open-source ecosystem lives here.</p></div><div class="card"><div class="card-icon">🔐</div><h4>Advanced Security</h4><p>Secret scanning, dependency vulnerability alerts, code scanning with CodeQL — security embedded into the development workflow.</p></div><div class="card"><div class="card-icon">📦</div><h4>GitHub Packages</h4><p>Container registry and package hosting directly integrated with repositories. No separate package registry needed.</p></div><div class="card"><div class="card-icon">🌟</div><h4>Developer Identity</h4><p>Your GitHub profile is your professional reputation. Stars, contributions, and public repos are the developer CV — genuine social lock-in.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From a weekend project to Microsoft's most strategic developer platform.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>2008 — GitHub Launches</h4><p>Tom Preston-Werner and Chris Wanstrath launch GitHub at PyCon. Initial focus on Ruby community quickly expands to all languages.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2011 — 1 Million Repositories</h4><p>Crosses 1 million repositories. Network effects accelerate as every major open-source project migrates to GitHub.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2018 — Microsoft Acquires for $7.5B</h4><p>Microsoft buys GitHub. Open-source community concerns prove largely unfounded under Satya Nadella's stewardship.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2021 — GitHub Copilot Technical Preview</h4><p>Copilot launches as a technical preview. The AI coding assistant becomes the fastest-growing GitHub product in history.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2023 — Copilot Enterprise and 100M Developers</h4><p>Crosses 100 million registered developers. Copilot Enterprise launches for organisation-wide AI coding with codebase context.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#161b22',primaryTextColor:'#e8eaf6',primaryBorderColor:'#f0f6fc',lineColor:'#f0f6fc',secondaryColor:'#0d1117',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#161b22',nodeBorder:'#f0f6fc',clusterBkg:'#0d1117',titleColor:'#e8eaf6',edgeLabelBackground:'#0d1117',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

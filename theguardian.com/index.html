@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>The Guardian — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of The Guardian: how the world's leading progressive newspaper works, its reader-supported funding model, Scott Trust ownership, and how it built 150M monthly digital visitors without a paywall."/>
+  <meta name="keywords" content="Guardian analysis, Guardian business model, how Guardian works, Guardian reader supported, Scott Trust, Guardian vs NYT paywall"/>
+  <link rel="canonical" href="https://justsimple.online/theguardian.com/"/>
+  <meta property="og:title" content="The Guardian — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How The Guardian built 150M monthly digital visitors without a paywall — the reader-supported journalism model that challenges subscription and advertising approaches."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/theguardian.com/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#052962;--text:#e8eaf6;--muted:#8892b0;--border:#001838;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#000818 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#05296218,transparent);}
+    .hero-badge{display:inline-block;background:#05296226;border:1px solid #05296266;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#05296214,#0529620a);border:1.5px solid #05296259;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>The Guardian: How the World's Reader-Supported Newspaper Works</h1>
+    <p>An independent deep-dive into The Guardian's unique reader-supported funding model, the Scott Trust ownership structure that protects editorial independence, and how a Manchester newspaper built the largest progressive digital news audience in the English-speaking world.</p>
+    <div class="hero-url">🌐 <span>theguardian.com</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by The Guardian. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">📰</span>What is The Guardian?</h2>
+      <p class="section-intro">The Guardian is a British quality newspaper known for investigative journalism, progressive editorial values, and a distinctive funding model: no paywall, supported by voluntary reader contributions.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>The Guardian is a British newspaper famous for serious journalism about politics, the environment, technology, and culture. Unlike most news websites that make you pay a subscription to read articles (like The New York Times), The Guardian lets you read everything for free. Instead, they ask readers who enjoy the journalism to voluntarily contribute money to support it. Millions of people around the world do this because they value having good journalism that isn't behind a paywall.</p>
+        <p>The Guardian is owned by a charity called the Scott Trust, which was set up specifically to keep the Guardian independent from commercial and political pressure. This means no billionaire owner can tell the Guardian what to write or not write. The Guardian broke the Edward Snowden NSA surveillance revelations story in 2013, which showed the world that governments were secretly collecting everyone's phone records and internet activity. This kind of journalism is what makes The Guardian distinctive.</p>
+      </div>
+      <div class="prose">
+        <p>The Guardian was founded in Manchester in 1821 as the Manchester Guardian to report on the Peterloo Massacre and the campaign for democratic reform. The newspaper moved to London and became The Guardian in 1959. Its ownership by the Scott Trust (established in 1936) is the cornerstone of its editorial independence — the Trust's purpose is 'to secure the financial and editorial independence of The Guardian in perpetuity.' No individual owns The Guardian; the Scott Trust is its ultimate proprietor.</p>
+        <p>The Guardian's global digital strategy, launched in earnest in the early 2010s, built its digital audience by providing free access to high-quality journalism on the bet that a large enough free readership would generate advertising revenue and voluntary contributions. TheGuardian.com grew rapidly in the United States and Australia, where Guardian US and Guardian Australia operate as editorial additions to the UK newsroom. By 2020, The Guardian's digital audience reached 150M+ monthly unique visitors globally, making it one of the most-read news websites in the world.</p>
+        <p>The Guardian's reader-supported model crosses the threshold into operating profit in 2019 for the first time in decades, following years of financial difficulty. The combination of advertising revenue, reader contributions (now over 1 million paying supporters globally), and commercial revenues restored financial sustainability without requiring a hard paywall. This model — sometimes called the 'Visible Paywall' or 'contribution model' — has been closely watched by journalism executives globally as an alternative to the subscription paywalls adopted by The New York Times and others.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">The Guardian's scale as a global progressive news platform.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">150M+</span><span class="label">Monthly unique digital visitors globally</span></div><div class="stat"><span class="num">1821</span><span class="label">Year founded as the Manchester Guardian</span></div><div class="stat"><span class="num">1M+</span><span class="label">Regular paying reader supporters globally</span></div><div class="stat"><span class="num">2019</span><span class="label">Year Guardian reached operating profit</span></div><div class="stat"><span class="num">#0</span><span class="label">Hard paywall articles (all content free to read)</span></div><div class="stat"><span class="num">3</span><span class="label">Editorial editions: UK, US, and Australia</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How The Guardian Works</h2>
+      <p class="section-intro">The Guardian operates as a global digital newsroom producing quality journalism funded by advertising, reader contributions, and commercial revenues — without restricting access through a paywall.</p>
+      <div class="prose">
+        <p>The Guardian's newsroom operates 24/7 across three primary editorial centres (London, New York, Sydney) with correspondents across the world. The UK edition covers British politics, culture, and international news; Guardian US focuses on American politics and culture; Guardian Australia covers Australian news and Asia-Pacific. This global network allows The Guardian to cover the English-speaking world comprehensively, making it a single destination for international English-language news rather than primarily a British paper.</p>
+        <p>The Guardian's reader contribution system is a soft ask rather than a hard paywall. After reading a certain number of articles, readers see a message asking them to contribute to support Guardian journalism. Contributions start from a few dollars/pounds per month and are voluntary — declining the ask does not restrict access. The contribution model has grown to over 1 million regular supporters who make monthly, annual, or one-time contributions. This revenue now rivals advertising in significance for The Guardian's P&L.</p>
+        <p>The Guardian's investigative journalism output — the Snowden NSA files (2013), Panama Papers (2016), Cambridge Analytica and Facebook data scandal (2018), and dozens of other major investigations — is the foundation of its editorial reputation and supporter acquisition. Readers who feel invested in The Guardian's journalism (particularly after reading a major investigation) are significantly more likely to become financial supporters. Investigative journalism is both an editorial and a commercial investment.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">The Guardian Business and Editorial Model</div>
+        <div class="mermaid">
+graph TB
+    A[The Guardian Scott Trust owned] --> B[Free Access No Paywall]
+    A --> C[Quality Investigative Journalism]
+    B --> D[150M Monthly Digital Visitors]
+    C --> D
+    D --> E[Display Advertising Revenue]
+    D --> F[Reader Contribution Prompts]
+    F --> G[1M Plus Regular Supporters]
+    G --> H[Monthly Annual One-time Contributions]
+    E --> I[Financial Sustainability achieved 2019]
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How The Guardian Makes Money</h2>
+      <p class="section-intro">The Guardian generates revenue through digital advertising, reader contributions, and commercial revenues from Guardian Media Group activities.</p>
+      <div class="prose">
+        <p><strong>Reader contributions</strong> are now one of the two largest revenue streams for The Guardian, having grown from a minor experiment to a major funding pillar. Over 1 million regular supporters contribute monthly, annually, or via one-time payments. The average annual contribution is approximately $5-10/month. This diversification away from advertising dependence gives The Guardian editorial independence from advertiser pressure.</p>
+        <p><strong>Digital advertising</strong> across TheGuardian.com's 150M+ monthly visitors generates significant programmatic and direct-sold advertising revenue. The Guardian's audience demographics (educated, liberal, higher income) command premium CPMs from advertisers. The Guardian has been a vocal critic of programmatic advertising's effects on journalism quality, and has moved toward direct advertising relationships with brands that value The Guardian's audience quality over raw reach.</p>
+        <p>Commercial revenues from Guardian Media Group — including Guardian Jobs (a UK employment listings platform), Guardian Licensing and Syndication, and events — supplement editorial revenues. The Scott Trust also holds investments in AutoTrader Group (UK), which provides significant investment returns that historically supported Guardian journalism.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">The Guardian Revenue Model</div>
+        <div class="mermaid">
+graph LR
+    A[Guardian Revenue] --> B[Reader Contributions 1M plus supporters]
+    A --> C[Digital Advertising Programmatic Direct]
+    A --> D[Commercial Services Guardian Jobs]
+    A --> E[Scott Trust Investments]
+    B --> F[Monthly annual one-time voluntary contributions]
+    C --> G[150M monthly visitors educated audience premium CPM]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes The Guardian Unique</h2>
+      <p class="section-intro">The Guardian's Scott Trust ownership, no-paywall commitment, and investigative journalism reputation create a media institution unlike any other in global English-language news.</p>
+      <div class="cards"><div class="card"><div class="card-icon">🏛️</div><h4>Scott Trust Ownership</h4><p>No individual owner — the Scott Trust protects editorial independence in perpetuity. No billionaire proprietor can direct coverage for personal or political benefit.</p></div><div class="card"><div class="card-icon">🆓</div><h4>No Hard Paywall</h4><p>All Guardian journalism is free to read. The contribution model asks rather than demands. This free access philosophy has built a global audience that paywalled competitors cannot reach.</p></div><div class="card"><div class="card-icon">🔍</div><h4>Investigative Journalism</h4><p>Snowden NSA files, Panama Papers, Cambridge Analytica — The Guardian breaks major global investigations. Each major investigation is both editorial purpose and supporter acquisition.</p></div><div class="card"><div class="card-icon">🌍</div><h4>Global Three-Edition Model</h4><p>UK, US, and Australian editions with dedicated editorial teams. A single news brand serving the English-speaking world from three geographic perspectives.</p></div><div class="card"><div class="card-icon">🌿</div><h4>Environmental Journalism</h4><p>The Guardian's climate and environment coverage is widely considered the most comprehensive of any major news outlet. It has pledged not to accept advertising from fossil fuel companies.</p></div><div class="card"><div class="card-icon">📧</div><h4>Email Newsletters</h4><p>Dozens of specialist newsletters from Morning Briefing to Today in Focus audio deliver Guardian journalism directly to engaged subscribers, building the contributor funnel outside the website.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From the Manchester Guardian to the world's most widely read liberal newspaper online.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>1821 — Manchester Guardian Founded</h4><p>Founded by John Edward Taylor to report on the Peterloo Massacre. Supported parliamentary reform and free trade from its Manchester base.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>1936 — Scott Trust Established</h4><p>CP Scott's family establish the Scott Trust to ensure Guardian editorial independence in perpetuity — a founding document for owner-independent journalism.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>1999 — Guardian Unlimited Digital Launch</h4><p>The Guardian launches its digital presence, investing early in online journalism before most British newspapers recognised digital's importance.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2013 — Snowden NSA Surveillance Files</h4><p>Glenn Greenwald and The Guardian publish the NSA mass surveillance revelations from Edward Snowden. A landmark investigative journalism achievement.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2016 — Reader Contributions Launch</h4><p>The Guardian launches reader contribution requests, asking readers to support journalism they value. Grows to 1M+ supporters in three years.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2019 — Guardian Reaches Operating Profit</h4><p>For the first time in decades, The Guardian reaches operating profit through the combination of reader contributions, advertising, and commercial revenues.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#001028',primaryTextColor:'#e8eaf6',primaryBorderColor:'#052962',lineColor:'#052962',secondaryColor:'#000818',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#001028',nodeBorder:'#052962',clusterBkg:'#000818',titleColor:'#e8eaf6',edgeLabelBackground:'#000818',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>

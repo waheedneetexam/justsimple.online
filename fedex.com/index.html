@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>FedEx — JustSimple.Online</title>
+  <meta name="description" content="Independent analysis of FedEx: how the world's largest express delivery company works, its hub-and-spoke network, revenue model, and competition with UPS and USPS for e-commerce delivery."/>
+  <meta name="keywords" content="FedEx analysis, FedEx business model, how FedEx works, FedEx hub-and-spoke, FedEx vs UPS, express delivery revenue"/>
+  <link rel="canonical" href="https://justsimple.online/fedex.com/"/>
+  <meta property="og:title" content="FedEx — Independent Analysis by JustSimple.Online"/>
+  <meta property="og:description" content="How FedEx delivers 15M+ packages daily to 220+ countries — the hub-and-spoke express delivery network that invented overnight shipping."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://justsimple.online/fedex.com/"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662293899276634" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSFVXECJ40"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TSFVXECJ40');</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root{--bg:#0a0d1a;--surface:#0f1628;--card:#141d35;--accent:#4D148C;--text:#e8eaf6;--muted:#8892b0;--border:#100018;--radius:16px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(15,17,23,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:34px;width:auto;}
+    .nav-tagline{font-size:.75rem;color:var(--muted);display:none;}
+    @media(min-width:500px){.nav-tagline{display:block;}}
+    .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-right a:hover{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,var(--bg) 0%,#050008 50%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:72px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#4D148C18,transparent);}
+    .hero-badge{display:inline-block;background:#4D148C26;border:1px solid #4D148C66;color:var(--accent);padding:4px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:16px;}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px;}
+    .hero-url{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 20px;font-size:.9rem;color:var(--muted);}
+    .hero-url span{color:var(--accent);font-weight:600;}
+    main{max-width:1100px;margin:0 auto;padding:56px 24px 100px;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    h2 .emoji{margin-right:10px;}
+    .section-intro{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:28px;}
+    .kid-box{background:linear-gradient(135deg,#4D148C14,#4D148C0a);border:1.5px solid #4D148C59;border-radius:var(--radius);padding:28px 32px;position:relative;overflow:hidden;}
+    .kid-box::before{content:'💡';position:absolute;right:24px;top:20px;font-size:3rem;opacity:.18;}
+    .kid-box h3{color:var(--accent);font-size:1.1rem;font-weight:700;margin-bottom:12px;}
+    .kid-box p{color:var(--text);line-height:1.8;}
+    .kid-box p+p{margin-top:12px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .card-icon{font-size:2rem;margin-bottom:12px;}
+    .card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .card p{font-size:.9rem;color:var(--muted);}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;}
+    .stat .num{display:block;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat .label{font-size:.8rem;color:var(--muted);}
+    .prose p{color:var(--muted);margin-bottom:20px;font-size:1rem;}
+    .prose p strong{color:var(--text);}
+    .tl-item{position:relative;padding-left:28px;margin-bottom:32px;}
+    .tl-item::before{content:'';position:absolute;left:7px;top:0;bottom:-32px;width:2px;background:var(--border);}
+    .tl-item:last-child::before{display:none;}
+    .tl-dot{position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+    .tl-item h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px;}
+    .tl-item p{font-size:.9rem;color:var(--muted);}
+    .adsense-unit{text-align:center;margin:40px 0;min-height:90px;}
+    .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:48px;}
+    .disclaimer p{font-size:.85rem;color:var(--muted);}
+    .disclaimer strong{color:var(--text);}
+    @media(max-width:600px){nav{padding:12px 16px;}.hero{padding:48px 16px 40px;}main{padding:36px 16px 80px;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/logo.svg" alt="JustSimple.Online Logo"/>
+      <span class="nav-tagline">Independent Web Analysis</span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/what-we-do.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">Independent Analysis</div>
+    <h1>FedEx: How the World's Express Delivery Network Works</h1>
+    <p>An independent deep-dive into FedEx's hub-and-spoke global delivery network, how overnight shipping was invented and commoditised, the FedEx vs UPS competitive dynamic, and how e-commerce transformed express delivery from premium to mass market.</p>
+    <div class="hero-url">🌐 <span>fedex.com</span></div>
+  </div>
+  <main>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Editorial Independence:</strong> JustSimple.Online is not affiliated with, endorsed by, or sponsored by FedEx. All analysis is independent research for informational purposes only.</p>
+    </div>
+    <section id="what-is">
+      <h2><span class="emoji">✈️</span>What is FedEx?</h2>
+      <p class="section-intro">FedEx is the company that invented overnight delivery — the global express logistics network that delivers 15M+ packages daily to over 220 countries using the hub-and-spoke model that Fred Smith wrote about in a Yale thesis.</p>
+      <div class="kid-box" style="margin-bottom:32px;">
+        <h3>Explain it like I'm 10</h3>
+        <p>FedEx (Federal Express) is a shipping company that delivers packages and letters very quickly. If you need a package to arrive at a specific address tomorrow morning, FedEx Express can do that — for a price. FedEx is famous for inventing overnight shipping in the early 1970s. They collect packages from businesses and people, fly them to their huge sorting hub in Memphis, Tennessee (where packages are sorted overnight), and then fly them out to their destinations by morning.</p>
+        <p>FedEx makes money by charging different prices for different speeds of delivery. If you need something delivered tomorrow morning, you pay a lot. If you're okay with it arriving in 3-5 days, you pay much less with FedEx Ground. FedEx also delivers packages for Amazon and other e-commerce companies. FedEx competes mainly with UPS (United Parcel Service) and, at the lower end, with the US Postal Service (USPS) for package delivery.</p>
+      </div>
+      <div class="prose">
+        <p>FedEx was founded by Frederick W. Smith in 1971, famously based on a concept paper he wrote as a Yale undergraduate about the hub-and-spoke model for package delivery. Smith's thesis (allegedly graded with a C) proposed concentrating package routing through a central hub where all packages converge for sorting and then redistribute outward — rather than the direct city-to-city routes that competitors used. FedEx launched commercial operations in April 1973, initially losing money but surviving through Smith's personal resource management before reaching profitability.</p>
+        <p>FedEx's hub-and-spoke network centres on its SuperHub in Memphis, Tennessee — the world's largest cargo airport by volume. Every night, hundreds of FedEx aircraft converge on Memphis from across the US; packages are sorted by destination over a four-hour window between midnight and 4 AM; aircraft then depart to regional hubs and destination cities. This nightly ritual processes millions of packages in a few hours, making next-day delivery reliable across vast geographic distances.</p>
+        <p>FedEx expanded from US express into a global logistics company through the acquisition of TNT Express (European express delivery) for $4.8B in 2016, making FedEx a genuine global competitor to UPS and DHL. FedEx operations span FedEx Express (overnight and international express), FedEx Ground (residential ground delivery competing with UPS Ground), FedEx Freight (less-than-truckload freight), and FedEx Office (print and shipping services at retail locations). The company processes $90B+ in annual revenue.</p>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="stats">
+      <h2><span class="emoji">📊</span>Key Numbers</h2>
+      <p class="section-intro">FedEx's scale as the world's express delivery leader.</p>
+      <div class="stats-grid"><div class="stat"><span class="num">$90B+</span><span class="label">Annual revenue</span></div><div class="stat"><span class="num">15M+</span><span class="label">Packages delivered per day</span></div><div class="stat"><span class="num">220+</span><span class="label">Countries and territories served</span></div><div class="stat"><span class="num">680+</span><span class="label">Aircraft in the FedEx fleet</span></div><div class="stat"><span class="num">1971</span><span class="label">Year founded by Frederick W. Smith</span></div><div class="stat"><span class="num">200K+</span><span class="label">Motorised vehicles in the FedEx fleet</span></div></div>
+    </section>
+    <section id="how-it-works">
+      <h2><span class="emoji">⚙️</span>How FedEx Works</h2>
+      <p class="section-intro">FedEx's hub-and-spoke network routes packages through regional and central sorting hubs, enabling next-day delivery across vast geographic distances with high reliability.</p>
+      <div class="prose">
+        <p>FedEx Express uses a two-tier hub-and-spoke system. Local courier pickup routes collect packages from businesses and drop-off locations; packages are transported to regional sort facilities; then flown to major hubs (Memphis SuperHub, Indianapolis, Oakland, Paris CDG, Guangzhou) for overnight sorting. The automated sorting systems at major hubs process hundreds of thousands of packages per hour using conveyor systems, scanners, and automated diverters that route each package to the correct outbound aircraft or truck. Every package is scanned multiple times, creating the tracking data customers see in real time.</p>
+        <p>FedEx's air fleet is the world's largest cargo airline by number of aircraft. Over 680 aircraft (including Boeing 777F, 767F, MD-11F, and ATR 72 turboprops for smaller markets) operate nightly in the coordinated network. Aircraft are owned and leased; FedEx owns its own maintenance facilities. The logistics of coordinating 680+ aircraft, thousands of trucks, and millions of packages daily in a 4-hour overnight sort window requires sophisticated operations management that took decades to develop and represents a significant barrier to new entrants.</p>
+        <p>FedEx Ground provides residential and commercial package delivery using independent contractors (not employees) in branded FedEx trucks. Ground is slower (1-5 days) and significantly cheaper than Express, competing directly with UPS Ground for e-commerce delivery. FedEx Ground grew from zero in 1985 to processing more packages per day than Express by the early 2020s. Amazon's growth from FedEx Ground customer to FedEx competitor (Amazon Logistics) cost FedEx significant volume — FedEx and Amazon ended their Express partnership in 2019.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">FedEx Hub-and-Spoke Network</div>
+        <div class="mermaid">
+graph TB
+    A[Customer ships package] --> B[FedEx courier pickup]
+    B --> C[Local sort facility]
+    C --> D[Regional hub]
+    D --> E[Memphis SuperHub midnight sort]
+    E --> F[Outbound aircraft by 4am]
+    F --> G[Destination regional hub]
+    G --> H[Delivery courier truck]
+    H --> I[Package delivered by 10:30am]
+        </div>
+      </div>
+    </section>
+    <section id="business-model">
+      <h2><span class="emoji">💰</span>How FedEx Makes Money</h2>
+      <p class="section-intro">FedEx generates revenue from express package delivery (premium pricing), ground delivery, freight, and office services across its four business segments.</p>
+      <div class="prose">
+        <p><strong>FedEx Express</strong> (time-definite overnight and international delivery) is the premium segment commanding the highest per-package revenue. Priority Overnight (delivery by 10:30 AM), Standard Overnight (by 5 PM), 2-Day, and Express Saver (3-day) are tiered products at progressively lower prices. International Priority and International Economy extend express service globally. Express revenue benefits from time-sensitive business documents and packages where price sensitivity is lower than speed requirements.</p>
+        <p><strong>FedEx Ground</strong> (residential and commercial 1-5 day delivery) has become the largest volume segment. Ground delivery uses independent service providers (contractors) who own their delivery trucks and pay FedEx for route rights. This contractor model reduces FedEx's labour costs versus UPS's Teamsters-unionised driver workforce. E-commerce growth has been the primary driver of FedEx Ground volume expansion.</p>
+        <p>FedEx Freight (less-than-truckload freight delivery for business shipments too large for parcel but too small for full truckload) generates revenue from commercial freight customers. FedEx Office (print, ship, and business services retail locations) provides consumer shipping services and print services at approximately 2,000 retail locations. FedEx International generates premium revenue from cross-border shipping where regulatory and customs complexity commands higher pricing than domestic delivery.</p>
+      </div>
+      <div class="diagram-wrap">
+        <div class="diagram-title">FedEx Revenue by Segment</div>
+        <div class="mermaid">
+graph LR
+    A[FedEx Revenue 90B annual] --> B[FedEx Express Premium Overnight]
+    A --> C[FedEx Ground E-commerce Residential]
+    A --> D[FedEx Freight LTL Business]
+    A --> E[FedEx Office Retail Services]
+    B --> F[Overnight and international express]
+    C --> G[Contractor model competes with UPS Ground]
+        </div>
+      </div>
+    </section>
+    <div class="adsense-unit">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2662293899276634" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <section id="features">
+      <h2><span class="emoji">✨</span>What Makes FedEx Unique</h2>
+      <p class="section-intro">FedEx's Memphis SuperHub, 680-aircraft fleet, and hub-and-spoke network represent logistics infrastructure that took decades to build and cannot be replicated quickly.</p>
+      <div class="cards"><div class="card"><div class="card-icon">🌙</div><h4>Memphis SuperHub</h4><p>The world's largest cargo airport by volume. Hundreds of FedEx aircraft land simultaneously at midnight, packages are sorted in 4 hours, aircraft depart by 4 AM. Operational precision at extraordinary scale.</p></div><div class="card"><div class="card-icon">✈️</div><h4>World's Largest Cargo Airline</h4><p>680+ aircraft makes FedEx the world's largest cargo airline by fleet size. The investment required to replicate this air network is a structural barrier to new entrants.</p></div><div class="card"><div class="card-icon">📦</div><h4>Overnight Delivery Invented</h4><p>FedEx invented reliable overnight delivery. Frederick Smith's hub-and-spoke insight created an industry. 50+ years of operational refinement have made the system extraordinarily reliable.</p></div><div class="card"><div class="card-icon">🌍</div><h4>220+ Country Coverage</h4><p>Global coverage including international customs expertise, local compliance knowledge, and ground delivery partners in remote markets that Amazon Logistics cannot match.</p></div><div class="card"><div class="card-icon">📊</div><h4>Real-Time Package Tracking</h4><p>Every package scanned at each network point provides real-time tracking data. FedEx's tracking technology was industry-leading when introduced and remains a customer expectation.</p></div><div class="card"><div class="card-icon">🏢</div><h4>FedEx Office Network</h4><p>2,000+ retail locations provide consumer and small business shipping services, print production, and FedEx branding touchpoints in high-traffic retail locations.</p></div></div>
+    </section>
+    <section id="history">
+      <h2><span class="emoji">📅</span>History &amp; Timeline</h2>
+      <p class="section-intro">From a 1971 Yale thesis to the world's largest cargo airline.</p>
+      <div><div class="tl-item"><div class="tl-dot"></div><h4>1971 — FedEx Founded by Frederick Smith</h4><p>Fred Smith founds Federal Express in Little Rock, Arkansas. The hub-and-spoke model from his Yale thesis becomes the operational foundation.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>1973 — Commercial Operations Begin</h4><p>FedEx launches commercial operations on April 17, 1973, delivering 186 packages to 25 US cities on its first night.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>1984 — FedEx ZapMail and Technology Investment</h4><p>FedEx launches ZapMail (electronic document transmission) but discontinues it as fax machines commoditise the service. Demonstrates FedEx's technology-first culture.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>1994 — FedEx.com Launches — Online Tracking</h4><p>FedEx launches its website with online package tracking — one of the first commercial applications of the web for customer service.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2016 — TNT Express Acquisition</h4><p>FedEx acquires TNT Express for $4.8B, creating a genuine global competitor with European ground network to complement FedEx's international air express.</p></div><div class="tl-item"><div class="tl-dot"></div><h4>2022 — FedEx One Consolidation</h4><p>FedEx announces consolidation of Express, Ground, and Freight into a single unified FedEx brand and operational structure, reducing complexity and costs.</p></div></div>
+    </section>
+  </main>
+  
+  <div id="diag-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <button id="diag-close" style="position:absolute;top:18px;right:24px;background:none;border:none;color:#8892b0;font-size:2rem;cursor:pointer;line-height:1;z-index:10000;">&times;</button>
+    <div id="diag-modal-inner" style="position:relative;max-width:92vw;max-height:88vh;overflow:auto;display:flex;flex-direction:column;align-items:center;min-width:60vw;min-height:30vh;"></div>
+  </div>
+  <style>#diag-modal{display:none;}#diag-modal.open{display:flex;}.diagram-wrap{cursor:zoom-in;border:1px solid var(--border);border-radius:12px;padding:24px;background:var(--surface);margin-top:28px;overflow:hidden;}.diagram-title{font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;}</style>
+  <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#0a0010',primaryTextColor:'#e8eaf6',primaryBorderColor:'#4D148C',lineColor:'#4D148C',secondaryColor:'#050008',tertiaryColor:'#0a0d1a',background:'#0a0d1a',mainBkg:'#0a0010',nodeBorder:'#4D148C',clusterBkg:'#050008',titleColor:'#e8eaf6',edgeLabelBackground:'#050008',fontFamily:'Segoe UI,system-ui,sans-serif'}});</script>
+  <script>
+(function(){
+  var modal=document.getElementById('diag-modal'),inner=document.getElementById('diag-modal-inner'),closeBtn=document.getElementById('diag-close');
+  if(!modal||!inner||!closeBtn)return;
+  var scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0,activeImg=null,onMove=null,onUp=null;
+  document.querySelectorAll('.diagram-wrap').forEach(function(w){w.style.cursor='zoom-in';});
+  document.addEventListener('click',function(e){var wrap=e.target.closest?e.target.closest('.diagram-wrap'):null;if(!wrap)return;var mDiv=wrap.querySelector('.mermaid');if(mDiv)openModal(mDiv);});
+  function openModal(mDiv){clearInner();modal.classList.add('open');document.body.style.overflow='hidden';var svg=mDiv.querySelector('svg');if(svg){showSvg(svg);return;}var msg=document.createElement('p');msg.className='diag-msg';msg.style.cssText='color:#8892b0;text-align:center;padding:80px 20px;font-size:1rem;margin:0;';msg.textContent='Rendering diagram...';inner.appendChild(msg);var t=setInterval(function(){var s=mDiv.querySelector('svg');if(s){clearInterval(t);msg.remove();showSvg(s);}},60);}
+  function clearInner(){inner.querySelectorAll('svg,img,.diag-msg,.diag-hint').forEach(function(el){el.remove();});if(onMove)document.removeEventListener('mousemove',onMove);if(onUp)document.removeEventListener('mouseup',onUp);onMove=onUp=activeImg=null;scale=1;tx=0;ty=0;}
+  function applyTransform(){if(activeImg)activeImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function showSvg(svg){clearInner();var xml=new XMLSerializer().serializeToString(svg);var img=document.createElement('img');img.style.cssText='display:block;margin:0 auto;max-width:min(88vw,1100px);max-height:72vh;width:100%;height:auto;cursor:zoom-in;transform-origin:center center;user-select:none;';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);inner.appendChild(img);activeImg=img;var hint=document.createElement('p');hint.className='diag-hint';hint.style.cssText='color:#8892b0;text-align:center;font-size:0.72rem;margin:8px 0 0;opacity:0.7;';hint.textContent='Scroll to zoom · Drag to pan · Double-click to reset';inner.appendChild(hint);inner.addEventListener('wheel',function(e){e.preventDefault();var rect=img.getBoundingClientRect(),ox=(e.clientX-rect.left)/rect.width,oy=(e.clientY-rect.top)/rect.height;var factor=e.deltaY<0?1.15:0.87,ns=Math.min(8,Math.max(0.5,scale*factor));tx+=ox*(scale-ns)*rect.width;ty+=oy*(scale-ns)*rect.height;scale=ns;img.style.cursor=scale>1?'grab':'zoom-in';applyTransform();},{passive:false});img.addEventListener('mousedown',function(e){if(scale<=1)return;dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;img.style.cursor='grabbing';e.preventDefault();});onMove=function(e){if(!dragging)return;tx=e.clientX-sx;ty=e.clientY-sy;applyTransform();};onUp=function(){dragging=false;if(activeImg)activeImg.style.cursor=scale>1?'grab':'zoom-in';};document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);img.addEventListener('dblclick',function(){scale=1;tx=0;ty=0;img.style.cursor='zoom-in';applyTransform();});var lastDist=0;img.addEventListener('touchstart',function(e){if(e.touches.length===2)lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(8,Math.max(0.5,scale*(d/lastDist)));lastDist=d;applyTransform();}},{passive:false});}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';clearInner();}
+  closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+}());
+</script>
+</body>
+</html>
