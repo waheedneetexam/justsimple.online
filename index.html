@@ -128,7 +128,15 @@
       border-color: var(--accent);
       box-shadow: 0 0 0 3px rgba(124,58,237,.15);
     }
-    .search-icon { color: var(--muted); font-size: 1rem; flex-shrink: 0; margin-right: 10px; }
+    .search-icon {
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      margin-right: 10px;
+    }
     .search-input {
       flex: 1;
       background: none;
@@ -177,7 +185,34 @@
     }
     .search-result:last-child { border-bottom: none; }
     .search-result:hover { background: rgba(124,58,237,.1); }
-    .search-result-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+    .search-result-icon { flex-shrink: 0; margin-top: 2px; }
+    .site-mark,
+    .search-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      border: 1px solid rgba(167,139,250,.32);
+      background: rgba(124,58,237,.14);
+      color: #ddd6fe;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+    .site-mark {
+      width: 52px;
+      height: 52px;
+      font-size: 1rem;
+      margin-bottom: 14px;
+    }
+    .search-mark {
+      min-width: 42px;
+      height: 42px;
+      padding: 0 10px;
+      font-size: .82rem;
+      border-radius: 12px;
+    }
     .search-result-body { flex: 1; min-width: 0; }
     .search-result-name { font-weight: 700; font-size: .95rem; color: #fff; }
     .search-result-desc {
@@ -221,7 +256,6 @@
       transition: border-color .2s, transform .2s, box-shadow .2s;
     }
     .site-card:hover { border-color: #a78bfa; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(124,58,237,.15); }
-    .site-icon { font-size: 2.6rem; margin-bottom: 14px; }
     .site-card h3 { color: #fff; font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
     .site-card p  { color: var(--muted); font-size: .88rem; line-height: 1.65; }
     .tag {
@@ -239,6 +273,42 @@
     footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
     footer .footer-logo { height: 28px; width: auto; vertical-align: middle; margin-right: 8px; }
     footer a { color: #a78bfa; text-decoration: none; }
+    .site-count-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      background: rgba(124,58,237,.12);
+      border: 1px solid rgba(124,58,237,.34);
+      color: #ddd6fe;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font: inherit;
+      cursor: pointer;
+    }
+    .site-count-toggle:hover { background: rgba(124,58,237,.18); }
+    .site-directory {
+      max-width: 960px;
+      margin: 18px auto 0;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,.02);
+      display: none;
+    }
+    .site-directory.open { display: block; }
+    .site-directory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px 16px;
+      margin-top: 8px;
+    }
+    .site-directory-grid a {
+      color: #c4b5fd;
+      text-decoration: none;
+      font-size: .84rem;
+    }
+    .site-directory-grid a:hover { color: #fff; }
   </style>
 </head>
 <body>
@@ -264,7 +334,7 @@
   <!-- Search -->
   <div class="search-wrap">
     <div class="search-inner">
-      <span class="search-icon">🔍</span>
+      <span class="search-icon">Find</span>
       <input
         id="site-search"
         class="search-input"
@@ -293,14 +363,14 @@
 
 <!-- ── Analyses ── -->
 <main>
-  <div class="section-label">Analysed Websites <span id="shuffle-hint" style="font-size:.75rem;color:#8892b0;font-weight:400;margin-left:8px;">↻ shuffles on every visit</span></div>
+  <div class="section-label">Analysed Websites <span id="shuffle-hint" style="font-size:.75rem;color:#8892b0;font-weight:400;margin-left:8px;">shuffled on every visit</span></div>
   <div class="grid" id="sites-grid"></div>
 </main>
 
 <script>
 (function () {
   // ── Fallback list (used if API is unreachable) ──────────────────────────
-  var FALLBACK = [
+  var ALL_SITES = [
     { folder_path:'/btcpayserver.org/', name:'BTCPay Server',  description:'Open-source Bitcoin payment processor. Accept crypto with 0% fees, no middleman, fully self-hosted.', tags:['Bitcoin','Payments','Open Source'] },
     { folder_path:'/phoenix.acinq.co/', name:'Phoenix Wallet', description:'Self-custodial Lightning Network Bitcoin wallet by ACINQ. Send Bitcoin instantly with auto channel management.', tags:['Lightning','Bitcoin','Mobile Wallet'] },
     { folder_path:'/amazon.com/',   name:'Amazon',    description:'World\'s largest online retailer + AWS cloud computing. 315M+ customers, Prime, Alexa, and much more.', tags:['E-Commerce','Cloud','Streaming'] },
@@ -320,11 +390,11 @@
     { folder_path:'/whatsapp.com/', name:'WhatsApp',  description:'3 billion users, 100 billion messages daily, end-to-end encryption.', tags:['Messaging','Encryption','Meta'] },
     { folder_path:'/temu.com/',     name:'Temu',      description:'Gamified ultra-discount shopping. 1B+ downloads, 180+ countries, direct from manufacturers.', tags:['E-Commerce','Deals','Shopping'] },
     { folder_path:'/weather.com/',  name:'Weather.com', description:'IBM\'s global weather platform. Powers 95% of weather apps worldwide.', tags:['Weather','IBM','Forecasting'] },
-    { folder_path:'/yahoo.co.jp/',  name:'Yahoo Japan', description:'Japan\'s #1 web portal with 83M+ monthly users and 100+ services.', tags:['Japan','Web Portal','Payments'] }
+    { folder_path:'/yahoo.co.jp/',  name:'Yahoo Japan', description:'Japan\'s #1 web portal with 83M+ monthly users and 100+ services.', tags:['Japan','Web Portal','Payments'] },
+    { folder_path:'/live.com/',     name:'Live', description:'Microsoft\'s identity and web entry point tying Outlook, account services, and consumer access together.', tags:['Microsoft','Identity','Email'] },
+    { folder_path:'/naver.com/',    name:'Naver', description:'South Korea\'s dominant portal combining search, news, shopping, maps, and local internet services.', tags:['Search','Portal','Korea'] },
+    { folder_path:'/pinterest.com/', name:'Pinterest', description:'Visual discovery platform for ideas, inspiration, shopping intent, and saved collections.', tags:['Visual Search','Social','Shopping'] }
   ];
-
-  // Site-name → emoji icon map
-  var ICONS = { 'BTCPay Server':'₿','Phoenix Wallet':'⚡','Amazon':'📦','Yahoo':'🟣','TikTok':'🎵','Bing':'🔍','Yahoo Japan':'🇯🇵','DuckDuckGo':'🦆','Temu':'🛍️','Weather.com':'🌤️','Netflix':'🎬','Google':'🔍','YouTube':'▶️','Facebook':'👥','Instagram':'📸','ChatGPT':'🤖','Reddit':'🗳️','Wikipedia':'📖','X (Twitter)':'✖️','WhatsApp':'💬' };
 
   function shuffle(arr) {
     var a = arr.slice();
@@ -335,17 +405,27 @@
     return a;
   }
 
+  function getMonogram(name) {
+    var cleaned = String(name || '')
+      .replace(/\([^)]*\)/g, '')
+      .replace(/[^A-Za-z0-9 ]+/g, ' ')
+      .trim();
+    if (!cleaned) return 'WS';
+    var words = cleaned.split(/\s+/).filter(Boolean);
+    if (words.length >= 2) return (words[0][0] + words[1][0]).toUpperCase();
+    return cleaned.slice(0, 2).toUpperCase();
+  }
+
   function renderCards(sites) {
     var grid = document.getElementById('sites-grid');
     grid.innerHTML = '';
     shuffle(sites).slice(0, 9).forEach(function (s) {
-      var icon = ICONS[s.name] || '🌐';
       var tag  = Array.isArray(s.tags) ? s.tags.slice(0, 3).join(' · ') : (s.tags || '');
       var a    = document.createElement('a');
       a.className = 'site-card';
       a.href = s.folder_path;
       a.innerHTML =
-        '<div class="site-icon">' + icon + '</div>' +
+        '<div class="site-mark" aria-hidden="true">' + getMonogram(s.name) + '</div>' +
         '<h3>' + s.name + '</h3>' +
         '<p>' + s.description + '</p>' +
         '<span class="tag">' + tag + '</span>';
@@ -360,10 +440,10 @@
       return r.json();
     })
     .then(function (data) {
-      renderCards(data.sites && data.sites.length ? data.sites : FALLBACK);
+      renderCards(data.sites && data.sites.length ? data.sites : ALL_SITES);
     })
     .catch(function () {
-      renderCards(FALLBACK);  // API down → use fallback silently
+      renderCards(ALL_SITES);  // API down → use fallback silently
     });
 }());
 </script>
@@ -386,6 +466,12 @@
   <br><br>
   <a href="/">justsimple.online</a> &nbsp;·&nbsp; <a href="/what-we-do.html">What We Do</a> &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms of Use</a>
   <br><br>
+  <button id="site-count-toggle" class="site-count-toggle" type="button" aria-expanded="false" aria-controls="site-directory">Website Analyses: <span id="site-count">0</span></button>
+  <div id="site-directory" class="site-directory" aria-hidden="true">
+    <div style="font-size:.78rem;margin-bottom:10px;">Processed website pages</div>
+    <div id="site-directory-grid" class="site-directory-grid"></div>
+  </div>
+  <br><br>
   <span style="font-size:.78rem;">All analyses are independent editorial content. JustSimple.Online is not affiliated with any website analysed.</span>
 </footer>
 
@@ -394,8 +480,36 @@
   const input    = document.getElementById('site-search');
   const dropdown = document.getElementById('search-dropdown');
   const clearBtn = document.getElementById('search-clear');
-  const ICONS    = { default: '🌐' };
+  const footerToggle = document.getElementById('site-count-toggle');
+  const siteCount = document.getElementById('site-count');
+  const siteDirectory = document.getElementById('site-directory');
+  const siteDirectoryGrid = document.getElementById('site-directory-grid');
   let debounce   = null;
+  const ALL_SITES = [
+    { folder_path:'/amazon.com/', name:'Amazon', description:'World\'s largest online retailer + AWS cloud computing. 315M+ customers, Prime, Alexa, and much more.', tags:['E-Commerce','Cloud','Streaming'] },
+    { folder_path:'/bing.com/', name:'Bing', description:'Microsoft\'s AI-powered search engine with Copilot. 3.36B monthly visits and growing fast.', tags:['Search','AI','Microsoft'] },
+    { folder_path:'/btcpayserver.org/', name:'BTCPay Server', description:'Open-source Bitcoin payment processor. Accept crypto with 0% fees, no middleman, fully self-hosted.', tags:['Bitcoin','Payments','Open Source'] },
+    { folder_path:'/chatgpt.com/', name:'ChatGPT', description:'OpenAI\'s conversational AI interface for chat, reasoning, writing, coding, and task assistance.', tags:['AI','OpenAI','Assistant'] },
+    { folder_path:'/duckduckgo.com/', name:'DuckDuckGo', description:'Privacy-first search engine that never tracks you. 71.9B searches in 2024, #2 mobile search in 20+ countries.', tags:['Privacy','Search','No Tracking'] },
+    { folder_path:'/facebook.com/', name:'Facebook', description:'Global social network for feeds, groups, messaging, communities, and Meta\'s advertising ecosystem.', tags:['Social','Meta','Ads'] },
+    { folder_path:'/google.com/', name:'Google', description:'The world\'s search engine. 92% market share, 8.5B daily searches, $307B revenue.', tags:['Search','Ads','Cloud','AI'] },
+    { folder_path:'/instagram.com/', name:'Instagram', description:'2 billion users, 95M photos daily, and the app that created the influencer economy.', tags:['Photos','Reels','Meta'] },
+    { folder_path:'/live.com/', name:'Live', description:'Microsoft\'s identity and web entry point tying Outlook, account services, and consumer access together.', tags:['Microsoft','Identity','Email'] },
+    { folder_path:'/naver.com/', name:'Naver', description:'South Korea\'s dominant portal combining search, news, shopping, maps, and local internet services.', tags:['Search','Portal','Korea'] },
+    { folder_path:'/netflix.com/', name:'Netflix', description:'The world\'s leading streaming service. 230M+ subscribers, $17B content spend, originals in 190 countries.', tags:['Streaming','Entertainment','Originals'] },
+    { folder_path:'/phoenix.acinq.co/', name:'Phoenix Wallet', description:'Self-custodial Lightning Network Bitcoin wallet by ACINQ. Send Bitcoin instantly with auto channel management.', tags:['Lightning','Bitcoin','Mobile Wallet'] },
+    { folder_path:'/pinterest.com/', name:'Pinterest', description:'Visual discovery platform for ideas, inspiration, shopping intent, and saved collections.', tags:['Visual Search','Social','Shopping'] },
+    { folder_path:'/reddit.com/', name:'Reddit', description:'850M monthly users, 100K+ communities. The front page of the internet since 2005.', tags:['Community','Forums','Upvotes'] },
+    { folder_path:'/temu.com/', name:'Temu', description:'Gamified ultra-discount shopping. 1B+ downloads, 180+ countries, direct from manufacturers.', tags:['E-Commerce','Deals','Shopping'] },
+    { folder_path:'/tiktok.com/', name:'TikTok', description:'Short-form video platform by ByteDance. 1.6B users, AI-powered For You feed, $23B revenue in 2024.', tags:['Video','Social','Entertainment'] },
+    { folder_path:'/weather.com/', name:'Weather.com', description:'IBM\'s global weather platform. Powers 95% of weather apps worldwide.', tags:['Weather','IBM','Forecasting'] },
+    { folder_path:'/whatsapp.com/', name:'WhatsApp', description:'3 billion users, 100 billion messages daily, end-to-end encryption.', tags:['Messaging','Encryption','Meta'] },
+    { folder_path:'/wikipedia.org/', name:'Wikipedia', description:'60 million articles, 1.8 billion visitors, zero ads. The free encyclopaedia anyone can edit.', tags:['Reference','Non-profit','Knowledge'] },
+    { folder_path:'/x.com/', name:'X (Twitter)', description:'550M users, $44B Musk acquisition. The real-time global conversation platform.', tags:['Social','News','Musk'] },
+    { folder_path:'/yahoo.co.jp/', name:'Yahoo Japan', description:'Japan\'s #1 web portal with 83M+ monthly users and 100+ services.', tags:['Japan','Web Portal','Payments'] },
+    { folder_path:'/yahoo.com/', name:'Yahoo', description:'Pioneer web portal with 1B+ users. Yahoo Mail, News, Finance, Sports — all in one place since 1994.', tags:['Web Portal','Email','News'] },
+    { folder_path:'/youtube.com/', name:'YouTube', description:'2.7 billion users, 500 hours of video uploaded every minute. The second largest search engine.', tags:['Video','Streaming','Creators'] }
+  ];
 
   function esc(str) {
     return String(str)
@@ -403,12 +517,23 @@
       .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  function siteIcon(name) {
-    const n = name.toLowerCase();
-    if (n.includes('bitcoin') || n.includes('btc') || n.includes('pay')) return '₿';
-    if (n.includes('lightning') || n.includes('phoenix')) return '⚡';
-    if (n.includes('wallet')) return '👛';
-    return '🌐';
+  function siteMark(name) {
+    const cleaned = String(name || '')
+      .replace(/\([^)]*\)/g, '')
+      .replace(/[^A-Za-z0-9 ]+/g, ' ')
+      .trim();
+    if (!cleaned) return 'WS';
+    const words = cleaned.split(/\s+/).filter(Boolean);
+    if (words.length >= 2) return (words[0][0] + words[1][0]).toUpperCase();
+    return cleaned.slice(0, 2).toUpperCase();
+  }
+
+  function renderSiteDirectory() {
+    const sites = ALL_SITES.slice().sort((a, b) => a.name.localeCompare(b.name));
+    siteCount.textContent = String(sites.length);
+    siteDirectoryGrid.innerHTML = sites.map(site =>
+      `<a href="${esc(site.folder_path)}">${esc(site.name)}</a>`
+    ).join('');
   }
 
   function renderResults(results, query) {
@@ -419,7 +544,7 @@
     }
     dropdown.innerHTML = results.map(r => `
       <a class="search-result" href="${esc(r.folder_path)}" role="option">
-        <div class="search-result-icon">${siteIcon(r.name)}</div>
+        <div class="search-result-icon"><span class="search-mark" aria-hidden="true">${siteMark(r.name)}</span></div>
         <div class="search-result-body">
           <div class="search-result-name">${esc(r.name)}</div>
           <div class="search-result-desc">${esc(r.description)}</div>
@@ -475,6 +600,14 @@
       dropdown.classList.remove('open');
       input.blur();
     }
+  });
+
+  renderSiteDirectory();
+
+  footerToggle.addEventListener('click', function () {
+    const isOpen = siteDirectory.classList.toggle('open');
+    footerToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    siteDirectory.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
   });
 })();
 </script>
